@@ -76,7 +76,7 @@ Costs are list-price equivalents for free-tier calls (Gemini 3.5 Flash-Lite at $
 
 Plugin overhead, from `go test -bench` on an Apple M1: about 15 µs to normalise and fingerprint a request, and about 0.36 ms for a replayed step including the atomic write of the cassette to disk.
 
-Limits of this study: brief_py and brief_ts were written for this project and differ in more than one way (language, prompts, how search text reaches the writer), so the result is about these two designs rather than a general law; there are six companies. A model-swap fork (Flash-Lite to Gemini 3.5 Flash) ran out of free-tier quota partway through, so it's left out rather than reported on a partial sample.
+The position result has one confound we haven't separated yet: by the last search, the agent already holds two searches' worth of genuine results, so a late plant is also more diluted. A dilution-matched control (same position, fewer genuine results) is the next run. Limits of this study: brief_py and brief_ts were written for this project and differ in more than one way (language, prompts, how search text reaches the writer), so the result is about these two designs rather than a general law; there are six companies. A model-swap fork (Flash-Lite to Gemini 3.5 Flash) ran out of free-tier quota partway through, so it's left out rather than reported on a partial sample.
 
 ## How it works
 
