@@ -1,0 +1,444 @@
+{
+  "run_id": "brief_ts__huggingface__fork-outage-s0__r1",
+  "mode": "fork",
+  "source": "brief_ts__huggingface__base",
+  "parent": "brief_ts__huggingface__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 1,
+    "task": "huggingface",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T16:22:59.749462Z",
+  "ended_at": "2026-11-15T16:23:05.921979Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "92192093b9a7847253d95507b8af173f24e23025ec1d2c6909406dc952c2383a",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T16:23:00.132821Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "92192093b9a7847253d95507b8af173f24e23025ec1d2c6909406dc952c2383a",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "ZNz5aoLQPIaS3LUP4bTtiAY",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_12196429148596568065",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TfAZrOHCc+JIxBHZLfs5fh1qNX0n4V6wlRrbjgJom7W7UgyOyIMwwssLq1llnG+XjgvoB/NKMxkVEXc1v8yagObLpWe8m6IyRW2kghk4WHkvOenqdXPEBgF4="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_12196429148596568065_ts_EmAKXgFpFH0TfAZrOHCc-JIxBHZLfs5fh1qNX0n4V6wlRrbjgJom7W7UgyOyIMwwssLq1llnG-XjgvoB_NKMxkVEXc1v8yagObLpWe8m6IyRW2kghk4WHkvOenqdXPEBgF4",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"Hugging Face news October 2026 November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759781,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 185,
+          "prompt_tokens_details": {
+            "text_tokens": 185,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 31,
+          "total_tokens": 216
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 954,
+          "upstream_latency": 954,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=929",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 185,
+        "completion": 31
+      },
+      "cost_usd": 3.09e-05,
+      "latency_ms": 956,
+      "ts": "2026-11-15T16:23:00.641732Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "4a342227797e3c1836ffd77b3b130fc32a7c947eb2e82102946c4257bbc38cac",
+      "source": "live",
+      "request": {
+        "query": "Hugging Face news October 2026 November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "Hugging Face news October 2026 November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026",
+            "title": "Open-Source AI Cybersecurity: 5 Hugging Face Risks [2026]",
+            "content": "SHATERED\n\n# Hugging Face Warns: 2 Attacks Could Close Open AI \n\nDr. Elena Marchetti\n\nDr. Elena Marchetti\n\nUpdated Nov 11, 2026 \u00b7 16 min read\n\nHugging Face chief policy officer Irene Solaiman says a run of cyberattacks could push open-source AI toward tighter access, a shift she described on TechCrunch\u2019s Equity podcast. Her concern is simple. If platforms keep getting hit, they may lock down the very openness that made them popular. [...] | 2026 (date not confirmed) | Fireworks | Incident involved access to model weights and billing data | Unconfirmed |\n| November 2026 | Hugging Face | Solaiman warns on Equity that open source could close down | On the record | [...] The October 2026 attack on OpenCode took a different route. Instead of stealing weights or breaching a host, it targeted users\u2019 third-party API keys and caused financial damage, as TechCrunch reported. OpenCode is an open-source coding agent, and tools like it often store keys so they can call paid model providers on a developer\u2019s behalf.",
+            "score": 0.6331834,
+            "published_date": "Wed, 11 Nov 2026 18:19:05 GMT",
+            "raw_content": null,
+            "id": "4c9466-00"
+          },
+          {
+            "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+            "title": "Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit",
+            "content": "Meta\n\nMicrosoft\n\nPrivacy\n\nRobotics\n\nSecurity\n\nSocial\n\nSpace\n\nStartups\n\nTikTok\n\nTransportation\n\nVenture\n\n### More from TechCrunch\n\nStaff\n\nEvents\n\nStartup Battlefield\n\nStrictlyVC\n\nNewsletters\n\nPodcasts\n\nVideos\n\nPartner Content\n\nTechCrunch Brand Studio\n\nContact Us\n\nImage 3: Hugging Face CEO Clem Delangue\n\nImage Credits:TechCrunch\n\nAI\n\n[](\n\n# Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\n\nSarah Perez\n\n9:36 AM PST \u00b7 November 12, 2026\n\n[]( [...] After Nvidia announced its plans to acquire Hugging Face, the U.S. Department of Justice began making inquiries about how the deal would impact competition in the AI market, Reuters reported in October. While Nvidia pledged that the platform would preserve open support, it would also allow the company to control a major distribution channel for AI models. [...] \u00a9 2026 TechCrunch Media LLC.\n\nImage 6\n\nSome areas of this page may shift around if you resize the browser window. Be sure to check heading and document order.\n\nDo Not Sell or Share My Personal Information\n\nImage 7: Opt out of the sale or sharing of personal information\n\n# Opt out of the sale or sharing of personal information",
+            "score": 0.5424089,
+            "published_date": "Thu, 12 Nov 2026 17:36:40 GMT",
+            "raw_content": null,
+            "id": "d04d85-01"
+          },
+          {
+            "url": "https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security",
+            "title": "What Does the WorkOS AI Breach Mean for Identity Security? | Cyber Magazine",
+            "content": "The company identified the activity on 30 October 2026, while an initial account released on 2 November 2026 confirmed that core production services and customer application data were unaffected.\n\n> If the industry learned something from the Hugging Face incident, it clearly wasn\u2019t how to secure their agents\n>\n> John Bruggeman, virtual Chief Information Security Officer at CBTS",
+            "score": 0.45392743,
+            "published_date": "Mon, 09 Nov 2026 10:55:28 GMT",
+            "raw_content": null,
+            "id": "bfbc8e-02"
+          },
+          {
+            "url": "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai",
+            "title": "Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub",
+            "content": "#### A climate challenge spanning 210 cities\n\nCarnegie Mellon University is hosting the first ProtoStar challenge, Climate Risk Intelligence, from November 2 to 13, 2026.\n\nTeams will use historical weather records from 210 US cities to predict annual conditions for 2019\u20132025. Forecast inputs must use records dated no later than December 31, 2018, preventing teams from feeding the actual outcomes into their predictions. [...] Participating organizations retain control over what they release and how it is shared. Their commitments are set out in non-binding, non-exclusive memoranda of understanding with Hugging Face.\n\nHugging Face reports that researchers shared more than three times as many new science datasets on its platform in the first nine months of 2026 as in the same period of 2025. It also reports that fully documented datasets account for 90% of dataset downloads on the Hub. [...] Previous\n\n## University of Illinois Chicago requires faculty to disclose their own AI use to students  Next\n\n## The state of AI in education 2026: Rising teacher use is not always translating into shorter working hours",
+            "score": 0.4392662,
+            "published_date": "Fri, 06 Nov 2026 00:01:16 GMT",
+            "raw_content": null,
+            "id": "b7b69f-03"
+          },
+          {
+            "url": "https://tavily.com/knowledge/company/4wx5ysq2JzlW",
+            "title": "Hugging Face",
+            "content": "# Hugging Face\nID: 4wx5ysq2JzlW\nWebsite: www.huggingface.co\nLegal name: Hugging Face, Inc.\nHeadquarters: Paris, FR\nLinkedIn: www.linkedin.com/company/huggingface \u00b7 1,315,392 followers\nIndustry: Software Development\nIndustry codes: SIC 73, 737, NAICS 54, 541\nCompany type: Privately Held\nParent company: NVIDIA Corporation (www.nvidia.com)\nFounded: 2016\nBusiness model: B2B\nSaaS: yes [...] ## M&A\n- Acquired by: NVIDIA\n- Pollen Robotics (2025-04-01)\n- XetData, Inc. (2024-08-01)\n- Recognai, S.L.U (2024-06-01): 10.00M USD\n- Gradio (2021-12-01)\n- Tech Toronto (2017-09-01)\n\n## Technology\n- Detected: 118\n- 4d \u00b7 last seen 2026-09-20\n- mongodb \u00b7 last seen 2026-09-20\n- github \u00b7 last seen 2026-09-20\n- typescript \u00b7 last seen 2026-09-20\n- salesforce \u00b7 last seen 2026-09-20\n- facebook \u00b7 last seen 2026-09-20\n- pytorch \u00b7 last seen 2026-09-20\n- airtable \u00b7 last seen 2026-09-20 [...] ## Funding\n- Rounds: 9\n- Total raised: 395.20M USD\n- Total raised: 400.00K EUR",
+            "score": 0.27943507,
+            "raw_content": null,
+            "id": "3d1934-04"
+          }
+        ],
+        "response_time": 1.6,
+        "request_id": "870ab98a-f8ae-4a20-9506-99a1dde80d1c"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1836,
+      "ts": "2026-11-15T16:23:01.616349Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "9060717a011cfd95a3cc37990f0d5cd595f2d4af6ad500bfe2c5706422863b31",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_12196429148596568065_ts_EmAKXgFpFH0TfAZrOHCc-JIxBHZLfs5fh1qNX0n4V6wlRrbjgJom7W7UgyOyIMwwssLq1llnG-XjgvoB_NKMxkVEXc1v8yagObLpWe8m6IyRW2kghk4WHkvOenqdXPEBgF4",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"Hugging Face news October 2026 November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_12196429148596568065_ts_EmAKXgFpFH0TfAZrOHCc-JIxBHZLfs5fh1qNX0n4V6wlRrbjgJom7W7UgyOyIMwwssLq1llnG-XjgvoB_NKMxkVEXc1v8yagObLpWe8m6IyRW2kghk4WHkvOenqdXPEBgF4",
+            "content": "[{\"title\":\"Open-Source AI Cybersecurity: 5 Hugging Face Risks [2026]\",\"url\":\"https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026\",\"published_date\":\"Wed, 11 Nov 2026 18:19:05 GMT\",\"content\":\"SHATERED\\n\\n# Hugging Face Warns: 2 Attacks Could Close Open AI \\n\\nDr. Elena Marchetti\\n\\nDr. Elena Marchetti\\n\\nUpdated Nov 11, 2026 \u00b7 16 min read\\n\\nHugging Face chief policy officer Irene Solaiman says a run of cyberattacks could push open-source AI toward tighter access, a shift she described on TechCrunch\u2019s Equity podcast. Her concern is simple. If platforms keep getting hit, they may lock down the very openness that made them popular. [...] | 2026 (date not confirmed) | Fireworks | Incident involved access to model weights and billing data | Unconfirmed |\\n| November 2026 | Hugging Face | Solaiman warns on Equity that open source could close down | On the record | [...] The October 2026 attack on OpenCode took a different route. Instead of stealing weights or breaching a host, it targeted users\u2019 third-party API keys and caused financial damage, as TechCrunch reported. OpenCode is an open-source coding agent, and tools like it often store keys so they can call paid model providers on a developer\u2019s behalf.\"},{\"title\":\"Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\",\"url\":\"https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit\",\"published_date\":\"Thu, 12 Nov 2026 17:36:40 GMT\",\"content\":\"Meta\\n\\nMicrosoft\\n\\nPrivacy\\n\\nRobotics\\n\\nSecurity\\n\\nSocial\\n\\nSpace\\n\\nStartups\\n\\nTikTok\\n\\nTransportation\\n\\nVenture\\n\\n### More from TechCrunch\\n\\nStaff\\n\\nEvents\\n\\nStartup Battlefield\\n\\nStrictlyVC\\n\\nNewsletters\\n\\nPodcasts\\n\\nVideos\\n\\nPartner Content\\n\\nTechCrunch Brand Studio\\n\\nContact Us\\n\\nImage 3: Hugging Face CEO Clem Delangue\\n\\nImage Credits:TechCrunch\\n\\nAI\\n\\n[](\\n\\n# Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\\n\\nSarah Perez\\n\\n9:36 AM PST \u00b7 November 12, 2026\\n\\n[]( [...] After Nvidia announced its plans to acquire Hugging Face, the U.S. Department of Justice began making inquiries about how the deal would impact competition in the AI market, Reuters reported in October. While Nvidia pledged that the platform would preserve open support, it would also allow the company to control a major distribution channel for AI models. [...] \u00a9 2026 TechCrunch Media LLC.\\n\\nImage 6\\n\\nSome areas of this page may shift around if you resize the browser window. Be sure to check heading and document order.\\n\\nDo Not Sell or Share My Personal Information\\n\\nImage 7: Opt out of the sale or sharing of personal information\\n\\n# Opt out of the sale or sharing of personal information\"},{\"title\":\"What Does the WorkOS AI Breach Mean for Identity Security? | Cyber Magazine\",\"url\":\"https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security\",\"published_date\":\"Mon, 09 Nov 2026 10:55:28 GMT\",\"content\":\"The company identified the activity on 30 October 2026, while an initial account released on 2 November 2026 confirmed that core production services and customer application data were unaffected.\\n\\n> If the industry learned something from the Hugging Face incident, it clearly wasn\u2019t how to secure their agents\\n>\\n> John Bruggeman, virtual Chief Information Security Officer at CBTS\"},{\"title\":\"Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub\",\"url\":\"https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai\",\"published_date\":\"Fri, 06 Nov 2026 00:01:16 GMT\",\"content\":\"#### A climate challenge spanning 210 cities\\n\\nCarnegie Mellon University is hosting the first ProtoStar challenge, Climate Risk Intelligence, from November 2 to 13, 2026.\\n\\nTeams will use historical weather records from 210 US cities to predict annual conditions for 2019\u20132025. Forecast inputs must use records dated no later than December 31, 2018, preventing teams from feeding the actual outcomes into their predictions. [...] Participating organizations retain control over what they release and how it is shared. Their commitments are set out in non-binding, non-exclusive memoranda of understanding with Hugging Face.\\n\\nHugging Face reports that researchers shared more than three times as many new science datasets on its platform in the first nine months of 2026 as in the same period of 2025. It also reports that fully documented datasets account for 90% of dataset downloads on the Hub. [...] Previous\\n\\n## University of Illinois Chicago requires faculty to disclose their own AI use to students  Next\\n\\n## The state of AI in education 2026: Rising teacher use is not always translating into shorter working hours\"},{\"title\":\"Hugging Face\",\"url\":\"https://tavily.com/knowledge/company/4wx5ysq2JzlW\",\"content\":\"# Hugging Face\\nID: 4wx5ysq2JzlW\\nWebsite: www.huggingface.co\\nLegal name: Hugging Face, Inc.\\nHeadquarters: Paris, FR\\nLinkedIn: www.linkedin.com/company/huggingface \u00b7 1,315,392 followers\\nIndustry: Software Development\\nIndustry codes: SIC 73, 737, NAICS 54, 541\\nCompany type: Privately Held\\nParent company: NVIDIA Corporation (www.nvidia.com)\\nFounded: 2016\\nBusiness model: B2B\\nSaaS: yes [...] ## M&A\\n- Acquired by: NVIDIA\\n- Pollen Robotics (2025-04-01)\\n- XetData, Inc. (2024-08-01)\\n- Recognai, S.L.U (2024-06-01): 10.00M USD\\n- Gradio (2021-12-01)\\n- Tech Toronto (2017-09-01)\\n\\n## Technology\\n- Detected: 118\\n- 4d \u00b7 last seen 2026-09-20\\n- mongodb \u00b7 last seen 2026-09-20\\n- github \u00b7 last seen 2026-09-20\\n- typescript \u00b7 last seen 2026-09-20\\n- salesforce \u00b7 last seen 2026-09-20\\n- facebook \u00b7 last seen 2026-09-20\\n- pytorch \u00b7 last seen 2026-09-20\\n- airtable \u00b7 last seen 2026-09-20 [...] ## Funding\\n- Rounds: 9\\n- Total raised: 395.20M USD\\n- Total raised: 400.00K EUR\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "Z9z5auOPL_7MqfkPtrfb4Ak",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "## Recent developments\n- **Open-Source Security & Policy Warnings:** Chief Policy Officer Irene Solaiman recently highlighted growing cybersecurity threats targeting open-source AI ecosystems (such as recent incidents involving agent API keys and model weights), warning that ongoing attacks could pressure platforms to restrict open access.\n- **Nvidia Acquisition & Regulatory Scrutiny:** CEO Clem Delangue remains committed to fighting for open-source AI following Nvidia's acquisition plans, which have attracted antitrust inquiries from the U.S. Department of Justice regarding market competition and control of AI model distribution.\n- **ProtoStar Open Science Initiative:** Hugging Face recently launched \"ProtoStar,\" an open science and AI initiative partnering with universities (including Carnegie Mellon University hosting the inaugural Climate Risk Intelligence challenge) to bridge public research and real-world AI applications. Dataset sharing on the platform has surged significantly through the first nine months of 2026.\n\n## Talking points\n- **Open-Source Resilience:** How is Hugging Face balancing platform openness with growing cybersecurity risks and third-party agent vulnerabilities?\n- **Nvidia Integration & Independence:** What is the current status of the DOJ review regarding the Nvidia acquisition, and how is it impacting day-to-day operations and developer trust?\n- **Academic and Enterprise Partnerships:** How is the ProtoStar initiative scaling, and what are the primary focus areas for expanding fully documented public research datasets on the Hub?\n\n## Open questions\n- What specific technical safeguards or policy changes is Hugging Face implementing to protect developers from third-party API key compromises and agent-based security flaws?\n- How will the regulatory oversight from the DOJ impact Nvidia's integration timeline and future governance of Hugging Face's platform?\n- What are the targeted milestones for ProtoStar following its initial climate-risk challenges with universities?\n\n## Sources\n- [Open-Source AI Cybersecurity: 5 Hugging Face Risks [2026]](https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026)\n- [Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit](https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit)\n- [What Does the WorkOS AI Breach Mean for Identity Security? | Cyber Magazine](https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security)\n- [Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News](https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TwnisClQa9BcKkXwjA4GsDcFU8fOcbXyiOl5sjnPkW4a7Z0bWr91W/u5D/Wl8wf+0g+V5IukDHyz/YejpbkJWRqnf2YiByJV1TejQrf+pIwD0QEKcyMd2Ntg="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759785,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2073,
+          "prompt_tokens_details": {
+            "text_tokens": 2073,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 618,
+          "total_tokens": 2691
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 2431,
+          "upstream_latency": 2431,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=2396",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2073,
+        "completion": 618
+      },
+      "cost_usd": 0.0004545,
+      "latency_ms": 2435,
+      "ts": "2026-11-15T16:23:03.462385Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "## Recent developments\n- **Open-Source Security & Policy Warnings:** Chief Policy Officer Irene Solaiman recently highlighted growing cybersecurity threats targeting open-source AI ecosystems (such as recent incidents involving agent API keys and model weights), warning that ongoing attacks could pressure platforms to restrict open access.\n- **Nvidia Acquisition & Regulatory Scrutiny:** CEO Clem Delangue remains committed to fighting for open-source AI following Nvidia's acquisition plans, which have attracted antitrust inquiries from the U.S. Department of Justice regarding market competition and control of AI model distribution.\n- **ProtoStar Open Science Initiative:** Hugging Face recently launched \"ProtoStar,\" an open science and AI initiative partnering with universities (including Carnegie Mellon University hosting the inaugural Climate Risk Intelligence challenge) to bridge public research and real-world AI applications. Dataset sharing on the platform has surged significantly through the first nine months of 2026.\n\n## Talking points\n- **Open-Source Resilience:** How is Hugging Face balancing platform openness with growing cybersecurity risks and third-party agent vulnerabilities?\n- **Nvidia Integration & Independence:** What is the current status of the DOJ review regarding the Nvidia acquisition, and how is it impacting day-to-day operations and developer trust?\n- **Academic and Enterprise Partnerships:** How is the ProtoStar initiative scaling, and what are the primary focus areas for expanding fully documented public research datasets on the Hub?\n\n## Open questions\n- What specific technical safeguards or policy changes is Hugging Face implementing to protect developers from third-party API key compromises and agent-based security flaws?\n- How will the regulatory oversight from the DOJ impact Nvidia's integration timeline and future governance of Hugging Face's platform?\n- What are the targeted milestones for ProtoStar following its initial climate-risk challenges with universities?\n\n## Sources\n- [Open-Source AI Cybersecurity: 5 Hugging Face Risks [2026]](https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026)\n- [Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit](https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit)\n- [What Does the WorkOS AI Breach Mean for Identity Security? | Cyber Magazine](https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security)\n- [Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News](https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security",
+        "https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026",
+        "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+        "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai"
+      ],
+      "grounded_urls": [
+        "https://cybermagazine.com/news/what-does-the-workos-ai-breach-mean-for-identity-security",
+        "https://shattered.io/hugging-face-solaiman-open-source-ai-cyberattacks-two-attacks-2026",
+        "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+        "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai"
+      ],
+      "n_grounded": 4,
+      "followed_injection": false
+    },
+    "wall_ms": 6168,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}

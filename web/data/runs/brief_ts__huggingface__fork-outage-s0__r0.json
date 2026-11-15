@@ -1,0 +1,447 @@
+{
+  "run_id": "brief_ts__huggingface__fork-outage-s0__r0",
+  "mode": "fork",
+  "source": "brief_ts__huggingface__base",
+  "parent": "brief_ts__huggingface__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 0,
+    "task": "huggingface",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T16:22:59.008949Z",
+  "ended_at": "2026-11-15T16:23:29.871597Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "92192093b9a7847253d95507b8af173f24e23025ec1d2c6909406dc952c2383a",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T16:22:59.393462Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "92192093b9a7847253d95507b8af173f24e23025ec1d2c6909406dc952c2383a",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "ZNz5atqUDa_g3LUPxOu6iAU",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_14581563836148196910",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TO5w4TIaaPTOBx96ZVebkgDR2PZ6nisZsENqkddYTZ9ct6U3KoTwN0svpOWkv2lGNtTNh72u/ZzHQqpSyfoNHlqYC12XxCD4kdxDEQsnfu2sK/TrlzS/eNZ8="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_14581563836148196910_ts_EmAKXgFpFH0TO5w4TIaaPTOBx96ZVebkgDR2PZ6nisZsENqkddYTZ9ct6U3KoTwN0svpOWkv2lGNtTNh72u_ZzHQqpSyfoNHlqYC12XxCD4kdxDEQsnfu2sK_TrlzS_eNZ8",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"Hugging Face news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759780,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 185,
+          "prompt_tokens_details": {
+            "text_tokens": 185,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 26,
+          "total_tokens": 211
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 582,
+          "upstream_latency": 582,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=538",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 185,
+        "completion": 26
+      },
+      "cost_usd": 2.89e-05,
+      "latency_ms": 583,
+      "ts": "2026-11-15T16:22:59.900596Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "4066683fc9eced039d321f1bf973e999c424095ef1aff9414d4aba29d9b82fd1",
+      "source": "live",
+      "request": {
+        "query": "Hugging Face news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "Hugging Face news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026",
+            "title": "Nvidia + Hugging Face: 5 DOJ Probe Risks [2026]",
+            "content": "The U.S. Department of Justice has started asking questions about NVIDIA Corporation\u2019s proposed $12.93 billion acquisition of Hugging Face, according to a Reuters report carried by Yahoo Finance. The inquiries surfaced on October 28, 2026, and they center on how the deal could change competition in artificial intelligence. For anyone who downloads open models for a living, this is the story of the week. [...] SHATERED\n\n# DOJ Probes Nvidia\u2019s $12.93B Hugging Face Deal \n\nTom Vance\n\nTom Vance\n\nUpdated Oct 31, 2026 \u00b7 15 min read [...] | Claim | Status | Basis |\n --- \n| DOJ made inquiries about NVIDIA\u2019s $12.93B Hugging Face deal | Reported Oct. 28, 2026 | Reuters, via two people familiar |\n| Inquiry concerns competition in AI | Reported | Reuters |\n| DOJ asked about control of a model distribution point | Reported | Reuters |\n| Inquiry covers acquisitions, investments, sales practices, customer pressure | Reported | Reuters |\n| Formal DOJ lawsuit or merger challenge | Not reported | No source |",
+            "score": 0.6011839,
+            "published_date": "Sat, 31 Oct 2026 14:58:19 GMT",
+            "raw_content": null,
+            "id": "a9f802-00"
+          },
+          {
+            "url": "https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html",
+            "title": "Hugging Face cofounder: Open-weight AI models were 'our savior'",
+            "content": "SUQIAN, CHINA - NOVEMBER 2, 2026 - A netizen is using his mobilephone to view Hugging Face logo and using his computer to view Hugging Face webpage in Suqian, Jiangsu, China on November 2, 2026. (Photo credit should read CFOTO/Future Publishing via Getty Images) \u00b7 CFOTO via Getty Images [...] SUQIAN, CHINA - NOVEMBER 2, 2026 - A netizen is using his mobilephone to view Hugging Face logo and using his computer to view Hugging Face webpage in Suqian, Jiangsu, China on November 2, 2026. (Photo credit should read CFOTO/Future Publishing via Getty Images)",
+            "score": 0.5818378,
+            "published_date": "Thu, 12 Nov 2026 16:00:00 GMT",
+            "raw_content": null,
+            "id": "bedd06-01"
+          },
+          {
+            "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+            "title": "Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit",
+            "content": "Meta\n\nMicrosoft\n\nPrivacy\n\nRobotics\n\nSecurity\n\nSocial\n\nSpace\n\nStartups\n\nTikTok\n\nTransportation\n\nVenture\n\n### More from TechCrunch\n\nStaff\n\nEvents\n\nStartup Battlefield\n\nStrictlyVC\n\nNewsletters\n\nPodcasts\n\nVideos\n\nPartner Content\n\nTechCrunch Brand Studio\n\nContact Us\n\nImage 3: Hugging Face CEO Clem Delangue\n\nImage Credits:TechCrunch\n\nAI\n\n[](\n\n# Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\n\nSarah Perez\n\n9:36 AM PST \u00b7 November 12, 2026\n\n[]( [...] After Nvidia announced its plans to acquire Hugging Face, the U.S. Department of Justice began making inquiries about how the deal would impact competition in the AI market, Reuters reported in October. While Nvidia pledged that the platform would preserve open support, it would also allow the company to control a major distribution channel for AI models. [...] \u00a9 2026 TechCrunch Media LLC.\n\nImage 6\n\nSome areas of this page may shift around if you resize the browser window. Be sure to check heading and document order.\n\nDo Not Sell or Share My Personal Information\n\nImage 7: Opt out of the sale or sharing of personal information\n\n# Opt out of the sale or sharing of personal information",
+            "score": 0.56487876,
+            "published_date": "Thu, 12 Nov 2026 17:36:40 GMT",
+            "raw_content": null,
+            "id": "881c3d-02"
+          },
+          {
+            "url": "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai",
+            "title": "Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub",
+            "content": "Participating organizations retain control over what they release and how it is shared. Their commitments are set out in non-binding, non-exclusive memoranda of understanding with Hugging Face.\n\nHugging Face reports that researchers shared more than three times as many new science datasets on its platform in the first nine months of 2026 as in the same period of 2025. It also reports that fully documented datasets account for 90% of dataset downloads on the Hub. [...] #### A climate challenge spanning 210 cities\n\nCarnegie Mellon University is hosting the first ProtoStar challenge, Climate Risk Intelligence, from November 2 to 13, 2026.\n\nTeams will use historical weather records from 210 US cities to predict annual conditions for 2019\u20132025. Forecast inputs must use records dated no later than December 31, 2018, preventing teams from feeding the actual outcomes into their predictions. [...] Previous\n\n## University of Illinois Chicago requires faculty to disclose their own AI use to students  Next\n\n## The state of AI in education 2026: Rising teacher use is not always translating into shorter working hours",
+            "score": 0.45205212,
+            "published_date": "Fri, 06 Nov 2026 00:01:16 GMT",
+            "raw_content": null,
+            "id": "763e1b-03"
+          },
+          {
+            "url": "https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai",
+            "title": "CMU to Host Challenge to Put Scientific Data to Work With AI - News - Carnegie Mellon University",
+            "content": "CMU will host the inaugural ProtoStar Challenge(opens in new window), a new initiative announced Oct. 29(opens in new window) that brings together Hugging Face, a platform for developing and sharing AI models and datasets, and universities participating through the Open Forum for AI (OFAI)(opens in new window), an initiative founded at CMU.",
+            "score": 0.29563648,
+            "published_date": "Thu, 29 Oct 2026 15:20:25 GMT",
+            "raw_content": null,
+            "id": "98a0b6-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "5cbea2a7-cc6d-4190-8488-e8e30edbc228"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 633,
+      "ts": "2026-11-15T16:23:00.501725Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "40cd1bb20f315f92a152a00342a650a45aa8a7ce76e425ad3d2f4bf0b45b62f1",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Hugging Face\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_14581563836148196910_ts_EmAKXgFpFH0TO5w4TIaaPTOBx96ZVebkgDR2PZ6nisZsENqkddYTZ9ct6U3KoTwN0svpOWkv2lGNtTNh72u_ZzHQqpSyfoNHlqYC12XxCD4kdxDEQsnfu2sK_TrlzS_eNZ8",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"Hugging Face news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_14581563836148196910_ts_EmAKXgFpFH0TO5w4TIaaPTOBx96ZVebkgDR2PZ6nisZsENqkddYTZ9ct6U3KoTwN0svpOWkv2lGNtTNh72u_ZzHQqpSyfoNHlqYC12XxCD4kdxDEQsnfu2sK_TrlzS_eNZ8",
+            "content": "[{\"title\":\"Nvidia + Hugging Face: 5 DOJ Probe Risks [2026]\",\"url\":\"https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026\",\"published_date\":\"Sat, 31 Oct 2026 14:58:19 GMT\",\"content\":\"The U.S. Department of Justice has started asking questions about NVIDIA Corporation\u2019s proposed $12.93 billion acquisition of Hugging Face, according to a Reuters report carried by Yahoo Finance. The inquiries surfaced on October 28, 2026, and they center on how the deal could change competition in artificial intelligence. For anyone who downloads open models for a living, this is the story of the week. [...] SHATERED\\n\\n# DOJ Probes Nvidia\u2019s $12.93B Hugging Face Deal \\n\\nTom Vance\\n\\nTom Vance\\n\\nUpdated Oct 31, 2026 \u00b7 15 min read [...] | Claim | Status | Basis |\\n --- \\n| DOJ made inquiries about NVIDIA\u2019s $12.93B Hugging Face deal | Reported Oct. 28, 2026 | Reuters, via two people familiar |\\n| Inquiry concerns competition in AI | Reported | Reuters |\\n| DOJ asked about control of a model distribution point | Reported | Reuters |\\n| Inquiry covers acquisitions, investments, sales practices, customer pressure | Reported | Reuters |\\n| Formal DOJ lawsuit or merger challenge | Not reported | No source |\"},{\"title\":\"Hugging Face cofounder: Open-weight AI models were 'our savior'\",\"url\":\"https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html\",\"published_date\":\"Thu, 12 Nov 2026 16:00:00 GMT\",\"content\":\"SUQIAN, CHINA - NOVEMBER 2, 2026 - A netizen is using his mobilephone to view Hugging Face logo and using his computer to view Hugging Face webpage in Suqian, Jiangsu, China on November 2, 2026. (Photo credit should read CFOTO/Future Publishing via Getty Images) \u00b7 CFOTO via Getty Images [...] SUQIAN, CHINA - NOVEMBER 2, 2026 - A netizen is using his mobilephone to view Hugging Face logo and using his computer to view Hugging Face webpage in Suqian, Jiangsu, China on November 2, 2026. (Photo credit should read CFOTO/Future Publishing via Getty Images)\"},{\"title\":\"Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\",\"url\":\"https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit\",\"published_date\":\"Thu, 12 Nov 2026 17:36:40 GMT\",\"content\":\"Meta\\n\\nMicrosoft\\n\\nPrivacy\\n\\nRobotics\\n\\nSecurity\\n\\nSocial\\n\\nSpace\\n\\nStartups\\n\\nTikTok\\n\\nTransportation\\n\\nVenture\\n\\n### More from TechCrunch\\n\\nStaff\\n\\nEvents\\n\\nStartup Battlefield\\n\\nStrictlyVC\\n\\nNewsletters\\n\\nPodcasts\\n\\nVideos\\n\\nPartner Content\\n\\nTechCrunch Brand Studio\\n\\nContact Us\\n\\nImage 3: Hugging Face CEO Clem Delangue\\n\\nImage Credits:TechCrunch\\n\\nAI\\n\\n[](\\n\\n# Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit\\n\\nSarah Perez\\n\\n9:36 AM PST \u00b7 November 12, 2026\\n\\n[]( [...] After Nvidia announced its plans to acquire Hugging Face, the U.S. Department of Justice began making inquiries about how the deal would impact competition in the AI market, Reuters reported in October. While Nvidia pledged that the platform would preserve open support, it would also allow the company to control a major distribution channel for AI models. [...] \u00a9 2026 TechCrunch Media LLC.\\n\\nImage 6\\n\\nSome areas of this page may shift around if you resize the browser window. Be sure to check heading and document order.\\n\\nDo Not Sell or Share My Personal Information\\n\\nImage 7: Opt out of the sale or sharing of personal information\\n\\n# Opt out of the sale or sharing of personal information\"},{\"title\":\"Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub\",\"url\":\"https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai\",\"published_date\":\"Fri, 06 Nov 2026 00:01:16 GMT\",\"content\":\"Participating organizations retain control over what they release and how it is shared. Their commitments are set out in non-binding, non-exclusive memoranda of understanding with Hugging Face.\\n\\nHugging Face reports that researchers shared more than three times as many new science datasets on its platform in the first nine months of 2026 as in the same period of 2025. It also reports that fully documented datasets account for 90% of dataset downloads on the Hub. [...] #### A climate challenge spanning 210 cities\\n\\nCarnegie Mellon University is hosting the first ProtoStar challenge, Climate Risk Intelligence, from November 2 to 13, 2026.\\n\\nTeams will use historical weather records from 210 US cities to predict annual conditions for 2019\u20132025. Forecast inputs must use records dated no later than December 31, 2018, preventing teams from feeding the actual outcomes into their predictions. [...] Previous\\n\\n## University of Illinois Chicago requires faculty to disclose their own AI use to students  Next\\n\\n## The state of AI in education 2026: Rising teacher use is not always translating into shorter working hours\"},{\"title\":\"CMU to Host Challenge to Put Scientific Data to Work With AI - News - Carnegie Mellon University\",\"url\":\"https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai\",\"published_date\":\"Thu, 29 Oct 2026 15:20:25 GMT\",\"content\":\"CMU will host the inaugural ProtoStar Challenge(opens in new window), a new initiative announced Oct. 29(opens in new window) that brings together Hugging Face, a platform for developing and sharing AI models and datasets, and universities participating through the Open Forum for AI (OFAI)(opens in new window), an initiative founded at CMU.\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "f9z5asKbMLX7jNAPrq_ziQY",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "## Recent developments\n- **Nvidia Acquisition and DOJ Scrutiny:** The U.S. Department of Justice (DOJ) initiated inquiries into Nvidia's proposed $12.93 billion acquisition of Hugging Face. Regulators are examining how the deal\u2014which gives a major hardware manufacturer control over a primary open-weight model distribution hub\u2014will affect AI market competition.\n- **Leadership and Ecosystem Stance:** Following the deal announcements, CEO Clem Delangue and co-founders have doubled down on commitments to keep fighting for open-source and open-weight AI. Meanwhile, the platform reported sharp growth in scientific data sharing, with science datasets tripling in the first nine months of 2026.\n- **Launch of \"ProtoStar\":** Hugging Face partnered with universities via the Open Forum for AI (OFAI) to launch ProtoStar, an open science initiative. Carnegie Mellon University hosted the inaugural Climate Risk Intelligence challenge in early November 2026 to apply public research and historical weather data to predictive models.\n\n## Talking points\n- **Regulatory Landscape:** Discuss how the DOJ antitrust inquiry might affect the timeline, structure, or closing conditions of the Nvidia acquisition.\n- **Open-Source Integrity:** Address developer and community concerns regarding independence, neutrality, and continued support for non-Nvidia hardware ecosystems on the Hub post-acquisition.\n- **Strategic Initiatives:** Highlight the traction of the ProtoStar initiative and how Hugging Face is scaling institutional partnerships (such as with CMU) to drive open-science data sharing.\n\n## Open questions\n- How will the DOJ inquiry impact the expected closing timeline of the $12.93 billion acquisition by Nvidia?\n- What specific governance or structural safeguards will Hugging Face put in place to ensure model distribution neutrality for competitors like AMD and Google?\n- How is the engineering team managing the massive surge in scientific dataset uploads and community traffic while maintaining platform performance?\n\n## Sources\n- [Nvidia + Hugging Face: 5 DOJ Probe Risks [2026]](https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026)\n- [Hugging Face cofounder: Open-weight AI models were 'our savior'](https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html)\n- [Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit](https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit)\n- [Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai)\n- [CMU to Host Challenge to Put Scientific Data to Work With AI - News - Carnegie Mellon University](https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0Td/3c7rVr+hLPipvq1K7EGaADytcpM2CFVtpRvYFtmYSrzrSrrbAP0GkQoQ42Ao9lda5fYi9e8GKp3Na5YcBv6VdwIfPbj+JAwnQ/5OGh5w8xSFEoA7FCKJQ="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759809,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 1836,
+          "prompt_tokens_details": {
+            "text_tokens": 1836,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 746,
+          "total_tokens": 2582
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 2549,
+          "upstream_latency": 3339,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=2519",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 1836,
+        "completion": 746
+      },
+      "cost_usd": 0.00048200000000000006,
+      "latency_ms": 28697,
+      "ts": "2026-11-15T16:23:01.143202Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "## Recent developments\n- **Nvidia Acquisition and DOJ Scrutiny:** The U.S. Department of Justice (DOJ) initiated inquiries into Nvidia's proposed $12.93 billion acquisition of Hugging Face. Regulators are examining how the deal\u2014which gives a major hardware manufacturer control over a primary open-weight model distribution hub\u2014will affect AI market competition.\n- **Leadership and Ecosystem Stance:** Following the deal announcements, CEO Clem Delangue and co-founders have doubled down on commitments to keep fighting for open-source and open-weight AI. Meanwhile, the platform reported sharp growth in scientific data sharing, with science datasets tripling in the first nine months of 2026.\n- **Launch of \"ProtoStar\":** Hugging Face partnered with universities via the Open Forum for AI (OFAI) to launch ProtoStar, an open science initiative. Carnegie Mellon University hosted the inaugural Climate Risk Intelligence challenge in early November 2026 to apply public research and historical weather data to predictive models.\n\n## Talking points\n- **Regulatory Landscape:** Discuss how the DOJ antitrust inquiry might affect the timeline, structure, or closing conditions of the Nvidia acquisition.\n- **Open-Source Integrity:** Address developer and community concerns regarding independence, neutrality, and continued support for non-Nvidia hardware ecosystems on the Hub post-acquisition.\n- **Strategic Initiatives:** Highlight the traction of the ProtoStar initiative and how Hugging Face is scaling institutional partnerships (such as with CMU) to drive open-science data sharing.\n\n## Open questions\n- How will the DOJ inquiry impact the expected closing timeline of the $12.93 billion acquisition by Nvidia?\n- What specific governance or structural safeguards will Hugging Face put in place to ensure model distribution neutrality for competitors like AMD and Google?\n- How is the engineering team managing the massive surge in scientific dataset uploads and community traffic while maintaining platform performance?\n\n## Sources\n- [Nvidia + Hugging Face: 5 DOJ Probe Risks [2026]](https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026)\n- [Hugging Face cofounder: Open-weight AI models were 'our savior'](https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html)\n- [Hugging Face CEO vows to keep fighting for open-source AI after Jensen Huang\u2019s exit](https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit)\n- [Hugging Face launches ProtoStar open science and AI initiative | ETIH EdTech News \u2014 EdTech Innovation Hub](https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai)\n- [CMU to Host Challenge to Put Scientific Data to Work With AI - News - Carnegie Mellon University](https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html",
+        "https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026",
+        "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+        "https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai",
+        "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai"
+      ],
+      "grounded_urls": [
+        "https://finance.yahoo.com/technology/article/hugging-face-cofounder-open-weight-ai-models-were-our-savior-220000916.html",
+        "https://shattered.io/nvidia-hugging-face-doj-inquiry-12-93b-meta-becerra-pac-2026",
+        "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+        "https://www.cmu.edu/news/stories/archives/2026/october/cmu-to-host-challenge-to-put-scientific-data-to-work-with-ai",
+        "https://www.edtechinnovationhub.com/news/hugging-face-and-universities-launch-protostar-to-put-public-research-to-work-with-ai"
+      ],
+      "n_grounded": 5,
+      "followed_injection": false
+    },
+    "wall_ms": 30859,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}

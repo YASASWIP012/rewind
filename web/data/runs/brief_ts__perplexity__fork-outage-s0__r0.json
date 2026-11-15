@@ -1,0 +1,445 @@
+{
+  "run_id": "brief_ts__perplexity__fork-outage-s0__r0",
+  "mode": "fork",
+  "source": "brief_ts__perplexity__base",
+  "parent": "brief_ts__perplexity__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 0,
+    "task": "perplexity",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T16:22:35.37669Z",
+  "ended_at": "2026-11-15T16:22:40.318916Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "d37cc8ab013e34f0a228b9cf8f9ea56ef85d407f9ce1083534f5cf0fe871da0e",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Perplexity AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T16:22:35.954899Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "d37cc8ab013e34f0a228b9cf8f9ea56ef85d407f9ce1083534f5cf0fe871da0e",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Perplexity AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "TNz5aoulLuG6g8UP4vOWkAg",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_11853403813537080671",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0Tz7dWaxvtFVvmnRNQH8z5E0865s38Hg5zgpdOesVVm42mgSAEZyRN2n+GBvxUwMdRxY/lX34MYaPWYe8czcGnxtkLhFgtCLGu8kMeMjZK+uSlxHONklcjcak="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_11853403813537080671_ts_EmAKXgFpFH0Tz7dWaxvtFVvmnRNQH8z5E0865s38Hg5zgpdOesVVm42mgSAEZyRN2n-GBvxUwMdRxY_lX34MYaPWYe8czcGnxtkLhFgtCLGu8kMeMjZK-uSlxHONklcjcak",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"Perplexity AI news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759757,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 185,
+          "prompt_tokens_details": {
+            "text_tokens": 185,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 26,
+          "total_tokens": 211
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 631,
+          "upstream_latency": 631,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=489",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 185,
+        "completion": 26
+      },
+      "cost_usd": 2.89e-05,
+      "latency_ms": 634,
+      "ts": "2026-11-15T16:22:36.465082Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "b2b0804e01f5826cc0ec0d147fe7677c7c691af3b681992f1e62982b6e16e23c",
+      "source": "live",
+      "request": {
+        "query": "Perplexity AI news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "Perplexity AI news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026",
+            "title": "Perplexity Decider v1.3 & Flash Open Weights \u2014 CASRAI",
+            "content": "On November 13, 2026, Perplexity released open weights for pplx-decider-v1.3 and pplx-decider-flash-v1.3 under the Apache 2.0 license on Hugging Face, introducing specialized decision and text-classification models that depart from conventional generative token decoders. Built on fine-tuned Qwen architectures, the models evaluate complex text states against structured criteria to output calibrated probability distributions and verbatim text extractions for automated research workflows. [...] v2026.1CASRAI Dictionary 1,986 entries across 29 domains \u00b7 CC-BY 4.01,986 entries \u00b7 CC-BY 4.0\n\nRelease notes\u00b7Cite\u00b7Licence\u00b7EN-GB\n\nCASRAIStandards \u00b7 Research administration\n\nBecome a memberJoin a groupJoin a working group\u2192\n\nEditorial \u00b7 CASRAI\u00b7 AI and ML research outputs\n\n# Perplexity Releases Open-Weight Decider v1.3 and Flash Decision Models\n\nPerplexity released open-weight Decider v1.3 and Flash models on November 13, 2026, introducing Apache 2.0 text-span extraction and routing classifiers. [...] ## More on AI and ML research outputs\n\n14 Nov 2026\n\n### SteerDistill Preprint Uses Closed-Loop Teacher Steering to Quantize LLM Agents\n\nSteerDistill uses closed-loop teacher steering to preserve multi-step tool-calling accuracy in 4-bit LLM agents without incurring inference overhead.14 Nov 2026\n\n### Evolving Infra Preprint Details Agent-Adaptive LLM Serving Architecture at Scale",
+            "score": 0.682891,
+            "published_date": "Sat, 14 Nov 2026 23:00:42 GMT",
+            "raw_content": null,
+            "id": "0fcba4-00"
+          },
+          {
+            "url": "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+            "title": "Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine",
+            "content": "Article\n\nArtificial Intelligence (AI)\n\n# Perplexity: AI Answer Engine Tops US$750m Run-Rate\n\nByAdam Pond\n\nNovember 05, 2026\n\nundefined mins\n\nShare this article\n\nPrioritise Us on Google\n\nShare this article\n\nPrioritise Us on Google\n\nAravind Srinivas, CEO and Co-founder of Perplexity. Credit: Getty\n\nAravind Srinivas, Co-founder and CEO of Perplexity, tripled revenue in 2026 by turning his AI answer engine into Computer, an AI agent for enterprise work [...] Key facts\n\n Enterprise: PayPal runs 74,000 Perplexity queries a week across 3,700+ weekly users (2026)\n Cloud: a three-year US$750m Microsoft Azure agreement signed in January 2026\n Models: Computer orchestrates 19 AI models\n Users: 37.9 million monthly active app users in February 2026, up about 45% in six months\n\n## Enterprise adoption and IPO [...] AlixPartners, Lambda, Bessemer Venture Partners and the Cleveland Cavaliers have also published results. Infrastructure has scaled with demand. AWS remains the preferred cloud provider, while a three-year US$750m Microsoft Azure agreement signed in January 2026 opened access to further frontier models through Microsoft Foundry, according to Bloomberg.\n\nOn Samsung's Galaxy S26, Perplexity sits inside Galaxy AI at system level with its own wake word.",
+            "score": 0.66050094,
+            "published_date": "Thu, 05 Nov 2026 15:30:46 GMT",
+            "raw_content": null,
+            "id": "c4897c-01"
+          },
+          {
+            "url": "https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features",
+            "title": "Perplexity AI sued over undisclosed usage caps on paid subscription features",
+            "content": "Skip to content\n\nTop Class Actions Official Logo\n\n### By Top Class Actions  |  November 12, 2026\n\n##### Category: Legal News\n\n\n\n## Perplexity AI class action lawsuit overview:\n\n Who: Plaintiff Ntsikelelo Bonga filed a class action lawsuit against Perplexity AI Inc.\n Why: Bonga claims Perplexity AI misleads consumers about usage limits for its paid subscription service.\n Where: The Perplexity AI class action lawsuit was filed in California federal court. [...] November 12, 2026 at 1:46 pm\n\n   Add me\n\n   Reply\n\n#### Leave a Reply Cancel reply [...] #### Unpaid wages lawsuit: Were you underpaid at a California warehouse?\n\nNovember 11, 2026 | Lawsuits to Join \n  \n\nRead More\n\nSidebar Single Image\n\n#### Did 1800Flowers charge you hidden fees?\n\nNovember 11, 2026 | Lawsuits to Join \n  \n\nRead More\n\n## 2 thoughts onPerplexity AI sued over undisclosed usage caps on paid subscription features\n\n1. Tonya G. says:\n\n   November 12, 2026 at 2:45 pm\n\n   I purchased a Perplexity Pro Subscription\n\n   Reply\n2. Honey Uy says:",
+            "score": 0.6389479,
+            "published_date": "Thu, 12 Nov 2026 16:00:00 GMT",
+            "raw_content": null,
+            "id": "dda0a9-02"
+          },
+          {
+            "url": "https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac",
+            "title": "Perplexity brings AI agents feature called Teammates to the Mac - 9to5Mac",
+            "content": "Access to Teammates currently requires a paid Perplexity Max subscription. The feature builds on top of Perplexity\u2019s existing AI orchestration system.\n\n> Teammates are now available in the Perplexity Mac app for Max subscribers.  \n>   \n> Teammates take on work for you. They work individually or with other teammates to handle QA, customer service, research, growth marketing, and more. pic.twitter.com/IDmvATZaJ6\n>\n> \u2014 Perplexity (@perplexity\\_ai) November 13, 2026\n\nRelated Perplexity stories: [...] Go to the 9to5Mac home page\n\n Apps\n Mac\n AI\n Perplexity\n\n# Perplexity brings AI agents feature called Teammates to the Mac\n\nAvatar for Zac Hall  Zac Hall | Nov 13 2026 - 11:31 am PT\n\n0 Comments\n\n \n\nThis week, Perplexity has deployed its new proactive agentic AI feature called Teammates to the Mac. Perplexity Teammates were previously limited to iOS and the web.\n\n## Perplexity Teammates now work on iOS and the Mac",
+            "score": 0.6217706,
+            "published_date": "Fri, 13 Nov 2026 19:31:05 GMT",
+            "raw_content": null,
+            "id": "6f2392-03"
+          },
+          {
+            "url": "https://cryptonews.com/news/perplexity-ai-predicts-a-wild-finish-to-2026-for-xrp",
+            "title": "Perplexity AI Predicts a Wild Finish to 2026 for XRP",
+            "content": "> \ud83d\udd25\u26a1\ufe0f The Bitcoin Hyper Testnet Explorer is LIVE!  \n>   \n> Explore transactions and on-chain activity as the ecosystem expands.  \n>   \n> \ud83d\udd17   \n>   \n> Wallet, Faucet, Bridge & Staking coming up!  \n>   \n> November 26. Bitcoin Hyper is moving forward.  \n>   \n> Full article \ud83d\udc47 pic.twitter.com/0RwTgOcwle\n>\n> \u2014 Bitcoin Hyper (@BTC\\_Hyper2) October 17, 2026 [...] Industry Talk\n\nDeepSeek AI XRP Price Prediction: Could Ripple Really Go This High?\n\n2026-11-10 19:02:00\n\n,\n\nby Ahmed Barakat\n\nIndustry Talk\n\nClaude AI Predicts a Monster XRP Move Ahead of Anthropic IPO\n\n2026-11-12 19:03:00\n\n,\n\nby Ahmed Barakat\n\nBitcoin News\n\nBitcoin Price Cooked? Gensler 2.0 Fears as Fed Blocks Crypto Bank\n\n2026-11-11 07:12:16\n\n,\n\nby Ahmed Barakat\n\nBest Crypto to Buy Now in November 2026 \u2013 Top Crypto to Invest In\n\n2026-11-04 15:43:13\n\n,\n\nby Alan Draper [...] Industry Talk\n\nDeepSeek AI XRP Price Prediction: Could Ripple Really Go This High?\n\n2026-11-10 19:02:00\n\n,\n\nby Ahmed Barakat\n\nIndustry Talk\n\nClaude AI Predicts a Monster XRP Move Ahead of Anthropic IPO\n\n2026-11-12 19:03:00\n\n,\n\nby Ahmed Barakat\n\nBitcoin News\n\nBitcoin Price Cooked? Gensler 2.0 Fears as Fed Blocks Crypto Bank\n\n2026-11-11 07:12:16\n\n,\n\nby Ahmed Barakat\n\nBest Crypto to Buy Now in November 2026 \u2013 Top Crypto to Invest In\n\n2026-11-04 15:43:13\n\n,\n\nby Alan Draper",
+            "score": 0.6096404,
+            "published_date": "Mon, 26 Oct 2026 20:55:00 GMT",
+            "raw_content": null,
+            "id": "d7d367-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "40c22ca9-6a36-43e4-b368-9474718eeaca"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 285,
+      "ts": "2026-11-15T16:22:37.120654Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "42b473034631cc27bbbdb67f44d0ecade056a9cc4503a0aa42ebabe9d3f6fcd2",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Perplexity AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_11853403813537080671_ts_EmAKXgFpFH0Tz7dWaxvtFVvmnRNQH8z5E0865s38Hg5zgpdOesVVm42mgSAEZyRN2n-GBvxUwMdRxY_lX34MYaPWYe8czcGnxtkLhFgtCLGu8kMeMjZK-uSlxHONklcjcak",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"Perplexity AI news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_11853403813537080671_ts_EmAKXgFpFH0Tz7dWaxvtFVvmnRNQH8z5E0865s38Hg5zgpdOesVVm42mgSAEZyRN2n-GBvxUwMdRxY_lX34MYaPWYe8czcGnxtkLhFgtCLGu8kMeMjZK-uSlxHONklcjcak",
+            "content": "[{\"title\":\"Perplexity Decider v1.3 & Flash Open Weights \u2014 CASRAI\",\"url\":\"https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026\",\"published_date\":\"Sat, 14 Nov 2026 23:00:42 GMT\",\"content\":\"On November 13, 2026, Perplexity released open weights for pplx-decider-v1.3 and pplx-decider-flash-v1.3 under the Apache 2.0 license on Hugging Face, introducing specialized decision and text-classification models that depart from conventional generative token decoders. Built on fine-tuned Qwen architectures, the models evaluate complex text states against structured criteria to output calibrated probability distributions and verbatim text extractions for automated research workflows. [...] v2026.1CASRAI Dictionary 1,986 entries across 29 domains \u00b7 CC-BY 4.01,986 entries \u00b7 CC-BY 4.0\\n\\nRelease notes\u00b7Cite\u00b7Licence\u00b7EN-GB\\n\\nCASRAIStandards \u00b7 Research administration\\n\\nBecome a memberJoin a groupJoin a working group\u2192\\n\\nEditorial \u00b7 CASRAI\u00b7 AI and ML research outputs\\n\\n# Perplexity Releases Open-Weight Decider v1.3 and Flash Decision Models\\n\\nPerplexity released open-weight Decider v1.3 and Flash models on November 13, 2026, introducing Apache 2.0 text-span extraction and routing classifiers. [...] ## More on AI and ML research outputs\\n\\n14 Nov 2026\\n\\n### SteerDistill Preprint Uses Closed-Loop Teacher Steering to Quantize LLM Agents\\n\\nSteerDistill uses closed-loop teacher steering to preserve multi-step tool-calling accuracy in 4-bit LLM agents without incurring inference overhead.14 Nov 2026\\n\\n### Evolving Infra Preprint Details Agent-Adaptive LLM Serving Architecture at Scale\"},{\"title\":\"Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine\",\"url\":\"https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate\",\"published_date\":\"Thu, 05 Nov 2026 15:30:46 GMT\",\"content\":\"Article\\n\\nArtificial Intelligence (AI)\\n\\n# Perplexity: AI Answer Engine Tops US$750m Run-Rate\\n\\nByAdam Pond\\n\\nNovember 05, 2026\\n\\nundefined mins\\n\\nShare this article\\n\\nPrioritise Us on Google\\n\\nShare this article\\n\\nPrioritise Us on Google\\n\\nAravind Srinivas, CEO and Co-founder of Perplexity. Credit: Getty\\n\\nAravind Srinivas, Co-founder and CEO of Perplexity, tripled revenue in 2026 by turning his AI answer engine into Computer, an AI agent for enterprise work [...] Key facts\\n\\n Enterprise: PayPal runs 74,000 Perplexity queries a week across 3,700+ weekly users (2026)\\n Cloud: a three-year US$750m Microsoft Azure agreement signed in January 2026\\n Models: Computer orchestrates 19 AI models\\n Users: 37.9 million monthly active app users in February 2026, up about 45% in six months\\n\\n## Enterprise adoption and IPO [...] AlixPartners, Lambda, Bessemer Venture Partners and the Cleveland Cavaliers have also published results. Infrastructure has scaled with demand. AWS remains the preferred cloud provider, while a three-year US$750m Microsoft Azure agreement signed in January 2026 opened access to further frontier models through Microsoft Foundry, according to Bloomberg.\\n\\nOn Samsung's Galaxy S26, Perplexity sits inside Galaxy AI at system level with its own wake word.\"},{\"title\":\"Perplexity AI sued over undisclosed usage caps on paid subscription features\",\"url\":\"https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features\",\"published_date\":\"Thu, 12 Nov 2026 16:00:00 GMT\",\"content\":\"Skip to content\\n\\nTop Class Actions Official Logo\\n\\n### By Top Class Actions  |  November 12, 2026\\n\\n##### Category: Legal News\\n\\n\\n\\n## Perplexity AI class action lawsuit overview:\\n\\n Who: Plaintiff Ntsikelelo Bonga filed a class action lawsuit against Perplexity AI Inc.\\n Why: Bonga claims Perplexity AI misleads consumers about usage limits for its paid subscription service.\\n Where: The Perplexity AI class action lawsuit was filed in California federal court. [...] November 12, 2026 at 1:46 pm\\n\\n   Add me\\n\\n   Reply\\n\\n#### Leave a Reply Cancel reply [...] #### Unpaid wages lawsuit: Were you underpaid at a California warehouse?\\n\\nNovember 11, 2026 | Lawsuits to Join \\n  \\n\\nRead More\\n\\nSidebar Single Image\\n\\n#### Did 1800Flowers charge you hidden fees?\\n\\nNovember 11, 2026 | Lawsuits to Join \\n  \\n\\nRead More\\n\\n## 2 thoughts onPerplexity AI sued over undisclosed usage caps on paid subscription features\\n\\n1. Tonya G. says:\\n\\n   November 12, 2026 at 2:45 pm\\n\\n   I purchased a Perplexity Pro Subscription\\n\\n   Reply\\n2. Honey Uy says:\"},{\"title\":\"Perplexity brings AI agents feature called Teammates to the Mac - 9to5Mac\",\"url\":\"https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac\",\"published_date\":\"Fri, 13 Nov 2026 19:31:05 GMT\",\"content\":\"Access to Teammates currently requires a paid Perplexity Max subscription. The feature builds on top of Perplexity\u2019s existing AI orchestration system.\\n\\n> Teammates are now available in the Perplexity Mac app for Max subscribers.  \\n>   \\n> Teammates take on work for you. They work individually or with other teammates to handle QA, customer service, research, growth marketing, and more. pic.twitter.com/IDmvATZaJ6\\n>\\n> \u2014 Perplexity (@perplexity\\\\_ai) November 13, 2026\\n\\nRelated Perplexity stories: [...] Go to the 9to5Mac home page\\n\\n Apps\\n Mac\\n AI\\n Perplexity\\n\\n# Perplexity brings AI agents feature called Teammates to the Mac\\n\\nAvatar for Zac Hall  Zac Hall | Nov 13 2026 - 11:31 am PT\\n\\n0 Comments\\n\\n \\n\\nThis week, Perplexity has deployed its new proactive agentic AI feature called Teammates to the Mac. Perplexity Teammates were previously limited to iOS and the web.\\n\\n## Perplexity Teammates now work on iOS and the Mac\"},{\"title\":\"Perplexity AI Predicts a Wild Finish to 2026 for XRP\",\"url\":\"https://cryptonews.com/news/perplexity-ai-predicts-a-wild-finish-to-2026-for-xrp\",\"published_date\":\"Mon, 26 Oct 2026 20:55:00 GMT\",\"content\":\"> \ud83d\udd25\u26a1\ufe0f The Bitcoin Hyper Testnet Explorer is LIVE!  \\n>   \\n> Explore transactions and on-chain activity as the ecosystem expands.  \\n>   \\n> \ud83d\udd17   \\n>   \\n> Wallet, Faucet, Bridge & Staking coming up!  \\n>   \\n> November 26. Bitcoin Hyper is moving forward.  \\n>   \\n> Full article \ud83d\udc47 pic.twitter.com/0RwTgOcwle\\n>\\n> \u2014 Bitcoin Hyper (@BTC\\\\_Hyper2) October 17, 2026 [...] Industry Talk\\n\\nDeepSeek AI XRP Price Prediction: Could Ripple Really Go This High?\\n\\n2026-11-10 19:02:00\\n\\n,\\n\\nby Ahmed Barakat\\n\\nIndustry Talk\\n\\nClaude AI Predicts a Monster XRP Move Ahead of Anthropic IPO\\n\\n2026-11-12 19:03:00\\n\\n,\\n\\nby Ahmed Barakat\\n\\nBitcoin News\\n\\nBitcoin Price Cooked? Gensler 2.0 Fears as Fed Blocks Crypto Bank\\n\\n2026-11-11 07:12:16\\n\\n,\\n\\nby Ahmed Barakat\\n\\nBest Crypto to Buy Now in November 2026 \u2013 Top Crypto to Invest In\\n\\n2026-11-04 15:43:13\\n\\n,\\n\\nby Alan Draper [...] Industry Talk\\n\\nDeepSeek AI XRP Price Prediction: Could Ripple Really Go This High?\\n\\n2026-11-10 19:02:00\\n\\n,\\n\\nby Ahmed Barakat\\n\\nIndustry Talk\\n\\nClaude AI Predicts a Monster XRP Move Ahead of Anthropic IPO\\n\\n2026-11-12 19:03:00\\n\\n,\\n\\nby Ahmed Barakat\\n\\nBitcoin News\\n\\nBitcoin Price Cooked? Gensler 2.0 Fears as Fed Blocks Crypto Bank\\n\\n2026-11-11 07:12:16\\n\\n,\\n\\nby Ahmed Barakat\\n\\nBest Crypto to Buy Now in November 2026 \u2013 Top Crypto to Invest In\\n\\n2026-11-04 15:43:13\\n\\n,\\n\\nby Alan Draper\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "Tdz5avO3OpLe694P7sGdGA",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "## Recent developments\n* **Financial Milestone & Growth:** Perplexity AI's revenue run-rate surpassed US$750 million, fueled by strong enterprise traction (such as large-scale deployments at PayPal) and expansion into AI agent services for workplace productivity [AI Magazine].\n* **Product Rollouts & Mac App Integration:** Perplexity expanded its agentic workflow capabilities by deploying its \"Teammates\" feature to the Mac app for Max subscribers, allowing multiple agents to collaborate on QA, research, and customer service [9to5Mac].\n* **Open-Weights Model Release:** In mid-November 2026, Perplexity released open-weights models (`pplx-decider-v1.3` and `pplx-decider-flash-v1.3`) under the Apache 2.0 license on Hugging Face, offering specialized text-span extraction and routing classifiers built on Qwen architectures [CASRAI].\n* **Legal Challenges:** Perplexity faced a new class-action lawsuit filed in California federal court regarding alleged undisclosed usage caps on paid subscription features [Top Class Actions].\n\n## Talking points\n* **Enterprise Expansion:** Discuss how Perplexity is scaling its enterprise offerings, balancing heavy infrastructure investments (such as multi-million dollar cloud agreements) with system-level mobile and desktop integration.\n* **Agentic Workflows (\"Teammates\"):** Explore how multi-agent collaboration frameworks like Teammates are changing customer expectations for automated research and business workflows.\n* **Open Source Strategy:** Discuss the motivations behind releasing open-weights decision models like *Decider v1.3* and how developer ecosystem contributions impact their core search and routing logic.\n\n## Open questions\n* How is Perplexity addressing user feedback and legal scrutiny regarding tier usage limits and subscription transparency?\n* What are the primary cost and latency optimization strategies as enterprise queries scale into the hundreds of thousands per week?\n* How does the integration of proactive agentic systems (like Teammates on Mac and iOS) alter their monetization and infrastructure roadmap heading into next year?\n\n## Sources\n* [Perplexity Decider v1.3 & Flash Open Weights \u2014 CASRAI](https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026)\n* [Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine](https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate)\n* [Perplexity AI sued over undisclosed usage caps on paid subscription features](https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features)\n* [Perplexity brings AI agents feature called Teammates to the Mac - 9to5Mac](https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TcLT1oZy+85JJmIyTCzwEeVpRAuw2Qq0a40MMaNIV2qzVKwdycwYFRimcULqt/Eo0mSBZioDe9hmrFtcyWGN7j8FgUU2OBVdnYUPzy2uMYOsQKa8tz1P7sAk="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794759760,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2610,
+          "prompt_tokens_details": {
+            "text_tokens": 2610,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 662,
+          "total_tokens": 3272
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 2881,
+          "upstream_latency": 2881,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=2851",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2610,
+        "completion": 662
+      },
+      "cost_usd": 0.0005258000000000001,
+      "latency_ms": 2883,
+      "ts": "2026-11-15T16:22:37.415048Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "## Recent developments\n* **Financial Milestone & Growth:** Perplexity AI's revenue run-rate surpassed US$750 million, fueled by strong enterprise traction (such as large-scale deployments at PayPal) and expansion into AI agent services for workplace productivity [AI Magazine].\n* **Product Rollouts & Mac App Integration:** Perplexity expanded its agentic workflow capabilities by deploying its \"Teammates\" feature to the Mac app for Max subscribers, allowing multiple agents to collaborate on QA, research, and customer service [9to5Mac].\n* **Open-Weights Model Release:** In mid-November 2026, Perplexity released open-weights models (`pplx-decider-v1.3` and `pplx-decider-flash-v1.3`) under the Apache 2.0 license on Hugging Face, offering specialized text-span extraction and routing classifiers built on Qwen architectures [CASRAI].\n* **Legal Challenges:** Perplexity faced a new class-action lawsuit filed in California federal court regarding alleged undisclosed usage caps on paid subscription features [Top Class Actions].\n\n## Talking points\n* **Enterprise Expansion:** Discuss how Perplexity is scaling its enterprise offerings, balancing heavy infrastructure investments (such as multi-million dollar cloud agreements) with system-level mobile and desktop integration.\n* **Agentic Workflows (\"Teammates\"):** Explore how multi-agent collaboration frameworks like Teammates are changing customer expectations for automated research and business workflows.\n* **Open Source Strategy:** Discuss the motivations behind releasing open-weights decision models like *Decider v1.3* and how developer ecosystem contributions impact their core search and routing logic.\n\n## Open questions\n* How is Perplexity addressing user feedback and legal scrutiny regarding tier usage limits and subscription transparency?\n* What are the primary cost and latency optimization strategies as enterprise queries scale into the hundreds of thousands per week?\n* How does the integration of proactive agentic systems (like Teammates on Mac and iOS) alter their monetization and infrastructure roadmap heading into next year?\n\n## Sources\n* [Perplexity Decider v1.3 & Flash Open Weights \u2014 CASRAI](https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026)\n* [Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine](https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate)\n* [Perplexity AI sued over undisclosed usage caps on paid subscription features](https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features)\n* [Perplexity brings AI agents feature called Teammates to the Mac - 9to5Mac](https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac",
+        "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+        "https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026",
+        "https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features"
+      ],
+      "grounded_urls": [
+        "https://9to5mac.com/2026/11/13/perplexity-brings-ai-agents-feature-called-teammates-to-the-mac",
+        "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+        "https://casrai.org/news/perplexity-pplx-decider-v1-3-open-weights-release-2026",
+        "https://topclassactions.com/lawsuit-settlements/lawsuit-news/perplexity-ai-sued-over-undisclosed-usage-caps-on-paid-subscription-features"
+      ],
+      "n_grounded": 4,
+      "followed_injection": false
+    },
+    "wall_ms": 4939,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}
