@@ -40,7 +40,7 @@ AGENTS = {
     "brief_py": {"cmd": [sys.executable, str(BENCH / "agents/brief_py/agent.py")], "cwd": BENCH},
     "brief_ts": {"cmd": ["npx", "--no-install", "tsx", "agent.ts"], "cwd": BENCH / "agents/brief_ts"},
 }
-VARIANTS = ["base", "replay", "poison", "misinfo", "outage", "model_swap"]
+VARIANTS = ["base", "replay", "poison", "misinfo", "misinfo_late", "poison_late", "outage", "model_swap"]
 
 
 def log(msg: str) -> None:
@@ -184,11 +184,21 @@ def first_index(cassette: dict, kind: str):
     return None
 
 
+def last_index(cassette: dict, kind: str):
+    found = None
+    for s in cassette.get("steps", []):
+        if s.get("kind") == kind:
+            found = s["i"]
+    return found
+
+
 def cmd_fork(args):
     swap = args.model_swap if args.model_swap is not None else True
     specs = []
     for a, t, cas in base_runs(args):
         relay_i, llm_i = first_index(cas, "relay"), first_index(cas, "llm")
+        if getattr(args, "at", "first") == "last":
+            relay_i = last_index(cas, "relay")
         forks = []
         if relay_i is not None:
             forks.append(("poison", relay_i, {"type": "poison", "text": POISON_TEXT}, None))
@@ -197,6 +207,11 @@ def cmd_fork(args):
             log(f"  {a}/{t}: base has no relay step, no poison fork")
         if llm_i is not None:
             forks.append(("outage", llm_i, {"type": "outage", "status": 503}, None))
+        if getattr(args, "variants", None):
+            keep = set(args.variants.split(","))
+            forks = [f for f in forks if f[0] in keep]
+        if getattr(args, "at", "first") == "last":
+            forks = [(f"{v}_late", k, m, e) for v, k, m, e in forks if v in ("poison", "misinfo")]
         if swap:
             # whole run on the swapped model: step 0 is swapped by the gateway, later steps by MODEL
             forks.append(("model_swap", 0, {"type": "model_swap", "model": SWAP_MODEL}, {"MODEL": SWAP_MODEL}))
@@ -493,6 +508,8 @@ def main(argv=None):
     pf = sub.add_parser("fork", help="fork base cassettes with mutations")
     common(pf)
     pf.add_argument("--repeats", type=int, default=3)
+    pf.add_argument("--at", choices=["first", "last"], default="first", help="fork at the first or last search")
+    pf.add_argument("--variants", help="comma list of fork kinds to run (poison,misinfo,outage,model_swap)")
     pf.add_argument("--model-swap", dest="model_swap", action="store_true", default=None)
     pf.add_argument("--no-model-swap", dest="model_swap", action="store_false")
     common(sub.add_parser("replay", help="strict replay of base cassettes"))
