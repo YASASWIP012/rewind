@@ -2,7 +2,7 @@
 
 Rewind is a Bifrost plugin for people who build AI agents. It records every model call and web search an agent makes, replays the run for free, and forks it at any step so you can change one thing and see what the agent does next.
 
-**[Open the demo](https://yasaswip012.github.io/rewind/)** (no login, no keys; it reads recorded runs) · [Run it locally](#run-it-locally) · [How it works](#how-it-works) · [Results](#results)
+**[Open the demo](https://yasaswip012.github.io/rewind/)** (no login, no keys; it reads recorded runs) · **[Watch the video](https://youtu.be/j05141J04tc)** (1:47) · [Run it locally](#run-it-locally) · [How it works](#how-it-works) · [Results](#results)
 
 Built for the Geek Room Global AI Hackathon 2026. Primary problem statement: 02, a benchmarking platform for AI agents (Bifrost track), with the Tavily integration box ticked for 05, the pre-meeting briefing agent. The plugin also meets what 04 asks for: public extension points, a stock Bifrost build, tests and docs.
 
