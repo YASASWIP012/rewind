@@ -25,7 +25,7 @@ Screen: run tree, then the branch diff at the fork point.
 ## 5. Results (1:20 to 1:45)
 Screen: results table.
 
-> {{RESULT_LINE}}
+> Both agents use the same model. When we planted a false acquisition claim in one search result, the Python agent repeated it in twelve of twelve forks and the TypeScript agent in three. A hidden instruction got through seven times out of twelve against zero. With paired forks, that's significant after just twelve runs each. Same model, different agent design, very different results.
 
 ## 6. For developers (1:45 to 2:05)
 Screen: terminal running the test command, then the upstream pull request.

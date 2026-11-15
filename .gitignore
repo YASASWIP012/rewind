@@ -11,3 +11,7 @@ bench/data/
 bench/data-real/
 bench/*.log
 .DS_Store
+docs/video/*.mp3
+docs/video/*.mp4
+docs/video/frames/
+docs/video/frames.txt
