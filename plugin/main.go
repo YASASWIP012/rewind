@@ -69,6 +69,51 @@ type pending struct {
 	step     Step
 	started  time.Time
 	diverged *Divergence
+	mu       sync.Mutex
+	chunks   []json.RawMessage
+	saved    bool
+}
+
+// streamBody is how a streamed response is stored in a cassette.
+type streamBody struct {
+	Stream bool              `json:"stream"`
+	Chunks []json.RawMessage `json:"chunks"`
+}
+
+// HTTPTransportStreamChunkHook records each chunk of a live streamed chat response.
+// The step is saved once the stream reports a finish reason or usage, and updated
+// if more chunks follow.
+func HTTPTransportStreamChunkHook(ctx *schemas.BifrostContext, req *schemas.HTTPRequest, chunk *schemas.BifrostStreamChunk) (*schemas.BifrostStreamChunk, error) {
+	p, ok := ctx.Value(pendingKey).(*pending)
+	if !ok || p == nil || chunk == nil || chunk.BifrostChatResponse == nil {
+		return chunk, nil
+	}
+	raw, err := json.Marshal(chunk.BifrostChatResponse)
+	if err != nil {
+		return chunk, nil
+	}
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	p.chunks = append(p.chunks, raw)
+	done := chunk.BifrostChatResponse.Usage != nil
+	for _, c := range chunk.BifrostChatResponse.Choices {
+		if c.FinishReason != nil {
+			done = true
+		}
+	}
+	if done || p.saved {
+		body, _ := json.Marshal(streamBody{Stream: true, Chunks: p.chunks})
+		p.step.Status = 200
+		p.step.Response = body
+		p.step.LatencyMS = time.Since(p.started).Milliseconds()
+		if u := chunk.BifrostChatResponse.Usage; u != nil {
+			p.step.Tokens = Tokens{Prompt: u.PromptTokens, Completion: u.CompletionTokens}
+			p.step.CostUSD = priceFor(chunk.BifrostChatResponse.Model, p.step.Model, p.step.Tokens)
+		}
+		p.run.Upsert(p.step)
+		p.saved = true
+	}
+	return chunk, nil
 }
 
 // HTTPTransportPreHook decides, per request, whether to forward it, serve it from
@@ -108,9 +153,15 @@ func HTTPTransportPreHook(ctx *schemas.BifrostContext, req *schemas.HTTPRequest)
 
 	default: // replay, or fork before the fork point
 		src := run.SourceStep(i)
-		if src != nil && src.Fingerprint == fp {
+		if src != nil && src.Fingerprint == fp && run.Claim(src.I) {
 			p.step.Source = SourceReplayed
 			return serveRecorded(run, p, src)
+		}
+		// Concurrent requests can arrive in a different order than they were
+		// recorded; serve an unused recorded step with the same fingerprint.
+		if alt := run.SourceByFingerprint(fp); alt != nil {
+			p.step.Source = SourceReplayed
+			return serveRecorded(run, p, alt)
 		}
 		div := &Divergence{I: i, Got: fp}
 		if src != nil {
@@ -145,6 +196,13 @@ func HTTPTransportPostHook(ctx *schemas.BifrostContext, req *schemas.HTTPRequest
 	v := ctx.Value(pendingKey)
 	p, ok := v.(*pending)
 	if !ok || p == nil || resp == nil {
+		return nil
+	}
+	// Streamed responses are recorded chunk by chunk in HTTPTransportStreamChunkHook.
+	p.mu.Lock()
+	streamed := len(p.chunks) > 0 || isStream(req.Body)
+	p.mu.Unlock()
+	if streamed && resp.StatusCode < 400 {
 		return nil
 	}
 	p.step.Status = resp.StatusCode
@@ -235,7 +293,27 @@ func serveRecorded(run *Run, p *pending, src *Step) (*schemas.HTTPResponse, erro
 	if status == 0 {
 		status = 200
 	}
+	var sb streamBody
+	if json.Unmarshal(src.Response, &sb) == nil && sb.Stream {
+		return sseResponse(sb.Chunks), nil
+	}
 	return jsonResponse(status, []byte(src.Response)), nil
+}
+
+// sseResponse replays recorded stream chunks as server-sent events.
+func sseResponse(chunks []json.RawMessage) *schemas.HTTPResponse {
+	var b strings.Builder
+	for _, c := range chunks {
+		b.WriteString("data: ")
+		b.Write(c)
+		b.WriteString("\n\n")
+	}
+	b.WriteString("data: [DONE]\n\n")
+	return &schemas.HTTPResponse{
+		StatusCode: 200,
+		Headers:    map[string]string{"Content-Type": "text/event-stream", "Cache-Control": "no-cache", "X-Rewind": "1"},
+		Body:       []byte(b.String()),
+	}
 }
 
 func jsonResponse(status int, body []byte) *schemas.HTTPResponse {

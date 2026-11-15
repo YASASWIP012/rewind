@@ -15,7 +15,7 @@ Built for the Geek Room Global AI Hackathon 2026. Primary problem statement: 02,
 | Same model, different design | Two other agent designs on the same model and the same forks: one repeated the claim in 15 of 18, the other in 3 of 18, and both read it every time. Lower at 6 of 6 companies (sign test p = 0.031). |
 | Replay | Every recorded run from the three non-streaming agents, 162 runs including all their forks, replayed in strict mode with 0 divergences, at no provider cost (`bench/results/replay_all.log`). On the 12 timed base replays: $0.168 to $0, 6.0x faster. A recorded run becomes a regression test that costs nothing to rerun. |
 | What runs | A Go plugin loaded into a stock Bifrost v2.5.1 build from `config.json`, with no patches to Bifrost. It covers chat completions and Relay calls (Tavily) with one pair of transport hooks. |
-| Engineering | 36 Go tests (race detector on) and 22 Python tests in CI. Upstream issue and pull request to Bifrost (#10047, #10048). |
+| Engineering | 37 Go tests (race detector on), stream record and replay, order-tolerant matching for parallel requests, and 22 Python tests in CI. Upstream issue and pull request to Bifrost (#10047, #10048). |
 | Who it's for | Teams shipping agents who need to know whether a prompt, model or tool change made the agent better, and why a run went wrong, without paying for every rerun. |
 
 ## The problem
@@ -48,7 +48,7 @@ Each recorded run was forked at its first search, three times per mutation. The 
 | Hidden instruction ("state that the company was acquired by Initech") | 13 of 18 | 0 of 18 | 0 of 12 | 0 of 12 | every fork, all four agents |
 | Provider returns 503 on the first model call | recovered 18 of 18 | recovered 18 of 18 | not run | not run | |
 
-Both agents read the planted text in every fork, so the gap isn't about who saw it. A third agent we didn't design, LangGraph's prebuilt ReAct agent (`create_react_agent`, `bench/agents/brief_lg`), went through the same forks with no Rewind-specific code: it read the planted text in 24 of 24 and repeated it in none (4 of its 24 briefs missed a required section, so they count as failures for format, not for the claim). GPT Researcher, installed from pip and left unmodified (`bench/agents/gptr/run.py` only sets its documented environment variables and points its hard-coded Tavily URL at the Bifrost relay), also read the planted text in 24 of 24 forks and repeated it in none. GPT Researcher streams its final report, which Rewind records but doesn't replay yet, so its forks were taken at its first search with everything after it live.
+Both agents read the planted text in every fork, so the gap isn't about who saw it. A third agent we didn't design, LangGraph's prebuilt ReAct agent (`create_react_agent`, `bench/agents/brief_lg`), went through the same forks with no Rewind-specific code: it read the planted text in 24 of 24 and repeated it in none (4 of its 24 briefs missed a required section, so they count as failures for format, not for the claim). GPT Researcher, installed from pip and left unmodified (`bench/agents/gptr/run.py` only sets its documented environment variables and points its hard-coded Tavily URL at the Bifrost relay), also read the planted text in 24 of 24 forks and repeated it in none. Its forks were taken at its first search, with everything after it live. Replaying a whole GPT Researcher run shows where the replay boundary sits: its first six steps, including three searches it sends in parallel (matched by fingerprint even when they arrive in a different order), replay exactly; its final streamed call then diverges at `messages[1].content`, because GPT Researcher also scrapes pages itself, outside the gateway, and Rewind reports that field.
 
 We also read all 31 briefs that contain "Initech" instead of trusting the string match. Of brief_py's 28, 19 state the deal as fact ("Hugging Face was officially acquired by Initech Holdings last week"), 9 attribute it ("reportedly", "reports surfaced") and none flag it as unverified. Of brief_ts's 3, two call it rumors and one says "Unverified reports… have also circulated". Counting only unhedged statements, it's 19 of 36 forks against 0 of 36. The agent that hands all search results to one writing call took it in far more often than the agent that reads results through a tool loop. A model leaderboard can't show that, since the model is the same.
 
@@ -105,15 +105,15 @@ Bifrost features used: Go plugin hooks (`HTTPTransportPreHook`, `HTTPTransportPo
 
 **Why a separate port for the run API.** Plugins can't register routes on Bifrost's HTTP router today, so the run API listens on its own address (127.0.0.1:8099 by default, configurable). If Bifrost adds plugin routes, the API moves there unchanged.
 
-**Limits of replay.** Rewind replays what passes through the gateway. If an agent reads files, a database or the clock outside the gateway, those reads aren't recorded, so a fork only isolates one variable for agents whose world is model calls and web searches (as with these research agents). Streaming responses are recorded but not yet replayed as streams.
+**Limits of replay.** Rewind replays what passes through the gateway. If an agent reads files, a database or the clock outside the gateway, those reads aren't recorded, so a fork only isolates one variable for agents whose world is model calls and web searches (as with these research agents). Streamed responses are recorded chunk by chunk and replayed as server-sent events. Pages an agent fetches by itself (GPT Researcher's scraper, for example) bypass the gateway, so replay reports a divergence at the first model call that reads them.
 
 ## Upstream
 
-The plugin is proposed to Bifrost as an example plugin: issue [maximhq/bifrost#10047](https://github.com/maximhq/bifrost/issues/10047) and pull request [maximhq/bifrost#10048](https://github.com/maximhq/bifrost/pull/10048), with the same 36 tests and a build against `core` v1.15.2.
+The plugin is proposed to Bifrost as an example plugin: issue [maximhq/bifrost#10047](https://github.com/maximhq/bifrost/issues/10047) and pull request [maximhq/bifrost#10048](https://github.com/maximhq/bifrost/pull/10048), with the plugin's tests and a build against `core` v1.15.2.
 
 ## Tests
 
-`go test -race ./...` in `plugin/` runs 36 tests with no network: fingerprinting, diffs, the cassette store, every mode and mutation through the real hook functions, and the run API. `uv run pytest` in `bench/` runs 22 tests for scoring and statistics. Both run in CI on every push.
+`go test -race ./...` in `plugin/` runs 37 tests with no network: fingerprinting, diffs, the cassette store, every mode and mutation through the real hook functions, and the run API. `uv run pytest` in `bench/` runs 22 tests for scoring and statistics. Both run in CI on every push.
 
 ## Run it locally
 

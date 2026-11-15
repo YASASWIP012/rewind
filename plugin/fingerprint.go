@@ -192,3 +192,12 @@ func poisonSearch(resp json.RawMessage, text string) ([]byte, error) {
 	first["content"] = content + "\n\n" + text
 	return json.Marshal(m)
 }
+
+// isStream reports whether a chat request asked for a streamed response.
+func isStream(body []byte) bool {
+	var m struct {
+		Stream bool `json:"stream"`
+	}
+	_ = json.Unmarshal(body, &m)
+	return m.Stream
+}

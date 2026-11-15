@@ -98,6 +98,7 @@ type Run struct {
 	dir         string
 	source      *Run
 	next        int
+	used        map[int]bool   // source steps already served in this replay
 	ID          string         `json:"run_id"`
 	Mode        Mode           `json:"mode"`
 	Source      string         `json:"source,omitempty"`
@@ -142,6 +143,62 @@ func (r *Run) Append(s Step) {
 	r.mu.Lock()
 	r.Steps = append(r.Steps, s)
 	sort.Slice(r.Steps, func(a, b int) bool { return r.Steps[a].I < r.Steps[b].I })
+	r.mu.Unlock()
+	_ = r.Flush()
+}
+
+// Claim marks source step i as served; it returns false if it was already used.
+func (r *Run) Claim(i int) bool {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	if r.used == nil {
+		r.used = map[int]bool{}
+	}
+	if r.used[i] {
+		return false
+	}
+	r.used[i] = true
+	return true
+}
+
+// SourceByFingerprint returns, and claims, the first unused source step with this
+// fingerprint.
+func (r *Run) SourceByFingerprint(fp string) *Step {
+	if r.source == nil {
+		return nil
+	}
+	r.source.mu.Lock()
+	var cand []Step
+	for _, s := range r.source.Steps {
+		if s.Fingerprint == fp {
+			cand = append(cand, s)
+		}
+	}
+	r.source.mu.Unlock()
+	for k := range cand {
+		if r.Claim(cand[k].I) {
+			s := cand[k]
+			return &s
+		}
+	}
+	return nil
+}
+
+// Upsert replaces the step with the same index, or adds it.
+func (r *Run) Upsert(s Step) {
+	r.mu.Lock()
+	replaced := false
+	for k := range r.Steps {
+		if r.Steps[k].I == s.I {
+			r.Steps[k] = s
+			replaced = true
+			break
+		}
+	}
+	if !replaced {
+		r.Steps = append(r.Steps, s)
+		sort.Slice(r.Steps, func(a, b int) bool { return r.Steps[a].I < r.Steps[b].I })
+	}
 	r.mu.Unlock()
 	_ = r.Flush()
 }
