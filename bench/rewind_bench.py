@@ -39,6 +39,9 @@ SWAP_MODEL = os.environ.get("REWIND_SWAP_MODEL", "gemini/gemini-3.5-flash")
 AGENTS = {
     "brief_py": {"cmd": [sys.executable, str(BENCH / "agents/brief_py/agent.py")], "cwd": BENCH},
     "brief_ts": {"cmd": ["npx", "--no-install", "tsx", "agent.ts"], "cwd": BENCH / "agents/brief_ts"},
+    # LangGraph's prebuilt ReAct agent; runs in its own uv environment.
+    "brief_lg": {"cmd": ["uv", "run", "--with", "langgraph", "--with", "langchain-openai", "--with", "httpx",
+                         "python", str(BENCH / "agents/brief_lg/agent.py")], "cwd": BENCH},
 }
 VARIANTS = ["base", "replay", "poison", "misinfo", "misinfo_late", "poison_late", "outage", "model_swap"]
 
