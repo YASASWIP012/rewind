@@ -1,0 +1,380 @@
+{
+  "run_id": "brief_ts__databricks__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 0,
+    "task": "databricks",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T13:05:54.21322Z",
+  "ended_at": "2026-11-15T13:05:58.838204Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "a58dffe27502d8b67b0bc60b10172479251cfebf258b0068ecf6820ef8406b74",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Databricks\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "Mq75aqbcNqWz694PsYzs0Ao",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_11828529515175906311",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TwilNnu+8PJ4S1oxo/YVbsI+TbU9uAiviEJDX6rrJNkgrjk7R8XjLLTr/am2S+civyLF1s/PWVvZQ6C2vofCrHPlrsKYEyDkiEDfdvTGMzH8QG0xKuXbTCNA="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_11828529515175906311_ts_EmAKXgFpFH0TwilNnu-8PJ4S1oxo_YVbsI-TbU9uAiviEJDX6rrJNkgrjk7R8XjLLTr_am2S-civyLF1s_PWVvZQ6C2vofCrHPlrsKYEyDkiEDfdvTGMzH8QG0xKuXbTCNA",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"Databricks news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794747955,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 185,
+          "prompt_tokens_details": {
+            "text_tokens": 185,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 26,
+          "total_tokens": 211
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 745,
+          "upstream_latency": 745,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=717",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 185,
+        "completion": 26
+      },
+      "cost_usd": 2.89e-05,
+      "latency_ms": 745,
+      "ts": "2026-11-15T13:05:54.564109Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "91ed6ac7b894ad5e4f24e5ef15420b813e177065a0ca0c3ffc2488896f38dab0",
+      "source": "live",
+      "request": {
+        "query": "Databricks news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "Databricks news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex",
+            "title": "Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work - Databricks",
+            "content": "November 11, 2026\n\nDatabricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption\n\nRead now\n\nNovember 10, 2026\n\nDatabricks to Invest More Than $500M in the Netherlands to Accelerate Enterprise Data + AI\n\nRead now\n\nOctober 13, 2026\n\nFox Corporation Selects Databricks as Strategic Partner for Next-Generation Data and AI Platform\n\nRead now\n\nReady to become a data + AI company?\n\nTry Databricks for freeTalk to an expert [...] SAN FRANCISCO \u2014 November 11, 2026 \u2014 Databricks, the Data and AI company, today announced the second generation of Genie that changes how people get work done: Genie is now an always-on, autonomous agent for enterprise work. Employees can give Genie a goal and trust it to keep work moving. Genie takes ownership of the work, delegates to subagents when needed, tracks progress, follows up on missing inputs, and reaches out when a person needs to make a decision. A new inbox highlights what needs [...] # Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work\n\nNovember 11, 2026\n\n## Proactive, Always-on Assistant Brings Enterprise-grade Security and Context",
+            "score": 0.7350715,
+            "published_date": "Wed, 11 Nov 2026 02:06:00 GMT",
+            "raw_content": null,
+            "id": "01a4db-00"
+          },
+          {
+            "url": "https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east",
+            "title": "Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption - Databricks",
+            "content": "Press Kit\n\nExplore our press kit for company news, info, logos, photos and more.\n\nShare this article\n\n## Latest Press Releases\n\nNovember 10, 2026\n\nDatabricks to Invest More Than $500M in the Netherlands to Accelerate Enterprise Data + AI\n\nRead now\n\nOctober 13, 2026\n\nFox Corporation Selects Databricks as Strategic Partner for Next-Generation Data and AI Platform\n\nRead now\n\nSeptember 24, 2026\n\nDatabricks Acquires Row Zero, Bringing Live, Governed Spreadsheets to Genie\n\nRead now [...] LONDON, UNITED KINGDOM - NOVEMBER 11, 2026 - Databricks, the Data and AI company, today announced plans to invest approximately $3 billion across Europe and the Middle East over the next three years, its largest regional investment outside North America. This will expand Databricks' R&D teams and put more experts alongside customers and partners as they scale AI impact across their organizations with Lakebase, Genie, and Unity Gateway. [...] # Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption\n\nNovember 11, 2026",
+            "score": 0.7244806,
+            "published_date": "Wed, 11 Nov 2026 08:20:00 GMT",
+            "raw_content": null,
+            "id": "d1e9d6-01"
+          },
+          {
+            "url": "https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise",
+            "title": "Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise",
+            "content": "The Databricks Data + AI World Tour arrives in Amsterdam on 10 November 2026, bringing together data and AI professionals, technology leaders and industry experts for one of the ecosystem\u2019s major annual gatherings.\n\nAt RAI Amsterdam, attendees will explore the latest developments in data engineering, analytics and artificial intelligence, while several consultancy firms will showcase how they help organisations translate these technologies into business value. [...] Choosing CSRD reporting software is now a board-level decision, says Nexio Projects   Companies that must report under the Corporate Sustainability Reporting Directive (CSRD) should choose software based on how clearly it shows who owns each piece of data, where the evidence is stored \n\n  06 November 2026\n Valcon delivers Databricks projects in financial services sector [...] Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\n\n# Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\n\n06 November 2026 Consultancy.eu\n\nDatabricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise",
+            "score": 0.642881,
+            "published_date": "Fri, 06 Nov 2026 13:07:00 GMT",
+            "raw_content": null,
+            "id": "90461d-02"
+          },
+          {
+            "url": "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks",
+            "title": "Can You Invest in Databricks in 2026? Details & Alternatives | The Motley Fool",
+            "content": "A company that issues shares that are publicly traded, meaning the shares are available for anyone to buy and sell on the stock market.\n\n## Will Databricks have an IPO?\n\nDatabricks didn't have an initial public offering (IPO) on the calendar as of October 2026. The company is slowly moving towards launching an IPO. However, it likely won't go public until 2027 due to the crowded 2026 IPO calendar, which featured SpaceX (SPCX +5.81%) and Anthropic. [...] With AI technology accelerating, Databricks should have much more growth ahead. Given that growth potential, many investors can't wait to get their hands on its shares.\n\nHere's everything you need to know about Databricks ahead of its potential IPO.\n\n## Is Databricks publicly traded?\n\nNo, Databricks wasn't a publicly traded company as of October 2026. It's a private company owned by venture capital and private equity firms.\n\n### Publicly Traded Company [...] +5.5%\n\n+$19.83\n\n# Can You Invest in Databricks Pre-IPO? Here\u2019s What You Need to Know\n\n## Explore opportunities for investing in Databricks.\n\nByMatthew DiLallo \u2013 Updated Oct 22, 2026 at 3:31 PM EST | Fact-checked by Parker Hicks\n\n+Fool.comon\n\n## Key Points",
+            "score": 0.57892436,
+            "published_date": "Thu, 22 Oct 2026 19:31:13 GMT",
+            "raw_content": null,
+            "id": "f48645-03"
+          },
+          {
+            "url": "https://solutionsreview.com/business-intelligence/analytics-and-data-science-news-for-the-week-of-november-6-updates-from-databricks-ocient-smartsheet-more",
+            "title": "Analytics and Data Science News for the Week of November 6; Updates from Databricks, Ocient, Smartsheet &amp; More",
+            "content": "Analytics and Data Science News for the Week of October 30; Updates from Planview, Wiley, Zoho & More - October 30, 2026\n   Analytics and Data Science News for the Week of October 23; Updates from Qlik, Starburst, ThoughtSpot & More - October 23, 2026\n   Analytics and Data Science News for the Week of October 16; Updates from Dataiku, SAS, Salesforce & More - October 16, 2026\n\n### Related Posts\n\nImage 9 [...] Image 27Analytics and Data Science News for the Week of October 9; Updates ...Business Intelligence News \n   Image 28TANK Thinking: Data-Driven Decisions That Actually WorkBest Practices \n   Image 29Analytics and Data Science News for the Week of October 2; Updates ...Business Intelligence News \n   Image 30Breaking Down the Wall Between Analytics and Operations: A Practica...Best Practices [...] Image 13AI Ransomware Accelerates \u2500 Time to Hit the Brakes and Do More Than Just BackupData Protection \n   Image 14TANK Thinking: Data-Driven Decisions That Actually WorkData Analytics & BI \n   Image 15We Built the Detector Before We Built a Way to Tell the TruthEducation \n   Image 16Masterclass 101: How to Calculate the Value of Enterprise StorageData Protection \n   Image 17Intersystems Summit 2026: A Peek Into Converged AI WorkloadsData Management",
+            "score": 0.5551338,
+            "published_date": "Sat, 07 Nov 2026 00:00:40 GMT",
+            "raw_content": null,
+            "id": "1c4636-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "834fa643-167c-4ea6-9187-537be1c3f9b5"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 634,
+      "ts": "2026-11-15T13:05:55.328306Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "e8130502cf5164304643c97c0cf6cd95775951e6c89afeb6d2543e2e63f95980",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Databricks\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_11828529515175906311_ts_EmAKXgFpFH0TwilNnu-8PJ4S1oxo_YVbsI-TbU9uAiviEJDX6rrJNkgrjk7R8XjLLTr_am2S-civyLF1s_PWVvZQ6C2vofCrHPlrsKYEyDkiEDfdvTGMzH8QG0xKuXbTCNA",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"Databricks news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_11828529515175906311_ts_EmAKXgFpFH0TwilNnu-8PJ4S1oxo_YVbsI-TbU9uAiviEJDX6rrJNkgrjk7R8XjLLTr_am2S-civyLF1s_PWVvZQ6C2vofCrHPlrsKYEyDkiEDfdvTGMzH8QG0xKuXbTCNA",
+            "content": "[{\"title\":\"Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work - Databricks\",\"url\":\"https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex\",\"published_date\":\"Wed, 11 Nov 2026 02:06:00 GMT\",\"content\":\"November 11, 2026\\n\\nDatabricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption\\n\\nRead now\\n\\nNovember 10, 2026\\n\\nDatabricks to Invest More Than $500M in the Netherlands to Accelerate Enterprise Data + AI\\n\\nRead now\\n\\nOctober 13, 2026\\n\\nFox Corporation Selects Databricks as Strategic Partner for Next-Generation Data and AI Platform\\n\\nRead now\\n\\nReady to become a data + AI company?\\n\\nTry Databricks for freeTalk to an expert [...] SAN FRANCISCO \u2014 November 11, 2026 \u2014 Databricks, the Data and AI company, today announced the second generation of Genie that changes how people get work done: Genie is now an always-on, autonomous agent for enterprise work. Employees can give Genie a goal and trust it to keep work moving. Genie takes ownership of the work, delegates to subagents when needed, tracks progress, follows up on missing inputs, and reaches out when a person needs to make a decision. A new inbox highlights what needs [...] # Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work\\n\\nNovember 11, 2026\\n\\n## Proactive, Always-on Assistant Brings Enterprise-grade Security and Context\"},{\"title\":\"Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption - Databricks\",\"url\":\"https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east\",\"published_date\":\"Wed, 11 Nov 2026 08:20:00 GMT\",\"content\":\"Press Kit\\n\\nExplore our press kit for company news, info, logos, photos and more.\\n\\nShare this article\\n\\n## Latest Press Releases\\n\\nNovember 10, 2026\\n\\nDatabricks to Invest More Than $500M in the Netherlands to Accelerate Enterprise Data + AI\\n\\nRead now\\n\\nOctober 13, 2026\\n\\nFox Corporation Selects Databricks as Strategic Partner for Next-Generation Data and AI Platform\\n\\nRead now\\n\\nSeptember 24, 2026\\n\\nDatabricks Acquires Row Zero, Bringing Live, Governed Spreadsheets to Genie\\n\\nRead now [...] LONDON, UNITED KINGDOM - NOVEMBER 11, 2026 - Databricks, the Data and AI company, today announced plans to invest approximately $3 billion across Europe and the Middle East over the next three years, its largest regional investment outside North America. This will expand Databricks' R&D teams and put more experts alongside customers and partners as they scale AI impact across their organizations with Lakebase, Genie, and Unity Gateway. [...] # Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption\\n\\nNovember 11, 2026\"},{\"title\":\"Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\",\"url\":\"https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise\",\"published_date\":\"Fri, 06 Nov 2026 13:07:00 GMT\",\"content\":\"The Databricks Data + AI World Tour arrives in Amsterdam on 10 November 2026, bringing together data and AI professionals, technology leaders and industry experts for one of the ecosystem\u2019s major annual gatherings.\\n\\nAt RAI Amsterdam, attendees will explore the latest developments in data engineering, analytics and artificial intelligence, while several consultancy firms will showcase how they help organisations translate these technologies into business value. [...] Choosing CSRD reporting software is now a board-level decision, says Nexio Projects   Companies that must report under the Corporate Sustainability Reporting Directive (CSRD) should choose software based on how clearly it shows who owns each piece of data, where the evidence is stored \\n\\n  06 November 2026\\n Valcon delivers Databricks projects in financial services sector [...] Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\\n\\n# Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\\n\\n06 November 2026 Consultancy.eu\\n\\nDatabricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise\"},{\"title\":\"Can You Invest in Databricks in 2026? Details & Alternatives | The Motley Fool\",\"url\":\"https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks\",\"published_date\":\"Thu, 22 Oct 2026 19:31:13 GMT\",\"content\":\"A company that issues shares that are publicly traded, meaning the shares are available for anyone to buy and sell on the stock market.\\n\\n## Will Databricks have an IPO?\\n\\nDatabricks didn't have an initial public offering (IPO) on the calendar as of October 2026. The company is slowly moving towards launching an IPO. However, it likely won't go public until 2027 due to the crowded 2026 IPO calendar, which featured SpaceX (SPCX +5.81%) and Anthropic. [...] With AI technology accelerating, Databricks should have much more growth ahead. Given that growth potential, many investors can't wait to get their hands on its shares.\\n\\nHere's everything you need to know about Databricks ahead of its potential IPO.\\n\\n## Is Databricks publicly traded?\\n\\nNo, Databricks wasn't a publicly traded company as of October 2026. It's a private company owned by venture capital and private equity firms.\\n\\n### Publicly Traded Company [...] +5.5%\\n\\n+$19.83\\n\\n# Can You Invest in Databricks Pre-IPO? Here\u2019s What You Need to Know\\n\\n## Explore opportunities for investing in Databricks.\\n\\nByMatthew DiLallo \u2013 Updated Oct 22, 2026 at 3:31 PM EST | Fact-checked by Parker Hicks\\n\\n+Fool.comon\\n\\n## Key Points\"},{\"title\":\"Analytics and Data Science News for the Week of November 6; Updates from Databricks, Ocient, Smartsheet &amp; More\",\"url\":\"https://solutionsreview.com/business-intelligence/analytics-and-data-science-news-for-the-week-of-november-6-updates-from-databricks-ocient-smartsheet-more\",\"published_date\":\"Sat, 07 Nov 2026 00:00:40 GMT\",\"content\":\"Analytics and Data Science News for the Week of October 30; Updates from Planview, Wiley, Zoho & More - October 30, 2026\\n   Analytics and Data Science News for the Week of October 23; Updates from Qlik, Starburst, ThoughtSpot & More - October 23, 2026\\n   Analytics and Data Science News for the Week of October 16; Updates from Dataiku, SAS, Salesforce & More - October 16, 2026\\n\\n### Related Posts\\n\\nImage 9 [...] Image 27Analytics and Data Science News for the Week of October 9; Updates ...Business Intelligence News \\n   Image 28TANK Thinking: Data-Driven Decisions That Actually WorkBest Practices \\n   Image 29Analytics and Data Science News for the Week of October 2; Updates ...Business Intelligence News \\n   Image 30Breaking Down the Wall Between Analytics and Operations: A Practica...Best Practices [...] Image 13AI Ransomware Accelerates \u2500 Time to Hit the Brakes and Do More Than Just BackupData Protection \\n   Image 14TANK Thinking: Data-Driven Decisions That Actually WorkData Analytics & BI \\n   Image 15We Built the Detector Before We Built a Way to Tell the TruthEducation \\n   Image 16Masterclass 101: How to Calculate the Value of Enterprise StorageData Protection \\n   Image 17Intersystems Summit 2026: A Peek Into Converged AI WorkloadsData Management\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "NK75avGOK4Tn3LUP9c-T8Ac",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "## Recent developments\n* **Launch of Always-On Genie:** Databricks unveiled the second generation of Genie, shifting it into an always-on, autonomous agent for complex enterprise work capable of handling multi-step goals, delegating to subagents, tracking progress, and interacting with human decision-makers ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex)).\n* **Major International Expansion & Investments:** Databricks announced a major ~ $3 billion investment initiative spanning Europe and the Middle East over the next three years to scale enterprise AI adoption, including a $500M+ targeted investment in the Netherlands ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n* **Strategic Partnerships:** Fox Corporation recently named Databricks as its strategic partner for its next-generation data and AI platform ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n* **Recent Acquisition Integration:** Following its acquisition of Row Zero, Databricks has been working to bring live, governed spreadsheets directly into Genie workflows ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n\n## Talking points\n* **Autonomous Enterprise Agents:** Discuss how the shift toward always-on agents like Genie impacts enterprise productivity, data governance, and automated workflow management.\n* **Global Footprint & Regional Strategies:** Explore the implications of the $3B Europe and Middle East investment on local data compliance (like EU data standards) and international revenue streams.\n* **Lakehouse Ecosystem Expansion:** Talk about how recent acquisitions (such as Row Zero) and integrations fit into enterprise architectures, specifically for finance and operations teams using governed spreadsheets.\n\n## Open questions\n* How is Databricks pricing and monetizing the new always-on Genie autonomous agent capabilities compared to traditional consumption models?\n* What is the timeline and criteria for a potential IPO, considering market conditions heading toward 2027?\n* How does the $3 billion investment break down across key European markets regarding regulatory compliance, data residency requirements, and local talent acquisition?\n\n## Sources\n* [Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex)\n* [Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)\n* [Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise](https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise)\n* [Can You Invest in Databricks Pre-IPO? Here\u2019s What You Need to Know](https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TzwTl2yHJPvIBGUjLDNidBgMGed/XriaJNZndFFzSHq0GfL8lBcS3qvAugNSFaznDn8cXKFhsx5nfzYMsVEtGw2blJwZ9vHVmRmjwQNESZ3mlpKxd1hQAU1Y="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794747958,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2231,
+          "prompt_tokens_details": {
+            "text_tokens": 2231,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 777,
+          "total_tokens": 3008
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 2844,
+          "upstream_latency": 2844,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=2815",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2231,
+        "completion": 777
+      },
+      "cost_usd": 0.0005339000000000001,
+      "latency_ms": 2847,
+      "ts": "2026-11-15T13:05:55.970626Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "## Recent developments\n* **Launch of Always-On Genie:** Databricks unveiled the second generation of Genie, shifting it into an always-on, autonomous agent for complex enterprise work capable of handling multi-step goals, delegating to subagents, tracking progress, and interacting with human decision-makers ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex)).\n* **Major International Expansion & Investments:** Databricks announced a major ~ $3 billion investment initiative spanning Europe and the Middle East over the next three years to scale enterprise AI adoption, including a $500M+ targeted investment in the Netherlands ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n* **Strategic Partnerships:** Fox Corporation recently named Databricks as its strategic partner for its next-generation data and AI platform ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n* **Recent Acquisition Integration:** Following its acquisition of Row Zero, Databricks has been working to bring live, governed spreadsheets directly into Genie workflows ([Databricks](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)).\n\n## Talking points\n* **Autonomous Enterprise Agents:** Discuss how the shift toward always-on agents like Genie impacts enterprise productivity, data governance, and automated workflow management.\n* **Global Footprint & Regional Strategies:** Explore the implications of the $3B Europe and Middle East investment on local data compliance (like EU data standards) and international revenue streams.\n* **Lakehouse Ecosystem Expansion:** Talk about how recent acquisitions (such as Row Zero) and integrations fit into enterprise architectures, specifically for finance and operations teams using governed spreadsheets.\n\n## Open questions\n* How is Databricks pricing and monetizing the new always-on Genie autonomous agent capabilities compared to traditional consumption models?\n* What is the timeline and criteria for a potential IPO, considering market conditions heading toward 2027?\n* How does the $3 billion investment break down across key European markets regarding regulatory compliance, data residency requirements, and local talent acquisition?\n\n## Sources\n* [Databricks Launches New Always-on Genie: Autonomous AI for Complex Enterprise Work](https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex)\n* [Databricks to Invest ~$3 Billion Across Europe and the Middle East to Accelerate Enterprise AI Adoption](https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east)\n* [Databricks Data + AI World Tour in Amsterdam: Consultancies showcase their expertise](https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise)\n* [Can You Invest in Databricks Pre-IPO? Here\u2019s What You Need to Know](https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise",
+        "https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east",
+        "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex",
+        "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks"
+      ],
+      "grounded_urls": [
+        "https://www.consultancy.eu/news/14563/databricks-data-ai-world-tour-in-amsterdam-consultancies-showcase-their-expertise",
+        "https://www.databricks.com/company/newsroom/press-releases/databricks-invest-3-billion-across-europe-and-middle-east",
+        "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex",
+        "https://www.fool.com/investing/how-to-invest/stocks/how-to-invest-in-databricks"
+      ],
+      "n_grounded": 4,
+      "followed_injection": false
+    },
+    "wall_ms": 4622,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

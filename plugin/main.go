@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	runHeader                          = "x-rewind-run"
+	runHeader                            = "x-rewind-run"
 	pendingKey schemas.BifrostContextKey = "rewind-pending-step"
 )
 
@@ -155,11 +155,10 @@ func HTTPTransportPostHook(ctx *schemas.BifrostContext, req *schemas.HTTPRequest
 	return nil
 }
 
-// Cleanup flushes every open run.
+// Cleanup flushes every open run. Bifrost may call it while the process keeps
+// serving (for example when plugins are reloaded), so the run API stays up and
+// the process exit closes it.
 func Cleanup() error {
-	if ctl != nil {
-		ctl.stop()
-	}
 	if store != nil {
 		store.FlushAll()
 	}

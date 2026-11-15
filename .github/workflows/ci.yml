@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27.x"
+          cache-dependency-path: plugin/go.sum
+      # plugin/go.mod replaces the transports module with build/transports
+      - name: Prepare build/transports
+        run: make build/transports
+      - name: go vet
+        working-directory: plugin
+        run: go vet ./...
+      - name: go test
+        working-directory: plugin
+        run: go test -race -count=1 ./...
+      - name: Build plugin
+        working-directory: plugin
+        env:
+          CGO_ENABLED: "1"
+        run: go build -buildmode=plugin -o ../bin/rewind.so .
+
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: pytest
+        working-directory: bench
+        run: uv run pytest -q
