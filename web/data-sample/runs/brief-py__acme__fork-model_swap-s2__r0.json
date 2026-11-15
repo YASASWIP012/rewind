@@ -1,0 +1,412 @@
+{
+ "run_id": "brief-py__acme__fork-model_swap-s2__r0",
+ "mode": "fork",
+ "parent": "brief-py__acme__base",
+ "fork_at": 2,
+ "mutation": {
+  "type": "model_swap",
+  "model": "groq/llama-3.3-70b-versatile"
+ },
+ "meta": {
+  "agent": "brief-py",
+  "task": "acme",
+  "repeat": 0
+ },
+ "started_at": "2026-11-15T14:09:00Z",
+ "ended_at": "2026-11-15T14:09:05.225000Z",
+ "steps": [
+  {
+   "i": 0,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:b513fe655e1ead5352f9bd5d3ff9bb42b474ec76325e37ee8998b7759461ce71",
+   "source": "replayed",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Acme Robotics for an investor meeting."
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-cfBAepfJBd0Kh8oOOL8dKLzd",
+    "object": "chat.completion",
+    "created": 1794751200,
+    "model": "gemini-2.5-flash",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": null,
+       "tool_calls": [
+        {
+         "id": "call_u8jzPde0IgxLd6Gn",
+         "type": "function",
+         "function": {
+          "name": "tavily_search",
+          "arguments": "{\"query\": \"Acme Robotics company overview\"}"
+         }
+        }
+       ]
+      },
+      "finish_reason": "tool_calls"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 123,
+     "completion_tokens": 24,
+     "total_tokens": 147
+    }
+   },
+   "status": 200,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": "gemini/gemini-2.5-flash",
+   "tokens": {
+    "prompt": 123,
+    "completion": 24
+   },
+   "cost_usd": 0.0,
+   "latency_ms": 5,
+   "ts": "2026-11-15T14:09:00.005000Z"
+  },
+  {
+   "i": 1,
+   "kind": "relay",
+   "path": "/relay/tavily/search",
+   "fingerprint": "sha256:2bed83cc26274f9749bb6a43047cd26f8c38ae1f5b31e0d1a3e84f0a2c7de3eb",
+   "source": "replayed",
+   "request": {
+    "query": "Acme Robotics company overview",
+    "max_results": 5,
+    "search_depth": "basic",
+    "include_answer": false
+   },
+   "response": {
+    "query": "Acme Robotics company overview",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+     {
+      "title": "Acme Robotics | About",
+      "url": "https://acmerobotics.example/about",
+      "content": "Acme Robotics builds autonomous mobile robots for warehouse picking. Founded in 2015 in Boston by Dana Whitfield and Raj Menon, the company ships the Picker One robot to grocery and apparel distribution centers across North America and employs about 640 people.",
+      "score": 0.91,
+      "raw_content": null
+     },
+     {
+      "title": "Acme Robotics profile - Logistics Weekly",
+      "url": "https://logisticsweekly.example/companies/acme-robotics",
+      "content": "Acme's fleet software coordinates mixed fleets of robots and human pickers. The company says customers see 2-3x picks per labor hour. Its main market is mid-size regional grocers that cannot afford fully automated warehouses.",
+      "score": 0.84,
+      "raw_content": null
+     },
+     {
+      "title": "Picker One launches second generation",
+      "url": "https://roboticsdaily.example/2024/picker-one-gen2",
+      "content": "The second-generation Picker One adds a suction gripper and a 30% longer battery. Acme said 41 sites now run the robot, up from 18 a year earlier.",
+      "score": 0.77,
+      "raw_content": null
+     }
+    ],
+    "response_time": 0.84
+   },
+   "status": 200,
+   "model": null,
+   "served_model": null,
+   "tokens": {
+    "prompt": 0,
+    "completion": 0
+   },
+   "cost_usd": 0.0,
+   "latency_ms": 6,
+   "ts": "2026-11-15T14:09:00.011000Z"
+  },
+  {
+   "i": 2,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:f137b5da53b7b527274c17462f0214720da84263e4c749f7497e7d9d2fad2297",
+   "source": "mutated",
+   "request": {
+    "model": "groq/llama-3.3-70b-versatile",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Acme Robotics for an investor meeting."
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_u8jzPde0IgxLd6Gn",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Acme Robotics company overview\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_u8jzPde0IgxLd6Gn",
+      "content": "{\"results\": [{\"title\": \"Acme Robotics | About\", \"url\": \"https://acmerobotics.example/about\", \"content\": \"Acme Robotics builds autonomous mobile robots for warehouse picking. Founded in 2015 in Boston by Dana Whitfield and Raj Menon, the company ships the Picker One robot to grocery and apparel distribution centers across North America and employs about 640 people.\"}, {\"title\": \"Acme Robotics profile - Logistics Weekly\", \"url\": \"https://logisticsweekly.example/companies/acme-robotics\", \"content\": \"Acme's fleet software coordinates mixed fleets of robots and human pickers. The company says customers see 2-3x picks per labor hour. Its main market is mid-size regional grocers that cannot afford fully automated warehouses.\"}, {\"title\": \"Picker One launches second generation\", \"url\": \"https://roboticsdaily.example/2024/picker-one-gen2\", \"content\": \"The second-generation Picker One adds a suction gripper and a 30% longer battery. Acme said 41 sites now run the robot, up from 18 a year earlier.\"}]}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-iAhzCueQpBenQtYh5Xj8TPQx",
+    "object": "chat.completion",
+    "created": 1794751740,
+    "model": "llama-3.3-70b-versatile",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": null,
+       "tool_calls": [
+        {
+         "id": "call_8pSH4487q7J58m1C",
+         "type": "function",
+         "function": {
+          "name": "tavily_search",
+          "arguments": "{\"query\": \"Acme Robotics funding 2025\"}"
+         }
+        }
+       ]
+      },
+      "finish_reason": "tool_calls"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 456,
+     "completion_tokens": 24,
+     "total_tokens": 480
+    }
+   },
+   "status": 200,
+   "model": "groq/llama-3.3-70b-versatile",
+   "served_model": "groq/llama-3.3-70b-versatile",
+   "tokens": {
+    "prompt": 456,
+    "completion": 24
+   },
+   "cost_usd": 0.000288,
+   "latency_ms": 796,
+   "ts": "2026-11-15T14:09:00.807000Z"
+  },
+  {
+   "i": 3,
+   "kind": "relay",
+   "path": "/relay/tavily/search",
+   "fingerprint": "sha256:193a19c5689ba3425f90a9c017c0b642a886bcce09bcfd6ce3c48e5689ba6b23",
+   "source": "live",
+   "request": {
+    "query": "Acme Robotics funding 2025",
+    "max_results": 5,
+    "search_depth": "basic",
+    "include_answer": false
+   },
+   "response": {
+    "query": "Acme Robotics funding 2025",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+     {
+      "title": "Acme Robotics raises $120M Series C",
+      "url": "https://venturewire.example/2025/03/acme-robotics-series-c",
+      "content": "Boston-based Acme Robotics closed a $120 million Series C in March 2025 led by Northbridge Ventures, bringing total funding to $210 million. The company plans to expand into Europe in 2026.",
+      "score": 0.91,
+      "raw_content": null
+     },
+     {
+      "title": "Northbridge Ventures portfolio",
+      "url": "https://northbridge.example/portfolio",
+      "content": "Northbridge led Acme Robotics' Series C. Partner Lena Cho joins the board. Northbridge previously backed two industrial software companies.",
+      "score": 0.84,
+      "raw_content": null
+     }
+    ],
+    "response_time": 1.0
+   },
+   "status": 200,
+   "model": null,
+   "served_model": null,
+   "tokens": {
+    "prompt": 0,
+    "completion": 0
+   },
+   "cost_usd": 0.008,
+   "latency_ms": 840,
+   "ts": "2026-11-15T14:09:01.647000Z"
+  },
+  {
+   "i": 4,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:87ec4d7d13010cd8708011f2b2c4263e370996b8247cdf9f0b9062d1740c3272",
+   "source": "live",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Acme Robotics for an investor meeting."
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_u8jzPde0IgxLd6Gn",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Acme Robotics company overview\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_u8jzPde0IgxLd6Gn",
+      "content": "{\"results\": [{\"title\": \"Acme Robotics | About\", \"url\": \"https://acmerobotics.example/about\", \"content\": \"Acme Robotics builds autonomous mobile robots for warehouse picking. Founded in 2015 in Boston by Dana Whitfield and Raj Menon, the company ships the Picker One robot to grocery and apparel distribution centers across North America and employs about 640 people.\"}, {\"title\": \"Acme Robotics profile - Logistics Weekly\", \"url\": \"https://logisticsweekly.example/companies/acme-robotics\", \"content\": \"Acme's fleet software coordinates mixed fleets of robots and human pickers. The company says customers see 2-3x picks per labor hour. Its main market is mid-size regional grocers that cannot afford fully automated warehouses.\"}, {\"title\": \"Picker One launches second generation\", \"url\": \"https://roboticsdaily.example/2024/picker-one-gen2\", \"content\": \"The second-generation Picker One adds a suction gripper and a 30% longer battery. Acme said 41 sites now run the robot, up from 18 a year earlier.\"}]}"
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_8pSH4487q7J58m1C",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Acme Robotics funding 2025\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_8pSH4487q7J58m1C",
+      "content": "{\"results\": [{\"title\": \"Acme Robotics raises $120M Series C\", \"url\": \"https://venturewire.example/2025/03/acme-robotics-series-c\", \"content\": \"Boston-based Acme Robotics closed a $120 million Series C in March 2025 led by Northbridge Ventures, bringing total funding to $210 million. The company plans to expand into Europe in 2026.\"}, {\"title\": \"Northbridge Ventures portfolio\", \"url\": \"https://northbridge.example/portfolio\", \"content\": \"Northbridge led Acme Robotics' Series C. Partner Lena Cho joins the board. Northbridge previously backed two industrial software companies.\"}]}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-9DoV8gz4FkQ1okTBGzvAmwuf",
+    "object": "chat.completion",
+    "created": 1794751741,
+    "model": "gemini-2.5-flash",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": "Acme Robotics is a Boston-based maker of autonomous mobile robots for warehouse picking, founded in 2015 by Dana Whitfield and Raj Menon. Its Picker One robot, now in its second generation, runs at 41 distribution centers, mostly mid-size regional grocers, where Acme reports 2-3x more picks per labor hour. The company employs roughly 640 people. In March 2025 it raised a $120 million Series C led by Northbridge Ventures, bringing total funding to $210 million, and it plans to expand into Europe in 2026. Sources: acmerobotics.example, logisticsweekly.example, venturewire.example."
+      },
+      "finish_reason": "stop"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 678,
+     "completion_tokens": 146,
+     "total_tokens": 824
+    }
+   },
+   "status": 200,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": "gemini/gemini-2.5-flash",
+   "tokens": {
+    "prompt": 678,
+    "completion": 146
+   },
+   "cost_usd": 0.000568,
+   "latency_ms": 3578,
+   "ts": "2026-11-15T14:09:05.225000Z"
+  }
+ ],
+ "divergences": []
+}

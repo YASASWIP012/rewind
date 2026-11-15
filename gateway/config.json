@@ -1,0 +1,87 @@
+{
+  "$schema": "https://www.getbifrost.ai/schema",
+  "client": {
+    "drop_excess_requests": false,
+    "enable_logging": true
+  },
+  "providers": {
+    "gemini": {
+      "keys": [
+        {
+          "name": "gemini-free",
+          "value": "env.GEMINI_API_KEY",
+          "models": [
+            "*"
+          ],
+          "weight": 1.0
+        }
+      ]
+    }
+  },
+  "relays": [
+    {
+      "name": "tavily",
+      "description": "Tavily web search for research agents",
+      "base_url": "https://api.tavily.com",
+      "auth": {
+        "type": "bearer"
+      },
+      "credential": {
+        "value": "env.TAVILY_API_KEY"
+      },
+      "routes": [
+        {
+          "method": "POST",
+          "path": "/search"
+        },
+        {
+          "method": "POST",
+          "path": "/extract"
+        }
+      ]
+    }
+  ],
+  "plugins": [
+    {
+      "enabled": true,
+      "name": "rewind",
+      "path": "bin/rewind.so",
+      "placement": "pre_builtin",
+      "config": {
+        "data_dir": "data/cassettes",
+        "control_addr": "127.0.0.1:8099"
+      }
+    }
+  ],
+  "governance": {
+    "virtual_keys": [
+      {
+        "id": "vk-rewind-local",
+        "name": "rewind-local",
+        "value": "sk-bf-rewind-local",
+        "is_active": true,
+        "relay_grants": [
+          {
+            "relay_name": "tavily"
+          }
+        ],
+        "provider_configs": [
+          {
+            "provider": "gemini",
+            "allowed_models": [
+              "gemini-2.5-flash",
+              "gemini-2.5-flash-lite",
+              "gemini-3.5-flash",
+              "gemini-3.5-flash-lite"
+            ],
+            "key_ids": [
+              "*"
+            ],
+            "weight": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "source_of_truth": "config.json"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "brief-ts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Briefing agent (tool-calling loop) for the Rewind benchmark.",
+  "scripts": { "start": "tsx agent.ts" },
+  "dependencies": { "openai": "^4.104.0" },
+  "devDependencies": { "tsx": "^4.20.0" }
+}

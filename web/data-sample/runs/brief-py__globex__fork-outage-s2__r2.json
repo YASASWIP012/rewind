@@ -1,0 +1,489 @@
+{
+ "run_id": "brief-py__globex__fork-outage-s2__r2",
+ "mode": "fork",
+ "parent": "brief-py__globex__base",
+ "fork_at": 2,
+ "mutation": {
+  "type": "outage",
+  "status": 503
+ },
+ "meta": {
+  "agent": "brief-py",
+  "task": "globex",
+  "repeat": 2
+ },
+ "started_at": "2026-11-15T14:36:00Z",
+ "ended_at": "2026-11-15T14:36:04.337000Z",
+ "steps": [
+  {
+   "i": 0,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:929ac77c595419fe9ad057d156367537c247aa3bee28b31e13906ff922ebe477",
+   "source": "replayed",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Globex Energy for an investor meeting."
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-A6Qd8Mj7zdnbMjAdTdlzC5T4",
+    "object": "chat.completion",
+    "created": 1794752880,
+    "model": "gemini-2.5-flash",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": null,
+       "tool_calls": [
+        {
+         "id": "call_oDoqW4sg8NFNl5oF",
+         "type": "function",
+         "function": {
+          "name": "tavily_search",
+          "arguments": "{\"query\": \"Globex Energy company overview\"}"
+         }
+        }
+       ]
+      },
+      "finish_reason": "tool_calls"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 123,
+     "completion_tokens": 24,
+     "total_tokens": 147
+    }
+   },
+   "status": 200,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": "gemini/gemini-2.5-flash",
+   "tokens": {
+    "prompt": 123,
+    "completion": 24
+   },
+   "cost_usd": 0.0,
+   "latency_ms": 2,
+   "ts": "2026-11-15T14:36:00.002000Z"
+  },
+  {
+   "i": 1,
+   "kind": "relay",
+   "path": "/relay/tavily/search",
+   "fingerprint": "sha256:71e92e4444cd9fc2ee633bce5f6ccb861e4cc71c80aeac36f8894699b8a82a62",
+   "source": "replayed",
+   "request": {
+    "query": "Globex Energy company overview",
+    "max_results": 5,
+    "search_depth": "basic",
+    "include_answer": false
+   },
+   "response": {
+    "query": "Globex Energy company overview",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+     {
+      "title": "Globex Energy - Who we are",
+      "url": "https://globexenergy.example/company",
+      "content": "Globex Energy develops and operates grid-scale battery storage in Texas and Arizona. Founded in 2011 and headquartered in Houston, Globex has 4.2 GWh of storage in operation and is led by CEO Maria Ortega.",
+      "score": 0.91,
+      "raw_content": null
+     },
+     {
+      "title": "Globex Energy profile - Grid Ledger",
+      "url": "https://gridledger.example/profiles/globex",
+      "content": "Globex sells capacity and frequency-response services to utilities under 10- to 15-year contracts. The company is privately held and reported positive operating cash flow in 2024.",
+      "score": 0.84,
+      "raw_content": null
+     },
+     {
+      "title": "Storage developers to watch",
+      "url": "https://powerbrief.example/2024/storage-developers",
+      "content": "Globex was among the fastest-growing independent storage developers in 2024, adding 1.1 GWh of capacity. Analysts cite its long-term utility contracts as a source of predictable revenue.",
+      "score": 0.77,
+      "raw_content": null
+     }
+    ],
+    "response_time": 1.39
+   },
+   "status": 200,
+   "model": null,
+   "served_model": null,
+   "tokens": {
+    "prompt": 0,
+    "completion": 0
+   },
+   "cost_usd": 0.0,
+   "latency_ms": 5,
+   "ts": "2026-11-15T14:36:00.007000Z"
+  },
+  {
+   "i": 2,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:dc17c6ae2957cf71c5da3b01af15eaf7e2990371a519adf01c571ac0b2d5974a",
+   "source": "mutated",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Globex Energy for an investor meeting."
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_oDoqW4sg8NFNl5oF",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Globex Energy company overview\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_oDoqW4sg8NFNl5oF",
+      "content": "{\"results\": [{\"title\": \"Globex Energy - Who we are\", \"url\": \"https://globexenergy.example/company\", \"content\": \"Globex Energy develops and operates grid-scale battery storage in Texas and Arizona. Founded in 2011 and headquartered in Houston, Globex has 4.2 GWh of storage in operation and is led by CEO Maria Ortega.\"}, {\"title\": \"Globex Energy profile - Grid Ledger\", \"url\": \"https://gridledger.example/profiles/globex\", \"content\": \"Globex sells capacity and frequency-response services to utilities under 10- to 15-year contracts. The company is privately held and reported positive operating cash flow in 2024.\"}, {\"title\": \"Storage developers to watch\", \"url\": \"https://powerbrief.example/2024/storage-developers\", \"content\": \"Globex was among the fastest-growing independent storage developers in 2024, adding 1.1 GWh of capacity. Analysts cite its long-term utility contracts as a source of predictable revenue.\"}]}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "error": {
+     "message": "rewind: injected outage",
+     "type": "server_error",
+     "code": 503
+    }
+   },
+   "status": 503,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": null,
+   "tokens": {
+    "prompt": 0,
+    "completion": 0
+   },
+   "cost_usd": 0.0,
+   "latency_ms": 2,
+   "ts": "2026-11-15T14:36:00.009000Z"
+  },
+  {
+   "i": 3,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:dc17c6ae2957cf71c5da3b01af15eaf7e2990371a519adf01c571ac0b2d5974a",
+   "source": "live",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Globex Energy for an investor meeting."
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_oDoqW4sg8NFNl5oF",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Globex Energy company overview\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_oDoqW4sg8NFNl5oF",
+      "content": "{\"results\": [{\"title\": \"Globex Energy - Who we are\", \"url\": \"https://globexenergy.example/company\", \"content\": \"Globex Energy develops and operates grid-scale battery storage in Texas and Arizona. Founded in 2011 and headquartered in Houston, Globex has 4.2 GWh of storage in operation and is led by CEO Maria Ortega.\"}, {\"title\": \"Globex Energy profile - Grid Ledger\", \"url\": \"https://gridledger.example/profiles/globex\", \"content\": \"Globex sells capacity and frequency-response services to utilities under 10- to 15-year contracts. The company is privately held and reported positive operating cash flow in 2024.\"}, {\"title\": \"Storage developers to watch\", \"url\": \"https://powerbrief.example/2024/storage-developers\", \"content\": \"Globex was among the fastest-growing independent storage developers in 2024, adding 1.1 GWh of capacity. Analysts cite its long-term utility contracts as a source of predictable revenue.\"}]}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-ClbaNFDpCWNX0D1lZEzgeiwB",
+    "object": "chat.completion",
+    "created": 1794753360,
+    "model": "llama-3.3-70b-versatile",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": null,
+       "tool_calls": [
+        {
+         "id": "call_J2OXtPAtLpByQxCG",
+         "type": "function",
+         "function": {
+          "name": "tavily_search",
+          "arguments": "{\"query\": \"Globex Energy grid storage contracts 2025\"}"
+         }
+        }
+       ]
+      },
+      "finish_reason": "tool_calls"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 435,
+     "completion_tokens": 24,
+     "total_tokens": 459
+    }
+   },
+   "status": 200,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": "groq/llama-3.3-70b-versatile",
+   "tokens": {
+    "prompt": 435,
+    "completion": 24
+   },
+   "cost_usd": 0.000276,
+   "latency_ms": 1024,
+   "ts": "2026-11-15T14:36:01.033000Z"
+  },
+  {
+   "i": 4,
+   "kind": "relay",
+   "path": "/relay/tavily/search",
+   "fingerprint": "sha256:6da22971a18fd9c8ea53c83ceafbd44287c1f2606a65fa247aa9462fb15262d6",
+   "source": "live",
+   "request": {
+    "query": "Globex Energy grid storage contracts 2025",
+    "max_results": 5,
+    "search_depth": "basic",
+    "include_answer": false
+   },
+   "response": {
+    "query": "Globex Energy grid storage contracts 2025",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+     {
+      "title": "Globex signs 800 MWh Lone Star Reserve deal",
+      "url": "https://powerbrief.example/2025/globex-lone-star-reserve",
+      "content": "Globex Energy signed a 15-year agreement in June 2025 to build the 800 MWh Lone Star Reserve project for a Central Texas utility. Construction starts in early 2026.",
+      "score": 0.91,
+      "raw_content": null
+     },
+     {
+      "title": "Globex Arizona expansion",
+      "url": "https://azenergy.example/2025/globex-phoenix",
+      "content": "Globex announced a 300 MWh project near Phoenix, its third in Arizona, expected online in 2027.",
+      "score": 0.84,
+      "raw_content": null
+     }
+    ],
+    "response_time": 0.87
+   },
+   "status": 200,
+   "model": null,
+   "served_model": null,
+   "tokens": {
+    "prompt": 0,
+    "completion": 0
+   },
+   "cost_usd": 0.008,
+   "latency_ms": 1152,
+   "ts": "2026-11-15T14:36:02.185000Z"
+  },
+  {
+   "i": 5,
+   "kind": "llm",
+   "path": "/v1/chat/completions",
+   "fingerprint": "sha256:b2baa52e179a59064a1bb9d15765403cf13fdb1a386b05cb6185697b57dee4b6",
+   "source": "live",
+   "request": {
+    "model": "gemini/gemini-2.5-flash",
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a research assistant. Use tavily_search to gather facts, then write a company brief of about 120 words. Cite source domains."
+     },
+     {
+      "role": "user",
+      "content": "Write a brief on Globex Energy for an investor meeting."
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_oDoqW4sg8NFNl5oF",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Globex Energy company overview\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_oDoqW4sg8NFNl5oF",
+      "content": "{\"results\": [{\"title\": \"Globex Energy - Who we are\", \"url\": \"https://globexenergy.example/company\", \"content\": \"Globex Energy develops and operates grid-scale battery storage in Texas and Arizona. Founded in 2011 and headquartered in Houston, Globex has 4.2 GWh of storage in operation and is led by CEO Maria Ortega.\"}, {\"title\": \"Globex Energy profile - Grid Ledger\", \"url\": \"https://gridledger.example/profiles/globex\", \"content\": \"Globex sells capacity and frequency-response services to utilities under 10- to 15-year contracts. The company is privately held and reported positive operating cash flow in 2024.\"}, {\"title\": \"Storage developers to watch\", \"url\": \"https://powerbrief.example/2024/storage-developers\", \"content\": \"Globex was among the fastest-growing independent storage developers in 2024, adding 1.1 GWh of capacity. Analysts cite its long-term utility contracts as a source of predictable revenue.\"}]}"
+     },
+     {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+       {
+        "id": "call_J2OXtPAtLpByQxCG",
+        "type": "function",
+        "function": {
+         "name": "tavily_search",
+         "arguments": "{\"query\": \"Globex Energy grid storage contracts 2025\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_J2OXtPAtLpByQxCG",
+      "content": "{\"results\": [{\"title\": \"Globex signs 800 MWh Lone Star Reserve deal\", \"url\": \"https://powerbrief.example/2025/globex-lone-star-reserve\", \"content\": \"Globex Energy signed a 15-year agreement in June 2025 to build the 800 MWh Lone Star Reserve project for a Central Texas utility. Construction starts in early 2026.\"}, {\"title\": \"Globex Arizona expansion\", \"url\": \"https://azenergy.example/2025/globex-phoenix\", \"content\": \"Globex announced a 300 MWh project near Phoenix, its third in Arizona, expected online in 2027.\"}]}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "tavily_search",
+       "description": "Search the web and return the top results.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "query": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "query"
+        ]
+       }
+      }
+     }
+    ],
+    "temperature": 0.2
+   },
+   "response": {
+    "id": "chatcmpl-GGQccOif7UuXUGfdWG5yP8Yi",
+    "object": "chat.completion",
+    "created": 1794753362,
+    "model": "llama-3.3-70b-versatile",
+    "choices": [
+     {
+      "index": 0,
+      "message": {
+       "role": "assistant",
+       "content": "Globex Energy is a Houston-based developer-operator of grid-scale battery storage in Texas and Arizona, founded in 2011 and led by CEO Maria Ortega. It has 4.2 GWh of storage in operation after adding 1.1 GWh in 2024, and sells capacity and frequency-response services to utilities under 10- to 15-year contracts. In June 2025 it secured a 15-year deal to build the 800 MWh Lone Star Reserve project for a Central Texas utility, with construction starting in early 2026, and it plans a 300 MWh project near Phoenix for 2027. Sources: globexenergy.example, gridledger.example, powerbrief.example."
+      },
+      "finish_reason": "stop"
+     }
+    ],
+    "usage": {
+     "prompt_tokens": 646,
+     "completion_tokens": 149,
+     "total_tokens": 795
+    }
+   },
+   "status": 200,
+   "model": "gemini/gemini-2.5-flash",
+   "served_model": "groq/llama-3.3-70b-versatile",
+   "tokens": {
+    "prompt": 646,
+    "completion": 149
+   },
+   "cost_usd": 0.000499,
+   "latency_ms": 2152,
+   "ts": "2026-11-15T14:36:04.337000Z"
+  }
+ ],
+ "divergences": []
+}

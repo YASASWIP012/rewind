@@ -1,0 +1,13 @@
+.env
+/data/
+node_modules/
+.venv/
+__pycache__/
+*.so
+/bin/
+/build/
+gateway/*.db*
+bench/data/
+bench/data-real/
+bench/*.log
+.DS_Store

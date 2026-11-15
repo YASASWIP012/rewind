@@ -1,0 +1,15 @@
+# Benchmark tasks. meeting_time is fixed so prompts stay identical across runs.
+meeting_time: "2026-11-20T10:00:00+05:30"
+tasks:
+  - id: openai
+    company: OpenAI
+  - id: nvidia
+    company: NVIDIA
+  - id: mistral
+    company: Mistral AI
+  - id: databricks
+    company: Databricks
+  - id: perplexity
+    company: Perplexity AI
+  - id: huggingface
+    company: Hugging Face
