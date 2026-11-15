@@ -13,8 +13,8 @@
   ],
   "fork_notes": [
     "Replay: 12 runs, 0 misses, $0.168 to $0, 6.0x faster including agent start-up.",
-    "A fork replays the shared history from the recording, so it only pays for the steps after the change: about 42% cheaper than a fresh run for brief_py and 94% for brief_ts.",
-    "132 real runs in total, $1.10 at list price, all on free tiers."
+    "Position matters: the same false claim at brief_py's last search (earlier searches replayed byte for byte) was repeated in 1 of 12 forks, against 15 of 18 at the first search. Lower at all 6 companies.",
+    "A fork only pays for the steps after the change: 42% cheaper than a fresh run at the first search, 96% at the last."
   ],
   "engineering": [
     "Runs on a stock Bifrost v2.5.1 build; uses only public plugin hooks (HTTPTransportPreHook / PostHook) plus Relays, virtual keys and provider retries.",
