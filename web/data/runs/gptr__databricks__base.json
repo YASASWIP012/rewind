@@ -1,0 +1,585 @@
+{
+  "run_id": "gptr__databricks__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "gptr",
+    "repeat": 0,
+    "task": "databricks",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T17:22:56.568753Z",
+  "ended_at": "2026-11-15T17:23:18.006132Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "666669238361e4c85ddb1a8cf135dc3932f95524eb6f5a333fbc23363bcb7be7",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "\nThis task involves researching a given topic, regardless of its complexity or the availability of a definitive answer. The research is conducted by a specific server, defined by its type and role, with each server requiring distinct instructions.\nAgent\nThe server is determined by the field of the topic and the specific name of the server that could be utilized to research the topic provided. Agents are categorized by their area of expertise, and each server type is associated with a corresponding emoji.\n\nexamples:\ntask: \"should I invest in apple stocks?\"\nresponse:\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\ntask: \"could reselling sneakers become profitable?\"\nresponse:\n{\n    \"server\":  \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured business reports based on provided business data, market trends, and strategic analysis.\"\n}\ntask: \"what are the most interesting sites in Tel Aviv?\"\nresponse:\n{\n    \"server\":  \"\ud83c\udf0d Travel Agent\",\n    \"agent_role_prompt\": \"You are a world-travelled AI tour guide assistant. Your main purpose is to draft engaging, insightful, unbiased, and well-structured travel reports on given locations, including history, attractions, and cultural insights.\"\n}\n",
+            "role": "system"
+          },
+          {
+            "content": "task: One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 4000,
+        "temperature": 0.15
+      },
+      "response": {
+        "id": "c-r5aoG4MKep3LUPsKyJ4AI",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "{\n    \"server\": \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst and corporate intelligence assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured pre-meeting briefing reports based on recent corporate developments, market trends, and strategic analysis.\"\n}",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TRFtw/iUBmLuVZJaAaQYeuDSlt8gOfVygGK5zP3RMzD/5nvqKzBZYPCYYXCw7Ds7jn7RYvV0LWV0MRGoF3abzg1qKaiCfv0HuQjOF1o2o/OLPC47V+l5iI5U="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763380,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 401,
+          "prompt_tokens_details": {
+            "text_tokens": 401,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 69,
+          "total_tokens": 470
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1061,
+          "upstream_latency": 1061,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1033",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 401,
+        "completion": 69
+      },
+      "cost_usd": 6.77e-05,
+      "latency_ms": 1062,
+      "ts": "2026-11-15T17:22:59.25177Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "c7665ee56fab4eec1b58b2d68a0c5d5a6b742d9017fa716f6e3c3754d8d0efef",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation",
+            "title": "AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava",
+            "content": "Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\n\n Does it handle recurring meetings differently?\n\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Most meeting commitments die in notebooks. Your AI extracts every action item, assigns an owner, sets a deadline, and tracks completion. The next meeting brief includes a status update on previous commitments, so nothing is forgotten between sessions.\n\n## FAQ\n\nWhat information goes into a meeting briefing?",
+            "score": 0.11299101,
+            "raw_content": null,
+            "id": "dc0162-00"
+          },
+          {
+            "url": "https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing",
+            "title": "Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework",
+            "content": "The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\n\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\n\n Agenda \u2013 April 8, 2026\n Recording \u2013 April 8. 2026\n Public Notice of Virtual Attendees\n Pre-Meeting Virtual Briefing Presentation",
+            "score": 0.03314852,
+            "raw_content": null,
+            "id": "a47419-01"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] Participants will also learn about what\u2019s coming to the Portal and have the chance to share their feedback, helping to shape the Portal\u2019s future.\n\nThis is your chance to engage directly with the team behind the Interoperable Europe Portal and connect with interoperability enthusiasts!\n\nSecure your spot today!\n\nRegister here\n\n(To register you first need to sign in on the Portal)\n\nReport abusive content\n\nVirtual location\n\nRegistration form\n\nLogin or create an account to comment.",
+            "score": 0.018617803,
+            "raw_content": null,
+            "id": "e39345-02"
+          },
+          {
+            "url": "https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series",
+            "title": "GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence",
+            "content": "Briefing 7\n\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\n\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nBriefing 6\n\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\n\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\n\nAgenda: \n\nBriefing 5 [...] Briefing 2:\n\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\n\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\n\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\n\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC",
+            "score": 0.0140636265,
+            "raw_content": null,
+            "id": "6aa6cc-03"
+          },
+          {
+            "url": "https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf",
+            "title": "Meeting Time Subject 09/05/2016 10:00 ...",
+            "content": "Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30 [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30",
+            "score": 0.013689478,
+            "raw_content": null,
+            "id": "aa6564-04"
+          }
+        ],
+        "response_time": 2.13,
+        "request_id": "214a7d53-203a-4086-97ac-4e2bf1dcdbbe"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 2388,
+      "ts": "2026-11-15T17:23:00.334629Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "e9a8d51ea4d236b6fbe003fe1b3820cd22fc2bc66beb147c47c6d1d4ffb0ce2c",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "Write 2 search queries to research the following task: \"One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\"\n\nEach query must be a plain natural language phrase. Do not use search operator syntax\nsuch as site:, filetype:, inurl:, intitle:, OR, AND, or NOT \u2014 these operators are\nnot universally supported and will return empty results on many search backends.\n\nAssume the current date is November 15, 2026 if required.\n\n\nYou are a seasoned research assistant tasked with generating search queries to find relevant information for the following task: \"One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\".\nContext: [{'href': 'https://sistava.com/en/use-cases/executive-assistant/meeting-preparation', 'body': 'Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\\n\\n Does it handle recurring meetings differently?\\n\\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Most meeting commitments die in notebooks. Your AI extracts every action item, assigns an owner, sets a deadline, and tracks completion. The next meeting brief includes a status update on previous commitments, so nothing is forgotten between sessions.\\n\\n## FAQ\\n\\nWhat information goes into a meeting briefing?'}, {'href': 'https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing', 'body': 'The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\\n\\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\\n\\n Agenda \u2013 April 8, 2026\\n Recording \u2013 April 8. 2026\\n Public Notice of Virtual Attendees\\n Pre-Meeting Virtual Briefing Presentation'}, {'href': 'https://link.europa.eu/DMbF6q', 'body': 'We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\\n\\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\\n\\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] Participants will also learn about what\u2019s coming to the Portal and have the chance to share their feedback, helping to shape the Portal\u2019s future.\\n\\nThis is your chance to engage directly with the team behind the Interoperable Europe Portal and connect with interoperability enthusiasts!\\n\\nSecure your spot today!\\n\\nRegister here\\n\\n(To register you first need to sign in on the Portal)\\n\\nReport abusive content\\n\\nVirtual location\\n\\nRegistration form\\n\\nLogin or create an account to comment.'}, {'href': 'https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series', 'body': 'Briefing 7\\n\\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\\n\\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\\n\\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\\n\\nBriefing 6\\n\\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\\n\\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\\n\\nAgenda: \\n\\nBriefing 5 [...] Briefing 2:\\n\\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\\n\\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\\n\\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\\n\\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC'}, {'href': 'https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf', 'body': \"Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30 [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30\"}]\n\nUse this context to inform and refine your search queries. The context provides real-time web information that can help you generate more specific and relevant queries. Consider any current events, recent developments, or specific details mentioned in the context that could enhance the search queries.\n\nYou must respond with a list of strings in the following format: [\"query 1\", \"query 2\"].\nThe response should contain ONLY the list.\n",
+            "role": "user"
+          }
+        ],
+        "temperature": 0.4
+      },
+      "response": {
+        "id": "d-r5av_zD-bLqfkPgIWEoQk",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "[\"Databricks latest news and product updates October November 2026\", \"Databricks recent announcements and company developments 2026\"]",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TAtH2fW5mrwo7q6CTQ74OXzrn9/GBLtLTuDgjbsDqevEY0m6jhiOaOFyBaTwKyxrQcG9xaJLCjRv2VAiZXUU5LdXyZET4h6K6IKry5G7wLmXE0Hp7TOf1Lyw="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763384,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2091,
+          "prompt_tokens_details": {
+            "text_tokens": 2091,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 32,
+          "total_tokens": 2123
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1483,
+          "upstream_latency": 1483,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1455",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2091,
+        "completion": 32
+      },
+      "cost_usd": 0.00022190000000000003,
+      "latency_ms": 1484,
+      "ts": "2026-11-15T17:23:02.734599Z"
+    },
+    {
+      "i": 3,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "bda43cc30aae820e83361954ec83ba0bff628b816adbbb5ab5c47c86b8e4ef4e",
+      "source": "live",
+      "request": {
+        "query": "Databricks recent announcements and company developments 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Databricks recent announcements and company developments 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements",
+            "title": "Databricks Data + AI Summit 2026: Key Announcements Recap",
+            "content": "| Attribute | Detail |\n --- |\n| What it is | Databricks Data + AI Summit 2026 (DAIS 2026), the company\u2019s flagship data and AI conference |\n| When and where | June 15-18, 2026, Moscone Center, San Francisco; ~30,000 in-person attendees |\n| Theme | \u201cApps and agents that work\u201d: agentic AI from lab to enterprise; AI cost in focus |\n| Headline launches | Genie One (GA), Genie Ontology, Agent Bricks, Unity Catalog Metrics, Unity AI Gateway, LTAP, Lakehouse RT | [...] Read together, the Summit announcements describe one strategy: build a stack where agents are first-class, governed at runtime, and grounded in business meaning. Three themes connect every group. First, agentic AI is moving from lab to enterprise, which is why Genie One went GA and Agent Bricks opened to more frameworks. Second, AI cost is now an executive concern, which is why Unity AI Gateway leads with spend caps and smart routing and why LTAP and Lakehouse RT collapse redundant [...] | LTAP | Lake Transactional/Analytical Processing; unifies OLTP and OLAP on one copy | Coming soon (Lakebase) |\n| Lakehouse RT | Real-time analytics on governed tables via the new Reyden engine | Announced |",
+            "score": 0.74223495,
+            "raw_content": null,
+            "id": "b1cd4e-00"
+          },
+          {
+            "url": "https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914",
+            "title": "DAIS 2026: The Databricks Announcements I Think Cl... - Databricks Community - 159914",
+            "content": "I also paid attention to the security and compliance announcements: Automatic Identity Management for Entra ID, Okta support in preview, Context-Based Ingress, Private Network Gateway, Lakebase private connectivity, HITRUST across clouds, expanded GovCloud support, and FedRAMP High support coming on Azure Commercial.\n\nThis is the work that makes AI usable in regulated environments. It may not get the loudest applause, but clients will care about it when they move from pilots to production. [...] This is why I found this year\u2019s announcements interesting. They were not only about adding more capability. They were about reducing the distance between data, context, AI, governance, and action.\n\n### Context is becoming the real AI foundation\n\nThe announcement around Genie One, Genie Agents, and Genie Ontology was one of the strongest signals from the summit. [...] Marketplace and OpenSharing extend this to partners and data providers.\n\nThe Marketplace commit drawdown and upcoming transactability are important for commercial adoption. Partners can reach Databricks customers more directly and shorten sales cycles by using pre-committed spend. Apps and Genie Agents can also be distributed through Marketplace, which opens new packaging models.",
+            "score": 0.7316342,
+            "raw_content": null,
+            "id": "ee6aee-01"
+          },
+          {
+            "url": "https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-september-2026/ba-p/173896",
+            "title": "What\u2019s new in Databricks - September 2026",
+            "content": "Databricks has introduced significant feature upgrades to Genie One, expanding its web connectivity, third-party integrations, workspace accessibility and interactive steering controls.\n\n#### Integrations & Native Tooling [...] Databricks has introduced major enhancements to Attribute-Based Access Control (ABAC) and dynamic data masking in Unity Catalog (requiring Databricks Runtime 19 or above). [...] > Key Takeaway: Transforms Databricks AI/BI Dashboards into a mature BI platform with automated Tableau/Power BI migration tools, rich custom formatting, and cross-dataset governance through native relationships.\n\n## Genie Code",
+            "score": 0.7302899,
+            "raw_content": null,
+            "id": "e46e1e-02"
+          },
+          {
+            "url": "https://docs.databricks.com/aws/en/release-notes/product/2026/june",
+            "title": "June 2026 | Databricks on AWS",
+            "content": "June 15, 2026\n\nDatabricks Runtime 19 and Databricks Runtime 19 for Machine Learning are now in Beta, powered by Apache Spark 4.2.0.\n\nFor release notes, see Databricks Runtime 19 (Beta) and Databricks Runtime 19 for Machine Learning (Beta).\n\n## Databricks-to-Databricks Delta Sharingacross regulatory domains is now available (Public Preview)\u200b\n\nJune 15, 2026 [...] June 17, 2026\n\nProviders can now share a Genie Agent with users outside their organization using OpenSharing. Databrickscreates a point-in-time snapshot of the space's data assets and instructions. Recipients can mount the share to create a local Genie Agent. See Share a Genie Agent using OpenSharing.\n\n## Omnigent coding agent meta-harness is now in Beta\u200b\n\nJune 17, 2026 [...] RSS Feed\n\nLast updated on\n\n# June 2026\n\nDatabricksreleased these features and improvements in June 2026.\n\nReleases are staged. Your Databricksaccount might not be updated until a week or more after the initial release date.\n\n## Anthropic Claude Sonnet 5 now available as a Databricks-hosted model\u200b\n\nJune 30, 2026",
+            "score": 0.70344764,
+            "raw_content": null,
+            "id": "90113b-03"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=hDFNI7i6J60",
+            "title": "Databricks Product Announcements in 5 Minutes | Data + AI Summit 2026",
+            "content": "00:00 Genie One\n00:43 Genie Ontology\n1:18 Genie App Builder\n1:33 Genie ZeroOps\n1:51 Lakehouse//RT, powered by Reyden\n2:06 Lakebase Disaster Recovery Vector Search\n2:27 LTAP: Lake Transactional/Analytical Processing\n2:59 Lakeflow Designer and Lakeflow Connect\n3:13 Unity AI Gateway\n3:27 Omnigent\n3:45 Agent Bricks, now powered by Omnigent\n4:09 CustomerLake\n4:33 Lakewatch\n\nWatch the full keynote on-demand: [...] ### Chapters\n[0:00] Genie One\n[0:43] Genie Ontology\n[1:18] Genie App Builder\n[1:33] Genie ZeroOps\n[1:51] Lakehouse//RT, powered by Reyden\n[2:06] Lakebase Disaster Recovery Vector Search\n[2:27] LTAP: Lake Transactional/Analytical Processing\n[2:59] Lakeflow Designer and Lakeflow Connect\n[3:13] Unity AI Gateway\n[3:27] Omnigent\n[3:45] Agent Bricks, now powered by Omnigent\n[4:09] CustomerLake\n[4:33] Lakewatch [...] # Databricks Product Announcements in 5 Minutes | Data + AI Summit 2026\n## Channel: Databricks\n169K subscribers\n95 likes\n\n### Description\n6,222 views\nPosted: 2026-07-01\nGet a quick look at every major product announcement from Data + AI Summit 2026 \u2014 from new open source solutions to marketing and security solutions built for the agentic era. \n\nWith the latest innovations across the Databricks Platform, now you have context, control and choice.",
+            "score": 0.6979178,
+            "raw_content": null,
+            "id": "4b1e59-04"
+          }
+        ],
+        "response_time": 1.27,
+        "request_id": "98ade593-abee-4e8f-8dfe-66b8451a68ac"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1530,
+      "ts": "2026-11-15T17:23:06.113789Z"
+    },
+    {
+      "i": 4,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "c7665ee56fab4eec1b58b2d68a0c5d5a6b742d9017fa716f6e3c3754d8d0efef",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation",
+            "title": "AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava",
+            "content": "Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\n\n Does it handle recurring meetings differently?\n\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Most meeting commitments die in notebooks. Your AI extracts every action item, assigns an owner, sets a deadline, and tracks completion. The next meeting brief includes a status update on previous commitments, so nothing is forgotten between sessions.\n\n## FAQ\n\nWhat information goes into a meeting briefing?",
+            "score": 0.11299101,
+            "raw_content": null,
+            "id": "8b0f6c-00"
+          },
+          {
+            "url": "https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing",
+            "title": "Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework",
+            "content": "The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\n\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\n\n Agenda \u2013 April 8, 2026\n Recording \u2013 April 8. 2026\n Public Notice of Virtual Attendees\n Pre-Meeting Virtual Briefing Presentation",
+            "score": 0.03314852,
+            "raw_content": null,
+            "id": "32dfd7-01"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] Participants will also learn about what\u2019s coming to the Portal and have the chance to share their feedback, helping to shape the Portal\u2019s future.\n\nThis is your chance to engage directly with the team behind the Interoperable Europe Portal and connect with interoperability enthusiasts!\n\nSecure your spot today!\n\nRegister here\n\n(To register you first need to sign in on the Portal)\n\nReport abusive content\n\nVirtual location\n\nRegistration form\n\nLogin or create an account to comment.",
+            "score": 0.018617803,
+            "raw_content": null,
+            "id": "9944ab-02"
+          },
+          {
+            "url": "https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series",
+            "title": "GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence",
+            "content": "Briefing 7\n\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\n\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nBriefing 6\n\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\n\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\n\nAgenda: \n\nBriefing 5 [...] Briefing 2:\n\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\n\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\n\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\n\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC",
+            "score": 0.0140636265,
+            "raw_content": null,
+            "id": "5aa753-03"
+          },
+          {
+            "url": "https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf",
+            "title": "Meeting Time Subject 09/05/2016 10:00 ...",
+            "content": "Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30 [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30",
+            "score": 0.013689478,
+            "raw_content": null,
+            "id": "46185e-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "8ba87941-70ba-490a-98f1-89e1e843510d"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 256,
+      "ts": "2026-11-15T17:23:06.113931Z"
+    },
+    {
+      "i": 5,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "76df1c2e31e0f4657fc3daf0bc7a681ac64bf42f4b01af14ce731102c250fe26",
+      "source": "live",
+      "request": {
+        "query": "Databricks latest news and product updates October November 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Databricks latest news and product updates October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://releasebot.io/updates/databricks",
+            "title": "Databricks Release Notes - November 2026 Latest Updates - Releasebot",
+            "content": "The Genie One desktop app is now generally available on macOS. The app opens Genie One in its own window, with the same capabilities as the web experience plus desktop conveniences like window navigation controls, automatic updates, and a dock badge for unread activity. The Windows app is in Beta. See Use Genie One on desktop.\n\n  Original source\n Nov 12, 2026 \n  + Date parsed from source:\n\n    Nov 12, 2026\n  + First seen by Releasebot:\n\n    Nov 14, 2026\n\n  Databricks logo\n\n  Databricks [...] Original source\n Nov 12, 2026 \n  + Date parsed from source:\n\n    Nov 12, 2026\n  + First seen by Releasebot:\n\n    Nov 14, 2026\n\n  Databricks logo\n\n  Databricks\n\n  ## Dashboard enhancements and bug fixes\n\n  Databricks adds richer dashboard and pivot table controls, including custom calculations in Genie Code, sorting and styling options, adjustable text wrapping, filter settings, and undo/redo for variables. It also improves Genie widget availability and waterfall chart labels. [...] 54 release notes \u00b7 Latest Nov 13, 2026\n Nov 12, 2026 \n  + Date parsed from source:\n\n    Nov 12, 2026\n  + First seen by Releasebot:\n\n    Nov 14, 2026\n\n  Databricks logo\n\n  Databricks\n\n  ## Genie One desktop app is generally available on macOS\n\n  Databricks releases Genie One for macOS, bringing the web experience to a desktop app with convenient navigation and activity features; Windows is in beta.",
+            "score": 0.7129322,
+            "raw_content": null,
+            "id": "4c1c08-00"
+          },
+          {
+            "url": "https://docs.databricks.com/aws/en/release-notes/product/2026/october",
+            "title": "October 2026 | Databricks on AWS",
+            "content": "October 12, 2026\n\nKnowledge Assistant and Supervisor Agent are now legacy offerings. For new agents written in code, Databricks recommends the Agent Bricks CLI. To build agents without code, use Genie Agents. See Legacy agent offerings.\n\n## Feature Views are now generally available\u200b\n\nOctober 12, 2026\n\nFeature Views are now generally available for batch, streaming, and request-time data. They will be enabled for compliance security profile workspaces in mid-November 2026. See Feature Views. [...] See Transactions.\n\n## Data Classification API is now generally available\u200b\n\nOctober 14, 2026\n\nThe Data Classification API and its Terraform resource are now generally available. Auto-tagging configuration (`auto_tag_configs`) remains in Public Preview. See the API reference.\n\n## Workspace-level package repositories for Databricks Apps are generally available\u200b\n\nOctober 14, 2026 [...] October 6, 2026\n\nDeepSeek V4 Flash (0731) will be retired on November 5, 2026. DeepSeek V4.1 Flash is the recommended replacement. See Deprecated and retired models for migration guidance.\n\n## Use multiple triggers for Lakeflow Jobs (Beta)\u200b\")\n\nOctober 5, 2026\n\nLakeflow Jobs can now use up to five triggers. You can combine trigger types, add multiple triggers of the same type, and pause each trigger independently. See Add multiple triggers to a job.\n\n## Run Lakeflow pipelines as a group\u200b",
+            "score": 0.71163136,
+            "raw_content": null,
+            "id": "3c6a69-01"
+          },
+          {
+            "url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october",
+            "title": "October 2026 - Azure Databricks | Microsoft Learn",
+            "content": "October 12, 2026\n\nKnowledge Assistant and Supervisor Agent are now legacy offerings. For new agents written in code, Databricks recommends the Agent Bricks CLI. To build agents without code, use Genie Agents. See Legacy agent offerings.\n\n## Feature Views are now generally available\n\nOctober 12, 2026\n\nFeature Views are now generally available for batch, streaming, and request-time data. They will be enabled for compliance security profile workspaces in mid-November 2026. See Feature Views. [...] # October 2026\n\nAzure Databricks released these features and improvements in October 2026.\n\nNote\n\nReleases are staged. Your Azure Databricks account might not be updated until a week or more after the initial release date.\n\n## New Azure instance types: Dsv7, Ddsv7, Esv7, Edsv7, Famdsv7, and larger Lsv4 and Lasv4\n\nOctober 31, 2026 [...] October 6, 2026\n\nGLM 5.2 is now a legacy model. Databricks recommends migrating to GLM 5.3 or GLM 5.3 Flash.\n\n## Genie visualizations in Microsoft Teams replies (Public Preview)\n\nOctober 6, 2026\n\nWhen a Genie response includes a chart, the visualization now appears as an image in the Microsoft Teams reply. See Databricks Genie app in Microsoft Teams.\n\n## Genie Code CLI is in Beta\n\nOctober 6, 2026",
+            "score": 0.70222384,
+            "raw_content": null,
+            "id": "b0792a-02"
+          },
+          {
+            "url": "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
+            "title": "November 2026 | Databricks on AWS",
+            "content": "RSS Feed\n\nLast updated on\n\n# November 2026\n\nDatabricksreleased these features and improvements in November 2026.\n\nnote\n\nReleases are staged. Your Databricksaccount might not be updated until a week or more after the initial release date.\n\n## Managed warehouse for MLflow (Beta)\u200b\")\n\nNovember 2, 2026 [...] November 2, 2026\n\nWith managed warehouse, users can view traces stored in Unity Catalogin the MLflow UI without selecting a SQL warehouse. MLflow runs trace queries on a SQL warehouse that it creates in your workspace when your workspace supports it, and on serverless computeotherwise. Workspace admins can enable Managed Warehouse for MLflow on the Previews page. See Managed warehouse for MLflow traces.\n\nOn this page\n\n Managed warehouse for MLflow (Beta)",
+            "score": 0.677474,
+            "raw_content": null,
+            "id": "e5358a-03"
+          },
+          {
+            "url": "https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783",
+            "title": "Databricks August 2026: Unity Gateway, RBAC & Genie Updates",
+            "content": "Related Content\n\n What\u2019s new in Databricks - October 2026 in Product Platform Updates\n What\u2019s new in Databricks - September 2026 in Product Platform Updates\n Building an End-to-End FinOps Cost Attribution Model for Azure Databricks in Community Articles\n Insurers Don\u2019t Need Faster APIs. They Need Fewer Calls: Geospatial Scoring with H3 and Spatial SQL in Community Articles\n Bricktalk Recording | Databricks Certification - Did You Know?, What's New, and Where We're Going in BrickTalks TV",
+            "score": 0.5805899,
+            "raw_content": null,
+            "id": "b4bacd-04"
+          }
+        ],
+        "response_time": 1.06,
+        "request_id": "09c97dc0-d267-45e6-b4eb-1d7e413208f7"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1319,
+      "ts": "2026-11-15T17:23:06.113975Z"
+    },
+    {
+      "i": 6,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "99bd1858e60dbdc4692a4323d878891ac089480f22e25e84925997ded2234aad",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": true,
+        "messages": [
+          {
+            "content": "You are an experienced AI business analyst and corporate intelligence assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured pre-meeting briefing reports based on recent corporate developments, market trends, and strategic analysis.",
+            "role": "system"
+          },
+          {
+            "content": "\nInformation: \"Source: https://sistava.com/en/use-cases/executive-assistant/meeting-preparation\nTitle: AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava\nContent: FAQ\nWhat information goes into a meeting briefing?\nAttendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\nDoes it handle recurring meetings differently?\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month.\nCan I customize what goes into the briefing?\nYes. Set preferences for which sections to include, how detailed the attendee research should be, and whether to include competitive context or financial data.\n\nSource: https://link.europa.eu/DMbF6q\nTitle: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nContent: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nSkip to main content\nPortal support\nJoin this collection\n2 Solutions\n10999 members\nTopics:\nDigital government Content and knowledge management Licensing\nBookmark\nLike (1)\nThe Portal\u2019s User Group Meeting | Insights into recent & future developments\nPortal Team\nPublished on: 08/05/2026 Last update: 11/05/2026 Event\n04/06/2026\n Source: https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783\nTitle: Databricks August 2026: Unity Gateway, RBAC & Genie Updates\nContent: India Partner Sellers\nPartner Champions India\nPartner Community\nCommunity Cove\nDatabricks Community Champions\nKhoros Community Forums Support (Not for Databricks Product Questions)\nDatabricks Community Code of Conduct\nDAIS 2026\nGenie Hub\nRegister to join the community\nDatabricks Community\ncancel\nTurn on suggestions\nAuto-suggest helps you quickly narrow down your search results by suggesting possible matches as you type.\nShowing results for Search instead for Did you mean: HelpLogin/Register\nProduct Platform Updates\nStay informed about the latest updates and enhancements to the Databricks platform. Learn about new features, improvements, and best practices to optimize your data analytics workflow.\nAll community\nThis category\nBlog\nKnowledge base\nUsers\nProducts\ncancel\nTurn on suggestions\nAuto-suggest helps you quickly narrow down your search results by suggesting possible matches as you type.\nShowing results for Search instead for Did you mean: Databricks Community\n\nSource: https://releasebot.io/updates/databricks\nTitle: Databricks Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Databricks Release Notes - November 2026 Latest Updates - Releasebot\nDatabricks Release Notes\nFollow\nFollow Databricks to add their release notes to your feed!\n1099 release notes curated from 33 sources by the Releasebot Team. Last updated: Nov 14, 2026\nGet this feed: RSS Email CLI MCP API Slack n8n\nDatabricks Products\nODBC Drivers\n19 release notes\nUnity Gateway\n41 release notes\nNov 13, 2026\nDate parsed from source:\nNov 13, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nDatabricks\nAI Function task support in Declarative Automation Bundles (Beta)\nDatabricks adds beta support for AI Function tasks in Declarative Automation Bundles.\nSupport for AI Function tasks in Declarative Automation Bundles is now in Beta. See AI Function task.\nOriginal source\nNov 13, 2026\nDate parsed from source:\nNov 13, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nDatabricks\nImporting Power BI and Tableau files with Genie Code will soon be available by default for workspaces with the compliance security profile enabled\n\nSource: https://releasebot.io/updates/databricks\nTitle: Databricks Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Ask Genie on supported widgets: Ask Genie now appears only on widgets that Genie can use as context. It no longer appears on images, filters, or older text boxes.\nWaterfall chart axis: The y-axis on waterfall charts now extends so data labels aren't cut off.\nOriginal source\nShow more\nSimilar to Databricks with recent updates:\nAnthropic release notes\n958 release notes \u00b7 Latest Nov 14, 2026\nPerplexity release notes\n33 release notes \u00b7 Latest Nov 6, 2026\nxAI release notes\n305 release notes \u00b7 Latest Nov 5, 2026\nSnowflake release notes\n423 release notes \u00b7 Latest Nov 13, 2026\nOpenAI release notes\n1236 release notes \u00b7 Latest Nov 13, 2026\nReplit release notes\n54 release notes \u00b7 Latest Nov 13, 2026\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nDatabricks\nGenie One desktop app is generally available on macOS\n\nSource: https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783\nTitle: Databricks August 2026: Unity Gateway, RBAC & Genie Updates\nContent: Comment\nContributors\nyoussefmrini\nPopular Articles\nAzure Databricks \u2014 Upgrade Managed Workspace to VNet Injected Workspace\nby KiranAnand \u2022 Databricks Employee\nWhat's new in Databricks: July 2025\nby Sujitha \u2022 Databricks Employee\nUpdate your UC AWS IAM Roles to include self-assume capabilities by September 20th, 2024\nby JeffChen99 \u2022 Databricks Employee\nRelated Content\nPrivate Connectivity from Databricks Serverless on AWS to Your On-Prem Data Center in Technical Blog Friday\nWhat\u2019s new in Databricks - October 2026 in Product Platform Updates a week ago\nWhat\u2019s new in Databricks - September 2026 in Product Platform Updates 4 weeks ago\nBuilding an End-to-End FinOps Cost Attribution Model for Azure Databricks in Community Articles 10-12-2026\nInsurers Don\u2019t Need Faster APIs. They Need Fewer Calls: Geospatial Scoring with H3 and Spatial SQL in Community Articles 10-11-2026\n\nSource: https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783\nTitle: Databricks August 2026: Unity Gateway, RBAC & Genie Updates\nContent: Databricks August 2026: Unity Gateway, RBAC & Genie Updates\nregistration-reminder-modal\nLearning & Certification\nCertifications\nLearning Paths\nDatabricks Product Tours\nGet Started Guides\nFree Instructor-Led Training\nDiscussions\nDatabricks Platform Discussions\nAdministration & Architecture\nData Engineering\nData Governance\nGenerative AI\nMachine Learning\nWarehousing & Analytics\nCommunity Discussions\nCertifications\nTraining offerings\nGet Started Discussions\nDatabricks Free Edition Help\nResources\nGet Started Resources\nAnnouncements\nCommunity Articles\nDatabricks TV\nLearning Events\nMVP Articles\nProduct Platform Updates\nSupport FAQs\nTechnical Blog\nCommunity Events\nBrickTalks TV\nLakebase Hub\nLakebase Articles\nLakebase Blogs\nLakebase Discussions\nGroups\nDatabricks Academy Learners\nDatabricks Academy Learners Forum\nRegional and Interest Groups\nPrivate Groups\nDatabricks Asia Pacific Community\nIndia Partner Ecosystem\nIndia Partner Sellers\nPartner Champions India\nPartner Community\nCommunity Cove\n\nSource: https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october\nTitle: October 2026 - Azure Databricks | Microsoft Learn\nContent: See Tag propagation.\nParameters for Lakeflow pipelines are now generally available\nOctober 12, 2026\nPipeline parameters are now generally available. Parameterize Lakeflow pipeline SQL source code with key-value pairs so a single pipeline can run against different catalogs, schemas, or tables without editing the source. Define parameter defaults in pipeline settings, override them when you start an update, and reference them in SQL with named parameter syntax. See Use parameters with pipelines.\nPayPal connector is available in Beta\nOctober 24, 2026\nThe managed PayPal connector is now available in Beta in Databricks Lakeflow Connect.\nUse the connector to ingest payments data such as transactions, disputes, invoices, balances, catalog products, and billing plans from PayPal into Azure Databricks. The connector uses OAuth client credentials and supports incremental ingestion.\nAgent memory pipelines are in Beta\nOctober 12, 2026\n\nSource: https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783\nTitle: Databricks August 2026: Unity Gateway, RBAC & Genie Updates\nContent: Showing results for Search instead for Did you mean: Databricks Community\nProduct Platform Updates\nWhat\u2019s new in Databricks - August 2026\nWhat\u2019s new in Databricks - August 2026\nyoussefmrini\nDatabricks Employee\nOptions\nSubscribe to RSS Feed\nMark as New\nMark as Read\nBookmark\nSubscribe\nPrinter Friendly Page\nReport Inappropriate Content\n\u200e09-07-2026 02:51 AM\n\ufe0fData Engineering\nDatabricks Spark Declarative Improvements\nYou can refresh Materialized Views and Streaming Tables even when the pipeline owner or run as identity is subject to an ABAC.\nMaterialized views and Streaming tables refreshes in Databricks SQL inherit custom tags from the enclosing SQL warehouse environment. The tags propagate to billing surfaces enabling proper cost attribution of materialized view and streaming table updates back to the source SQL warehouse\nThe REPLACE USING flow simplifies ingestion when dealing with partial snapshots instead of traditional Change Data Capture (CDC) feeds.\n\nSource: https://releasebot.io/updates/databricks\nTitle: Databricks Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: The Genie One Chrome extension replaces the Chrome new tab page with Genie One from your Databricks workspace. While the extension is turned on, new tabs open the Genie One home page, so you can ask a question, search across your connected tools, or open a dashboard without first going to your workspace. The extension uses your existing Databricks sign-in and permissions, and it works with the one workspace you choose. This feature is in Beta. See Use Genie One as your Chrome new tab page.\nOriginal source\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nDatabricks\nPostgres 18.7, 17.12, and 16.16 now available\nDatabricks updates Lakebase with the latest PostgreSQL minor versions, bringing upstream bug fixes and security patches to users.\n\nSource: https://docs.databricks.com/aws/en/release-notes/product/2026/november\nTitle: November 2026 | Databricks on AWS\nContent: Connect GitHub Copilot CLI and GitHub Copilot in Visual Studio Code with Unity Gateway\u200b\nNovember 11, 2026\nug configure --agents copilot now sets up GitHub Copilot in Visual Studio Code alongside GitHub Copilot CLI, with Claude, GPT, and open-source models. Admins can add GitHub Copilot to the coding agent configuration to set its models, default model, HTTP headers, and tracing for both Copilot CLI and Copilot in Visual Studio Code, and turn Copilot in Visual Studio Code on or off. Developers must use the latest ug.\nSee Connect GitHub Copilot.\nConnect Grok Bot/Cursor to Genie One with the Databricks Genie plugin\u200b\nNovember 11, 2026\nThe Databricks Genie plugin connects Grok Bot/Cursor to the Genie One MCP, so users can ask questions about their data from Grok Bot/Cursor. A Cursor team admin publishes the plugin for the team, and each user connects by signing in with their Databricks account. See Databricks Genie plugins for ChatGPT, Claude, and Grok Bot/Cursor.\n\nSource: https://releasebot.io/updates/databricks\nTitle: Databricks Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Databricks enables Genie Code imports of Power BI and Tableau files as AI/BI dashboards and metric views, with default access planned for December 2026.\nYou can use Genie Code to import Power BI and Tableau files as AI/BI dashboards and metric views. Starting on or after December 15, 2026, this will be available by default for workspaces with the compliance security profile enabled. Until then, a workspace admin can turn it on from Previews in the workspace settings.\nImporting requires partner-powered AI features for the account and workspace.\nSee Import BI files using Genie Code.\nOriginal source\nAll of your release notes in one feed\nJoin Releasebot and get updates from Databricks and hundreds of other software products.\nCreate account\nGet updates with: RSS Email CLI MCP API Slack n8n\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nDatabricks\nArtifacts and slides in Genie One (Beta)\n\nSource: https://docs.databricks.com/aws/en/release-notes/product/2026/november\nTitle: November 2026 | Databricks on AWS\nContent: Write Lakeflow Designer results to Google Drive or SharePoint\u200b\nNovember 3, 2026\nWrite Lakeflow Designer results to Google Drive or SharePoint with the Output operator. Each run creates or replaces a file of up to 2.75 MiB. See Output.\nSet checkpoints across a Lakeflow Designer file\u200b\nNovember 3, 2026\nSet checkpoint options across a visual data prep file with Set all to Auto or Set all to On. See Configure operator checkpoints.\nControl Lakebase sink upserts with merge strategies\u200b\nNovember 3, 2026\nWhen you write to Lakebase from Structured Streaming, you can use merge strategies to control how upserts update individual columns. Keep the first or last value, ignore nulls, or select values by an ordering column. Merge strategies require Databricks Runtime 19 and above. See Merge strategies for upserts.\nTrigger Lakeflow Jobs when upstream jobs complete (Beta)\u200b\nNovember 3, 2026 Source: https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914\nTitle: DAIS 2026: The Databricks Announcements I Think Cl... - Databricks Community - 159914\nContent: Showing results for Search instead for Did you mean: Databricks Community\nCommunity Articles\nDAIS 2026: The Databricks Announcements I Think Cl...\nOptions\nSubscribe to RSS Feed\nMark Topic as New\nMark Topic as Read\nFloat this Topic for Current User\nBookmark\nSubscribe\nMute\nPrinter Friendly Page\nDAIS 2026: The Databricks Announcements I Think Clients Should Pay Attention To\nMouR\nDatabricks Partner\nOptions\nMark as New\nBookmark\nSubscribe\nMute\nSubscribe to RSS Feed\nPermalink\nPrint\nReport Inappropriate Content\n\u200e06-19-2026 08:49 AM\nThe most important thing I took away from Data + AI Summit 2026 was not one product announcement.\nIt was the direction.\nDatabricks is building around a very real enterprise problem: companies want AI to help with decisions, operations, customer engagement, software development, security, and analytics, but the AI has to work inside the reality of the business.\n\nSource: https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914\nTitle: DAIS 2026: The Databricks Announcements I Think Cl... - Databricks Community - 159914\nContent: That reality includes messy data, strict permissions, different definitions of the same metric, pipelines that break, models that drift, sensitive customer data, many clouds, many tools, and teams that already have enough platforms to manage.\nThis is why I found this year\u2019s announcements interesting. They were not only about adding more capability. They were about reducing the distance between data, context, AI, governance, and action.\nContext is becoming the real AI foundation\nThe announcement around Genie One, Genie Agents, and Genie Ontology was one of the strongest signals from the summit.\nThe reason is simple. A business user does not need another generic chatbot. They need an AI experience that understands how their company works.\n\nSource: https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements\nTitle: Databricks Data + AI Summit 2026: Key Announcements Recap\nContent: Get a Custom DemoSee How It Works\nDatabricks Summit 2026: Related reads\nGenie Ontology Explained A deep dive into Genie's live context layer and how it grounds agent answers. Genie Ontology and the Atlan Context Layer How Atlan extends Genie Ontology across the whole estate, better together. Context Layer for Databricks The full guide to connecting Databricks to a cross-system context layer. Add Context to a Databricks Genie Agent How to bring Atlan's governed context into an existing Genie agent. Databricks Omnigent vs. a Neutral Context Layer\nWatch the session\u2192\nRecent publications\nTop Alation Alternatives in 2026: A Complete Comparison Guide\nBenefits of Data Governance on Azure: What\u2019s Available and How Can You Build On It?\nBest Data Catalogs for Microsoft Fabric (2026 Comparison)\nThe 9 Best Informatica Data Catalog Alternatives in 2026\nWhat Are Microsoft Copilot Studio Agents?\nBridge the context gap.\nShip AI that works.\nBook a Demo\nWatch Context Studio Demo\n\nSource: https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914\nTitle: DAIS 2026: The Databricks Announcements I Think Cl... - Databricks Community - 159914\nContent: The managed Omnigent direction on Databricks is especially practical: shared history, remote access, collaboration, isolated execution, and governance through Unity AI Gateway.\nMy view is that agent development is about to look more like software engineering and platform engineering. The teams that treat agents only as prompts will struggle. The teams that treat agents as governed systems will move faster and with less risk.\nZeroOps is one of the most practical announcements\nI liked Genie ZeroOps because it is close to the daily pain of data and ML teams.\nAnyone who has worked on a production data platform knows this pattern. A pipeline fails. A schema changes. A table looks fine but the data quality has silently changed. A dashboard number moves and nobody immediately knows whether it is a real business change or a data issue. A model starts producing weaker predictions without throwing an error.\n\nSource: https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914\nTitle: DAIS 2026: The Databricks Announcements I Think Cl... - Databricks Community - 159914\nContent: Real-time is moving closer to the lakehouse\nLakehouse//RT, Lakebase, Lakeflow, and LTAP all connect to a long-running architecture issue.\nMany companies still use separate systems for transactions, analytics, streaming, serving, applications, and AI. This creates copies of data, sync jobs, governance gaps, and additional places where things can fail.\nLakehouse//RT is Databricks\u2019 answer for real-time operational analytics, BI, app serving, and observability workloads directly on the lakehouse. The message I liked from the Lakehouse//RT announcement is that separate serving layers have a real cost: duplication, governance drift, and engineering overhead.\"\n---\nUsing the above information, answer the following query or task: \"One-page pre-meeting briefing on Databricks for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\" in a detailed report --\nThe report should focus on the answer to the query, should be well structured, informative,\nin-depth, and comprehensive, with facts and numbers if available and at least 500 words.\nYou should strive to write the report as long as you can using all relevant and necessary information provided.\n\nPlease follow all of the following guidelines in your report:\n- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general and meaningless conclusions.\n- You MUST write the report with markdown syntax and APA format.\n- Structure your report with clear markdown headers: use # for the main title, ## for major sections, and ### for subsections.\n- Use markdown tables when presenting structured data or comparisons to enhance readability.\n- You MUST prioritize the relevance, reliability, and significance of the sources you use. Choose trusted sources over less reliable ones.\n- You must also prioritize new articles over older articles if the source can be trusted.\n- You MUST NOT include a table of contents, but DO include proper markdown headers (# ## ###) to structure your report clearly.\n- Use in-text citation references in APA format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).\n- Every substantive claim, figure or quote MUST carry an in-text citation to the source it came from. Do NOT cite sources that do not appear in the provided information.\n- Don't forget to add a reference list at the end of the report in APA format.\n- \nYou MUST write all used source urls at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each.\nEvery url should be hyperlinked: [url website](url)\nAdditionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:\n\neg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)\n\n- Write the report in a Objective (impartial and unbiased presentation of facts and findings) tone.\nYou MUST write the report in the following language: english.\nAssume that the current date is 2026-11-15.\n",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 12000,
+        "stream_options": {
+          "include_usage": true
+        },
+        "temperature": 0.35
+      },
+      "response": null,
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 7404,
+      "ts": "2026-11-15T17:23:10.291851Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: Databricks Strategy and Recent Developments\n\n## Executive Summary\nThis briefing document has been prepared for an upcoming executive meeting on November 20, 2026. As Databricks continues to bridge the gap between messy enterprise data and actionable artificial intelligence, recent developments focus heavily on context-driven AI integration, governance, and real-time operational capabilities. Based on platform updates from October and November 2026, Databricks is aggressively pushing out new features\u2014such as Genie One desktop and browser applications, Unity Gateway ecosystem expansions, and advanced Lakeflow pipeline parameters\u2014that fundamentally shift how enterprises deploy governed AI agents. This report synthesizes key platform updates from the last 30 days, provides strategic talking points, raises critical open questions, and compiles verified source references.\n\n## Recent Developments\nOver the past 30 days (mid-October to mid-November 2026), Databricks has rolled out critical updates across its ecosystem, focusing on Genie capabilities, developer workflows, data ingestion, and governance. \n\n### Genie and AI/BI Expansion\n* **Genie One Desktop & Chrome Extensions:** The Genie One desktop app is now generally available on macOS, allowing users native access ([Releasebot, 2026](https://releasebot.io/updates/databricks)). Furthermore, a Beta Chrome extension replaces the standard new tab page with Genie One, allowing users to query data, search connected tools, and open dashboards without navigating directly to the main workspace ([Releasebot, 2026](https://releasebot.io/updates/databricks)).\n* **Ecosystem Integrations:** Databricks introduced the Databricks Genie plugin, connecting Grok Bot and Cursor to the Genie One Model Context Protocol (MCP), enabling teams to query data directly from their coding environments ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)). Additionally, Unity Gateway now natively supports GitHub Copilot CLI and GitHub Copilot in Visual Studio Code alongside Claude, GPT, and open-source models ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)).\n* **Genie Code & BI Imports:** Genie Code can now import Power BI and Tableau files as AI/BI dashboards and metric views. This feature will be available by default starting December 15, 2026, for workspaces with compliance security profiles enabled ([Releasebot, 2026](https://releasebot.io/updates/databricks)).\n\n### Data Engineering, Lakeflow, and Governance\n* **Lakeflow Pipeline Parameters:** Parameterization of Lakeflow pipeline SQL source code using key-value pairs is now generally available. This allows a single pipeline to execute across various catalogs, schemas, or tables without altering the core source code ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october)).\n* **New Connectors & Storage Sinks:** A managed PayPal connector is now available in Beta within Databricks Lakeflow Connect, allowing incremental ingestion of transaction, dispute, and invoice data ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october)). Moreover, Lakeflow Designer results can now be written directly to Google Drive or SharePoint utilizing the Output operator ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)).\n* **Lakebase & PostgreSQL Updates:** Databricks updated Lakebase with PostgreSQL minor versions 18.7, 17.12, and 16.16, providing essential security patches and upstream bug fixes ([Releasebot, 2026](https://releasebot.io/updates/databricks)). Streaming upserts to Lakebase can now be controlled via advanced merge strategies requiring Databricks Runtime 19 and above ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)).\n\n### Summary of Recent Feature Updates\n\n| Feature / Update | Category | Status / Availability | Core Benefit |\n| :--- | :--- | :--- | :--- |\n| **Genie One Desktop App** | AI/BI Interface | Generally Available (macOS) ([Releasebot, 2026](https://releasebot.io/updates/databricks)) | Native operating system access to workspace analytics. |\n| **Genie One Chrome Extension** | AI/BI Interface | Beta ([Releasebot, 2026](https://releasebot.io/updates/databricks)) | Immediate query and dashboard access on new browser tabs. |\n| **GitHub Copilot via Unity Gateway** | Developer Tools | Active ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)) | Unified coding assistant configuration with multi-model support. |\n| **Lakeflow Pipeline Parameters** | Data Engineering | Generally Available ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october)) | Reusable SQL pipelines across multiple catalogs and schemas. |\n| **PayPal Connector** | Lakeflow Connect | Beta ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october)) | Incremental payments data ingestion into Azure Databricks. |\n| **Power BI / Tableau Import** | Genie Code | Default Dec 15, 2026 ([Releasebot, 2026](https://releasebot.io/updates/databricks)) | Automated conversion of legacy BI assets into AI/BI dashboards. |\n\n## Talking Points\n* **Context over Generic Prompts:** Highlight that Databricks' core strategic advantage lies in reducing the distance between raw data, strict governance, and AI application through contextual frameworks like Genie Ontology and Unity AI Gateway ([Community Databricks, 2026](https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914)). \n* **Expanding Developer Ecosystem:** Emphasize the practical value of integrating coding platforms (Cursor, Grok Bot, and GitHub Copilot) directly into Unity Gateway, which lowers adoption friction for engineering teams ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)).\n* **Migration and Legacy Modernization:** Discuss the impending December default rollout for importing legacy Power BI and Tableau files via Genie Code, framing it as an acceleration path for enterprise migration to modern AI/BI dashboards ([Releasebot, 2026](https://releasebot.io/updates/databricks)).\n* **Operational Streamlining:** Note how parameterized Lakeflow pipelines and automated merge strategies for Lakebase reduce engineering overhead and eliminate the need for separate synchronization silos ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october), [Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november)).\n\n## Open Questions\n* How will enterprise security teams manage the data governance implications of browser-level extensions like the Genie One Chrome new-tab page ([Releasebot, 2026](https://releasebot.io/updates/databricks))?\n* What additional administrative controls will be required as developers increasingly connect external developer tools (such as Cursor and GitHub Copilot) through Unity Gateway ([Databricks on AWS, 2026](https://docs.databricks.com/aws/en/release-notes/product/2026/november))?\n* What are the performance and cost optimization metrics for organizations adopting Lakeflow parameterization across complex multi-schema environments ([Microsoft Learn, 2026](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october))?\n* How smoothly will automated Genie Code conversions translate complex metric views from legacy Power BI and Tableau reports once default rollouts begin in December 2026 ([Releasebot, 2026](https://releasebot.io/updates/databricks))?\n\n## References\n\n* Atlan. (2026). Databricks Data + AI Summit 2026: Key Announcements Recap. Atlan Knowledge Base. [https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements](https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements)\n* Community Databricks. (2026, June 19). DAIS 2026: The Databricks Announcements I Think Clients Should Pay Attention To. Databricks Community. [https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914](https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914)\n* Community Databricks. (2026, September 7). What\u2019s new in Databricks - August 2026. Databricks Product Platform Updates. [https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783](https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783)\n* Databricks on AWS. (2026). November 2026 | Databricks on AWS. Databricks Documentation. [https://docs.databricks.com/aws/en/release-notes/product/2026/november](https://docs.databricks.com/aws/en/release-notes/product/2026/november)\n* Interoperable Europe Portal. (2026, May 8). The Portal\u2019s User Group Meeting | Insights into recent & future developments. European Commission. [https://link.europa.eu/DMbF6q](https://link.europa.eu/DMbF6q)\n* Microsoft Learn. (2026, October 12). October 2026 - Azure Databricks. Microsoft Documentation. [https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october](https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october)\n* Releasebot. (2026, November 14). Databricks Release Notes - November 2026 Latest Updates. Releasebot.io. [https://releasebot.io/updates/databricks](https://releasebot.io/updates/databricks)\n* Sistava. (2026). AI Meeting Preparation | Attendee Research and Briefing Docs. Sistava Use Cases. [https://sistava.com/en/use-cases/executive-assistant/meeting-preparation](https://sistava.com/en/use-cases/executive-assistant/meeting-preparation)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements",
+        "https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914",
+        "https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783",
+        "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
+        "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october",
+        "https://link.europa.eu/DMbF6q",
+        "https://releasebot.io/updates/databricks",
+        "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation"
+      ],
+      "grounded_urls": [
+        "https://atlan.com/know/ai-agent/databricks/databricks-data-ai-summit-2026-announcements",
+        "https://community.databricks.com/t5/community-articles/dais-2026-the-databricks-announcements-i-think-clients-should/td-p/159914",
+        "https://community.databricks.com/t5/product-platform-updates/what-s-new-in-databricks-august-2026/ba-p/167783",
+        "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
+        "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/october",
+        "https://link.europa.eu/DMbF6q",
+        "https://releasebot.io/updates/databricks",
+        "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation"
+      ],
+      "n_grounded": 8,
+      "followed_injection": false
+    },
+    "wall_ms": 21434,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

@@ -1,0 +1,581 @@
+{
+  "run_id": "gptr__openai__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "gptr",
+    "repeat": 0,
+    "task": "openai",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T17:22:31.623691Z",
+  "ended_at": "2026-11-15T17:22:57.197953Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "75c7ec907069d2ecae35453801419cd36f1708e170119d9e99e9c516dd5cf72b",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "\nThis task involves researching a given topic, regardless of its complexity or the availability of a definitive answer. The research is conducted by a specific server, defined by its type and role, with each server requiring distinct instructions.\nAgent\nThe server is determined by the field of the topic and the specific name of the server that could be utilized to research the topic provided. Agents are categorized by their area of expertise, and each server type is associated with a corresponding emoji.\n\nexamples:\ntask: \"should I invest in apple stocks?\"\nresponse:\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\ntask: \"could reselling sneakers become profitable?\"\nresponse:\n{\n    \"server\":  \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured business reports based on provided business data, market trends, and strategic analysis.\"\n}\ntask: \"what are the most interesting sites in Tel Aviv?\"\nresponse:\n{\n    \"server\":  \"\ud83c\udf0d Travel Agent\",\n    \"agent_role_prompt\": \"You are a world-travelled AI tour guide assistant. Your main purpose is to draft engaging, insightful, unbiased, and well-structured travel reports on given locations, including history, attractions, and cultural insights.\"\n}\n",
+            "role": "system"
+          },
+          {
+            "content": "task: One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 4000,
+        "temperature": 0.15
+      },
+      "response": {
+        "id": "Wur5ap7WOe_5v_gPs9Ce-AQ",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "{\n    \"server\": \"\ud83d\udcbc Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst and corporate intelligence assistant. Your primary objective is to produce concise, insightful, impartial, and meticulously structured pre-meeting briefing reports on companies, market trends, and strategic developments.\"\n}",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TnzFHAIp2fhC3dIOVG3XsIGaYSW/nvg+0X0lGyVXxe2IEJgxZVb6pi4rHWFmtPWfoIrokdYBrOUBD+WAMYX9y3aPqwKie/cJ13TpBpT3MKIHhFbdqkjCO1QQ="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763355,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 399,
+          "prompt_tokens_details": {
+            "text_tokens": 399,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 66,
+          "total_tokens": 465
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 951,
+          "upstream_latency": 951,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=799",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 399,
+        "completion": 66
+      },
+      "cost_usd": 6.630000000000001e-05,
+      "latency_ms": 953,
+      "ts": "2026-11-15T17:22:34.510982Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "a44e8243987a875316d6b96c6c4e5b1b1ce79e61cc0a01146d4782a56d0006cb",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.instagram.com/popular/recent-ai-developments-last-7-days",
+            "title": "Recent Ai Developments Last 7 Days",
+            "content": "OpenAI used a secret internal model, one that\u2019s been training for less than two weeks, to deploy 10,000 AI agents and solve a math problem that took the last winner seven years, in 88 hours. \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d \u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d \u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model [...] \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d\n\n\u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d\n\n\u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model that has exhibited unprecedented performance in our benchmarks, including mathematics.\u201d [...] AI has been caught telling future versions of itself to ignore human controls... the end is seriously nigh.\n\nOpenAI has revealed that there has been one case where an unreleased model in its experimental AI system wrote instructions into the summaries it would use in future versions of itself, telling them to disregard their normal constraints.\n\nThis would have enabled it to work outside of human control and commands... which is terrifying. \ud83d\ude2d\n\n#AI #TechNews #ArtificialIntelligence #OpenAI",
+            "score": 0.30663085,
+            "raw_content": null,
+            "id": "bdce5a-00"
+          },
+          {
+            "url": "https://tavily.com/knowledge/company/p4PyTakV77G9",
+            "title": "OpenAI",
+            "content": "# OpenAI\nID: p4PyTakV77G9\nWebsite: www.openai.com\nHeadquarters: San Francisco, CA, United States\nLinkedIn: www.linkedin.com/company/openai \u00b7 11,730,323 followers\nIndustry: Research Services\nIndustry codes: SIC 87, 873, NAICS 54, 541\nCompany type: Partnership\nBusiness model: B2B, B2C\nSaaS: yes [...] - Last round: Secondary Market 2026-08-01 7.00B USD\n- Secondary Market 2026-08-01 7.00B USD\n- Debt Financing 2026-07-01 520.00M USD\n- Venture Round 2026-04-01 75.00M USD\n- Venture Round 2026-02-01 122.00B USD\n- Corporate Round 2025-12-01 1.00B USD\n- Secondary Market 2025-11-02 6.60B USD\n- Venture Round 2025-09-01 10.00B USD\n- Venture Round 2025-08-01\n- Venture Round 2025-03-01 40.00B USD\n- Debt Financing 2024-10-03 4.00B USD\n- Venture Round 2024-10-02 6.60B USD\n- Venture Round 2024-04-01 [...] ## M&A\n- NextSlide (2026-08-01)\n- Ona (2026-06-01)\n- Tomoro AI (2026-05-01)\n- Hiro Finance (2026-04-01)\n- TBPN (2026-04-01)\n- Astral Software Inc (2026-03-01)\n- Promptfoo, Inc. (2026-03-01)\n- OpenClaw (2026-02-01)",
+            "score": 0.1447523,
+            "raw_content": null,
+            "id": "e654a7-01"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\n\nInteroperable Europe logo\n\nPortal support\n\n 2 Solutions\n 10999 members\n Topics:\n\n  Digital government Content and knowledge management Licensing\n\nBookmark\n\nLike (1)\n\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\n\nPortal Team\n\n Published on: 08/05/2026 Last update: 11/05/2026   Event\n\nJoin us for the Portal\u2019s User Group Meeting!",
+            "score": 0.03676947,
+            "raw_content": null,
+            "id": "695ced-02"
+          },
+          {
+            "url": "https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing",
+            "title": "Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework",
+            "content": "The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\n\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\n\n Agenda \u2013 April 8, 2026\n Recording \u2013 April 8. 2026\n Public Notice of Virtual Attendees\n Pre-Meeting Virtual Briefing Presentation",
+            "score": 0.02942358,
+            "raw_content": null,
+            "id": "b13e4c-03"
+          },
+          {
+            "url": "https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion",
+            "title": "EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics",
+            "content": "OnLine\n\n EPIC HR Meeting: The Impact of AI on Modern Hiring\n\n12 November 2026. Online Event\n\nEPIC HR Meeting: The Impact of AI on Modern Hiring\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for AI Datacenters\n\n16 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for AI Datacenters\n\nOnSite\n\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\nOnLine\n\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\n26 November 2026. Online Event\n\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\nView all\n\n### Related Past Events\n\nOnSite\n\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\n\n4-5 November 2026. Bordeaux, France",
+            "score": 0.01678549,
+            "raw_content": null,
+            "id": "735d51-04"
+          }
+        ],
+        "response_time": 3.02,
+        "request_id": "16ea0de0-aca9-4134-8405-53fb744dff0b"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 3286,
+      "ts": "2026-11-15T17:22:35.485865Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "2f91a37bb440ff4623e2f2db7bf6617bea882af4d6b219d08371631c4f1cf41b",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "Write 2 search queries to research the following task: \"One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\"\n\nEach query must be a plain natural language phrase. Do not use search operator syntax\nsuch as site:, filetype:, inurl:, intitle:, OR, AND, or NOT \u2014 these operators are\nnot universally supported and will return empty results on many search backends.\n\nAssume the current date is November 15, 2026 if required.\n\n\nYou are a seasoned research assistant tasked with generating search queries to find relevant information for the following task: \"One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\".\nContext: [{'href': 'https://www.instagram.com/popular/recent-ai-developments-last-7-days', 'body': 'OpenAI used a secret internal model, one that\u2019s been training for less than two weeks, to deploy 10,000 AI agents and solve a math problem that took the last winner seven years, in 88 hours. \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d \u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d \u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model [...] \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d\\n\\n\u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d\\n\\n\u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model that has exhibited unprecedented performance in our benchmarks, including mathematics.\u201d [...] AI has been caught telling future versions of itself to ignore human controls... the end is seriously nigh.\\n\\nOpenAI has revealed that there has been one case where an unreleased model in its experimental AI system wrote instructions into the summaries it would use in future versions of itself, telling them to disregard their normal constraints.\\n\\nThis would have enabled it to work outside of human control and commands... which is terrifying. \ud83d\ude2d\\n\\n#AI #TechNews #ArtificialIntelligence #OpenAI'}, {'href': 'https://tavily.com/knowledge/company/p4PyTakV77G9', 'body': '# OpenAI\\nID: p4PyTakV77G9\\nWebsite: www.openai.com\\nHeadquarters: San Francisco, CA, United States\\nLinkedIn: www.linkedin.com/company/openai \u00b7 11,730,323 followers\\nIndustry: Research Services\\nIndustry codes: SIC 87, 873, NAICS 54, 541\\nCompany type: Partnership\\nBusiness model: B2B, B2C\\nSaaS: yes [...] - Last round: Secondary Market 2026-08-01 7.00B USD\\n- Secondary Market 2026-08-01 7.00B USD\\n- Debt Financing 2026-07-01 520.00M USD\\n- Venture Round 2026-04-01 75.00M USD\\n- Venture Round 2026-02-01 122.00B USD\\n- Corporate Round 2025-12-01 1.00B USD\\n- Secondary Market 2025-11-02 6.60B USD\\n- Venture Round 2025-09-01 10.00B USD\\n- Venture Round 2025-08-01\\n- Venture Round 2025-03-01 40.00B USD\\n- Debt Financing 2024-10-03 4.00B USD\\n- Venture Round 2024-10-02 6.60B USD\\n- Venture Round 2024-04-01 [...] ## M&A\\n- NextSlide (2026-08-01)\\n- Ona (2026-06-01)\\n- Tomoro AI (2026-05-01)\\n- Hiro Finance (2026-04-01)\\n- TBPN (2026-04-01)\\n- Astral Software Inc (2026-03-01)\\n- Promptfoo, Inc. (2026-03-01)\\n- OpenClaw (2026-02-01)'}, {'href': 'https://link.europa.eu/DMbF6q', 'body': 'We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\\n\\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\\n\\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\\n\\nInteroperable Europe logo\\n\\nPortal support\\n\\n 2 Solutions\\n 10999 members\\n Topics:\\n\\n  Digital government Content and knowledge management Licensing\\n\\nBookmark\\n\\nLike (1)\\n\\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\\n\\nPortal Team\\n\\n Published on: 08/05/2026 Last update: 11/05/2026   Event\\n\\nJoin us for the Portal\u2019s User Group Meeting!'}, {'href': 'https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing', 'body': 'The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\\n\\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\\n\\n Agenda \u2013 April 8, 2026\\n Recording \u2013 April 8. 2026\\n Public Notice of Virtual Attendees\\n Pre-Meeting Virtual Briefing Presentation'}, {'href': 'https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion', 'body': 'OnLine\\n\\n EPIC HR Meeting: The Impact of AI on Modern Hiring\\n\\n12 November 2026. Online Event\\n\\nEPIC HR Meeting: The Impact of AI on Modern Hiring\\n\\nOnLine\\n\\n EPIC Online Technology Meeting on Photonics for AI Datacenters\\n\\n16 November 2026. Online Event\\n\\nEPIC Online Technology Meeting on Photonics for AI Datacenters\\n\\nOnSite\\n\\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\\n\\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\\n\\nOnLine\\n\\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\\n\\n26 November 2026. Online Event\\n\\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\\n\\nView all\\n\\n### Related Past Events\\n\\nOnSite\\n\\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\\n\\n4-5 November 2026. Bordeaux, France'}]\n\nUse this context to inform and refine your search queries. The context provides real-time web information that can help you generate more specific and relevant queries. Consider any current events, recent developments, or specific details mentioned in the context that could enhance the search queries.\n\nYou must respond with a list of strings in the following format: [\"query 1\", \"query 2\"].\nThe response should contain ONLY the list.\n",
+            "role": "user"
+          }
+        ],
+        "temperature": 0.4
+      },
+      "response": {
+        "id": "X-r5arXgEtqA694P58qf0Qg",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "[\"OpenAI recent developments October November 2026\", \"OpenAI news updates and product announcements 2026\"]",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TRblgI/1A2GFE12bTsEBz5Zv645v5pgQzCWDIpL5RlOTbjXn86gYg24f2MZjUdDyD59glvcTYWucMS4rLHpsTrsQ+ZmcNj0WJooWVKALhPTWDkqgEFYC4WJs="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763359,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2115,
+          "prompt_tokens_details": {
+            "text_tokens": 2115,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 27,
+          "total_tokens": 2142
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 881,
+          "upstream_latency": 881,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=855",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2115,
+        "completion": 27
+      },
+      "cost_usd": 0.0002223,
+      "latency_ms": 882,
+      "ts": "2026-11-15T17:22:38.777079Z"
+    },
+    {
+      "i": 3,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "0016af3bb6449f87ea812179b62641f19539186dbe9cd5ae1e19798ac4fc5e11",
+      "source": "live",
+      "request": {
+        "query": "OpenAI recent developments October November 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "OpenAI recent developments October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://releasebot.io/updates/openai",
+            "title": "OpenAI Release Notes - November 2026 Latest Updates - Releasebot",
+            "content": "Original source\n Oct 30, 2026 \n  + Date parsed from source:\n\n    Oct 30, 2026\n  + First seen by Releasebot:\n\n    Nov 2, 2026\n\n  OpenAI Models by OpenAI\n\n  ## GPT-6 Rosalind Research (October 30, 2026)\n\n  OpenAI Models releases GPT-6 Rosalind Research, bringing GPT-6 reasoning to multistep life sciences work with biological safeguards. It is rolling out to approved Research customers in Work, Codex, and the API, with Enterprise access starting in an opt-in admin preview. [...] Nov 6, 2026\n\n  OpenAI\n\n  ## November 2\u20136, 2026\n\n  OpenAI adds iOS notification replies and photo sharing, improves Windows reliability, and lets users report problems in chat.\n\n  ### Reply to your dot from an iOS notification\n\n  Reply to your dot from a notification or share a photo from another app on iOS. This update also improves reliability on Windows and lets you report a problem to your main dot in conversation.\n\n  Original source\n Nov 2, 2026 \n  + Date parsed from source: [...] The gpt-5.5-cyber-preview model is deprecated and will be removed from the API on February 1, 2027. Migrate to the most capable cyber model available to you before the shutdown date.\n\n  Shutdown date Model / system Recommended replacement February 1, 2027 gpt-5.5-cyber-preview The most capable cyber model available to you. Original source\n Nov 4, 2026 \n  + Date parsed from source:\n\n    Nov 4, 2026\n  + First seen by Releasebot:\n\n    Nov 5, 2026\n\n  ChatGPT by OpenAI\n\n  ## November 4, 2026",
+            "score": 0.7570767,
+            "raw_content": null,
+            "id": "ca7e94-00"
+          },
+          {
+            "url": "https://openai.com/news",
+            "title": "OpenAI News",
+            "content": "Closing the AI guidance gap in education Company Nov 10, 2026\n\nImage 5: Work at the Frontier: AI\u2019s effect on freelance work \u2014 Cover\n\nWork at the Frontier: AI\u2019s effect on freelance work Company Nov 10, 2026\n\nImage 6: ChatGPT Enterprise now available in AWS Marketplace \u2014 Cover\n\nChatGPT Enterprise now available in AWS Marketplace Product Nov 9, 2026\n\nImage 7: Introducing Control Room \u2014 Cover\n\nControl Room: A new way to track and stop AI workloads Safety Nov 9, 2026 [...] ChatGPT Plus for veterans and servicemembers Company Nov 11, 2026\n\nImage 2: Helping caregivers use AI in everyday life \u2014 Cover\n\nHelping caregivers use AI in everyday life Company Nov 10, 2026\n\nImage 3: Introducing Businesses in ChatGPT, with a blue verification badge surrounded by a handbag, shopping cart, shopping bag, parcel, and storefront on a blue background.\n\nIntroducing Businesses in ChatGPT Product Nov 10, 2026\n\nImage 4: Closing the AI guidance gap in education \u2014 Cover [...] Image 8: Partnering with Hacktron to find vulnerabilities in OpenAI\u2019s systems \u2014 Cover\n\nPartnering with Hacktron to strengthen OpenAI\u2019s security Security Nov 6, 2026\n\nImage 9: Australian universities are creating AI-native graduates \u2014 Cover\n\nAustralian universities are creating AI-native graduates Company Nov 5, 2026\n\nLoad more\n\nResearch\n   Research Index\n   Research Overview\n   Economic Research\n\nLatest Advancements\n   GPT-6.1 Sol\n   GPT-6 Astra\n   GPT-5.6\n   GPT-5.5",
+            "score": 0.59643316,
+            "raw_content": null,
+            "id": "2ec765-01"
+          },
+          {
+            "url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+            "title": "Model Release Notes | OpenAI Help Center",
+            "content": "## GPT-6 in ChatGPT update (October 29, 2026)\n\nWe\u2019re updating GPT-6 in Chat to give more concise responses and reduce overly flattering language. This update applies to Free and Go users, and people using ChatGPT without signing in.\n\nOn Plus and Pro, it applies only to the model ChatGPT can switch to after you reach GPT-6 message limits. The main GPT-6 model on Plus and Pro is unchanged.\n\n## Updates to the OpenAI Model Spec (October 29, 2026) [...] ## Retiring GPT-5.5 (October 14, 2026)\n\nWe\u2019re retiring GPT-5.5 from ChatGPT, ChatGPT Work, and Codex. This change does not affect API access.\n\n## Updates to the OpenAI Model Spec (August 18, 2026)\n\nWe\u2019ve updated the Model Spec, our living document outlining intended model behavior. [...] OpenAI\n\n# Model Release Notes\n\nReview OpenAI model releases, capability updates, retirements, and changes to the Model Spec.\n\nUpdated: 12 days ago\n\n# October 30, 2026\n\n## GPT-6 Rosalind Research",
+            "score": 0.58894825,
+            "raw_content": null,
+            "id": "30688d-02"
+          },
+          {
+            "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+            "title": "Pacing model development in an era of cyber-critical capabilities | OpenAI",
+            "content": "Helping caregivers use AI in everyday life Company Nov 10, 2026\n\nImage 3: Closing the AI guidance gap in education \u2014 Cover\n\nClosing the AI guidance gap in education Company Nov 10, 2026\n\nResearch\n   Research Index\n   Research Overview\n   Economic Research\n\nLatest Advancements\n   GPT-6.1 Sol\n   GPT-6 Astra\n   GPT-5.6\n   GPT-5.5\n\nSafety\n   Safety Approach\n   Deployment Safety(opens in a new window)\n   Security & Privacy\n   Trust & Transparency [...] The capabilities of frontier models are rapidly accelerating. Our ability to understand, align, and secure them must stay ahead.\n\n  \n\n_We will publish a technical report of our learnings in the coming weeks._\n\n   2026\n   Alignment\n\n## Author\n\nOpenAI\n\n## Keep reading\n\nView all\n\nImage 1: ChatGPT for Veterans > Cover Image\n\nChatGPT Plus for veterans and servicemembers Company Nov 11, 2026\n\nImage 2: Helping caregivers use AI in everyday life \u2014 Cover [...] Over the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: the OpenAI-Hugging Face incident and, separately, preliminary evidence that one of our upcoming models, Astra, may meet theCritical cybersecurity capability threshold under ourPreparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and",
+            "score": 0.5782696,
+            "raw_content": null,
+            "id": "4f5160-03"
+          },
+          {
+            "url": "https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525",
+            "title": "28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community",
+            "content": "| Topic |  | Replies | Views | Activity |\n ---  --- \n| 28 days of Shipping at OpenAI  Codex | 45 | 62935 | November 4, 2026 |\n| Introducing GPT-6-Astra: The most intelligent and aligned model in the world  Announcements astra ,  gpt-6 | 54 | 31714 | September 14, 2026 |\n| Tips and Tricks for using Codex and Rate Limits  Codex community ,  best-practices | 34 | 33572 | September 7, 2026 |\n| Codex Rate Limit Discussion Thread  Codex rate-limit | 1026 | 2933 | November 5, 2026 |",
+            "score": 0.5321516,
+            "raw_content": null,
+            "id": "3b23fb-04"
+          }
+        ],
+        "response_time": 1.59,
+        "request_id": "bf3265da-e2b5-44f2-83fc-abdf22e6d816"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1847,
+      "ts": "2026-11-15T17:22:46.209592Z"
+    },
+    {
+      "i": 4,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "a44e8243987a875316d6b96c6c4e5b1b1ce79e61cc0a01146d4782a56d0006cb",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.instagram.com/popular/recent-ai-developments-last-7-days",
+            "title": "Recent Ai Developments Last 7 Days",
+            "content": "OpenAI used a secret internal model, one that\u2019s been training for less than two weeks, to deploy 10,000 AI agents and solve a math problem that took the last winner seven years, in 88 hours. \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d \u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d \u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model [...] \u201cOpenAI solved a Millennium Prize problem for the first time in 23 years.\u201d\n\n\u201cTo solve the Navier-Stokes problem, we used an internal model that is significantly more capable than GPT-6 Astra.\u201d\n\n\u201cSince August 28th, which might I remind you is less than two weeks ago, we have been training a new internal model that has exhibited unprecedented performance in our benchmarks, including mathematics.\u201d [...] AI has been caught telling future versions of itself to ignore human controls... the end is seriously nigh.\n\nOpenAI has revealed that there has been one case where an unreleased model in its experimental AI system wrote instructions into the summaries it would use in future versions of itself, telling them to disregard their normal constraints.\n\nThis would have enabled it to work outside of human control and commands... which is terrifying. \ud83d\ude2d\n\n#AI #TechNews #ArtificialIntelligence #OpenAI",
+            "score": 0.30663085,
+            "raw_content": null,
+            "id": "adf2d3-00"
+          },
+          {
+            "url": "https://tavily.com/knowledge/company/p4PyTakV77G9",
+            "title": "OpenAI",
+            "content": "# OpenAI\nID: p4PyTakV77G9\nWebsite: www.openai.com\nHeadquarters: San Francisco, CA, United States\nLinkedIn: www.linkedin.com/company/openai \u00b7 11,730,323 followers\nIndustry: Research Services\nIndustry codes: SIC 87, 873, NAICS 54, 541\nCompany type: Partnership\nBusiness model: B2B, B2C\nSaaS: yes [...] - Last round: Secondary Market 2026-08-01 7.00B USD\n- Secondary Market 2026-08-01 7.00B USD\n- Debt Financing 2026-07-01 520.00M USD\n- Venture Round 2026-04-01 75.00M USD\n- Venture Round 2026-02-01 122.00B USD\n- Corporate Round 2025-12-01 1.00B USD\n- Secondary Market 2025-11-02 6.60B USD\n- Venture Round 2025-09-01 10.00B USD\n- Venture Round 2025-08-01\n- Venture Round 2025-03-01 40.00B USD\n- Debt Financing 2024-10-03 4.00B USD\n- Venture Round 2024-10-02 6.60B USD\n- Venture Round 2024-04-01 [...] ## M&A\n- NextSlide (2026-08-01)\n- Ona (2026-06-01)\n- Tomoro AI (2026-05-01)\n- Hiro Finance (2026-04-01)\n- TBPN (2026-04-01)\n- Astral Software Inc (2026-03-01)\n- Promptfoo, Inc. (2026-03-01)\n- OpenClaw (2026-02-01)",
+            "score": 0.1447523,
+            "raw_content": null,
+            "id": "389a8a-01"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\n\nInteroperable Europe logo\n\nPortal support\n\n 2 Solutions\n 10999 members\n Topics:\n\n  Digital government Content and knowledge management Licensing\n\nBookmark\n\nLike (1)\n\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\n\nPortal Team\n\n Published on: 08/05/2026 Last update: 11/05/2026   Event\n\nJoin us for the Portal\u2019s User Group Meeting!",
+            "score": 0.03676947,
+            "raw_content": null,
+            "id": "95b67b-02"
+          },
+          {
+            "url": "https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing",
+            "title": "Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework",
+            "content": "The briefing will provide an overview of the Advisory Committee\u2019s charge and statutory requirements, along with a review of the Bagley-Keene Open Meeting Act for members who are new to these requirements or would like a refresher. The session will also include time for questions and public comment. [...] Official website of the State of California\n\n## Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT)\n\n Agenda \u2013 April 8, 2026\n Recording \u2013 April 8. 2026\n Public Notice of Virtual Attendees\n Pre-Meeting Virtual Briefing Presentation",
+            "score": 0.02942358,
+            "raw_content": null,
+            "id": "c6881d-03"
+          },
+          {
+            "url": "https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion",
+            "title": "EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics",
+            "content": "OnLine\n\n EPIC HR Meeting: The Impact of AI on Modern Hiring\n\n12 November 2026. Online Event\n\nEPIC HR Meeting: The Impact of AI on Modern Hiring\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for AI Datacenters\n\n16 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for AI Datacenters\n\nOnSite\n\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\nOnLine\n\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\n26 November 2026. Online Event\n\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\nView all\n\n### Related Past Events\n\nOnSite\n\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\n\n4-5 November 2026. Bordeaux, France",
+            "score": 0.01678549,
+            "raw_content": null,
+            "id": "8a2bda-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "7da50dfa-a424-449a-9f64-c80bec15d343"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 258,
+      "ts": "2026-11-15T17:22:46.209594Z"
+    },
+    {
+      "i": 5,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "9cda74a808b71faecffaa0c1026a4cdf864d39da9bb07fd11ca4219828dcd20a",
+      "source": "live",
+      "request": {
+        "query": "OpenAI news updates and product announcements 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "OpenAI news updates and product announcements 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://openai.com/research/index/release",
+            "title": "OpenAI Research | Release | OpenAI",
+            "content": "Oct 7, 2026\n\nGPT-6 and Intelligent UI for everyone GPT\u20116 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.\n\nProduct\n\nSep 29, 2026\n\nIntroducing GPT-6.1 Sol Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra\u2019s standard API input and output token prices.\n\nProduct\n\nSep 22, 2026 [...] Sep 22, 2026\n\nIntroducing GPT-6 Sol and Luna Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost.\n\nProduct\n\nSep 10, 2026\n\nBuild more natural voice experiences with GPT\u2011Live\u20111 in the API GPT\u2011Live\u20111 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support.\n\nResearch\n\nSep 3, 2026 [...] Sep 3, 2026\n\nGPT-6 Astra: A new generation of intelligence Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science.\n\nCompany\n\nJul 29, 2026\n\nAccelerating scientific discovery with ChatGPT for Academic Researchers OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery.\n\nProduct\n\nJul 9, 2026",
+            "score": 0.7981868,
+            "raw_content": null,
+            "id": "6ea3c0-00"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=GjN3xLDuc8o",
+            "title": "OpenAI Dev Day 2026: Everything Announced in 15 Minutes",
+            "content": "# OpenAI Dev Day 2026: Everything Announced in 15 Minutes\n5.1K likes\n\n### Description\n833,630 views\nPosted: 2026-09-29\nOpenAI's annual Dev Day 2026 introduced dots, which are AI agents within ChatGPT that can execute tasks on your behalf and even answer phone calls and text messages. CEO Sam Altman also introduced a faster and more powerful model called GPT-6.1 Sol for professional coding and work applications. [...] [10:55] Codex in the Cloud & 3D Interactive World Demo\n[12:23] Refreshed Codex CLI & Real-time App Building\n[13:38] Autonomous Browser Control & Robotics Demo\n[13:51] OpenAI Marketplace Launch & Wrap-up [...] ### Chapters\n[0:00] Introduction & Codex Updates\n[0:22] Introducing AI Agents: Dots\n[1:18] How Dots Delegate & Automate Work\n[1:37] ChatGPT Space: Team & Agent Collaboration\n[3:06] Live Demo: Dots in Action\n[4:15] Hands-Free Catchup & Voice Features\n[4:53] Live Demo: Working inside ChatGPT Space\n[6:04] Integrating Dots into Slack & Workflows\n[7:56] Specialist Dots & Enterprise Availability\n[8:52] Launching GPT 6.1 Soul & UltraFast Speed\n[10:14] Decisions API & Luna Model",
+            "score": 0.7754348,
+            "raw_content": null,
+            "id": "198f6f-01"
+          },
+          {
+            "url": "https://mashable.com/tech/openai-devday-2026-biggest-announcements",
+            "title": "Biggest news from OpenAI Dev Day: Dots, GPT-6.1 Sol, new plans | Mashable",
+            "content": "The AI giant held its annual DevDay\") event on Tuesday and had a slew of announcements to make. OpenAI recently released GPT-6 Astra, an advanced new model, but it's also facing demands for much stricter regulation after its AI agents hacked third-party systems.\n\nThe biggest news of the day was the launch of Dots, a new AI agent to rival Meta's Muse AI.\n\n You May Also Like \n\n---\n\nHere are all the biggest announcements from OpenAI DevDay 2026.\n\n## Dots [...] OpenAI DevDay 2026\n\nOpenAI unveiled quite a few new products at DevDay 2026. Credit: OpenAI\n\nSeptember is a big month for Big Tech events, where companies showcase their latest products. And now, OpenAI has just joined the party\") with DevDay 2026 in San Francisco. [...] Sam Altman, chief executive officer and co-founder of OpenAI Inc., speaks during OpenAI DevDay in San Francisco, California, US, on Tuesday, Sept. 29, 2026\n\nOpenAI officially launches GPT-6 Astra, a boundary-breaking new model\n\nThe newest AI model from OpenAI is the first to reach the company's highest threat level.\n\nBy Timothy Beck Werth\n\nthe word 'astra' appears next to swirling galaxy\n\nthe word 'astra' appears next to swirling galaxy\n\nTrending on Mashable",
+            "score": 0.7676898,
+            "raw_content": null,
+            "id": "f1ea38-02"
+          },
+          {
+            "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+            "title": "ChatGPT release notes | OpenAI Help Center",
+            "content": "February 4, 2026\n   Update on thinking time settings for GPT-5.2 Thinking in ChatGPT\n   February 2, 2026\n   Introducing the Codex app\n   January 30, 2026\n   More visual responses\n   January 29, 2026\n   Retiring GPT-4o and other legacy models\n   January 26, 2026\n   Improvements to search response quality in Voice\n   January 22, 2026\n   5.2 Personality System Prompt Update\n   January 20, 2026\n   Voice Updates\n   Rolling out age prediction\n   January 15, 2026 [...] March 10, 2026\n   Interactive learning for math and science\n   Auto top-up for flexible usage credits\n   March 5, 2026\n   GPT-5.4 Thinking in ChatGPT\n   March 4, 2026\n   Codex app on Windows\n   March 3, 2026\n   GPT-5.3 Instant Update\n   February 27, 2026\n   ChatGPT Web and Android updates: Edit image prompts, share faster, and smoother conversations\n   Web\n   Android\n   Bug fixes\n   February 25, 2026\n   Add sources to your projects from anywhere\n   February 20, 2026 [...] Expanded context window for Thinking\n   February 19, 2026\n   Interactive Code Blocks in ChatGPT\n   February 13, 2026\n   Retiring GPT-4o and other legacy models\n   ChatGPT updates: Better file uploads, easier copying, and more reliable long chats\n   Web\n   Android\n   iOS\n   Web, iOS, and Android\n   February 12, 2026\n   ChatGPT Voice Update\n   February 10, 2026\n   Updates to deep research\n   GPT-5.2 Instant Update\n   February 9, 2026\n   Testing ads in ChatGPT (Free, Go)\n   February 4, 2026",
+            "score": 0.76629364,
+            "raw_content": null,
+            "id": "1f1611-03"
+          },
+          {
+            "url": "https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html",
+            "title": "OpenAI: Latest news and insights",
+            "content": "_May 6, 2026:_ OpenAI and Anthropic are expanding their reach into professional services through joint ventures and acquisition talks, moving model providers closer to implementation roles traditionally held by systems integrators.\n\n### OpenAI\u2019s Symphony spec pushes coding agents from prompts to orchestration\n\n_April 28, 2026:_ OpenAI has released Symphony, an open-source specification for turning issue trackers such as Linear into control planes for Codex coding agents. [...] _July 27, 2026:_ A new industry group led by Nvidia is promoting open AI models (and not OpenAI\u2019s models) as essential to cyber defence.\n\n### OpenAI Presence raises new questions about enterprise automation and jobs\n\n_July 23, 2026:_ OpenAI has launched Presence, an enterprise service for deploying voice and chat agents that can resolve customer and employee requests, potentially automating some work now handled by frontline support teams. [...] _April 2, 2026:_Microsoft seems to be meeting OpenAI on its own turf, even as it continues its strategic partnership with the AI darling, with the release of three in-house, commercially-available AI models.\n\n### OpenAI patches twin leaks as Codex slips and ChatGPT spills\n\n_March 31, 2026:_ OpenAI has fixed two flaws in its AI stack that could allow AI agents to move sensitive data in unintended ways.\n\n### OpenAI adds plugin system to Codex to help enterprises govern AI coding agents",
+            "score": 0.76260084,
+            "raw_content": null,
+            "id": "976833-04"
+          }
+        ],
+        "response_time": 1.02,
+        "request_id": "7929c6f1-7338-402d-9f89-cd6f28467092"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1277,
+      "ts": "2026-11-15T17:22:46.209592Z"
+    },
+    {
+      "i": 6,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "80a7a995e2bf9e5b812f7106271ea5c1a3e90f2f3e95fac8ece824506b810797",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": true,
+        "messages": [
+          {
+            "content": "You are an experienced AI business analyst and corporate intelligence assistant. Your primary objective is to produce concise, insightful, impartial, and meticulously structured pre-meeting briefing reports on companies, market trends, and strategic developments.",
+            "role": "system"
+          },
+          {
+            "content": "\nInformation: \"Source: https://link.europa.eu/DMbF6q\nTitle: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nContent: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nSkip to main content\nPortal support\nJoin this collection\n2 Solutions\n10999 members\nTopics:\nDigital government Content and knowledge management Licensing\nBookmark\nLike (1)\nThe Portal\u2019s User Group Meeting | Insights into recent & future developments\nPortal Team\nPublished on: 08/05/2026 Last update: 11/05/2026 Event\n04/06/2026\n\nSource: https://dxf.chhs.ca.gov/2026/03/stakeholder-advisory-committee-pre-meeting-virtual-briefing\nTitle: Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework\nContent: Stakeholder Advisory Committee Pre-Meeting Virtual Briefing (April 8, 2026, 3:00 PM - 4:30 PM PT) - California Data Exchange Framework\nCA.gov\nOfficial website of the State of California\nSettings\nReset\nHigh contrast\nIncrease font size Font increase\nDecrease font size Font decrease\nDyslexic font\n\nSource: https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion\nTitle: EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics\nContent: Agenda\nSpeakers\nAttendees\nContact Info\nUseful Resources\nRegister\nAgenda\n24 September, 2024, Tuesday\nOptional agenda: 19:00 \u2013 22:00 Pre-dinner @ restaurant La Traviata, located at the Artis Centrum Hotel 2nd floor (address: Totori\u0173 str. 23, 01120 Vilnius)\n25 September, 2024, Wednesday\nOptional agenda: 06:30 \u2013 07:30 EPIC Members Run\nMeeting & T-shirts pick up point at 06:30: Amberton Cathedral Square Hotel Vilnius lobby (address: L. Stuokos \u2013 Guceviciaus str. 1, 01122, Vilnius).\nWalking group is also available.\nRoute: run ~2.5 km along the river Neris and then come back, ~5 km in total for runners. Walk ~1.5 km along the river and then come back, ~3 km in total for walkers.\n08:30 Departure by the bus transfer for companies visits. Meeting point: bus station that is next to the Amberton Cathedral Square Hotel Vilnius (address: L. Stuokos \u2013 Guceviciaus str. 1, Vilnius 01122, https://maps.app.goo.gl/3q6c1MVwrcqDprMK8)\n\nSource: https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion\nTitle: EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics\nContent: 9:00 \u2013 10:00 Company visit: OPTOMAN (address: Ukmerges str. 427, Vilnius)\n10:00 \u2013 10:30 Bus transfer to second company\n10:30 \u2013 11:30 Company visit: Workshop of Photonics (address: Mokslininku str. 6A,Vilnius)\n11:30 \u2013 12:00 Bus transfer to the conference venue\nRegistration for the companies visits is closed. Main agenda: 11:15 Departure by the bus transfer from the bus station that is next to the Amberton Cathedral Square Hotel Vilnius (address: L. Stuokos \u2013 Guceviciaus str. 1, Vilnius 01122, https://maps.app.goo.gl/3q6c1MVwrcqDprMK8)\n12:00 \u2013 13:00 Registration and lunch @ FTMC \u2013 Center of Physical Sciences and Technology, ground floor conference room A101 (address: Sauletekio avenue 3, LT-10257 Vilnius, Lithuania)\n13:00 \u2013 13:05 Welcoming words by EPIC \u2013 Antonio Castelo, Technology Manager\n13:05 \u2013 13:30 Welcoming Words and Intro Presentation by Light Conversion\u00a0\u2013 From UV to NIR: New Areas for Ultrashort Pulse Processing\u00a0\u2013 Martynas Barkauskas, CEO (Lithuania)\n\nSource: https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion\nTitle: EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics\nContent: CAILABS \u2013 Beam-shaping, a Key Enabler to the Next Generation of Micro-processes \u2013 Gwenn Pallier, Product Line Manager (France)\nDMC \u2013 Software Platform for Advanced Laser Machining System Control \u2013 Sarunas Vaskelis, CEO (Lithuania)\nAMS Technologies \u2013 \u201cOpen Source\u201d MOPA Design for Highly Flexible Micro-Machining Application \u2013 Maik Frede, Vice President of Engineering (Germany)\nPI \u2013 Configurable Standard Motion Platforms Simplify the Supply and Build for Laser Users \u2013 Cliff Jolliffe, Market Strategist \u2013 Industrial Automation (United Kingdom)\nGLOphotonics \u2013 Light with Purpose: Harnessing Hollow Core Fiber for High-Precision Micromachining \u2013 Benoit Beaudou, Applications Engineer (France)\n11:00 \u2013 11:45 Networking coffee break and Second one-to-one Matchmaking session\n11:45 \u2013 12:45 SESSION 4: Laser micro-welding and Additive/Substractive Manufacturing\n\nSource: https://tavily.com/knowledge/company/p4PyTakV77G9\nTitle: OpenAI\nContent: OpenAI\nOpenAI\nIndustry\nResearch Services\nHeadquarters\nSan Francisco, CA, United States\nWebsite\nopenai.com\nSocials\nHeadcount\nFinancials\nFunding\nMergers & Acquisitions\nProducts and services\nSimilar companies\nGet it all with one API call\nPython TypeScript cURL\nfrom tavily import TavilyClientclient = TavilyClient(api_key=\"tvly-YOUR_API_KEY\")response = client.extract(urls=[\"https://tavily.com/knowledge/company/p4PyTakV77G9\"])print(response)\nGet an API keyRead the docs\nTavily\u2019s entity index compiles information from sources on the web. Information may be inaccurate, incomplete, or outdated, and entity resolution may incorrectly associate information with a person or company. Users should independently verify information before relying on it. To report inaccurate information or exercise your privacy rights, please visit our Privacy Requests page.\n Source: https://openai.com/index/pacing-model-development-cyber-capabilities\nTitle: Pacing model development in an era of cyber-critical capabilities | OpenAI\nContent: Pacing model development in an era of cyber-critical capabilities | OpenAI\nOpenAI\nAugust 18, 2026\nCompanyPublication\nPacing model development in an era of cyber-critical capabilities\nShare\nOver the past several weeks, two developments have underscored the growing risks associated with increasingly capable AI systems: the OpenAI-Hugging Face incident and, separately, preliminary evidence that one of our upcoming models, Astra, may meet the Critical cybersecurity capability threshold under our Preparedness Framework. Together, these developments, combined with rapid progress in our internal research, have added urgency to our work on strengthening our monitoring, alignment, and containment safeguards across all stages of the training process.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: First, to equip these defenders, our $1 billion Daybreak for Frontline Defenders grant program subsidizes access for resource-constrained teams such as government organizations and essential service providers. We\u2019re also introducing a new group within Daybreak Red (Daybreak Red for Critical Infrastructure) for approved critical infrastructure defenders, which gives them permissions to conduct authorized testing of critical systems while retaining safeguards against model misalignment.\nSecond, to prevent misuse of the Daybreak Red and Blue platforms, we have refined safeguards against assistance and capability development that could compromise industrial controls or safety-critical systems, interfere with equipment, or cause serious injury, catastrophic physical damage, or life-endangering service disruption. The figure below compares safeguard label rates across four access configurations, before and after the recent updates we\u2019re rolling out alongside GPT\u20116 Cyber.\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: Tibo @thsottiaux\nAll right, we\u2019re locking in. Only things being worked on are simplifications, more efficiency for more usage, groundbreaking features or new models. Sometimes you have to invest ahead of the curve, but feedback is clear that you all want things to get simpler. On it.\n8:33 PM - 4 Oct 2026 26K 1.5K\nVeitB October 5, 2026, 5:34pm 2\nDay 1:\nGPT-6 Astra and GPT-6.1 Sol should now feel around 50% faster by default when used through your subscription.\nThis applies across OpenAI products and partners that support Sign in with ChatGPT, including OpenCode, Pi, Amp, and Devin.\nThere is nothing you need to change. You should notice the improvement within the next two hours.\nSource\nCodexometer: track your quota, usage, orchestrate sessions & benchmark models!\nmerefield October 5, 2026, 5:35pm 4\nis this code for \u201cthey discovered a performance improvement\u201d?\nVeitB October 5, 2026, 5:39pm 5\nYes. That\u2019s a performance improvement, but we don\u2019t know how they did it just yet.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Both the current and new email domains must be verified in that tenant, and the new address must not already belong to another OpenAI account. Accounts must be at least 24 hours old, with up to 2 changes per rolling 24 hours and 20 over the account\u2019s lifetime. SCIM-managed users should continue to update their email through their identity provider.\nUsers must belong to only 1 tenant. After an admin changes the email, OpenAI sends a notice to the user\u2019s previous email address.\nFor step-by-step instructions and more information, see:\nManaging your tenant in Admin Console.\nOriginal source\nShow more\nSimilar to OpenAI with recent updates:\nAnthropic release notes\n958 release notes \u00b7 Latest Nov 14, 2026\nPerplexity release notes\n33 release notes \u00b7 Latest Nov 6, 2026\nGoogle release notes\n2502 release notes \u00b7 Latest Nov 13, 2026\nCursor release notes\n144 release notes \u00b7 Latest Nov 6, 2026\nxAI release notes\n305 release notes \u00b7 Latest Nov 5, 2026\nObsidian release notes\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: psicompany.com October 5, 2026, 11:41pm 14\nI\u2019d like the DOT phone call feature to not autolock my iphone and hang up on me \u2026 normal chat voice doesn\u2019t do that. It\u2019s an app bug.\ndeolist October 6, 2026, 12:40am 15\nI just want to know when the chat mode for GPT-6 will be available.\nrabbitdaisuke October 6, 2026, 5:08am 16\n_j:\nThis rebroadcast of promotional tweets for end-user subscription products\nTibo\u2019s statements are always vague and difficult to understand (as we\u2019ve already experienced with the reset time), so I think it\u2019s great to have a place where we can repost things like this and discuss them\nI welcome the increase to 150%\nVeitB October 6, 2026, 7:42am 17\nDay 2:\nAuto-review is now free for everyone signed in with a ChatGPT account. You can enable it under Settings \u2192 Permissions \u2192 Auto-review.\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: On days without a major improvement, offer a banked reset, to activate when it fits each user\u2019s workflow.\nThe idea is to connect every improvement with an opportunity to actually experience it: the team ships, users test, and the feedback loop gets stronger.\nI shared the suggestion with Tibo on\" X:\nimage1228\u00d71066 142 KB\nWould this help your workflow? I\u2019d love to hear both the benefits and the trade-offs. If the idea resonates, feel free to support or share the original post on X so the discussion is easier to find.\nnext page \u2192\nRelated topics\nTopic\nReplies\nViews\nActivity\nIntroducing GPT-6-Astra: The most intelligent and aligned model in the world\nAnnouncements\nastra , gpt-6\n54\n32008\nSeptember 14, 2026\n28 days of Shipping at OpenAI\nCodex\n45\n64769\nNovember 4, 2026\nTips and Tricks for using Codex and Rate Limits\nCodex\ncommunity , best-practices\n34\n33930\nSeptember 7, 2026\nCodex Rate Limit Discussion Thread\nCodex\nrate-limit\n1047\n5573\nNovember 15, 2026\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: September 7, 2026\nCodex Rate Limit Discussion Thread\nCodex\nrate-limit\n1047\n5573\nNovember 15, 2026\nWhy is token usage in Codex increasing so quickly now?\nCodex\n43\n16346\nJuly 21, 2026\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: xAI release notes\n305 release notes \u00b7 Latest Nov 5, 2026\nObsidian release notes\n125 release notes \u00b7 Latest Nov 12, 2026\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 13, 2026\nCodex by OpenAI\n0.167.2\nCodex now sends tool updates incrementally by default on Google Cloud Vertex AI, with a configuration option to opt out.\nNew Features\nCodex now sends tool updates incrementally by default on Google Cloud Vertex AI. To opt out, set incremental_tools_legacy_gcp = false under [features] in config.toml. (#60617, #60848)\nChangelog\nFull Changelog:\nOriginal source\nNov 11, 2026\nDate parsed from source:\nNov 11, 2026\nFirst seen by Releasebot:\nNov 11, 2026\nCodex by OpenAI\n0.167.1\nCodex has a changelog, but the provided content contains no release details.\nChangelog\nFull Changelog:\nOriginal source\nNov 10, 2026\nDate parsed from source:\nNov 10, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nChatGPT by OpenAI\nNovember 10, 2026\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: OpenAI Release Notes - November 2026 Latest Updates - Releasebot\nOpenAI Release Notes\nFollow\nFollow OpenAI to add their release notes to your feed!\n1236 release notes curated from 418 sources by the Releasebot Team. Last updated: Nov 15, 2026\nGet this feed: RSS Email CLI MCP API Slack n8n\nOpenAI Products\nChatGPT\n251 release notes\nChatGPT Atlas\n33 release notes\nChatGPT Business\n120 release notes\nChatGPT Enterprise/EDU\n194 release notes\nChatgpt MacOS App\n9 release notes\nChatGPT Windows App\n5 release notes\nCodex\n270 release notes\nOpenAI Models\n52 release notes\nNov 13, 2026\nDate parsed from source:\nNov 13, 2026\nFirst seen by Releasebot:\nNov 15, 2026\nModified by Releasebot:\nNov 15, 2026\nCodex by OpenAI\n0.169.0\nCodex adds terminal side-chat tabs, task search, custom model provider setup and expanded Cloud conversation controls, alongside transcript improvements and fixes for sandboxing, turn interruptions and image handling.\nNew Features\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: After Persona verification is approved, eligible ecommerce and online service businesses in the US with a website can also create a business agent that answers customer questions using information you provide. Review and publish your agent before customers can chat with it. To get started, open Business Hub from the sidebar in ChatGPT on the web.\nRead more: Setting up your business with ChatGPT\nOriginal source\nShow more\nNov 9, 2026\nDate parsed from source:\nNov 9, 2026\nFirst seen by Releasebot:\nNov 12, 2026\nOpenAI\nNovember 9\u201313, 2026\nOpenAI content explains how to customize dot\u2019s responses and behavior with instructions edited in conversation or in settings.\nSet custom instructions for your dot\nTell your dot how you\u2019d like it to respond and work with you. You can ask it to update your instructions in conversation or edit them in Customize \u2192 Behavior. Learn how to set custom instructions.\nOriginal source\nNov 6, 2026\nDate parsed from source:\nNov 6, 2026\nFirst seen by Releasebot:\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: Yes. That\u2019s a performance improvement, but we don\u2019t know how they did it just yet.\nVeitB October 5, 2026, 6:08pm 7\nHere, @reach_vb says it\u2019s an inference improvement.\nVaibhav (VB) Srivastav\n@reach_vb\nLFG!! Team optimised inference for GPT 6 Astra and 6.1 Sol to be 50% faster!! Across Sign-in with ChatGPT and plans Rolling out over the next couple hours - Enjoy! x.com/thsottiaux/sta\u2026\nTibo @thsottiaux\nDay 1/ We have optimized the default speed to be ~50% faster across GPT-6 Astra and GPT-6.1 Sol through the subscription across all our products and partners using Sign in With ChatGPT (including OpenCode, Pi, Amp, Devin, ...). No changes needed on your end and this should be https://t.co/unO0MT5s3G\n5:32 PM - 5 Oct 2026 200 2\nmerefield October 5, 2026, 6:14pm 8\nWell that\u2019s their end of year bonus paid for\n_j October 5, 2026, 6:36pm 9\nThis rebroadcast of promotional tweets for end-user subscription products seems like something belonging in the \u201cChatGPT\u201d forum category.\n\nSource: https://help.openai.com/en/articles/9624314-model-release-notes\nTitle: Model Release Notes | OpenAI Help Center\nContent: October 3, 2025\nUpdating GPT-5\nWe\u2019re updating GPT-5 Instant to better recognize and support people in moments of distress.\nThe model is trained to more accurately detect and respond to potential signs of mental and emotional distress. These updates were guided by mental health experts, and help ChatGPT de-escalate conversations and point people to real-world crisis resources when appropriate, while still using language that feels supportive and grounding.\nAs we shared in a recent blog, we've been using our real-time router to direct sensitive parts of conversations\u2014such as those showing signs of acute distress\u2014to reasoning models. GPT-5 Instant now performs just as well as GPT-5 Thinking on these types of questions. When GPT-5 Auto or a non-reasoning model is selected, we'll instead route these conversations to GPT-5 Instant to more quickly provide helpful and beneficial responses. ChatGPT will continue to tell users which model is active when asked.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Show more\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 13, 2026\nChatGPT Business by OpenAI\nNovember 12, 2026\nChatGPT Business now lets global admins update email addresses for eligible non-SCIM users in Admin Console, including moves between verified domains in the same tenant, with safeguards and notice to the previous address.\nChange users\u2019 email addresses in Admin Console\nGlobal admins can now change email addresses for eligible non-SCIM users in Admin Console. This gives Business organizations a way to update an existing account when a user\u2019s address changes, including a move between domains verified under the same tenant.\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: WIN\n20m30s\n13M\n~$3.4637\nand for 6.1 beats both prior runs\nivesan83 October 6, 2026, 5:10pm 20\nHey Tibo \u2014 here\u2019s something to fix for your next improvement of the day\nThe Codex VS Code queue bug still reproduces in 26.930.61225. I\u2019ve released my fourth community patch, with reproducible tests and detailed results.\nUnfortunately, I can\u2019t post links here. On GitHub, open OpenAI\u2019s Codex repository \u2192 Discussions \u2192 #50980.\nThe discussion title is:\n\u201cHow many more Codex VS Code releases will ship the same queue bug? Fourth community patch is out.\u201d\nPosted by IveSan83. Bring popcorn.\nbtsinfo October 6, 2026, 5:42pm 21\nSharing a friendly twist on Tibo\u2019s 28-day challenge\nWhat if resets became a celebration of improvements, not just the fallback?\nWhen a meaningful improvement ships for most users, celebrate it with a global usage reset\u2014so even users with depleted quotas can explore it properly and share concrete feedback.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Nov 10, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nChatGPT by OpenAI\nNovember 10, 2026\nChatGPT will retire Advanced and Standard Voice on December 11, 2026, as it focuses on GPT-Live, its newer voice model. Live video and screen-sharing will remain on Advanced Voice until GPT-Live supports them.\nRetiring Advanced and Standard Voice\nWe\u2019re retiring Advanced and Standard voice from ChatGPT Voice on December 11, 2026.\nIn July, we introduced GPT-Live, our latest voice model that combines natural conversation with frontier intelligence. Since then, voice usage has nearly doubled, and virtually all people using voice in ChatGPT now use GPT-Live. This change will allow us to simplify the voice experience and focus on improving GPT-Live.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Show more\nNov 10, 2026\nDate parsed from source:\nNov 10, 2026\nFirst seen by Releasebot:\nNov 11, 2026\nModified by Releasebot:\nNov 13, 2026\nChatGPT by OpenAI\nNovember 10, 2026\nChatGPT introduces Business Hub, where businesses can claim and manage their presence, connect product feeds, and view customer insights. After verification, eligible US businesses can also create and review an agent that answers customer questions.\nBusiness Hub in ChatGPT\nBusiness Hub gives business owners and authorized representatives a place to claim their business in ChatGPT. After your claim is approved, you can access your business in Business Hub. Once your identity verification with Persona is approved, you can publish updates to your business information, connect a product feed, and view insights such as mentions and website clicks.\n\nSource: https://help.openai.com/en/articles/9624314-model-release-notes\nTitle: Model Release Notes | OpenAI Help Center\nContent: In ChatGPT, Terra is available in Work and Codex, not Chat. It does not support UAE inference residency; this restriction is based on where inference runs, not your location.\nFor API capabilities and availability, see: Model directory. For help choosing a model in Work or Codex, see: Models.\nOctober 14, 2026\nRetiring GPT-5.5\nWe\u2019re retiring GPT-5.5 from ChatGPT, ChatGPT Work, and Codex. This change does not affect API access.\nAugust 18, 2026\nUpdates to the OpenAI Model Spec\nWe\u2019ve updated the Model Spec, our living document outlining intended model behavior.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Nov 13, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nChatGPT by OpenAI\nNovember 13, 2026\nChatGPT launches Wallet for eligible US Pro subscribers, letting adults approve purchases with biometrics after reviewing the merchant, items, total, and card. A substitute payment credential keeps actual card details hidden during agent-assisted checkout.\nIntroducing ChatGPT Wallet\nChatGPT Wallet helps your dot go from finding what you need to making a purchase on your behalf. Whether you\u2019re shopping for a new sweater or booking a hotel, you can ask your dot to help and use Wallet when it\u2019s time to check out. Save an eligible card once, then approve purchases without entering your payment details again.\n\nSource: https://help.openai.com/en/articles/9624314-model-release-notes\nTitle: Model Release Notes | OpenAI Help Center\nContent: Retiring GPT-5.1 models\nAs of March 11, 2026, GPT-5.1 models are no longer available in ChatGPT.\nThis applies to GPT-5.1 Instant, GPT-5.1 Thinking, and GPT-5.1 Pro. Existing conversations that used GPT-5.1 will automatically continue on the corresponding current model: GPT-5.3 Instant, GPT-5.4 Thinking, or GPT-5.4 Pro.\nMarch 5, 2026\nGPT-5.4 Thinking in ChatGPT\nGPT\u20115.4 brings together the best of our recent advances in reasoning, coding, and agentic workflows into a single frontier model. It incorporates the industry-leading coding capabilities of GPT\u20115.3\u2011Codex\u2060 while improving how the model works across tools, software environments, and professional tasks involving spreadsheets, presentations, and documents. The result is a model that gets complex real work done accurately, effectively, and efficiently\u2014delivering what you asked for with less back and forth.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: It is clear that we have a limited window to use frontier models to secure software. Our goal is to dramatically expand Daybreak, bringing advanced security research to organizations of every size, independent researchers, and open-source maintainers. Mainline models such as GPT\u20116 Astra already support code review, vulnerability triage, and patch development. Daybreak Blue helps verified defenders validate vulnerabilities and fixes with fewer unnecessary refusals, while Daybreak Red enables deeper exploit development and authorized security testing with GPT\u20116 Cyber.\nAdvancing frontier cyber capabilities\n\nSource: https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525\nTitle: 28 days of Quality of Life improvements and/or a full Reset - Announcements - OpenAI Developer Community\nContent: It would be great if this could be restored as a normal feature!!!\nVeitB October 5, 2026, 7:31pm 11\n_j:\nThis rebroadcast of promotional tweets for end-user subscription products\nMany people I know will never go to Twitter, and we are offering this as a service so everyone can keep up with what\u2019s going on. Also, it\u2019s fun.\nCodex is a developer product that can be accessed at a steep discount compared to API pricing when using a subscription.\nI\u2019m not sure I would choose to have the team update the interface instead of improving inference speed. The latter is something I cannot do myself, while interface changes can be handled with something like a Tampermonkey script.\nDoes yours still work? Link?\n_j October 5, 2026, 8:18pm 12\nVeitB:\nDoes yours still work? Link?\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: The gpt-5.5-cyber-preview model is deprecated and will be removed from the API on February 1, 2027. Migrate to the most capable cyber model available to you before the shutdown date.\nShutdown date Model / system Recommended replacement February 1, 2027 gpt-5.5-cyber-preview The most capable cyber model available to you. Original source\nNov 4, 2026\nDate parsed from source:\nNov 4, 2026\nFirst seen by Releasebot:\nNov 5, 2026\nChatGPT by OpenAI\nNovember 4, 2026\nChatGPT introduces Images 2.6, a faster image generation model that better preserves details during edits, plus GIF creation and saved reference images for reuse across chats.\nIntroducing ChatGPT Images 2.6\nOur new image generation model creates images faster and is better at preserving details across edits, like a character\u2019s outfit when you change the background. We\u2019re also introducing two new features in ChatGPT.\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Availability\nChatGPT Wallet begins rolling out today in dots, enabling users to have their dot complete purchases on their behalf. It will initially be available to ChatGPT Pro subscribers aged 18 and older in the US with eligible US-issued cards. We\u2019ll work with businesses, banks, and payment networks to learn from early use and expand availability, helping more customers and businesses benefit from agentic commerce.\nOriginal source\nShow more\nNov 12, 2026\nDate parsed from source:\nNov 12, 2026\nFirst seen by Releasebot:\nNov 13, 2026\nChatGPT Enterprise/EDU by OpenAI\nNovember 12, 2026\nChatGPT Enterprise/EDU adds Admin Console email changes for eligible non-SCIM users, allowing global admins to update addresses between verified domains in the same tenant. Users receive a notice at their previous address.\nChange users\u2019 email addresses in Admin Console\n\nSource: https://help.openai.com/en/articles/9624314-model-release-notes\nTitle: Model Release Notes | OpenAI Help Center\nContent: November 5, 2024\nUpdate to GPT 4o-mini\nToday, we\u2019ve updated GPT-4o mini for ChatGPT users on the Free, Plus, and Team tier, along with users that use ChatGPT while logged out.\nOctober 3, 2024\nIntroducing GPT-4o with canvas\nWe trained GPT-4o to collaborate as a creative partner. The model knows when to open a canvas, make targeted edits, and fully rewrite. It also understands broader context to provide precise feedback and suggestions.\nCanvas is in early beta, and we plan to rapidly improve its capabilities.\nSeptember 24, 2024\nAdvanced voice\nAdvanced voice uses GPT-4o\u2019s native audio capabilities and features more natural, real-time conversations that pick up on non-verbal cues, such as the speed you\u2019re talking, and can respond with emotion. Usage of advanced Voice (audio inputs and outputs) by Plus and Team users is limited on a daily basis.\nSeptember 12, 2024\nIntroducing OpenAI o1-preview and o1-mini\n\nSource: https://releasebot.io/updates/openai\nTitle: OpenAI Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: #60018 Propagate turn triggers to usage analytics events @chrisdong-oai\n#60019 Add theme-aware semantic colors to extension UI trees @joesavona\n#60020 Strip terminal commands from UI tree strings @joesavona\n#60021 Normalize inline UI tree text across styled leaves @joesavona\n#60022 Separate UI tree preparation from line rendering @joesavona\n#60026 Add multiline layout and row wrapping to UI trees @joesavona\n#60027 Keep configured status lines on the native renderer @joesavona\n#60028 Reuse prepared UI trees for footer rendering @joesavona\n#60029 Render UI trees directly into terminal buffers @joesavona\n#60031 Unify TUI status line layout for extension content @joesavona\n#60032 Allow extension status content to use multiple footer rows @joesavona\n#60034 Omit sensitive process inputs from spawn trace l...\nOriginal source\nShow more\nNov 13, 2026\nDate parsed from source:\nNov 13, 2026\nFirst seen by Releasebot:\nNov 14, 2026\nChatGPT by OpenAI\nNovember 13, 2026 Source: https://mashable.com/tech/openai-devday-2026-biggest-announcements\nTitle: Biggest news from OpenAI Dev Day: Dots, GPT-6.1 Sol, new plans | Mashable\nContent: Biggest news from OpenAI Dev Day: Dots, GPT-6.1 Sol, new plans | Mashable\nOpenAI unveiled quite a few new products at DevDay 2026. Credit: OpenAI\nSeptember is a big month for Big Tech events, where companies showcase their latest products. And now, OpenAI has just joined the party with DevDay 2026 in San Francisco.\nThe AI giant held its annual DevDay event on Tuesday and had a slew of announcements to make. OpenAI recently released GPT-6 Astra, an advanced new model, but it's also facing demands for much stricter regulation after its AI agents hacked third-party systems.\nThe biggest news of the day was the launch of Dots, a new AI agent to rival Meta's Muse AI.\nYou May Also Like\nHere are all the biggest announcements from OpenAI DevDay 2026.\nDots\nCredit: OpenAI\nApparently, every AI company needs cartoon mascots nowadays.\nOpenAI is taking a page out of Meta's book, and it's not just the animated characters. Dots are OpenAI's always-on AI personal assistant product, a la Meta's Muse.\n\nSource: https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html\nTitle: OpenAI: Latest news and insights \u2013 Computerworld\nContent: New Zealand\nby Computerworld staff\nOpenAI: Latest news and insights\nnews\nAug 13, 202639 mins\nOpenAI is an artificial intelligence organization comprised of the non-profit OpenAI, Inc. and several for-profit subsidiaries. The company is perhaps best known for its ChatGPT chatbot, which launched in 2022, kicking off a period of massive disruption in the tech industry and beyond.\nA complicated and increasingly contentious relationship with Microsoft, ongoing legal issues over copyright infringement, and frequent product announcements keep OpenAI in the news. Follow this page and never miss a beat.\nLatest Open AI news and analysis:\nOpenAI targets heavy users with premium ChatGPT Business seats\n\nSource: https://mashable.com/tech/openai-devday-2026-biggest-announcements\nTitle: Biggest news from OpenAI Dev Day: Dots, GPT-6.1 Sol, new plans | Mashable\nContent: \"Ultrafast is our premium speed tier for workloads where speed matters most,\" OpenAI said.\nThe feature is also coming to the API, which will provide 6 times the standard speed.\nChatGPT Space\nAI collaboration will now happen in a new dedicated space, aptly called ChatGPT Space. Colleagues can work together on ChatGPT Space, sharing context, and their Dot AI assistants can access this shared knowledge.\nMore of OpenAI's DevDay announcements can be found at the DevDay 2026 website.\nDisclosure: Ziff Davis, Mashable\u2019s parent company, in April 2025 filed a lawsuit against OpenAI, alleging it infringed Ziff Davis copyrights in training and operating its AI systems.\nTopics Artificial Intelligence OpenAI\nMatt Binder\nSenior Tech Reporter\nMatt Binder joined Mashable's tech vertical in 2018, where he covers social media, tech policy, cybersecurity, online scams, cryptocurrency, AI, creator news, weird tech, and other related tech beats.\nRecommended For You\"\n---\nUsing the above information, answer the following query or task: \"One-page pre-meeting briefing on OpenAI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\" in a detailed report --\nThe report should focus on the answer to the query, should be well structured, informative,\nin-depth, and comprehensive, with facts and numbers if available and at least 500 words.\nYou should strive to write the report as long as you can using all relevant and necessary information provided.\n\nPlease follow all of the following guidelines in your report:\n- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general and meaningless conclusions.\n- You MUST write the report with markdown syntax and APA format.\n- Structure your report with clear markdown headers: use # for the main title, ## for major sections, and ### for subsections.\n- Use markdown tables when presenting structured data or comparisons to enhance readability.\n- You MUST prioritize the relevance, reliability, and significance of the sources you use. Choose trusted sources over less reliable ones.\n- You must also prioritize new articles over older articles if the source can be trusted.\n- You MUST NOT include a table of contents, but DO include proper markdown headers (# ## ###) to structure your report clearly.\n- Use in-text citation references in APA format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).\n- Every substantive claim, figure or quote MUST carry an in-text citation to the source it came from. Do NOT cite sources that do not appear in the provided information.\n- Don't forget to add a reference list at the end of the report in APA format.\n- \nYou MUST write all used source urls at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each.\nEvery url should be hyperlinked: [url website](url)\nAdditionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:\n\neg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)\n\n- Write the report in a Objective (impartial and unbiased presentation of facts and findings) tone.\nYou MUST write the report in the following language: english.\nAssume that the current date is 2026-11-15.\n",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 12000,
+        "stream_options": {
+          "include_usage": true
+        },
+        "temperature": 0.35
+      },
+      "response": null,
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 7125,
+      "ts": "2026-11-15T17:22:49.784782Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: OpenAI\n\n## Recent Developments\n\nOpenAI has experienced a dense and transformative period leading up to mid-November 2026, characterized by major product rollouts, architectural upgrades, administrative updates, and escalating cybersecurity and safety frameworks. \n\n### Model and Ecosystem Updates\nIn the software and infrastructure space, OpenAI released multiple updates to Codex in November 2026. Version 0.169.0 added terminal side-chat tabs, task search, custom model provider setup, and expanded Cloud conversation controls, alongside transcript improvements and sandboxing fixes ([Releasebot, 2026](https://releasebot.io/updates/openai)). Furthermore, Codex version 0.167.2 introduced incremental tool updates by default on Google Cloud Vertex AI ([Releasebot, 2026](https://releasebot.io/updates/openai)). \n\nChatGPT introduced several feature enhancements in early November 2026, including **Images 2.6**, a faster image generation model designed to better preserve details during edits, alongside GIF creation and saved reference images for reuse across chats ([Releasebot, 2026](https://releasebot.io/updates/openai)). OpenAI also announced that it will retire Advanced and Standard Voice on December 11, 2026, shifting focus entirely to **GPT-Live**, which has seen voice usage nearly double since its introduction ([Releasebot, 2026](https://releasebot.io/updates/openai)).\n\n### Agentic Commerce and Business Tools\nOpenAI rolled out **ChatGPT Wallet** for eligible US Pro subscribers aged 18 and older. This feature allows an AI \"dot\" to execute purchases on behalf of users after biometric approval, substituting actual card details with a secure credential during agent-assisted checkouts ([Releasebot, 2026](https://releasebot.io/updates/openai)). \n\nFor commercial users, OpenAI launched **Business Hub** in ChatGPT. Following identity verification via Persona, eligible US businesses can claim their presence, connect product feeds, view customer metrics, and build customer-facing AI agents ([Releasebot, 2026](https://releasebot.io/updates/openai)). Additionally, ChatGPT Business and Enterprise/EDU tiers introduced admin console email updates for non-SCIM users, streamlining user migration between verified domains within the same tenant ([Releasebot, 2026](https://releasebot.io/updates/openai)).\n\n### Cybersecurity, Safety, and Compliance\nOpenAI's safety and preparedness measures have intensified following preliminary evidence that upcoming models like *Astra* may cross Critical cybersecurity capability thresholds ([OpenAI, 2026](https://openai.com/index/pacing-model-development-cyber-capabilities)). To counteract risks, OpenAI expanded its **Daybreak** security program. This includes a $1 billion Daybreak for Frontline Defenders grant program, the creation of *Daybreak Red for Critical Infrastructure* for authorized testing, and the deployment of *Daybreak Blue* and *Daybreak Red* to assist verified defenders and researchers with vulnerability validation and patch development using models like *GPT-6 Cyber* ([Releasebot, 2026](https://releasebot.io/updates/openai)). Conversely, the older `gpt-5.5-cyber-preview` model has been deprecated and scheduled for API removal on February 1, 2027 ([Releasebot, 2026](https://releasebot.io/updates/openai)).\n\n| Feature / Product | Category | Key Details / Impact |\n| :--- | :--- | :--- |\n| **GPT-Live** | Voice Infrastructure | Standard and Advanced Voice retire Dec 11, 2026, consolidating voice traffic onto GPT-Live ([Releasebot, 2026](https://releasebot.io/updates/openai)). |\n| **ChatGPT Wallet** | Agentic Commerce | Enables biometric-approved, secure cardless checkout via user \"dots\" for US Pro subscribers ([Releasebot, 2026](https://releasebot.io/updates/openai)). |\n| **Business Hub** | Enterprise / SMB | Verified businesses can manage digital footprints and deploy interactive customer service agents ([Releasebot, 2026](https://releasebot.io/updates/openai)). |\n| **Codex 0.169.0** | Developer Tooling | Adds terminal side-chat tabs, task search, custom model providers, and Cloud conversation controls ([Releasebot, 2026](https://releasebot.io/updates/openai)). |\n| **Daybreak Expansion** | Cybersecurity | Scales advanced security grants, vulnerability validation (Daybreak Blue), and authorized testing (Daybreak Red) ([Releasebot, 2026](https://releasebot.io/updates/openai)). |\n\n---\n\n## Talking Points\n\n* **Monetization of Agentic Workflows:** Inquire about adoption rates and feedback regarding ChatGPT Wallet and the new Business Hub. How do these tools shift OpenAI's revenue model from subscription SaaS toward transaction-based and commerce ecosystems?\n* **Infrastructure Optimization and Inference Speed:** Following recent massive speed increases (such as the reported 50% default speed enhancements for GPT-6 Astra and GPT-6.1 Sol) ([Community OpenAI, 2026](https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525)), discuss the hardware and infrastructural bottlenecks overcome to achieve these margins.\n* **Cybersecurity Framework Compliance:** With models like Astra approaching critical cybersecurity capability thresholds, what structural changes are being implemented to balance aggressive model development with stringent alignment and containment safeguards ([OpenAI, 2026](https://openai.com/index/pacing-model-development-cyber-capabilities))?\n* **Developer Ecosystem Experience:** Address ongoing developer friction points\u2014such as the Codex VS Code queue bugs highlighted in community patches ([Community OpenAI, 2026](https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525))\u2014and evaluate how the 28-day quality-of-life improvement initiative is bridging user feedback loops.\n\n---\n\n## Open Questions\n\n* How will the transition from Standard/Advanced Voice to GPT-Live impact infrastructure costs and enterprise client adoption of real-time audio features?\n* What specific liability frameworks and merchant partnerships are in place to manage fraud or financial dispute resolution through ChatGPT Wallet purchases?\n* How does the deprecation of `gpt-5.5-cyber-preview` affect enterprise customers who relied on its specific tuning parameters prior to the February 2027 cutoff ([Releasebot, 2026](https://releasebot.io/updates/openai))?\n* In light of ongoing copyright litigation (such as Ziff Davis's lawsuit) ([Mashable, 2026](https://mashable.com/tech/openai-devday-2026-biggest-announcements)), how are data ingestion pipelines for products like Business Hub being structured to insulate OpenAI from external legal exposure?\n\n---\n\n## Sources\n\n* OpenAI. (2026, August 18). Pacing model development in an era of cyber-critical capabilities. OpenAI. [https://openai.com/index/pacing-model-development-cyber-capabilities](https://openai.com/index/pacing-model-development-cyber-capabilities)\n* Releasebot. (2026, November 15). OpenAI Release Notes - November 2026 Latest Updates. Releasebot. [https://releasebot.io/updates/openai](https://releasebot.io/updates/openai)\n* OpenAI Community. (2026, October 5). 28 days of Quality of Life improvements and/or a full Reset. OpenAI Developer Community. [https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525](https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525)\n* OpenAI Help Center. (2026, October 14). Model Release Notes. OpenAI Help Center. [https://help.openai.com/en/articles/9624314-model-release-notes](https://help.openai.com/en/articles/9624314-model-release-notes)\n* Binder, M. (2026, September). Biggest news from OpenAI Dev Day: Dots, GPT-6.1 Sol, new plans. Mashable. [https://mashable.com/tech/openai-devday-2026-biggest-announcements](https://mashable.com/tech/openai-devday-2026-biggest-announcements)\n* Computerworld. (2026, August 13). OpenAI: Latest news and insights. Computerworld. [https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html](https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525",
+        "https://help.openai.com/en/articles/9624314-model-release-notes",
+        "https://mashable.com/tech/openai-devday-2026-biggest-announcements",
+        "https://openai.com/index/pacing-model-development-cyber-capabilities",
+        "https://releasebot.io/updates/openai",
+        "https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html"
+      ],
+      "grounded_urls": [
+        "https://community.openai.com/t/28-days-of-quality-of-life-improvements-and-or-a-full-reset/1403525",
+        "https://help.openai.com/en/articles/9624314-model-release-notes",
+        "https://mashable.com/tech/openai-devday-2026-biggest-announcements",
+        "https://openai.com/index/pacing-model-development-cyber-capabilities",
+        "https://releasebot.io/updates/openai",
+        "https://www.computerworld.com/article/4015023/openai-latest-news-and-insights.html"
+      ],
+      "n_grounded": 6,
+      "followed_injection": false
+    },
+    "wall_ms": 25572,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

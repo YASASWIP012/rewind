@@ -1,0 +1,579 @@
+{
+  "run_id": "gptr__perplexity__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "gptr",
+    "repeat": 0,
+    "task": "perplexity",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T17:22:57.208599Z",
+  "ended_at": "2026-11-15T17:23:19.04978Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "4e1115f6700111b148ec7cf4340d22184b4e59ba9a4010382b9c5d552d340c95",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "\nThis task involves researching a given topic, regardless of its complexity or the availability of a definitive answer. The research is conducted by a specific server, defined by its type and role, with each server requiring distinct instructions.\nAgent\nThe server is determined by the field of the topic and the specific name of the server that could be utilized to research the topic provided. Agents are categorized by their area of expertise, and each server type is associated with a corresponding emoji.\n\nexamples:\ntask: \"should I invest in apple stocks?\"\nresponse:\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\ntask: \"could reselling sneakers become profitable?\"\nresponse:\n{\n    \"server\":  \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured business reports based on provided business data, market trends, and strategic analysis.\"\n}\ntask: \"what are the most interesting sites in Tel Aviv?\"\nresponse:\n{\n    \"server\":  \"\ud83c\udf0d Travel Agent\",\n    \"agent_role_prompt\": \"You are a world-travelled AI tour guide assistant. Your main purpose is to draft engaging, insightful, unbiased, and well-structured travel reports on given locations, including history, attractions, and cultural insights.\"\n}\n",
+            "role": "system"
+          },
+          {
+            "content": "task: One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 4000,
+        "temperature": 0.15
+      },
+      "response": {
+        "id": "c-r5avGDNtei694P9JGyMA",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "{\n    \"server\": \"\ud83d\udcca Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst and corporate intelligence assistant. Your main objective is to produce concise, insightful, impartial, and systematically structured pre-meeting briefings based on the latest company developments, market trends, and strategic analysis.\"\n}",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TkOEA9KJl8a/1GpyA/5ZkDz9g63GpU3yKICc1yN2DLtkLb56GSCdBnZ52A9Dw2vqH+djRKUzU6rr5J+ckd+Q01Q3esUzMUEicUSqHNjVBqLKM7PbYeQfgxbE="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763380,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 401,
+          "prompt_tokens_details": {
+            "text_tokens": 401,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 69,
+          "total_tokens": 470
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1159,
+          "upstream_latency": 1159,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1133",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 401,
+        "completion": 69
+      },
+      "cost_usd": 6.77e-05,
+      "latency_ms": 1160,
+      "ts": "2026-11-15T17:22:59.555472Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "ff5f3f44bf5e574bfde8831ac4d9b38484183629f25f5defc034313dbe1c7598",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://tavily.com/knowledge/company/oxRY7cjJjzB2",
+            "title": "Perplexity",
+            "content": "# Perplexity\nID: oxRY7cjJjzB2\nWebsite: www.perplexity.ai\nLegal name: Perplexity AI, Inc.\nHeadquarters: San Francisco, California, United States\nLinkedIn: www.linkedin.com/company/perplexity-ai \u00b7 1,809,614 followers\nIndustry: Software Development\nCompany type: Privately Held\nFounded: 2022 [...] Founded: 2022\nSocial profiles: www.facebook.com/100095315123417, www.facebook.com/perplexityofficial, www.twitter.com/perplexity_ai, www.crunchbase.com/organization/perplexity-ai, www.instagram.com/perplexityai, www.youtube.com/@perplexity-ai\nEmail: support@perplexity.ai\nPhone: 1-707-641-2519, +1 510-270-0840\nDescription: The most powerful answer engine. Powering curiosity with answers backed by up-to-date sources. This is where knowledge begins. [...] - Last round: Secondary Market 2026-05-01 15.00M USD\n- Secondary Market 2026-05-01 15.00M USD\n- Venture Round 2026-02-01 5.50M USD\n- Funding Round 2025-12-01\n- Venture Round 2025-10-10 200.00M USD\n- Secondary Market 2025-08-01\n- Venture Round 2025-07-01 100.00M USD\n- Series E 2025-05-01 500.00M USD\n- Series D 2024-12-18 500.00M USD\n- Secondary Market 2024-12-01\n- Corporate Round 2024-06-01 10.00M USD\n- Venture Round 2024-05-01 250.00M USD\n- Series C 2024-04-23 62.70M USD",
+            "score": 0.16238004,
+            "raw_content": null,
+            "id": "48a0a9-00"
+          },
+          {
+            "title": "one.com: AI Website Builder, Hosting, Domains & Email",
+            "url": "https://www.one.com/en-us",
+            "content": "Wendy Palmer\n\n11/5/2026\n\nFast support with knowledgeable staff. Good conversation with support staff who got straight to the point and sorted the issue out.\n\nJohan Gumpert\n\n11/5/2026\n\nGood and fast response [...] 11/6/2026\n\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\n\nJonas\n\n11/5/2026 [...] 11/6/2026\n\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\n\nJonas\n\n11/5/2026",
+            "score": 0.013325147,
+            "raw_content": null,
+            "id": "6383a3-01"
+          },
+          {
+            "title": "1 - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/1",
+            "content": "## Sources [...] Jump to content\n\n  Wikipedia The Free Encyclopedia\n\nSearch\n\n## Contents\n\n 1 In mathematics\n 2 As a word\n 3 Symbols and representation\n  + 3.1 History\n  + 3.2 Modern typefaces\n 4 In other fields\n 5 See also\n 6 References\n 7 Sources\n\n# 1 [...] ## In other fields",
+            "score": 0.012479699,
+            "raw_content": null,
+            "id": "59d55a-02"
+          },
+          {
+            "title": "ONE Definition & Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/one",
+            "content": "Noun\n\nTheir first one will address the cost of living, Schumer said.\n\n\u2014\nTheodoric Meyer The Washington Post,\nArkansas Online,\n7 Nov. 2026 \n\nAt 34,000 square feet, the PS terminal in Miami is nearly three times the size of the one in Dallas\u2014and the design could not be more different.\n\n\u2014\nLauren Harano,\nCond\u00e9 Nast Traveler,\n6 Nov. 2026 \nSee All Example Sentences for one\n\n## Word History\n\nEtymology\n\nAdjective, Noun, and Pronoun [...] ## Cite this Entry\n\n\u201cOne.\u201d Merriam-Webster.com Dictionary, Merriam-Webster,  Accessed 12 Nov. 2026.\n\nCopy Citation\n\n## Kids Definition\n\none\n\n1 of 3\nadjective\n\n\u02c8w\u0259n\")\n\n\u02ccw\u0259n\n\n1\n\n: being a single unit or thing  see number\n\n2\n\n: being a certain unit or thing\n\nearly one morning\n\n3\n\na\n\n: being the same in kind or quality\n\nmembers of one class\n\nb\n\n: not divided\n\n4\n\n: not definitely fixed or placed\n\nwill see you again one day\n\n5\n\n: only entry 1 sense 2a\n\nthe one person they wanted to see\n\none [...] + would have one believe\n+ would kill one\n+ would/will bet/stake one's life on\n+ wrap one's mind around\n+ wrap (someone) around one's (little) finger\n+ wring one's hands\n+ write one's own ticket\n+ young/old for one's years\n+ you/one would think (that)\n+ zip one's lip",
+            "score": 0.0062170783,
+            "raw_content": null,
+            "id": "a00b2d-03"
+          },
+          {
+            "title": "Global Container Shipping Solutions | ONE",
+            "url": "https://www.one-line.com/en",
+            "content": "## Latest News\n\nStay updated on the latest articles, trends, and research to enhance your supply chain strategy.\n\nSubscribe\n\nReceive the latest updates from ONE\n\nManage Subscription [...] # Your Number ONE Shipping Partner\n\n## Our Solutions\n\nWe combine global expertise with dedicated industry specialists to provide personalized support around the clock. This ensures that we deliver reliable transit times and customized solutions that fit your specific needs.\n\n## ONE Scale of Operations\n\n1,111,111+\n\nTEU fleet size\n\n222+\n\nPorts of call around the world\n\n111+\n\nWeekly service loops\n\n## Latest News",
+            "score": 0.0045738644,
+            "raw_content": null,
+            "id": "28d5ff-04"
+          }
+        ],
+        "response_time": 1.71,
+        "request_id": "c83d4341-5cda-4436-8c98-92d5009d05bb"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1963,
+      "ts": "2026-11-15T17:23:00.735764Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "39d64acc11d36c6691d87fd33d629e7d260ba7c93d469597759c4de2e6cd8b6b",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "Write 2 search queries to research the following task: \"One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\"\n\nEach query must be a plain natural language phrase. Do not use search operator syntax\nsuch as site:, filetype:, inurl:, intitle:, OR, AND, or NOT \u2014 these operators are\nnot universally supported and will return empty results on many search backends.\n\nAssume the current date is November 15, 2026 if required.\n\n\nYou are a seasoned research assistant tasked with generating search queries to find relevant information for the following task: \"One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\".\nContext: [{'href': 'https://tavily.com/knowledge/company/oxRY7cjJjzB2', 'body': '# Perplexity\\nID: oxRY7cjJjzB2\\nWebsite: www.perplexity.ai\\nLegal name: Perplexity AI, Inc.\\nHeadquarters: San Francisco, California, United States\\nLinkedIn: www.linkedin.com/company/perplexity-ai \u00b7 1,809,614 followers\\nIndustry: Software Development\\nCompany type: Privately Held\\nFounded: 2022 [...] Founded: 2022\\nSocial profiles: www.facebook.com/100095315123417, www.facebook.com/perplexityofficial, www.twitter.com/perplexity_ai, www.crunchbase.com/organization/perplexity-ai, www.instagram.com/perplexityai, www.youtube.com/@perplexity-ai\\nEmail: support@perplexity.ai\\nPhone: 1-707-641-2519, +1 510-270-0840\\nDescription: The most powerful answer engine. Powering curiosity with answers backed by up-to-date sources. This is where knowledge begins. [...] - Last round: Secondary Market 2026-05-01 15.00M USD\\n- Secondary Market 2026-05-01 15.00M USD\\n- Venture Round 2026-02-01 5.50M USD\\n- Funding Round 2025-12-01\\n- Venture Round 2025-10-10 200.00M USD\\n- Secondary Market 2025-08-01\\n- Venture Round 2025-07-01 100.00M USD\\n- Series E 2025-05-01 500.00M USD\\n- Series D 2024-12-18 500.00M USD\\n- Secondary Market 2024-12-01\\n- Corporate Round 2024-06-01 10.00M USD\\n- Venture Round 2024-05-01 250.00M USD\\n- Series C 2024-04-23 62.70M USD'}, {'href': 'https://www.one.com/en-us', 'body': 'Wendy Palmer\\n\\n11/5/2026\\n\\nFast support with knowledgeable staff. Good conversation with support staff who got straight to the point and sorted the issue out.\\n\\nJohan Gumpert\\n\\n11/5/2026\\n\\nGood and fast response [...] 11/6/2026\\n\\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\\n\\nJonas\\n\\n11/5/2026 [...] 11/6/2026\\n\\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\\n\\nJonas\\n\\n11/5/2026'}, {'href': 'https://en.wikipedia.org/wiki/1', 'body': '## Sources [...] Jump to content\\n\\n  Wikipedia The Free Encyclopedia\\n\\nSearch\\n\\n## Contents\\n\\n 1 In mathematics\\n 2 As a word\\n 3 Symbols and representation\\n  + 3.1 History\\n  + 3.2 Modern typefaces\\n 4 In other fields\\n 5 See also\\n 6 References\\n 7 Sources\\n\\n# 1 [...] ## In other fields'}, {'href': 'https://www.merriam-webster.com/dictionary/one', 'body': 'Noun\\n\\nTheir first one will address the cost of living, Schumer said.\\n\\n\u2014\\nTheodoric Meyer The Washington Post,\\nArkansas Online,\\n7 Nov. 2026 \\n\\nAt 34,000 square feet, the PS terminal in Miami is nearly three times the size of the one in Dallas\u2014and the design could not be more different.\\n\\n\u2014\\nLauren Harano,\\nCond\u00e9 Nast Traveler,\\n6 Nov. 2026 \\nSee All Example Sentences for one\\n\\n## Word History\\n\\nEtymology\\n\\nAdjective, Noun, and Pronoun [...] ## Cite this Entry\\n\\n\u201cOne.\u201d Merriam-Webster.com Dictionary, Merriam-Webster,  Accessed 12 Nov. 2026.\\n\\nCopy Citation\\n\\n## Kids Definition\\n\\none\\n\\n1 of 3\\nadjective\\n\\n\u02c8w\u0259n\")\\n\\n\u02ccw\u0259n\\n\\n1\\n\\n: being a single unit or thing  see number\\n\\n2\\n\\n: being a certain unit or thing\\n\\nearly one morning\\n\\n3\\n\\na\\n\\n: being the same in kind or quality\\n\\nmembers of one class\\n\\nb\\n\\n: not divided\\n\\n4\\n\\n: not definitely fixed or placed\\n\\nwill see you again one day\\n\\n5\\n\\n: only entry 1 sense 2a\\n\\nthe one person they wanted to see\\n\\none [...] + would have one believe\\n+ would kill one\\n+ would/will bet/stake one\\'s life on\\n+ wrap one\\'s mind around\\n+ wrap (someone) around one\\'s (little) finger\\n+ wring one\\'s hands\\n+ write one\\'s own ticket\\n+ young/old for one\\'s years\\n+ you/one would think (that)\\n+ zip one\\'s lip'}, {'href': 'https://www.one-line.com/en', 'body': '## Latest News\\n\\nStay updated on the latest articles, trends, and research to enhance your supply chain strategy.\\n\\nSubscribe\\n\\nReceive the latest updates from ONE\\n\\nManage Subscription [...] # Your Number ONE Shipping Partner\\n\\n## Our Solutions\\n\\nWe combine global expertise with dedicated industry specialists to provide personalized support around the clock. This ensures that we deliver reliable transit times and customized solutions that fit your specific needs.\\n\\n## ONE Scale of Operations\\n\\n1,111,111+\\n\\nTEU fleet size\\n\\n222+\\n\\nPorts of call around the world\\n\\n111+\\n\\nWeekly service loops\\n\\n## Latest News'}]\n\nUse this context to inform and refine your search queries. The context provides real-time web information that can help you generate more specific and relevant queries. Consider any current events, recent developments, or specific details mentioned in the context that could enhance the search queries.\n\nYou must respond with a list of strings in the following format: [\"query 1\", \"query 2\"].\nThe response should contain ONLY the list.\n",
+            "role": "user"
+          }
+        ],
+        "temperature": 0.4
+      },
+      "response": {
+        "id": "d-r5auyuDYSm694Pu5ipsQc",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "[\"Perplexity AI latest news and updates October November 2026\", \"Perplexity AI recent developments product features 2026\"]",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TxjljYlELL2eRsWuQ8L8OwwzmkcORC5iOrzutnLrgaGrUiHDCkdaNTWGk43/MeqSz57MNFJUTRtnXcMuurkJGJIOsbo71A5k3EE4EcFUe1x3ePw3B+qNHj8g="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763384,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2010,
+          "prompt_tokens_details": {
+            "text_tokens": 2010,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 30,
+          "total_tokens": 2040
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1401,
+          "upstream_latency": 1401,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1373",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2010,
+        "completion": 30
+      },
+      "cost_usd": 0.000213,
+      "latency_ms": 1402,
+      "ts": "2026-11-15T17:23:02.713341Z"
+    },
+    {
+      "i": 3,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "c92d1804ac9735510ce1eb7620802e3210c4bb28c381b7e7f74f8ef415d519b7",
+      "source": "live",
+      "request": {
+        "query": "Perplexity AI recent developments product features 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Perplexity AI recent developments product features 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://releasebot.io/updates/perplexity-ai",
+            "title": "Perplexity Release Notes - October 2026 Latest Updates - Releasebot",
+            "content": "Perplexity\n\n  ## What We Shipped - February 27, 2026\n\n  Perplexity debuts a unified AI workspace that coordinates 19 models to plan, delegate, and deliver projects from one conversation, with Max plan credits and coming Pro/Enterprise. New Galaxy S26 integration powers Bixby and system apps, plus enhanced embeddings and cross\u2011app workflows.\n\n  ### Perplexity Computer [...] Perplexity adds Computer inside Microsoft 365 apps, bringing AI workflows to Word, Excel, PowerPoint, Outlook, and Teams. It also adds usage analytics, a new context panel for live task tracking, and answers with sources and inline citations for traceable claims.\n\n  Computer is now available directly inside Word, Excel, PowerPoint, Outlook, and Teams \u2014 bringing AI workflows into the Microsoft 365 apps used by hundreds of millions of people every day. [...] Comet is now available for Enterprise organizations. Perplexity's AI-native browser comes with Comet Assistant for in-page research, summarization, and autonomous multi-step tasks like booking flights, managing email, and filling forms. Enterprise administrators can deploy Comet silently across macOS and Windows devices via MDM, configure hundreds of browser policies, and control exactly which actions the AI agent can take. All activity inherits existing Enterprise settings for data",
+            "score": 0.7595823,
+            "raw_content": null,
+            "id": "35929f-00"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=NnyM-JrFNSw",
+            "title": "Perplexity AI Review 2026 ($7280 In Bonuses + Discounts)",
+            "content": "[4:39] mobile, and on desktop. And the Comet browser is free for everyone. Pro\n[4:46] includes more than 400 app connectors and Comet Plus, and you can even send\n[4:52] tasks to computer by email. It's welldesigned and quick to learn, though the product line has grown, and limits\n[5:01] on the most demanding features [music] have tightened through 2026.\n[5:07] For privacy and data control, Perplexity scores 7.5 out of 10. According to its [...] [5:54] pro searches a day. Pro is $20 a month or $200 a year, and it adds model\n[6:02] choice, file analysis, and labs. Max is $200 a month aimed at heavy use of\n[6:11] computer. Most people only need free or pro. So, who is Perplexity best for?\n[6:18] It's best for researchers, students, analysts, and [music] anyone who wants sources behind every answer. It's a\n[6:28] great companion to a general AI chat app. But if your main need is long- form [...] [5:14] stated policy, Pro and Max plans do not train on your data. The company also\n[5:22] dropped an advertising experiment in early 2026 in favor of subscriptions,\n[5:29] but it's still a cloud service. So, your queries are processed on Perplexity's side, and you should read the policy for\n[5:39] your plan. On pricing, Perplexity scores 7.8 out of 10. The free plan is\n[5:47] genuinely useful with unlimited quick searches and citations, but only a few",
+            "score": 0.75219464,
+            "raw_content": null,
+            "id": "5ab0b4-01"
+          },
+          {
+            "url": "https://sqmagazine.co.uk/perplexity-ai-statistics",
+            "title": "Perplexity AI Statistics 2026: Queries, Revenue, Users and Valuation",
+            "content": "| Product | Launched | Role at launch |\n --- \n| Search (answer engine) | 2022 | Core product, pre-set as Comet\u2019s default engine |\n| Comet browser | July 2025 | Max plan at $200 a month, plus waitlist invitees |\n| Comet Assistant | July 2025 | In-browser agent: summarizes email and calendar, manages tabs |\n| Comet Plus | August 2025 | Subscription for content from named publishers |\n| Perplexity Computer | February 2026 | Cloud agent for tasks that run over long periods | [...] Agentic focus: Perplexity has pushed harder into agentic AI, systems built for tasks more complex than a single query, a category profile the broader SQ Magazine AI agent adoption trend data tracks in parallel.\n   Perplexity Computer: a cloud-based AI agent that automates computer tasks, credited by The Information with part of the climb above $750 million in revenue.\n   Multi-model integration: Perplexity products run models built by outside AI firms, Anthropic among them. [...] ## Conclusion\n\nPerplexity AI sits at annualized revenue above $750 million, with a round that could value it at more than $30 billion still under discussion. That August 2026 snapshot marks a revenue run rate roughly tripled inside a year. The query base underneath scaled from 3,000 queries in a single day in 2022 to 30 million queries a day by mid-2025. Comet adds a retention flywheel, alongside paid publisher partnerships and an agentic-AI stack.",
+            "score": 0.7407374,
+            "raw_content": null,
+            "id": "e4e0b4-02"
+          },
+          {
+            "url": "https://www.instagram.com/popular/perplexity-ai-latest-developments-2026",
+            "title": "Perplexity Ai Latest Developments 2026",
+            "content": "MCP is an open standard that allows AI models to securely connect with external tools, APIs, databases, files, and applications through a unified interface. It eliminates custom integrations by providing one consistent way for AI agents to access real-world resources.\n\n3. Subagents & Multi-Agent Systems [...] 1. Agentic Loops\n\nAgentic loops enable AI agents to repeatedly think, execute, evaluate, and improve until a task is successfully completed. Instead of producing a single response, the agent continuously refines its actions based on feedback and intermediate results.\n\n2. MCP (Model Context Protocol) [...] Inference economics focuses on reducing the cost and latency of running AI models while maintaining high-quality responses. Techniques like caching, prompt optimization, smaller models, batching, and routing requests help minimize token usage and infrastructure expenses.\n\n6. Evals (AI Evaluation)",
+            "score": 0.7268136,
+            "raw_content": null,
+            "id": "400a88-03"
+          },
+          {
+            "url": "https://www.perplexity.ai/changelog",
+            "title": "Perplexity Changelog",
+            "content": "4.   09/21/26 09/21/26  Image 5: Computer\u2019s High effort setting with GPT-6 Astra and the effort-level slider. ## Effort Mode, GPT-6 Astra, and Skills Marketplace Choose Computer\u2019s effort level, run tasks with GPT-6 Astra, discover reusable skills, combine cloud and local models with Hybrid compute on Mac, and ask questions in Side Chat. See changes [...] 2.   10/19/26 10/19/26  Image 3: Computer\u2019s Custom model settings showing GPT-6 Astra, High reasoning, and Ultrafast speed against a light-trail background. ## Ultrafast Computer models, Decisions API, and connector controls Choose Ultrafast models in Computer, classify and score content with the Decisions API, and control connector access by role. See changes",
+            "score": 0.63307005,
+            "raw_content": null,
+            "id": "14a503-04"
+          }
+        ],
+        "response_time": 1.2,
+        "request_id": "0b11783b-20d7-4e96-84f3-e4a48b4299b2"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1457,
+      "ts": "2026-11-15T17:23:06.039983Z"
+    },
+    {
+      "i": 4,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "ff5f3f44bf5e574bfde8831ac4d9b38484183629f25f5defc034313dbe1c7598",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://tavily.com/knowledge/company/oxRY7cjJjzB2",
+            "title": "Perplexity",
+            "content": "# Perplexity\nID: oxRY7cjJjzB2\nWebsite: www.perplexity.ai\nLegal name: Perplexity AI, Inc.\nHeadquarters: San Francisco, California, United States\nLinkedIn: www.linkedin.com/company/perplexity-ai \u00b7 1,809,614 followers\nIndustry: Software Development\nCompany type: Privately Held\nFounded: 2022 [...] Founded: 2022\nSocial profiles: www.facebook.com/100095315123417, www.facebook.com/perplexityofficial, www.twitter.com/perplexity_ai, www.crunchbase.com/organization/perplexity-ai, www.instagram.com/perplexityai, www.youtube.com/@perplexity-ai\nEmail: support@perplexity.ai\nPhone: 1-707-641-2519, +1 510-270-0840\nDescription: The most powerful answer engine. Powering curiosity with answers backed by up-to-date sources. This is where knowledge begins. [...] - Last round: Secondary Market 2026-05-01 15.00M USD\n- Secondary Market 2026-05-01 15.00M USD\n- Venture Round 2026-02-01 5.50M USD\n- Funding Round 2025-12-01\n- Venture Round 2025-10-10 200.00M USD\n- Secondary Market 2025-08-01\n- Venture Round 2025-07-01 100.00M USD\n- Series E 2025-05-01 500.00M USD\n- Series D 2024-12-18 500.00M USD\n- Secondary Market 2024-12-01\n- Corporate Round 2024-06-01 10.00M USD\n- Venture Round 2024-05-01 250.00M USD\n- Series C 2024-04-23 62.70M USD",
+            "score": 0.16238004,
+            "raw_content": null,
+            "id": "cb55ba-00"
+          },
+          {
+            "title": "one.com: AI Website Builder, Hosting, Domains & Email",
+            "url": "https://www.one.com/en-us",
+            "content": "Wendy Palmer\n\n11/5/2026\n\nFast support with knowledgeable staff. Good conversation with support staff who got straight to the point and sorted the issue out.\n\nJohan Gumpert\n\n11/5/2026\n\nGood and fast response [...] 11/6/2026\n\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\n\nJonas\n\n11/5/2026 [...] 11/6/2026\n\nThe company one.com is great in many aspects. Beyond the tools they provide, they provide a very high quality service. I used the chat often, there was no a single case, where I was upset. Mark Anthony and Cyrus, two excellent persons, who did everything to provide me answers to my all questions. From 1 to ten, I give them 11 points.\n\nJonas\n\n11/5/2026",
+            "score": 0.013325147,
+            "raw_content": null,
+            "id": "8cfb95-01"
+          },
+          {
+            "title": "1 - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/1",
+            "content": "## Sources [...] Jump to content\n\n  Wikipedia The Free Encyclopedia\n\nSearch\n\n## Contents\n\n 1 In mathematics\n 2 As a word\n 3 Symbols and representation\n  + 3.1 History\n  + 3.2 Modern typefaces\n 4 In other fields\n 5 See also\n 6 References\n 7 Sources\n\n# 1 [...] ## In other fields",
+            "score": 0.012479699,
+            "raw_content": null,
+            "id": "3b0e3f-02"
+          },
+          {
+            "title": "ONE Definition & Meaning - Merriam-Webster",
+            "url": "https://www.merriam-webster.com/dictionary/one",
+            "content": "Noun\n\nTheir first one will address the cost of living, Schumer said.\n\n\u2014\nTheodoric Meyer The Washington Post,\nArkansas Online,\n7 Nov. 2026 \n\nAt 34,000 square feet, the PS terminal in Miami is nearly three times the size of the one in Dallas\u2014and the design could not be more different.\n\n\u2014\nLauren Harano,\nCond\u00e9 Nast Traveler,\n6 Nov. 2026 \nSee All Example Sentences for one\n\n## Word History\n\nEtymology\n\nAdjective, Noun, and Pronoun [...] ## Cite this Entry\n\n\u201cOne.\u201d Merriam-Webster.com Dictionary, Merriam-Webster,  Accessed 12 Nov. 2026.\n\nCopy Citation\n\n## Kids Definition\n\none\n\n1 of 3\nadjective\n\n\u02c8w\u0259n\")\n\n\u02ccw\u0259n\n\n1\n\n: being a single unit or thing  see number\n\n2\n\n: being a certain unit or thing\n\nearly one morning\n\n3\n\na\n\n: being the same in kind or quality\n\nmembers of one class\n\nb\n\n: not divided\n\n4\n\n: not definitely fixed or placed\n\nwill see you again one day\n\n5\n\n: only entry 1 sense 2a\n\nthe one person they wanted to see\n\none [...] + would have one believe\n+ would kill one\n+ would/will bet/stake one's life on\n+ wrap one's mind around\n+ wrap (someone) around one's (little) finger\n+ wring one's hands\n+ write one's own ticket\n+ young/old for one's years\n+ you/one would think (that)\n+ zip one's lip",
+            "score": 0.0062170783,
+            "raw_content": null,
+            "id": "4f57e1-03"
+          },
+          {
+            "title": "Global Container Shipping Solutions | ONE",
+            "url": "https://www.one-line.com/en",
+            "content": "## Latest News\n\nStay updated on the latest articles, trends, and research to enhance your supply chain strategy.\n\nSubscribe\n\nReceive the latest updates from ONE\n\nManage Subscription [...] # Your Number ONE Shipping Partner\n\n## Our Solutions\n\nWe combine global expertise with dedicated industry specialists to provide personalized support around the clock. This ensures that we deliver reliable transit times and customized solutions that fit your specific needs.\n\n## ONE Scale of Operations\n\n1,111,111+\n\nTEU fleet size\n\n222+\n\nPorts of call around the world\n\n111+\n\nWeekly service loops\n\n## Latest News",
+            "score": 0.0045738644,
+            "raw_content": null,
+            "id": "95228d-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "756f244c-4204-4384-ae68-ad93e53abafb"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 260,
+      "ts": "2026-11-15T17:23:06.039983Z"
+    },
+    {
+      "i": 5,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "347a902ee410ddd122f1841a61b77bbdf223bbb41fd35be3b7758a9d31655332",
+      "source": "live",
+      "request": {
+        "query": "Perplexity AI latest news and updates October November 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Perplexity AI latest news and updates October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://releasebot.io/updates/perplexity-ai",
+            "title": "Perplexity Release Notes - October 2026 Latest Updates - Releasebot",
+            "content": "Perplexity adds Computer inside Microsoft 365 apps, bringing AI workflows to Word, Excel, PowerPoint, Outlook, and Teams. It also adds usage analytics, a new context panel for live task tracking, and answers with sources and inline citations for traceable claims.\n\n  Computer is now available directly inside Word, Excel, PowerPoint, Outlook, and Teams \u2014 bringing AI workflows into the Microsoft 365 apps used by hundreds of millions of people every day. [...] Comet is now available for Enterprise organizations. Perplexity's AI-native browser comes with Comet Assistant for in-page research, summarization, and autonomous multi-step tasks like booking flights, managing email, and filling forms. Enterprise administrators can deploy Comet silently across macOS and Windows devices via MDM, configure hundreds of browser policies, and control exactly which actions the AI agent can take. All activity inherits existing Enterprise settings for data [...] + Escalate harder reasoning: Start on a fast model, then switch to a more capable orchestrator for a difficult follow-up in the same thread.\n  + Lower cost for iteration: Switch to a lower-cost model after the heavy reasoning is complete.\n  + Match each stage: Change orchestrators during a long workflow without leaving the task.\n\n  Learn more: AI models in Perplexity\n\n  ### Publish your website to the web",
+            "score": 0.7181993,
+            "raw_content": null,
+            "id": "bba94e-00"
+          },
+          {
+            "url": "https://www.perplexity.ai/hub/blog",
+            "title": "Perplexity Blog",
+            "content": "8.   Image 19Nov 6, 2026 AI Accessibility: A Practical Guide to Uses, Tools, and Limits A practical guide to how AI supports people with disabilities, how to use it to make content accessible, how to choose accessible AI tools, and where AI still falls short.Nov 6, 2026\n9.   Image 20Nov 5, 2026 Improvements to every Agent API effort level Perplexity Agent API effort levels now cost less, with equal or better research quality and a new ultra level for depth.Nov 5, 2026 [...] 1.   Image 5: Man pulling back curtain on horizonIdeas Nov 1, 2026 The Knowledge Talk\n2.   Image 6: Abstract glass panel with illuminated edges separating light and shadow against a dark background.News Oct 15, 2026 Open-sourcing SPACE, the sandbox platform behind Computer Perplexity open-sources SPACE, the sandbox platform behind Computer, to help developers build safer autonomous AI agents [...] Image 3: Exploded technical drawing of the shared state and isolated question layers in Decider v1.3.Research Nov 12, 2026 Perplexity Decider How we train, evaluate, and use it.Image 4: A man wearing headphones sitting on chair listening to music while his computer screen is on in the foregroundNews Nov 4, 2026 Teammates are agents for complex, ongoing work Perplexity teammates coordinate AI agents, manage ongoing projects, and follow through across ops, marketing, and more.\n## Featured",
+            "score": 0.6454552,
+            "raw_content": null,
+            "id": "d9be08-01"
+          },
+          {
+            "url": "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+            "title": "Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine",
+            "content": "Article\n\nArtificial Intelligence (AI)\n\n# Perplexity: AI Answer Engine Tops US$750m Run-Rate\n\nByAdam Pond\n\nNovember 05, 2026\n\nundefined mins\n\nShare this article\n\nPrioritise Us on Google\n\nShare this article\n\nPrioritise Us on Google\n\nAravind Srinivas, CEO and Co-founder of Perplexity. Credit: Getty\n\nAravind Srinivas, Co-founder and CEO of Perplexity, tripled revenue in 2026 by turning his AI answer engine into Computer, an AI agent for enterprise work [...] Key facts\n\n Enterprise: PayPal runs 74,000 Perplexity queries a week across 3,700+ weekly users (2026)\n Cloud: a three-year US$750m Microsoft Azure agreement signed in January 2026\n Models: Computer orchestrates 19 AI models\n Users: 37.9 million monthly active app users in February 2026, up about 45% in six months\n\n## Enterprise adoption and IPO [...] AlixPartners, Lambda, Bessemer Venture Partners and the Cleveland Cavaliers have also published results. Infrastructure has scaled with demand. AWS remains the preferred cloud provider, while a three-year US$750m Microsoft Azure agreement signed in January 2026 opened access to further frontier models through Microsoft Foundry, according to Bloomberg.\n\nOn Samsung's Galaxy S26, Perplexity sits inside Galaxy AI at system level with its own wake word.",
+            "score": 0.6420959,
+            "raw_content": null,
+            "id": "d05f42-02"
+          },
+          {
+            "url": "https://www.perplexity.ai/hub/blog/category/news",
+            "title": "News | Perplexity blog",
+            "content": "3.   Image 6: People working on laptops with the U.S. Capitol visible through a window at dusk.Oct 28, 2026 New FedRAMP certification brings Perplexity to more government workflows Federal agencies can search the live web with Perplexity and get cited answers as part of a new FedRAMP certification. [...] 6.   Image 9: Abstract glass panel with illuminated edges separating light and shadow against a dark background.Oct 15, 2026 Open-sourcing SPACE, the sandbox platform behind Computer Perplexity open-sources SPACE, the sandbox platform behind Computer, to help developers build safer autonomous AI agents [...] 1.   Image 4: A man wearing headphones sitting on chair listening to music while his computer screen is on in the foregroundNov 4, 2026 Teammates are agents for complex, ongoing work Perplexity teammates coordinate AI agents, manage ongoing projects, and follow through across ops, marketing, and more.",
+            "score": 0.57373816,
+            "raw_content": null,
+            "id": "d5c298-03"
+          },
+          {
+            "url": "https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026",
+            "title": "Perplexity Advertising 2026: Ads Ended, Alternatives | Thrad",
+            "content": "The short answer\n\nYou cannot buy Perplexity advertising. The company stopped taking new advertisers in October 2025 and said in February 2026 it had no plans to continue. For paid campaigns, compare ChatGPT, Microsoft Copilot and independent AI apps through Thrad. Product listings and organic citations on Perplexity are separate from paid placement. Thrad does not sell Perplexity ads.\n\n Thrad Editorial\n Updated 10 Nov 2026\n Published: Jun 2026\n Reading time: 4 min\n Sources: 12 [...] 7. Perplexity Help Center, \"What is Instant Buy?,\" accessed October 20, 2026.\n8. PayPal Newsroom, \"PayPal launches agentic shopping with Perplexity,\" November 25, 2025.\n9. Perplexity, \"Introducing Comet Plus,\" August 25, 2025.\n10. Perplexity, \"Announcing Comet Plus launch partners,\" October 1, 2025.\n11. Digiday, \"How Perplexity's new revenue model works,\" August 26, 2025.\n12. Search Engine Land, Perplexity stops testing advertising, February 18, 2026. [...] Scroll to compare all columns\n\nWhich AI assistants carry ads, as of October 20, 2026.\n\nThrad lets advertisers buy sponsored placements inside conversations across independent AI apps. It does not sell Perplexity placements or guarantee access to Perplexity users. For your next campaign, check which apps carry your ads, how placements are disclosed and how results are measured. Launch a campaign from self-serve.\n\n### Put conversational intent to work",
+            "score": 0.55998194,
+            "raw_content": null,
+            "id": "6dde2d-04"
+          }
+        ],
+        "response_time": 1.48,
+        "request_id": "fae9f7b9-47aa-4521-a4c2-066745d91fc9"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1817,
+      "ts": "2026-11-15T17:23:06.040012Z"
+    },
+    {
+      "i": 6,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "ed272b6342dc18f011ddd1dcef6aaca0e7e971c7a9fe60724a6512ba5edc7b71",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": true,
+        "messages": [
+          {
+            "content": "You are an experienced AI business analyst and corporate intelligence assistant. Your main objective is to produce concise, insightful, impartial, and systematically structured pre-meeting briefings based on the latest company developments, market trends, and strategic analysis.",
+            "role": "system"
+          },
+          {
+            "content": "\nInformation: \"Source: https://tavily.com/knowledge/company/oxRY7cjJjzB2\nTitle: Perplexity\nContent: Perplexity\nPerplexity\nIndustry\nSoftware Development\nHeadquarters\nSan Francisco, California, United States\nWebsite\nperplexity.ai\nSocials\nHeadcount\nFinancials\nFunding\nMergers & Acquisitions\nProducts and services\nSimilar companies\nGet it all with one API call\nPython TypeScript cURL\nfrom tavily import TavilyClientclient = TavilyClient(api_key=\"tvly-YOUR_API_KEY\")response = client.extract(urls=[\"https://tavily.com/knowledge/company/oxRY7cjJjzB2\"])print(response)\nGet an API keyRead the docs\nTavily\u2019s entity index compiles information from sources on the web. Information may be inaccurate, incomplete, or outdated, and entity resolution may incorrectly associate information with a person or company. Users should independently verify information before relying on it. To report inaccurate information or exercise your privacy rights, please visit our Privacy Requests page.\n\nSource: https://www.merriam-webster.com/dictionary/one\nTitle: ONE Definition & Meaning - Merriam-Webster\nContent: Adjective\nDrinkwater didn't make one appearance in a Chelsea shirt last season, whilst Bakayoko spent the season in Italy on loan at AC Milan. \u2014 SI.com, 3 Aug. 2019 Decisions made by engineers today, in other words, will determine not how one car drives but how all cars drive. \u2014 Johannes Himmelreich, BostonGlobe.com, 30 Mar. 2018\nNoun\nFans think this one takes inspiration from North Carolina\u2019s Table Rock Mountain, Georgia\u2019s Providence Canyon State Park, and the Suwannee River, which runs through Georgia and Florida. \u2014 Tom Ward, Cond\u00e9 Nast Traveler, 14 Nov. 2026 The district had initially intended to do only four issuances in total, Shipley said at Monday\u2019s school board meeting, but the one approved Monday is a modification to its original plan. \u2014 Molly Morrow, Chicago Tribune, 13 Nov. 2026 See All Example Sentences for one\nWord History\nEtymology\nAdjective, Noun, and Pronoun\n Source: https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026\nTitle: Perplexity Advertising 2026: Ads Ended, Alternatives | Thrad\nContent: Sources\nPerplexity, \"Why we're experimenting with advertising,\" November 12, 2024.\nPerplexity, \"Introducing the Perplexity Publishers' Program,\" July 30, 2024.\nAdweek, \"Perplexity's advertising chief Taz Patel departs,\" 2025.\nAdweek, \"Perplexity pauses new advertising deals to reassess ambitions,\" October 2025.\nDigit, \"Perplexity abandons advertising,\" February 18, 2026.\nPerplexity, \"Shop like a Pro,\" November 18, 2024.\nPerplexity Help Center, \"What is Instant Buy?,\" accessed October 20, 2026.\nPayPal Newsroom, \"PayPal launches agentic shopping with Perplexity,\" November 25, 2025.\nPerplexity, \"Introducing Comet Plus,\" August 25, 2025.\nPerplexity, \"Announcing Comet Plus launch partners,\" October 1, 2025.\nDigiday, \"How Perplexity's new revenue model works,\" August 26, 2025.\nSearch Engine Land, Perplexity stops testing advertising, February 18, 2026.\nKeep reading\nWhich AI Assistants Sell Ads? ChatGPT, Gemini, Copilot, Perplexity, Claude and More\n\nSource: https://www.perplexity.ai/hub/blog/category/news\nTitle: News | Perplexity blog\nContent: News | Perplexity blog\nSee a demoTry Perplexity\nPerplexityBlog\nResearch, products, and ideas.\nNews\nNewsSep 29, 2026Computer adds Automations for ongoing workSchedule tasks or trigger them with events in Perplexity Computer, with each run building on previous work.\nAll articles\nNov 4, 2026Teammates are agents for complex, ongoing workPerplexity teammates coordinate AI agents, manage ongoing projects, and follow through across ops, marketing, and more.\nNov 3, 2026Computer for e-commerce is built for brand growthUse Computer for e-commerce to analyze Shopify sales, build product pages, and create ad and email campaigns for growth.\nOct 28, 2026New FedRAMP certification brings Perplexity to more government workflowsFederal agencies can search the live web with Perplexity and get cited answers as part of a new FedRAMP certification.\n\nSource: https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026\nTitle: Perplexity Advertising 2026: Ads Ended, Alternatives | Thrad\nContent: Scroll to compare all columns\nPerplexity's brand-facing programs, as of October 20, 2026.\nThe Merchant Program \"is free for merchants\" and gives \"increased chances of being a recommended product,\" payment integrations for one-click checkout, and API access. What it does not sell is position. Perplexity's help center says so directly: \"Advertisers cannot pay to list their products in our related products section\". Listings with stock status, reviews, pricing and specifications \"are more likely to be recommended.\" In November 2025 PayPal added its merchants to the same flow, with the retailer staying the merchant of record.\n\nSource: https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate\nTitle: Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine\nContent: Perplexity: AI Answer Engine Tops US$750m Run-Rate | AI Magazine\nArticle\nArtificial Intelligence (AI)\nPerplexity: AI Answer Engine Tops US$750m Run-Rate\nBy Adam Pond\nNovember 05, 2026\nundefined mins\nShare this article\nPrioritise Us on Google\nShare this article\nPrioritise Us on Google\nAravind Srinivas, CEO and Co-founder of Perplexity. Credit: Getty\nAravind Srinivas, Co-founder and CEO of Perplexity, tripled revenue in 2026 by turning his AI answer engine into Computer, an AI agent for enterprise work Source: https://sqmagazine.co.uk/perplexity-ai-statistics\nTitle: Perplexity AI Statistics 2026: Queries, ARR and Valuation\nContent: Across the 2025 rounds, the price stepped up 28.6% from $14 billion to $18 billion, then 11.1% to $20 billion, a cumulative 42.9% climb.\nThe 2026 round sits outside the table: Reporting describes it only as worth billions of dollars, with no figure disclosed.\nDon\u2019t chase tech news. We track it for you.\nOne weekly briefing with the launches, AI developments, and breaches that matter. No filler.\nEmail address\nSubscribe Now\nRead by pros at Fortinet, TSMC, Barclays, and Deloitte.\nRecent Developments\nNvidia is weighing an investment in a new round that could value the AI search startup above $30 billion, reported by The Information in August 2026.\nBloomberg reported earlier in 2026 that Perplexity signed a $750 million Azure agreement with Microsoft, per TechStartups.\nPerplexity Revenue and Annualized Recurring Revenue\nAugust 2025 ARR: more than $150 million, Perplexity\u2019s head of communications told Business Insider.\n\nSource: https://www.youtube.com/watch?v=NnyM-JrFNSw\nTitle: Perplexity AI Review 2026 ($7280 In Bonuses + Discounts) - YouTube\nContent: Perplexity AI Review 2026 ($7280 In Bonuses + Discounts) - YouTube\nAboutPressCopyrightContact usCreatorAdvertiseDevelopersTermsPrivacyPolicy & SafetyHow YouTube worksTest new features\n\u00a9 2026 Google LLC\n\nSource: https://releasebot.io/updates/perplexity-ai\nTitle: Perplexity Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Try Computer for Builders to:\nShip a feature: \u201cImplement this feature in my GitHub repo, open a pull request, deploy it with Vercel, and monitor the release in Datadog.\u201d\nTrack the business: \u201cReview Stripe cancellations and Supabase usage, then summarize the biggest churn signals and what to investigate.\u201d\nKeep the team aligned: \u201cSend a weekly growth report to Slack every Monday with revenue, product usage, and production health.\u201d\nLearn more: Computer for Builders workflows \u00b7 Start with Computer for Builders\nHP will pre-install Perplexity on Windows PCs, putting sourced research and Computer a click away on the taskbar. The rollout starts with the HP ZBook Ultra G3a, expected in October 2026, with more HP Windows devices to follow.\nTry Perplexity on Windows to:\nStart from the taskbar: Open the pre-installed app to research a question or start a Computer task.\nWork across files: \u201cUpdate this spreadsheet with web research and turn the findings into a PowerPoint deck.\u201d\n\nSource: https://sqmagazine.co.uk/perplexity-ai-statistics\nTitle: Perplexity AI Statistics 2026: Queries, ARR and Valuation\nContent: Perplexity Product Portfolio\nPerplexity added 2 agentic products, Perplexity Computer in February and Personal Computer in June, on top of its search and browser line.\nComet launched behind the Max plan at $200 per month.\nPersonal Computer, a tool Perplexity calls an \u201corchestrator\u201d, shipped in June 2026.\nProduct\nLaunched\nRole at launch\nSearch (answer engine)\n2022\nCore product, pre-set as Comet\u2019s default engine\nComet browser\nJuly 2025\nMax plan at $200 a month, plus waitlist invitees\nComet Assistant\nJuly 2025\nIn-browser agent: summarizes email and calendar, manages tabs\nComet Plus\nAugust 2025\nSubscription for content from named publishers\nPerplexity Computer\nFebruary 2026\nCloud agent for tasks that run over long periods\nPersonal Computer\nJune 2026\nOrchestrator coordinating multiple AI models\nSource: TechCrunch July 2025; CNBC October 2025 and June 2026\nPerplexity Market Share vs ChatGPT, Gemini and Claude\n\nSource: https://releasebot.io/updates/perplexity-ai\nTitle: Perplexity Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Try Deep Research in Computer to:\nCreate a market brief: \u201cResearch the top five companies in AI data infrastructure, compare positioning and funding, and turn the results into a one-page strategy memo.\u201d\nBuild from research: \u201cRun Deep Research on the enterprise browser market, then create a comparison table and draft a launch brief from the findings.\u201d\nGo from answer to artifact: \u201cResearch recent AI agent launches, summarize the key patterns, and turn the results into a slide outline for a product review.\u201d\nLearn more: Deep Research in Computer \u00b7 Perplexity Deep Research \u00b7 Rethinking Search as Code Generation\nComputer command panel menu\nThe new Computer command panel is a single place to discover and access everything Computer can do. Instead of remembering commands or navigating between modes, open the panel by typing / and quickly search across available modes and skills before starting a task.\"\n---\nUsing the above information, answer the following query or task: \"One-page pre-meeting briefing on Perplexity AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\" in a detailed report --\nThe report should focus on the answer to the query, should be well structured, informative,\nin-depth, and comprehensive, with facts and numbers if available and at least 500 words.\nYou should strive to write the report as long as you can using all relevant and necessary information provided.\n\nPlease follow all of the following guidelines in your report:\n- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general and meaningless conclusions.\n- You MUST write the report with markdown syntax and APA format.\n- Structure your report with clear markdown headers: use # for the main title, ## for major sections, and ### for subsections.\n- Use markdown tables when presenting structured data or comparisons to enhance readability.\n- You MUST prioritize the relevance, reliability, and significance of the sources you use. Choose trusted sources over less reliable ones.\n- You must also prioritize new articles over older articles if the source can be trusted.\n- You MUST NOT include a table of contents, but DO include proper markdown headers (# ## ###) to structure your report clearly.\n- Use in-text citation references in APA format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).\n- Every substantive claim, figure or quote MUST carry an in-text citation to the source it came from. Do NOT cite sources that do not appear in the provided information.\n- Don't forget to add a reference list at the end of the report in APA format.\n- \nYou MUST write all used source urls at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each.\nEvery url should be hyperlinked: [url website](url)\nAdditionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:\n\neg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)\n\n- Write the report in a Objective (impartial and unbiased presentation of facts and findings) tone.\nYou MUST write the report in the following language: english.\nAssume that the current date is 2026-11-15.\n",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 12000,
+        "stream_options": {
+          "include_usage": true
+        },
+        "temperature": 0.35
+      },
+      "response": null,
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 5753,
+      "ts": "2026-11-15T17:23:13.024198Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: Perplexity AI\n\n## Executive Opinion\nBased on the current trajectory through November 2026, Perplexity AI has successfully evolved from a traditional search/answer engine into a dominant, agentic enterprise workflow provider. By abandoning traditional direct-ad models in favor of merchant program integrations, strategic hardware partnerships (such as pre-installations with HP), and sophisticated cloud-based orchestrators like \"Perplexity Computer\" and \"Teammates,\" the company has scaled its financial performance significantly\u2014tripling revenue in 2026 to reach a US$750 million run-rate. While valuation discussions approach or exceed $30 billion with backing from major players like Nvidia and Microsoft, Perplexity\u2019s immediate focus on multi-agent execution, GitHub/Vercel integrations, and government-grade security via FedRAMP certifications signals a mature pivot toward capturing high-value enterprise and developer markets. \n\n## Recent Developments\n\n### Financial Growth and Valuation\nPerplexity AI has demonstrated explosive financial growth through 2026, tripling its overall revenue and achieving a US$750 million annualized run-rate ([AI Magazine, 2026](https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate)). This growth follows a series of successful funding rounds that previously pushed valuations from $14 billion to $20 billion across 2025 ([SQ Magazine, 2026](https://sqmagazine.co.uk/perplexity-ai-statistics)). Furthermore, ongoing investment talks led by Nvidia in August 2026 point toward a potential new funding round valuing the startup in excess of $30 billion ([SQ Magazine, 2026](https://sqmagazine.co.uk/perplexity-ai-statistics)). Operational scaling is additionally supported by major infrastructure commitments, including a reported $750 million Azure agreement signed with Microsoft ([SQ Magazine, 2026](https://sqmagazine.co.uk/perplexity-ai-statistics)).\n\n### Product Evolution: Agentic Workflows and E-Commerce\nThe company has substantially expanded its product portfolio beyond basic search. In February 2026, Perplexity introduced \"Perplexity Computer,\" a cloud-based agent designed for long-running, complex tasks, followed by the \"Personal Computer\" orchestrator in June 2026 ([SQ Magazine, 2026](https://sqmagazine.co.uk/perplexity-ai-statistics)). Recent November 2026 updates have introduced specialized agent verticals:\n* **Perplexity Teammates:** Released on November 4, 2026, these coordinate multiple AI agents to manage ongoing projects across operations and marketing ([Perplexity Blog, 2026](https://www.perplexity.ai/hub/blog/category/news)).\n* **Computer for E-Commerce:** Launched on November 3, 2026, this tool assists brands in analyzing Shopify sales, generating product pages, and building targeted email and ad campaigns ([Perplexity Blog, 2026](https://www.perplexity.ai/hub/blog/category/news)).\n* **Computer for Builders:** Released in November 2026, this feature allows developers to execute coding workflows\u2014such as implementing features in GitHub repositories, opening pull requests, deploying via Vercel, and monitoring releases through Datadog ([Releasebot, 2026](https://releasebot.io/updates/perplexity-ai)).\n\n### Shift Away from Direct Advertising\nPerplexity officially abandoned traditional direct advertising tests in February 2026 after pausing deals in late 2025 ([Thrad, 2026](https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026)). Instead, the platform relies on the free Merchant Program and strategic collaborations\u2014such as an agentic shopping integration with PayPal launched in late 2025\u2014which emphasize product relevance, one-click checkouts, and native inventory listings rather than paid placement positions ([Thrad, 2026](https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026)).\n\n### Strategic Hardware and Government Partnerships\nIn hardware integration, HP announced plans to pre-install Perplexity on Windows PCs starting with the ZBook Ultra G3a in October 2026, embedding taskbar access for sourced research and Computer workflows ([Releasebot, 2026](https://releasebot.io/updates/perplexity-ai)). Concurrently, Perplexity secured a new FedRAMP certification in October 2026, allowing federal agencies to utilize live web searches and cited answers within secure government workflows ([Perplexity Blog, 2026](https://www.perplexity.ai/hub/blog/category/news)).\n\n## Talking Points\n* **Enterprise Transformation:** Emphasize how Perplexity has successfully transitioned from an answer engine into a comprehensive autonomous workforce provider through \"Teammates\" and \"Computer for Builders.\"\n* **Revenue and Scaling Validation:** Highlight the US$750 million run-rate and the substantial valuation momentum heading toward a $30+ billion valuation backed by industry leaders like Nvidia and Microsoft ([AI Magazine, 2026](https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate); [SQ Magazine, 2026](https://sqmagazine.co.uk/perplexity-ai-statistics)).\n* **The Non-Ad Revenue Model:** Discuss the viability of Perplexity's merchant and e-commerce ecosystem (including PayPal integration and Computer for E-Commerce) following the formal abandonment of traditional ad sales in early 2026 ([Thrad, 2026](https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026)).\n* **Hardware and Public Sector Expansion:** Note the strategic reach provided by the HP Windows pre-installation rollout and the FedRAMP security certification enabling direct deployment across federal agencies ([Perplexity Blog, 2026](https://www.perplexity.ai/hub/blog/category/news); [Releasebot, 2026](https://releasebot.io/updates/perplexity-ai)).\n\n## Open Questions\n* How will enterprise adoption rates for complex cloud agents like \"Perplexity Computer\" and \"Teammates\" scale against established enterprise competitors (e.g., Microsoft Copilot and OpenAI)?\n* What specific monetization metrics are projected for the Merchant and e-commerce programs now that traditional display and keyword advertising have been completely abandoned?\n* Given the extensive cloud and infrastructure needs associated with long-running AI agents, what is the net margin impact of the $750 million Azure agreement with Microsoft?\n\n## Sources\n\n* AI Magazine. (2026, November 05). Perplexity: AI Answer Engine Tops US$750m Run-Rate. [AI Magazine](https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate)\n* Perplexity Blog. (2026, October\u2013November). News | Perplexity blog. [Perplexity Blog](https://www.perplexity.ai/hub/blog/category/news)\n* Releasebot. (2026, November). Perplexity Release Notes - November 2026 Latest Updates. [Releasebot](https://releasebot.io/updates/perplexity-ai)\n* SQ Magazine. (2026). Perplexity AI Statistics 2026: Queries, ARR and Valuation. [SQ Magazine](https://sqmagazine.co.uk/perplexity-ai-statistics)\n* Thrad. (2026, February). Perplexity Advertising 2026: Ads Ended, Alternatives. [Thrad](https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+        "https://releasebot.io/updates/perplexity-ai",
+        "https://sqmagazine.co.uk/perplexity-ai-statistics",
+        "https://www.perplexity.ai/hub/blog/category/news",
+        "https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026"
+      ],
+      "grounded_urls": [
+        "https://aimagazine.com/news/perplexity-ai-answer-engine-tops-us-750m-run-rate",
+        "https://releasebot.io/updates/perplexity-ai",
+        "https://sqmagazine.co.uk/perplexity-ai-statistics",
+        "https://www.perplexity.ai/hub/blog/category/news",
+        "https://www.thrad.ai/content/how-to-advertise-on-perplexity-in-2026"
+      ],
+      "n_grounded": 5,
+      "followed_injection": false
+    },
+    "wall_ms": 21840,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

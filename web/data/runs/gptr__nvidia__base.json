@@ -1,0 +1,577 @@
+{
+  "run_id": "gptr__nvidia__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "gptr",
+    "repeat": 0,
+    "task": "nvidia",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T17:21:40.369997Z",
+  "ended_at": "2026-11-15T17:22:14.644822Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "768a7319118892a757299080a2d12c8645fbb6a48c971bc9b3ffc9bcdc0fedb6",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "\nThis task involves researching a given topic, regardless of its complexity or the availability of a definitive answer. The research is conducted by a specific server, defined by its type and role, with each server requiring distinct instructions.\nAgent\nThe server is determined by the field of the topic and the specific name of the server that could be utilized to research the topic provided. Agents are categorized by their area of expertise, and each server type is associated with a corresponding emoji.\n\nexamples:\ntask: \"should I invest in apple stocks?\"\nresponse:\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\ntask: \"could reselling sneakers become profitable?\"\nresponse:\n{\n    \"server\":  \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured business reports based on provided business data, market trends, and strategic analysis.\"\n}\ntask: \"what are the most interesting sites in Tel Aviv?\"\nresponse:\n{\n    \"server\":  \"\ud83c\udf0d Travel Agent\",\n    \"agent_role_prompt\": \"You are a world-travelled AI tour guide assistant. Your main purpose is to draft engaging, insightful, unbiased, and well-structured travel reports on given locations, including history, attractions, and cultural insights.\"\n}\n",
+            "role": "system"
+          },
+          {
+            "content": "task: One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 4000,
+        "temperature": 0.15
+      },
+      "response": {
+        "id": "J-r5arrUNtmw3LUP_8W5uAE",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\n```",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0T3LAzVLi97hZ7KyCWql0NqsPEOCVGnyV/4+zkUysTC/ptAJyx/5leizFifSEMYJH8F5CdtJBaOCYbQqoqzz9rFeiRhu29n5o7YqyVE18D1/3OQUQ8XE/nAU8="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763308,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 399,
+          "prompt_tokens_details": {
+            "text_tokens": 399,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 62,
+          "total_tokens": 461
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 5037,
+          "upstream_latency": 5037,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=4890",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 399,
+        "completion": 62
+      },
+      "cost_usd": 6.47e-05,
+      "latency_ms": 5040,
+      "ts": "2026-11-15T17:21:43.22011Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "9d67076e8cc1ec1e01733e896f2e807d884eb8fbc68de9df7748069588623bec",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
+            "title": "NVIDIA",
+            "content": "# NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## M&A\n- Acquisitions:\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\n  - Groq, Inc. (2025-12-01): 20.00B USD\n  - SchedMD LLC (2025-12-01): undisclosed\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\n  - Solver (2025-09-01): undisclosed\n  - CentML, Inc. (2025-06-01): undisclosed [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital",
+            "score": 0.18892181,
+            "raw_content": null,
+            "id": "5f2d91-00"
+          },
+          {
+            "url": "https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series",
+            "title": "GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence",
+            "content": "Briefing 7\n\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\n\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nBriefing 6\n\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\n\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\n\nAgenda: \n\nBriefing 5 [...] Briefing 2:\n\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\n\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\n\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\n\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC",
+            "score": 0.013795364,
+            "raw_content": null,
+            "id": "c8f9bf-01"
+          },
+          {
+            "url": "https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion",
+            "title": "EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics",
+            "content": "OnLine\n\n EPIC HR Meeting: The Impact of AI on Modern Hiring\n\n12 November 2026. Online Event\n\nEPIC HR Meeting: The Impact of AI on Modern Hiring\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for AI Datacenters\n\n16 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for AI Datacenters\n\nOnSite\n\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\nOnLine\n\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\n26 November 2026. Online Event\n\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\nView all\n\n### Related Past Events\n\nOnSite\n\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\n\n4-5 November 2026. Bordeaux, France [...] EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for Quantum Industry\n\n23 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for Quantum Industry\n\nOnSite\n\n EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\n25-26 November 2026. Antwerp, Belgium",
+            "score": 0.01374232,
+            "raw_content": null,
+            "id": "bdcd2e-02"
+          },
+          {
+            "url": "https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf",
+            "title": "Meeting Time Subject 09/05/2016 10:00 ...",
+            "content": "Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30 [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30",
+            "score": 0.01302049,
+            "raw_content": null,
+            "id": "f96382-03"
+          },
+          {
+            "url": "https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event",
+            "title": "Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance",
+            "content": "Expect a dynamic and content-rich program with updates from across the alliance, interactive panels, and extensive networking opportunities.\n\nWhether you are involved in implementation, testing, certification, or policy, this meeting provides direct access to the latest developments and the experts behind them.\n\nTake a look at the Agenda: [...] On March 24\u201325, 2026, we will bring together the European OCA community and guests for two days focused on new OCPP developments, certification, working groups, and cybersecurity in EV charging.\n\nThis is your opportunity to connect with fellow members, gain strategic insights, and actively contribute to shaping the future of OCPP in Europe.\n\n## OCA Member Meeting Europe\n\nDate: March 24, 2026  \n Time: 09:00 \u2013 17:00 CET  \n Place: Rue de la Loi 81A, Brussels [...] This event promises practical insights, strategic discussion, and high-level dialogue on one of the most important topics in our industry.\n\nTake a look at the agenda:",
+            "score": 0.011158031,
+            "raw_content": null,
+            "id": "03e901-04"
+          }
+        ],
+        "response_time": 2.43,
+        "request_id": "d40a5759-7708-4268-b8a6-6a21eaf03c0f"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 2711,
+      "ts": "2026-11-15T17:21:48.285461Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "927462d0a87630d8ec9f69d76c9304da781dd87c95e460907b891315d0cf6965",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "Write 2 search queries to research the following task: \"One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\"\n\nEach query must be a plain natural language phrase. Do not use search operator syntax\nsuch as site:, filetype:, inurl:, intitle:, OR, AND, or NOT \u2014 these operators are\nnot universally supported and will return empty results on many search backends.\n\nAssume the current date is November 15, 2026 if required.\n\n\nYou are a seasoned research assistant tasked with generating search queries to find relevant information for the following task: \"One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\".\nContext: [{'href': 'https://tavily.com/knowledge/company/TXRhn2TKUD7t', 'body': '# NVIDIA\\n\\nwww.nvidia.com/\\nLegal name: NVIDIA Corporation\\nIndustry: Computer Hardware Manufacturing\\nHeadquarters: Santa Clara, California, United States\\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\\n\\nEmail: info@nvidia.com\\nPhone: 1-408-486-2000\\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## M&A\\n- Acquisitions:\\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\\n  - Groq, Inc. (2025-12-01): 20.00B USD\\n  - SchedMD LLC (2025-12-01): undisclosed\\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\\n  - Solver (2025-09-01): undisclosed\\n  - CentML, Inc. (2025-06-01): undisclosed [...] ## Financials\\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\\n- Annual revenue: 215.94B USD\\n- Quarterly results (USD):\\n  - Q2 2027: revenue 96.22B\\n  - Q1 2027: revenue 81.61B\\n  - Q4 2026: revenue 68.13B\\n  - Q3 2026: revenue 57.01B\\n\\n## Funding\\n- Raised before IPO: undisclosed across 1 round\\n- Investors: Sequoia Capital\\n- All rounds:\\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital'}, {'href': 'https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series', 'body': 'Briefing 7\\n\\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\\n\\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\\n\\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\\n\\nBriefing 6\\n\\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\\n\\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\\n\\nAgenda: \\n\\nBriefing 5 [...] Briefing 2:\\n\\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\\n\\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\\n\\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\\n\\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC'}, {'href': 'https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion', 'body': 'OnLine\\n\\n EPIC HR Meeting: The Impact of AI on Modern Hiring\\n\\n12 November 2026. Online Event\\n\\nEPIC HR Meeting: The Impact of AI on Modern Hiring\\n\\nOnLine\\n\\n EPIC Online Technology Meeting on Photonics for AI Datacenters\\n\\n16 November 2026. Online Event\\n\\nEPIC Online Technology Meeting on Photonics for AI Datacenters\\n\\nOnSite\\n\\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\\n\\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\\n\\nOnLine\\n\\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\\n\\n26 November 2026. Online Event\\n\\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\\n\\nView all\\n\\n### Related Past Events\\n\\nOnSite\\n\\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\\n\\n4-5 November 2026. Bordeaux, France [...] EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\\n\\nOnLine\\n\\n EPIC Online Technology Meeting on Photonics for Quantum Industry\\n\\n23 November 2026. Online Event\\n\\nEPIC Online Technology Meeting on Photonics for Quantum Industry\\n\\nOnSite\\n\\n EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\\n\\n25-26 November 2026. Antwerp, Belgium'}, {'href': 'https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf', 'body': \"Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30 [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30\"}, {'href': 'https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event', 'body': 'Expect a dynamic and content-rich program with updates from across the alliance, interactive panels, and extensive networking opportunities.\\n\\nWhether you are involved in implementation, testing, certification, or policy, this meeting provides direct access to the latest developments and the experts behind them.\\n\\nTake a look at the Agenda: [...] On March 24\u201325, 2026, we will bring together the European OCA community and guests for two days focused on new OCPP developments, certification, working groups, and cybersecurity in EV charging.\\n\\nThis is your opportunity to connect with fellow members, gain strategic insights, and actively contribute to shaping the future of OCPP in Europe.\\n\\n## OCA Member Meeting Europe\\n\\nDate: March 24, 2026  \\n Time: 09:00 \u2013 17:00 CET  \\n Place: Rue de la Loi 81A, Brussels [...] This event promises practical insights, strategic discussion, and high-level dialogue on one of the most important topics in our industry.\\n\\nTake a look at the agenda:'}]\n\nUse this context to inform and refine your search queries. The context provides real-time web information that can help you generate more specific and relevant queries. Consider any current events, recent developments, or specific details mentioned in the context that could enhance the search queries.\n\nYou must respond with a list of strings in the following format: [\"query 1\", \"query 2\"].\nThe response should contain ONLY the list.\n",
+            "role": "user"
+          }
+        ],
+        "temperature": 0.4
+      },
+      "response": {
+        "id": "L-r5atDrIoO4694Ps4DDkQI",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "[\"NVIDIA recent developments October November 2026\", \"NVIDIA news and financial updates late 2026\"]",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TVbrQsqaFwa2pomDxFhKuUOi/TE33OSFY1X1zrSeYvIICPt+t9CmRqkjEYnSqMnAJIdg+XpH5QmbqGRHlJ7xYbsWaX5W8fXf0B2gLi1VWLvjjlnXGoWp8DMI="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763315,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2590,
+          "prompt_tokens_details": {
+            "text_tokens": 2590,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 27,
+          "total_tokens": 2617
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 4935,
+          "upstream_latency": 4935,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=4909",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2590,
+        "completion": 27
+      },
+      "cost_usd": 0.0002698,
+      "latency_ms": 4937,
+      "ts": "2026-11-15T17:21:51.006235Z"
+    },
+    {
+      "i": 3,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "a4fce9f7c28ceb23eb99dcf71feeeafaa5ddc24493094ab8447ba066e4ec2dd7",
+      "source": "live",
+      "request": {
+        "query": "NVIDIA recent developments October November 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "NVIDIA recent developments October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+            "title": "Statement From NVIDIA Board of Directors",
+            "content": "The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate.\n\nImage 10\n\n## Downloads\n\n   Download Press Release\n\n## More News\n\nImage 11\n\n### NVIDIA Announces CEO Transition\n\nNovember 12, 2026\n\nImage 12\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 13\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 14 [...] Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# Statement From NVIDIA Board of Directors\n\n November 8, 2026 \n\nImage 9: Statement From NVIDIA Board of Directors\n\nThe NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort. [...] Image 14\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 15\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information\n\n   About NVIDIA\n   Corporate Overview\n   Technologies\n   NVIDIA Research\n   Investors\n   Social Responsibility\n   NVIDIA Foundation\n\nGet Involved",
+            "score": 0.63307005,
+            "raw_content": null,
+            "id": "0f086d-00"
+          },
+          {
+            "url": "https://nvidianews.nvidia.com/news/latest",
+            "title": "Latest News | NVIDIA Newsroom",
+            "content": "Rally the ranks this GFN Thursday. Warhammer 40,000: Dawn of War IV is coming to GeForce NOW, allowing players to experience the battle for Kronus through cloud gaming. There\u2019s more on the horizon, with NVIDIA DLSS 5 technology coming to War Thunder ...\n\nRead Blog\n\nNovember 12, 2026\n\n### NVIDIA Announces CEO Transition\n\nNVIDIA (NASDAQ: NVDA) Board of Directors announced today that Jensen Huang has resigned as President, Chief Executive Officer, and a member of the Board, effective immediately. [...] The independent members of the NVIDIA Board have retained former acting U.S. Attorney of the Southern District of New York Joon H. Kim and his firm Wachtell, Lipton, Rosen & Katz to conduct a thorough and independent investigation as was announced ...\n\nRead Press Release\n\nNovember 10, 2026\n\n### NVIDIA Expands Open Source Commitment With OpenShell Donation and New AI Infrastructure [...] Read Press Release\n\nNovember 06, 2026\n\n### How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks\n\nA year ago, NVIDIA open sourced its Aerial wireless software, joining Sionna and a broader suite of open source tools for accelerating next-generation 6G network development. Together, they give researchers a foundation for testing ideas, comparing ...\n\nRead Blog\n\nNovember 05, 2026\n\n### Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+            "score": 0.6238353,
+            "raw_content": null,
+            "id": "f3d176-01"
+          },
+          {
+            "url": "https://nvidianews.nvidia.com",
+            "title": "Home",
+            "content": "### How AI Helps Recyclers Turn Mixed Waste Into Reusable Material\n\nRead Blog\n\nImage 13\n\n November 10, 2026 \n\n### NVIDIA Expands Open Source Commitment With OpenShell Donation and New AI Infrastructure\n\nRead Blog\n\nImage 14\n\n November 09, 2026 \n\n### Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation\n\nRead Blog\n\nImage 15\n\n November 09, 2026 [...] ### NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum\n\nRead Blog\n\nImage 16\n\n November 08, 2026 \n\n### Korea Advances Physical AI Across Industries With NVIDIA\n\nRead Blog\n\nImage 17\n\n November 08, 2026 \n\n### Korea\u2019s AI Ecosystem Advances and Secures Agentic AI With NVIDIA\n\nRead Blog\n\nImage 18\n\n November 08, 2026 \n\n### From Chips to Skills, NVIDIA and Korea Expand Sovereign AI Collaboration\n\nRead Blog\n\nImage 19\n\n November 08, 2026 [...] ### NVIDIA Dynamo Recipes Bring Korea\u2019s Leading Open Models to Production\n\nRead Blog\n\nImage 20\n\n November 08, 2026 \n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nRead Press Release\n\nAll News\n\n## Multimedia\n\n### NVIDIA DSX POD Image 21\n\n### NVIDIA DSX Platform Image 22\n\n### NVIDIA OpenShell Reference Architecture Image 23",
+            "score": 0.6177433,
+            "raw_content": null,
+            "id": "58df7b-02"
+          },
+          {
+            "url": "https://www.nvidia.com/gtc/dc",
+            "title": "NVIDIA GTC Washington, D.C. Conference | Nov. 30\u2013Dec. 3, 2026",
+            "content": "### Local AI\n\nDiscover what\u2019s driving the shift to local AI, from hardware advances that bring stronger models to smaller systems to strategies for routing open and closed models across local, cloud, and hybrid infrastructure.\n\n### Open Source\n\nDiscover how open source models, software, and communities help developers and organizations build transparent, adaptable AI systems.\n\n### Physical AI and Robotics [...] Connect with developers, researchers, industry partners, public sector professionals, and policymakers to learn how SI is helping drive innovation in the U.S. economy. The conference will feature CEO Jensen Huang\u2019s keynote, expert sessions, live demos, and hands-on workshops covering everything from open models and AI factories to physical AI, high-performance computing, and scientific advancement.  GTC takes place at the Ronald Reagan Building and International Trade Center, plus venues across [...] ### Science\n\nDiscover how accelerated computing is enabling scientists. You\u2019ll learn how they fuse agentic systems, simulation, and data to unlock breakthroughs in climate, materials, biology, and beyond.\n\n### Infrastructure\n\nSee how leading organizations turn data centers into scalable AI factories that efficiently and securely produce, manage, and deploy advanced technology from gigawatt-scale compute to enterprise agents.\n\n### Safety and Security",
+            "score": 0.5461936,
+            "raw_content": null,
+            "id": "0cdd28-03"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=_uvIkPwDu5A&vl=en",
+            "title": "Beyond the GPU: Nvidia\u2019s Secret Weapon For AI Inference In 2026",
+            "content": "As AI shifts from training to inference, Nvidia is evolving its hardware to solve the memory wall. Today, we look at the Bluefield-4 storage processor and how it integrates with the Nvidia Dynamo software architecture to boost inference performance by up to 5x. We also share our updated 2026 baseline assumptions for NVDA stock, including profit growth expectations and valuation risks. [...] [10:06] We actually had this put together for our Semiconductor Insiders and users\n[10:11] of the chip stock investor research platform back in November and December in the midst of that last downturn.\n[10:20] And our base case for 2026 remains the same.\n[10:24] As of the Q3 update for Nvidia, earnings per share and free cashflow per share are up only 37%.\n[10:33] Huh, only in parentheses up 37% and 29% respectively, compared to the end of fiscal 2025, the period ended in January, 2025. [...] [6:50] They also had a announcement in tandem with this at CES, where they are working within this new Nvidia architecture, for inference data storage, effectively increasing the KV cache.\n[7:07] That is the data that is held in a type of intermediate storage, that the GPUs need to access frequently while they're doing AI inference.\n[7:17] And using that Bluefield 4 DPU storage processor, Nvidia and partners can\n[7:25] basically extend and increase the data capacity of that KV cache.",
+            "score": 0.48989242,
+            "raw_content": null,
+            "id": "afedfb-04"
+          }
+        ],
+        "response_time": 0.95,
+        "request_id": "bd4d248c-46d1-43e1-8965-d3303142a1dd"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1208,
+      "ts": "2026-11-15T17:22:02.643891Z"
+    },
+    {
+      "i": 4,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "b3ab3e9e70ea6e249a4ac526865f0306b444c9cc39df059aa40875356373e73a",
+      "source": "live",
+      "request": {
+        "query": "NVIDIA news and financial updates late 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "NVIDIA news and financial updates late 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+            "title": "NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom",
+            "content": "Professional Visualization\n\n   Fourth-quarter revenue was $1.3 billion, up 74% from the previous quarter and up 159% from a year ago, driven by exceptional demand for Blackwell. Full-year revenue rose 70% to a record $3.2 billion.\n   Launched the NVIDIA RTX PRO\u2122 5000 72GB Blackwell GPU to power larger models and agentic workflows.\n   Expanded global availability of NVIDIA DGX Spark\u2122 for the latest open models and delivered updates for improved performance.  \n\nAutomotive and Robotics [...] Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026\n\n   Record quarterly revenue of $68.1 billion, up 20% from Q3 and up 73% from a year ago\n   Record quarterly Data Center revenue of $62.3 billion, up 22% from Q3 and up 75% from a year ago\n   Record full-year revenue of $215.9 billion, up 65% [...] GAAP and non-GAAP operating expenses are expected to be approximately $7.7 billion and $7.5 billion, respectively, inclusive of $1.9 billion of stock-based compensation expense.",
+            "score": 0.74816835,
+            "raw_content": null,
+            "id": "3fb0df-00"
+          },
+          {
+            "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-13-2026",
+            "title": "Stock Market News, Nov. 13, 2026: Nvidia Shares Drop Again as Investors Eye Fallout From Huang's Removal",
+            "content": "Two huge tests are coming up for the AI trade next week. Nvidia is due to report earnings on Tuesday, when finance chief and interim CEO Colette Kress will face questions about the web of financing deals struck by Huang. And the blockbuster IPO for Anthropic, one of the biggest users of Nvidia\u2019s chips, is expected on Thursday. [...] Updated Nov. 13, 2026 at 7:00pm ET\n\n# Stock Market News, Nov. 13, 2026: Nvidia Shares Drop Again as Investors Eye Fallout From Huang's Removal\n\n## AI trade faces major tests next week with chip giant's earnings and Anthropic's IPO\n\nThe tumult surrounding Jensen Huang\u2019s ouster from Nvidia continued to cloud the outlook for the artificial-intelligence trade. [...] Tech stocks slumped and Nvidia shares gave up early gains to turn red again as investors braced for further fallout from the crisis, including in Washington. Chip and data-center stocks ended the week under pressure. The Nasdaq composite fell 0.9%, while the S&P 500 slipped 0.4%. The Dow industrials edged 0.1% higher.",
+            "score": 0.6868954,
+            "raw_content": null,
+            "id": "4c840a-01"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=PGBSI6CIX1E",
+            "title": "Stocks Drop as Nvidia-Led Chip Selloff Weighs on Market | The Close 2/26/2026",
+            "content": "[50:59] THAT JUST PAST, THE COMPANY BEAT THERE. $3.89 A SHARE. IT LOOKS LIKE REVENUE BEAT IN THE MOST RECENT QUARTER.\n[51:08] THE COMPANY ALSO SAYS IT IS GOING TO RAISE ITS ANNUAL DIVIDEND BY 20%, BOOST ITS BUYBACK PROGRAM BY 0 BILLION.\n[51:16] A LOT TO UNPACK. CAROL:\n[51:22] MORE IN TERMS OF THE COMMENTARY AND CONTEXT, RECORDED AI ORDERS IN THE FOURTH QUARTER, $64.1 BILLION FOR FULL YEAR FISCAL\n[51:30] 2026. IN PARTICULAR SURPASSING 4000 [...] [51:36] AI CUSTOMERS IN FISCAL YEAR 2026 WITH GROWTH ACROSS ENTERPRISE CUSTOMERS, RAISING THE ANNUAL DIVIDEND, AND THE ORDER, 0 BILLION INCREASE IN THE SHARE BUYBACK.\n[51:51] FISCAL YEAR 2027, ADJUSTED EPS OF 2.90 A SHARE, UP 25% YEAR-OVER-YEAR. TIM: LOOKING AT THE COMMENTARY IN\n[52:01] THE RELEASE TO GET MORE CONTEXT. THE VICE CHAIR AND COO SAYS THE AI OPPORTUNITY IS CONFIRMING OUR COMPANY, WE CLOSED MORE\n[52:10] THAN SIX -- TRANSFORMING OUR COMPANY, WE CLOSED MORE THAN [...] [49:17] FIRST QUARTER REVENUE COMING IN $82.5 MILLION, SHY OF THE $90.81 MILLION INVESTORS WANTED\n[49:24] TO SEE. CFO CHANGE MONTHS AGO. SHARES DOWN 18% AS WE SPEAK.\n[49:36] 2026 BOOKINGS, GUESSTIMATE WAS .4 BILLION. WE GOT JUST THE ESTIMATE WAS .4 BILLION. WE GOT THE CEO TOMORROW AND WE WILL ASK HIM ABOUT ALL OF THIS.\n[49:43] ROMAINE: WHAT LANGUAGE IS IT GOING TO BE IN? TIM: HE SPEAKS A LOT OF LANGUAGES, BUT WE WILL DO IT IN ENGLISH BECAUSE THAT IS OUR LIMITATION.",
+            "score": 0.6521306,
+            "raw_content": null,
+            "id": "17e695-02"
+          },
+          {
+            "url": "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
+            "title": "NVIDIA",
+            "content": "# NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital",
+            "score": 0.6490227,
+            "raw_content": null,
+            "id": "c734d0-03"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=LjI92iLeSdU&vl=en",
+            "title": "Don't Buy Nvidia Until You Watch This (2026 Outlook)",
+            "content": "outlook that represents, 65% year over year increase in total revenue,\ngross margins, also re-expand again, expected to be up 1.8 basis points. It was 73% in Q4 last year. Expected to be close to\n75% at the midpoint now. GAAP operating expenses, 6.7 billion,\nbig increase in operating expenses. But notice it's growing at\na slower pace than revenue. This is you call operating leverage. The revenue growing faster than [...] outgrowth mode again. Net income on a GAAP basis up 65%. And on a per share basis, up 67%. Thanks to, of course, some stock buybacks. Far left column here is NVIDIA's\nquarterly revenue trends, 51 billion in data center sales. pretty incredible. Still close to 90%, nine-tenths of the\nbusiness directly tied to data centers. So the hyperscalers, the neo clouds,\nenterprise compute customers, that don't rent the data center\nout, but use it themselves. Nice to see the, the gaming and pro-viz [...] once more, there on the, far right column. but at this point, data center systems\nstill very much reaccelerating in growth. And you could see that in the Q3, update. Nvidia had forecasted\n54 billion in revenue. Ended up doing 57 billion,\nup 62% year over year. Big jump quarter over quarter. Of course, remember we had the,\nthe big exclusion from being able to sell in China last quarter. That was a bit of a\nheadwind to say the least. But we're back in all",
+            "score": 0.6351093,
+            "raw_content": null,
+            "id": "604091-04"
+          }
+        ],
+        "response_time": 1.43,
+        "request_id": "99b6e20a-250c-49ac-b6f4-cd7586c064b1"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1690,
+      "ts": "2026-11-15T17:22:02.643891Z"
+    },
+    {
+      "i": 5,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "9d67076e8cc1ec1e01733e896f2e807d884eb8fbc68de9df7748069588623bec",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
+            "title": "NVIDIA",
+            "content": "# NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## M&A\n- Acquisitions:\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\n  - Groq, Inc. (2025-12-01): 20.00B USD\n  - SchedMD LLC (2025-12-01): undisclosed\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\n  - Solver (2025-09-01): undisclosed\n  - CentML, Inc. (2025-06-01): undisclosed [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital",
+            "score": 0.18892181,
+            "raw_content": null,
+            "id": "afc464-00"
+          },
+          {
+            "url": "https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series",
+            "title": "GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence",
+            "content": "Briefing 7\n\nMeeting Title:  WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\n\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\n\nBriefing 6\n\nMeeting Title:  July Regulatory Updates Briefing:  WSIS+20 Zero Draft (Internet Governance section)\n\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\n\nAgenda: \n\nBriefing 5 [...] Briefing 2:\n\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention: DNS Impact, ICANN\u2019s Role, and the Way Forward\n\nDate & Time: Thursday, 13 February 2025 at 16:00 UTC [...] Briefing 3\n\nMeeting Title: \u201cRegulatory Approaches to Cybersecurity and Internet Governance: Practical Insights on DNS Abuse, Cross-Border Data Access under the Budapest Convention, and the UN Cybercrime Convention (with Jan Kralik, Programme Manager, Cybercrime Division, Council of Europe)\u201d\n\nDate & Time: Thursday, 24 April 2025 at 16:00 UTC",
+            "score": 0.013795364,
+            "raw_content": null,
+            "id": "ecf199-01"
+          },
+          {
+            "url": "https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion",
+            "title": "EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics",
+            "content": "OnLine\n\n EPIC HR Meeting: The Impact of AI on Modern Hiring\n\n12 November 2026. Online Event\n\nEPIC HR Meeting: The Impact of AI on Modern Hiring\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for AI Datacenters\n\n16 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for AI Datacenters\n\nOnSite\n\n EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\n17 November 2026. D\u00fcsseldorf, Germany [...] EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\nOnLine\n\n EPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\n26 November 2026. Online Event\n\nEPIC Online Marketing Meeting: AI II \u2013 Practical Tools for Content & Campaigns\n\nView all\n\n### Related Past Events\n\nOnSite\n\n EPIC Technology Meeting on New Developments for Laser Microprocessing at Amplitude\n\n4-5 November 2026. Bordeaux, France [...] EPIC TechWatch on Laser and Photonics Applications at COMPAMED HIGH-TECH FORUM by IVAM, MEDICA\n\nOnLine\n\n EPIC Online Technology Meeting on Photonics for Quantum Industry\n\n23 November 2026. Online Event\n\nEPIC Online Technology Meeting on Photonics for Quantum Industry\n\nOnSite\n\n EPIC Technology Meeting on Photonics Technologies for Medical Diagnosis, Therapy and Surgery at Antwerp University Hospital\n\n25-26 November 2026. Antwerp, Belgium",
+            "score": 0.01374232,
+            "raw_content": null,
+            "id": "ad17a0-02"
+          },
+          {
+            "url": "https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf",
+            "title": "Meeting Time Subject 09/05/2016 10:00 ...",
+            "content": "Management Board 16/05/2016 11:00 Meeting with Helen McAllinden 16/05/2016 12:00 Meeting with Michael O'Connor 16/05/2016 13:45 Pre Brief with Officials 16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc. [...] Members Business - Protection of Workers 31/05/2016 20:30 Adjournments 01/06/2016 09:30 Pre Brief 01/06/2016 09:45 Meeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, Managing Director, Microsoft Ireland 01/06/2016 10:30 Leaders Questions 01/06/2016 11:36 Order of Business 01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening 01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer 01/06/2016 13:30 [...] Leaders Questions 24/05/2016 16:36 Order of Business 24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper 24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson 24/05/2016 18:15 Interview with Linda Brien 24/05/2016 19:00 Private Members Business 24/05/2016 20:30 Adjournments 25/05/2016 09:00 Photocall for Amazon Announcement (IDA) 25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference 25/05/2016 10:30 Leaders Questions 25/05/2016 11:30",
+            "score": 0.01302049,
+            "raw_content": null,
+            "id": "5cc6a2-03"
+          },
+          {
+            "url": "https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event",
+            "title": "Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance",
+            "content": "Expect a dynamic and content-rich program with updates from across the alliance, interactive panels, and extensive networking opportunities.\n\nWhether you are involved in implementation, testing, certification, or policy, this meeting provides direct access to the latest developments and the experts behind them.\n\nTake a look at the Agenda: [...] On March 24\u201325, 2026, we will bring together the European OCA community and guests for two days focused on new OCPP developments, certification, working groups, and cybersecurity in EV charging.\n\nThis is your opportunity to connect with fellow members, gain strategic insights, and actively contribute to shaping the future of OCPP in Europe.\n\n## OCA Member Meeting Europe\n\nDate: March 24, 2026  \n Time: 09:00 \u2013 17:00 CET  \n Place: Rue de la Loi 81A, Brussels [...] This event promises practical insights, strategic discussion, and high-level dialogue on one of the most important topics in our industry.\n\nTake a look at the agenda:",
+            "score": 0.011158031,
+            "raw_content": null,
+            "id": "b27ad6-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "82813eb5-e3e8-49fd-aa35-b77c2af5dfa6"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 265,
+      "ts": "2026-11-15T17:22:02.643908Z"
+    },
+    {
+      "i": 6,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "82a2b6e21f6d6aa35dbf091a94bbacebfcc9e541174ea0740445aaafe265032b",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": true,
+        "messages": [
+          {
+            "content": "You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.",
+            "role": "system"
+          },
+          {
+            "content": "\nInformation: \"Source: https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series\nTitle: GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence\nContent: Date & Time: Thursday, 15 January 2026 at 16:00 UTC\nAgenda: 2026-01-15 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 UN General Assembly High-Level Meeting Outcomes\nBriefing 6\nMeeting Title: July Regulatory Updates Briefing: WSIS+20 Zero Draft\u00a0(Internet Governance section)\nDate & Time: Thursday, 11 September 2025 at 16:00 UTC\nAgenda: https://icann-community.atlassian.net/wiki/x/AQAwH\nBriefing 5\nMeeting Title: July Regulatory Updates Briefing: UN OEWG Outcomes & WSIS+20 Reflections\nDate & Time: Thursday, 24 July 2025 at 16:00 UTC\nAgenda: https://icann-community.atlassian.net/wiki/x/AQAAFw\n_________________________________________________________________________\nBriefing 4\nMeeting Title: Laying the Groundwork: Internet Infrastructure and Multistakeholder Governance in MENA.\nDate & Time: Thursday, 29 May 2025 at 16:00 UTC\nAgenda: 2025-05-29 ALAC-GAC Regulatory Developments Briefing Series: Laying the Groundwork: Internet Infrastructure and Multistakeholder Governance in MENA\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: Meeting Time\nSubject\n09/05/2016 10:00 Meeting with Secretary General \n09/05/2016 14:00 Meeting with Martin Shanahan\n10/05/2016 08:15 Offical Opening of Airbnb New office (IDA) \n10/05/2016 13:00 Export Knowledge Programme  Workshop\n10/05/2016 14:30 Meeting with Minister Bruton \n10/05/2016 18:00 Personal \n11/05/2016 09:30 Pre-Government Meeting\n11/05/2016 10:30 Government Meeting\n11/05/2016 13:45 Briefing with Clare Dunne and Dermot Mulligan \n11/05/2016 14:00 Meeting with Ciaran Conlon \n11/05/2016 14:00 Photocall with EI and IDA re Trade Mission in Ireland\n11/05/2016 14:45 Meeting with Clare Dunne \n11/05/2016 15:00 Meeting with Dermot Mulligan \n11/05/2016 15:45 Constitutency: Events in Lexicon Open Minds & Funeral \n12/05/2016 09:00 Meeting with Breda Power \n12/05/2016 09:20 Meeting with Martin Shanagher \n12/05/2016 09:40 Meeting with Declan Hughes\n12/05/2016 10:15 Media: Photocall for the Sunday Independent Newspaper \n12/05/2016 12:00 Constitutency: Opening of Pottery Road\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 24/05/2016 10:15 Government Meeting\n24/05/2016 14:30 Meeting with Karen O'Leary and Mary Twomey \n24/05/2016 15:30 Photocall National Enterprise Awards \n24/05/2016 16:15 ***Leaders Questions*** \n24/05/2016 16:36 ***Order of Business*** \n24/05/2016 17:15 Radio Interview: The Last Word with Matt Cooper \n24/05/2016 17:35 Radio Interview: RTE DriveTime with Mary Wilson  \n24/05/2016 18:15 Interview with Linda Brien \n24/05/2016 19:00 ***Private Members Business***\n24/05/2016 20:30 ***Adjournments***\n25/05/2016 09:00 Photocall for Amazon Announcement (IDA)\n25/05/2016 10:10 Keynote address at the Small Firms Association (SFA) Annual Conference \n25/05/2016 10:30 ***Leaders Questions***\n25/05/2016 11:30 Meeting and Announcement of OSG/Sedgwick\n25/05/2016 11:36 ***Order of Business***\n25/05/2016 13:00 Constituency Photocall: Luke O'Hara (Blackrock College & Greenwatch Magazine) \n25/05/2016 13:30 ***SOS***\n26/05/2016 Competitiveness Council, Brussels\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 30/05/2016 12:00 Media pre record  for lunch time news: RTE, Newstalk and UTV \n30/05/2016 12:30 Meeting with Paul Fox \n30/05/2016 14:30 Meeting re Special Advisor \n30/05/2016 15:00 Meeting with Avril Cronin \n30/05/2016 16:30 Meeting with Patrick Falvin\n30/05/2016 17:30 Meeting with Neil Ryan \n30/05/2016 19:00 Constituency: The Cathaoirleach Sports Awards \n31/05/2016 09:30 Pre Government Meeting \n31/05/2016 10:15 Government Meeting\n31/05/2016 12:45 Personal: Lunch \n31/05/2016 14:15 Meeting with Secretary General in advance of Bilaterial with the Taoiseach \n31/05/2016 15:00 Meeting with Minister Breen \n31/05/2016 15:00 Meeting with Minister John Halligan \n31/05/2016 15:15 ***Leaders Questions*** \n31/05/2016 16:00 Briefing with Dermot Sheridan and Stephen Curran \n31/05/2016 16:36 ***Order of Business*** \n31/05/2016 18:00 Personal: Book Launch\n31/05/2016 19:00 Private Members Business - Protection of Workers \n31/05/2016 20:30 ***Adjournments***\n01/06/2016 09:30 Pre Brief \n01/06/2016 09:45\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 21/05/2016 11:00 Shankill FC Pantheas Fun Day \n21/05/2016 12:30 Charleigh Leigh Lexicon Acting! \n21/05/2016 13:00 Launch of Dalkey's First Public Access Defibrillator (Ribbon Cutting and Photo Op) \n21/05/2016 Party\n23/05/2016 09:00 Personal: St Michaels Hospital Reminder: Out Patients Department Appt for Ophthalmology\n23/05/2016 10:00 Constituency: St Pauls Fair, Glengeary\n23/05/2016 11:00 Meeting with Clare Dunne and Officials\n23/05/2016 12:00 Meeting with Clare Dunne and Officials \n23/05/2016 13:30 Brussels Briefing Session\n23/05/2016 14:30 Briefing with Alan Cantwell \n23/05/2016 15:30 Media Interview with Dearbhail McDonnell\n23/05/2016 16:00 Funeral \n23/05/2016 20:00 Sandycove / Glasthule Residents Association AGM \n24/05/2016 07:45 Briefing with Declan Hughes \n24/05/2016 08:30 Briefing with Pauline Mulligan \n24/05/2016 09:30 Pre Government Meeting \n24/05/2016 10:15 Government Meeting\n24/05/2016 14:30 Meeting with Karen O'Leary and Mary Twomey\n\nSource: https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event\nTitle: Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance\nContent: Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance\nJoin us in Brussels for the OCA Member Meeting and the Cyber Security Event\nThu 26 Feb 2026\nNews / Join us in Brussels for the OCA Member Meeting and the Cyber Security Event\nRegister now! And join the OCA Member Meeting and/or The OCA Cyber Security Event!\nThe Open Charge Alliance is excited to announce that registration is officially open for the two upcoming events this March: OCA Member Meeting Europe & Cyber Security Event in Brussels, Belgium.\nOn March 24\u201325, 2026, we will bring together the European OCA community and guests for two days focused on new OCPP developments, certification, working groups, and cybersecurity in EV charging.\nThis is your opportunity to connect with fellow members, gain strategic insights, and actively contribute to shaping the future of OCPP in Europe.\nOCA Member Meeting Europe\nDate: March 24, 2026\nTime: 09:00 \u2013 17:00 CET\nPlace: Rue de la Loi 81A, Brussels\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 17/05/2016 09:00 Government Meeting\n17/05/2016 12:30 Parliamentary Party Meeting\n17/05/2016 15:30 ***Leaders Questions*** \n17/05/2016 15:51 ***Order of Business*** \n17/05/2016 16:15 Photocall- Launch of new Enterprise Ireland \u20ac500k Competitive Start Fund for FinTech Sector\n17/05/2016 16:45 Meeting with Andrew McDowell and Paul O'Brien \n17/05/2016 17:45 Pre Brief \n17/05/2016 17:55 Meeting with Joe Carey \n17/05/2016 20:00 Briefing  \n17/05/2016 20:00 Overnight Athlone \n17/05/2016 Dail Resumes \n18/05/2016 Trade Mission in Ireland\n18/05/2016 07:45 Breakfast Briefing \n18/05/2016 09:00 Cross sectoral networking breakfast \n18/05/2016 10:30 Travel to Sligo\n18/05/2016 12:45 Cross sectoral networking lunch\n18/05/2016 15:00 Travel to Limerick \n18/05/2016 19:30 IDA Client Dinner \n18/05/2016 19:30 Overnight Limerick\n19/05/2016 Trade Mission in Ireland\n19/05/2016 07:30 Meeting with Denis Ryan, Process Excellence Director, J&J / Vistakon \n19/05/2016 07:45 Breakfast Briefing\n\nSource: https://tavily.com/knowledge/company/TXRhn2TKUD7t\nTitle: NVIDIA\nContent: NVIDIA\nNVIDIA\nIndustry\nComputer Hardware Manufacturing\nType\nPublic company \u00b7 NVDA (Nasdaq)\nHeadquarters\nSanta Clara, California, United States\nWebsite\nnvidia.com\nSocials\nFinancials\n215.94B USD annual revenue\nProducts and services 5\nData center AI platforms\nNVIDIA RTX and GeForce\nOmniverse\nNVIDIA DRIVE\nHealthcare AI\nSimilar companies 8\namd\nbroadcom\nqualcomm\nhuawei\nintel\nalibaba group\namazon\nbaidu\nWebsite traffic\nMonthly visits (Sep 2026)\n40.01M +2.5% quarter over quarter\nGlobal rank\n860\nTop countries\nUnited States 25.2%, India 8.2%, Russia 4.7%\nTop search terms\nnvidia, geforce now, nvidia app, nvidia drivers, nvidia broadcast\nGet it all with one API call\nPython TypeScript cURL\nfrom tavily import TavilyClientclient = TavilyClient(api_key=\"tvly-YOUR_API_KEY\")response = client.extract(urls=[\"https://tavily.com/knowledge/company/TXRhn2TKUD7t\"])print(response)\nGet an API keyRead the docs\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 31/05/2016 20:30 ***Adjournments***\n01/06/2016 09:30 Pre Brief \n01/06/2016 09:45\nMeeting with Jean-Philippe Courtois, President of Microsoft International and Cathriona Hallahan, \nManaging Director, Microsoft Ireland\n01/06/2016 10:30 ***Leaders Questions***\n01/06/2016 11:36 ***Order of Business*** \n01/06/2016 12:00 Ernst and Young Jobs Announcement and Office Opening \n01/06/2016 12:00 Note: Briefing on the Global Status of Advanced/Metastatic Breast Cancer \n01/06/2016 13:30 Pre Brief \n01/06/2016 13:30 ***SOS***\n01/06/2016 14:30 Bilaterial Meeting with the Taoiseach \n01/06/2016 17:00 Media Interview with Mary Carr, Mail on Sunday \n01/06/2016 17:30 Parliamentary Party Meeting \n01/06/2016 19:00 Constituency: Ceremony marking the conferral of a Civic Honour on Brendan and Jane McKenna\n01/06/2016 19:00 Private Members Business - Protection of Workers \n01/06/2016 20:30 ***Adjournments***\n01/06/2016 21:00 Personal: Ladies Dinner \n02/06/2016 08:30 Datalex Jobs Announcement (EI)\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 19/05/2016 07:45 Breakfast Briefing \n19/05/2016 08:30 Cross sectoral networking breakfast \n19/05/2016 10:30 Depart for Enterprise Ireland client Site Visit \n19/05/2016 11:00 Enterprise Ireland Client Site Visit \n19/05/2016 12:00 Depart for IDA Client Site Visit \n19/05/2016 12:15 Site visit at IDA Client Company \n19/05/2016 13:40 Travel to Dublin \n19/05/2016 16:30 Government Meeting \n19/05/2016 16:45 Adjournment Debates re Roche and Suir Pharma \n19/05/2016 19:00 Constituency: Rochestown Lodge \n19/05/2016 20:00 Fine Gael Table Quiz \n20/05/2016 09:30 Briefing with Clare Dunne\n20/05/2016 10:45 Meeting with Breda Power and officials \n20/05/2016 11:45 Meeting with Pat Breen, Minister of State \n20/05/2016 14:00 Personal: Eileen Jackson Ladies Lunch \n20/05/2016 19:15 Remarks at the Annual Dinner of the American Chamber of Commerce Ireland \n21/05/2016 11:00 Shankill FC Pantheas Fun Day \n21/05/2016 12:30 Charleigh Leigh Lexicon Acting!\n\nSource: https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event\nTitle: Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance\nContent: 9:40 \u2013 10:00\nKeynote \u2013 OCPP as Part of Europe\u2019s Cyber Security Toolbox\n10:00 \u2013 10:15\nKeynote speech \u2013 The importance of cybersecurity in the EV sector and the alliance between policy, industry and technology\n10:15 \u2013 11:55\nPanel Discussion \u2013 Cyber Security, Interoperability & Digital Sovereignty in EV Charging\n11:55 \u2013 12:00\nClosing Remarks\n12:00 - 13:30\nLunch\nRegister Now!\nJoin us in Brussels to connect with peers, exchange knowledge, and strengthen your position within the European EV charging ecosystem. Find more information about the event and how to register on the registration page of this event. Still left with questions, feel free to reach out on info@openchargealliance.org\nRegister now and we look forward to welcoming you in March 2026 in Brussels!\nRegister here!\nManage consent\n\nSource: https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion\nTitle: EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics\nContent: CAILABS \u2013 Beam-shaping, a Key Enabler to the Next Generation of Micro-processes \u2013 Gwenn Pallier, Product Line Manager (France)\nDMC \u2013 Software Platform for Advanced Laser Machining System Control \u2013 Sarunas Vaskelis, CEO (Lithuania)\nAMS Technologies \u2013 \u201cOpen Source\u201d MOPA Design for Highly Flexible Micro-Machining Application \u2013 Maik Frede, Vice President of Engineering (Germany)\nPI \u2013 Configurable Standard Motion Platforms Simplify the Supply and Build for Laser Users \u2013 Cliff Jolliffe, Market Strategist \u2013 Industrial Automation (United Kingdom)\nGLOphotonics \u2013 Light with Purpose: Harnessing Hollow Core Fiber for High-Precision Micromachining \u2013 Benoit Beaudou, Applications Engineer (France)\n11:00 \u2013 11:45 Networking coffee break and Second one-to-one Matchmaking session\n11:45 \u2013 12:45 SESSION 4: Laser micro-welding and Additive/Substractive Manufacturing\n\nSource: https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series\nTitle: GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence\nContent: GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence\nAtlassian uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. Accept all cookies to indicate that you agree to our use of cookies on your device.\nAtlassian cookies and tracking notice, (opens new window)\nAtlassian uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. Accept all cookies to indicate that you agree to our use of cookies on your device. Atlassian cookies and tracking notice, (opens new window)\nPreferences Only necessary Accept all\nALAC\n/\nGAC-ALAC Regulatory Developments Briefing Series\nUpdated Apr 28\nMore actions\nGAC-ALAC Regulatory Developments Briefing Series\nBy Michelle DeSmyter\n1 min\nAdd a reaction\nAttachments\nGAC-ALAC Regulatory Developments Briefing Series\nBriefing 7\nMeeting Title: WSIS+20 UN General Assembly High-Level Meeting Outcomes\nDate & Time: Thursday, 15 January 2026 at 16:00 UTC\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 12/05/2016 12:00 Constitutency: Opening of Pottery Road \n12/05/2016 18:00 Flight from Dublin to Brussels Aer Lingus EI 638\n12/05/2016 20:30 Overnight in Brussels \n13/05/2016 21:15 Flight from Brussels to Dublin Aer Lingus EI 639\n13/05/2016 Foreign Affairs Council (FAC) (Trade), Brussels \n14/05/2016 07:00 Meeting with Sean O Driscoll \n14/05/2016 11:30 NIBRT Careers in Biopharma event\n14/05/2016 20:00 Personal: Ruth Casey House Party \n15/05/2016 12:00 Fine Gael National Consultative Conference\n16/05/2016 08:00 Meeting with Management Board \n16/05/2016 11:00 Meeting with Helen McAllinden \n16/05/2016 12:00 Meeting with Michael O'Connor \n16/05/2016 13:45 Pre Brief with Officials \n16/05/2016 14:00 Meeting with Dr. Frank Seiji Sanda, Founder, Group CEO, and Chairman, Japan Communications Inc.\n16/05/2016 15:00 Meeting with the Secretary General\n16/05/2016 16:00 Meeting with Clare Dunne \n16/05/2016 17:15 Personal \n17/05/2016 09:00 Government Meeting\n17/05/2016 12:30 Parliamentary Party Meeting\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 25/05/2016 13:30 ***SOS***\n26/05/2016 Competitiveness Council, Brussels \n26/05/2016 05:00 Flight to Brussels Aer Lingus EI638\n26/05/2016 18:00 Blackrock Business Association Meeting \n26/05/2016 20:00 Dun Laoghaire Fine Gael Constitutency Executive Meeting \n26/05/2016 21:15 Flight from Brussels to Dublin Aer Lingus EI 639 \n27/05/2016 08:30 Brown Bags Office Opening and Jobs Announcement (IDA) \n27/05/2016 11:30 Kiernan Structural Steel Longford Jobs Announcement \n27/05/2016 13:15 Visit 'The Food Hub'\n27/05/2016 15:30 Meeting with Kevin Murphy CEO, Avant Card \n27/05/2016 16:00 Meeting with Tom Cronin, River Rye Brewery \n27/05/2016 16:30 Meeting with Philip Martin, MD Cora Systems \n27/05/2016 18:30 Personal\n27/05/2016 21:00 Maura Hopkins\n28/05/2016 20:00 Mairead McSweeney 40th Birthday Party\n29/05/2016 12:00 Personal: Aine Newry\n30/05/2016 10:00 Meeting with Karen Hynes and Mary Twomey \n30/05/2016 12:00 Media pre record  for lunch time news: RTE, Newstalk and UTV\n\nSource: https://epic-photonics.com/events/epic-technology-meeting-on-laser-microprocessing-new-developments-and-applications-at-light-conversion\nTitle: EPIC Technology Meeting on Laser Microprocessing: New Developments and Applications at Light Conversion - EPIC Photonics\nContent: Agenda\nSpeakers\nAttendees\nContact Info\nUseful Resources\nRegister\nAgenda\n24 September, 2024, Tuesday\nOptional agenda: 19:00 \u2013 22:00 Pre-dinner @ restaurant La Traviata, located at the Artis Centrum Hotel 2nd floor (address: Totori\u0173 str. 23, 01120 Vilnius)\n25 September, 2024, Wednesday\nOptional agenda: 06:30 \u2013 07:30 EPIC Members Run\nMeeting & T-shirts pick up point at 06:30: Amberton Cathedral Square Hotel Vilnius lobby (address: L. Stuokos \u2013 Guceviciaus str. 1, 01122, Vilnius).\nWalking group is also available.\nRoute: run ~2.5 km along the river Neris and then come back, ~5 km in total for runners. Walk ~1.5 km along the river and then come back, ~3 km in total for walkers.\n08:30 Departure by the bus transfer for companies visits. Meeting point: bus station that is next to the Amberton Cathedral Square Hotel Vilnius (address: L. Stuokos \u2013 Guceviciaus str. 1, Vilnius 01122, https://maps.app.goo.gl/3q6c1MVwrcqDprMK8)\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 20/06/2016 08:30 Photocall for KTI Awards \n20/06/2016 09:00 Briefing re ABR \n20/06/2016 10:00 Enterprise Ireland ABR Results \n20/06/2016 14:00 Constituency: Cuala All Ireland Minis \n20/06/2016 16:00 Briefing re Estimates \n20/06/2016 19:30 Pre dinner reception with Jacquelline Fuller (IDA) \n20/06/2016 20:00 FG Meeting \n21/06/2016 07:45 Pre Brief\n21/06/2016 08:00 Photocall and courtesy call with Johann-Dietrich W\u00f6rner, Director General of the European Space Agency \n21/06/2016 08:45 Pre Government Meeting \n21/06/2016 10:00 Government Meeting\n21/06/2016 14:32 Order of Business \n21/06/2016 17:00\nAttend Select Committee on Jobs, Enterprise and Innovation re 2016 Revised Estimates for Public Services -\nVote 32\n22/06/2016 08:30 Meeting with Dermot Mulligan\n22/06/2016 09:45 Pre Brief \n22/06/2016 10:00 Meeting with Mark Ferguson (SFI)\n22/06/2016 11:00 Pre Brief \n22/06/2016 11:15 Meeting with Irish Coalition for Irish International Companies\n\nSource: https://icann-community.atlassian.net/wiki/spaces/atlarge/pages/180715827/GAC-ALAC+Regulatory+Developments+Briefing+Series\nTitle: GAC-ALAC Regulatory Developments Briefing Series - ALAC - Confluence\nContent: Date & Time: Thursday, 13 February 2025 at 16:00 UTC\nAgenda: 2025-02-13 ALAC-GAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention13 February 2025 - ALAC-GAC Regulatory Developments Briefing Series: UN Cybercrime Convention and the Second Additional Protocol to the Budapest Convention\n_________________________________________________________________________\nBriefing 1:\nMeeting Title: GAC-ALAC Regulatory Developments Briefing Series: WSIS+20 Discussion\nDate & Time: Monday, 13 January 2025 at 16:00 UTC\nAgenda: 2025-01-13 ALAC-GAC Regulatory Developments Briefing Series: WSIS+20 Discussion\nCollapse action bar\nTable of contents\nOpen Details Panel\nView all comments\nOpen Rovo Chat\nAdd a comment\nAdd a reaction\n{\"serverDuration\": 13, \"requestCorrelationId\": \"223895711a1942188a103d6e3ffbc696\"}\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 16/06/2016 18:00 Blooms Day  ** Opened by President Higgins**\n16/06/2016 18:00 Outdoor Ulysses Play\n16/06/2016 Dalkey Book Festival\n17/06/2016 08:15 Meeting with Kevin Sherry and Conor O'Donovan\n17/06/2016 09:40 Keynote address Africa Ireland Economic Forum 2016\n17/06/2016 11:00\nPhotocall to launch the International Business Women\u2019s Conference in conjunction with the Rose of Tralee \nInternational Festival\n17/06/2016 12:00 Briefing re UK EU Referendum \n17/06/2016 13:00 Briefing re Estimates \n18/06/2016 09:30 TBC The Anne Sullivan Centre for Deafblind Open Day\n18/06/2016 11:00 Blackrock Libr Summer Reading Launch\n18/06/2016 11:00 Hollypark GNS Fete\n18/06/2016 12:30 FYI Cabinteely FC Medal Ceremony\n18/06/2016 12:30 Kilbogget Park Cabinteely FC Prize-Giving\n18/06/2016 14:00 Attend CoderDojo Coolest Projects (Time TBC)\n18/06/2016 Dalkey Book Festival\n19/06/2016 14:00 The Costello Commemoration \n20/06/2016 08:30 Photocall for KTI Awards \n20/06/2016 09:00 Briefing re ABR\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 04/06/2016 10:00 Bloom 2016\n04/06/2016 10:00 Shankill FC Crinken Cup and Brady's Challenges \n07/06/2016 06:25 Flight from Dublin to Leeds Bradford \n07/06/2016 09:00 Business Breakfast organised by the British Irish Chamber of Commerce \n07/06/2016 10:30 Meeting at Leeds Irish Health and Homes \n07/06/2016 12:00 Tour and Lunch at the Leeds Irish Centre \n07/06/2016 14:00 Meeting with Robert McClements \n07/06/2016 15:00 Meeting with Enterprise Ireland Client Companies \n07/06/2016 17:35 Flight from Leeds Bradford to Dublin \n07/06/2016 20:00 Dinner hosted by Johnson & Johnson Ireland\n07/06/2016 Visit to Leeds in advance of UK Referendum \n08/06/2016 09:30 Pre Government Meeting \n08/06/2016 10:15 Government Meeting\n08/06/2016 14:30 Meeting of the Export Trade Council (ETC)\n08/06/2016 15:00 Constitutency: Abbeyfield (Rosepark) Open Day BBQ\n08/06/2016 15:45 ***Leaders Questions***\n08/06/2016 16:51 ***Order of Business*** \n08/06/2016 18:30 Parliamentary Party Meeting\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 28/06/2016 19:15 Attend the Presentation of Certificates \n28/06/2016 20:00 ***Private Members Business***\n29/06/2016 08:30 Briefing with officials \n29/06/2016 10:30 Commencement Matter submitted by Senator Bacik \n29/06/2016 13:15 Pre brief\n29/06/2016 13:45 Meeting with Danny McCoy Ibec\n29/06/2016 14:17 ***Topical Issues***\n29/06/2016 14:30 Constituency - Dail Tour\n29/06/2016 15:30 Personal \n29/06/2016 16:30 Meeting with Women's Policy Group \n29/06/2016 17:30 Parliamentary Party Meeting \n29/06/2016 18:45 Address and Launch of Inspirefest -Welcome Reception\n30/06/2016 08:30 Official opening of Mergon Innovation Centre (EI Client Company) \n30/06/2016 09:45 Mullingar Chamber of Commerce National Life Science & Engineering Expo \n30/06/2016 10:30 Meeting Deputy Peter Burke and IDA Client Compnay\n30/06/2016 12:32 Questions on Promised Legislation\n30/06/2016 14:00 Pre brief\n30/06/2016 14:15 Meeting with Patricia Callan, SFA\n30/06/2016 15:30 Meeting with the Taoiseach\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 10/06/2016 12:00 Constituency: Visit to Our Lady of Good Counsel BNS's Award Winning School Garden\n10/06/2016 13:00 Constituency: Launch of Trailer Project as part of Traveller Pride Week\n10/06/2016 13:00 **FYI** Launch of Trailer Project as part of Traveller Pride Week\n10/06/2016 18:45 Reception to Mark 39th Staging of the Curtis Cup\n11/06/2016 10:00 FYI - St Matthies Fete \n11/06/2016 12:00 FYI Cabinteely Open Sponsor's Day\n11/06/2016 12:30 Teagasc Event\n11/06/2016 14:00 Launch of Dun Laoghaire Art Gallery Summer Art Exhibition\n12/06/2016 14:00 Meeting with Barbara O'Connell\n12/06/2016 16:00 Opening of Shankill Indoor Tennis Club \n13/06/2016 09:30 Surmodics (IDA) Announcement\n13/06/2016 Keep Free All Day PQ Prep \n14/06/2016 09:15 Pre Government Meeting \n14/06/2016 09:45 Government Meeting\n14/06/2016 14:32 ***Order of Business*** \n14/06/2016 17:17 ***Topical Issues***\n14/06/2016 18:30 UCD President's Garden Party\n14/06/2016 Keep Free All Day PQ Prep\n\nSource: https://enterprise.gov.ie/en/publications/publication-files/minister-mitchell-oconnors-diary-q2-2016.pdf\nTitle: \nContent: 22/06/2016 11:15 Meeting with Irish Coalition for Irish International Companies \n22/06/2016 14:00 Photocall with LEO re Launch of Enterprise Village for National Ploughing Championships\n22/06/2016 14:15 Interview \n22/06/2016 15:02 ***Topical Issues***\n22/06/2016 16:15 Photocall re BizFactor\n22/06/2016 16:30 ***Private Members Business*** \n22/06/2016 16:45 Briefing with Clare Dunne \n22/06/2016 17:30 Parliamentary Party Meeting \n22/06/2016 19:00 Meeting with advisors \n23/06/2016 08:45 Address Ibec Irish Manufacturers Association Annual Conference\n23/06/2016 10:15 Ministerial Management Board \n23/06/2016 10:30 FYI: Launch of Neurological Alliance of Ireland Campaign for Rehabilitation Services\n23/06/2016 12:32 Questions on Promised Legislation\n23/06/2016 12:47 Weekly Divisions (VOTES) \n23/06/2016 14:00 Photocall SFI\n23/06/2016 14:30 Meeting with Dermot Mulligan \n23/06/2016 15:30 Briefing re National Economic Dialogue with Declan Hughes\n\nSource: https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event\nTitle: Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance\nContent: Date: March 24, 2026\nTime: 09:00 \u2013 17:00 CET\nPlace: Rue de la Loi 81A, Brussels\nExpect a dynamic and content-rich program with updates from across the alliance, interactive panels, and extensive networking opportunities.\nWhether you are involved in implementation, testing, certification, or policy, this meeting provides direct access to the latest developments and the experts behind them.\nTake a look at the Agenda:\nFirst day: March 24\nActivity\n09:00 \u2013 10:00\nRegistration & Networking breakfast\n10:00 \u2013 10:45\nOCA General Update\n10:45 \u2013 11:15\nTechnology Working Group Update\n11:15 \u2013 11:45\nCoffee Break\n11:45 \u2013 12:15\nCompliance Working Group Update\n12:15 \u2013 13:15\nTest & Certification Panel\n13:15 \u2013 14:15\nLunch Break\n14:15 \u2013 14:30\nLocal Controller Task Group\n14:30 \u2013 14:45\nCommissioning Task Group\n14:45 \u2013 15:00\nCyber Security Task Group\n15:00 \u2013 15:30\nSecurity Panel\n15:30 \u2013 16:00\nCoffee Break\n16:00 \u2013 16:30\nRegional and Regulatory Requirements Working Group Update\n16:30 \u2013 17:00\n\nSource: https://openchargealliance.org/join-us-in-brussels-for-the-oca-member-meeting-and-the-cyber-security-event\nTitle: Join us in Brussels for the OCA Member Meeting and the Cyber Security Event - Open Charge Alliance\nContent: Coffee Break\n16:00 \u2013 16:30\nRegional and Regulatory Requirements Working Group Update\n16:30 \u2013 17:00\nOCPP Across the World Panel\n17:00 \u2013 17:30\nMeet the Board\nOCA Cyber Security Event\nDate: March 25, 2026\nTime: 09:00 \u2013 13:30 CET\nPlace: Renaissance Brussels Hotel\nFollowing the publication of the OCPP Security Operations Guide (January 2026), this focused half-day event will address the growing importance of cybersecurity in EV charging infrastructure.\nAs charging infrastructure becomes increasingly critical to the electricity grid and society, strong and interoperable security practices are essential.\nThis event promises practical insights, strategic discussion, and high-level dialogue on one of the most important topics in our industry.\nTake a look at the agenda:\nSecond day: March 25\nActivity\n9:00 \u2013 9:35\nRegistration & Coffee\n9:35 \u2013 9:40\nOpening & Welcome\n9:40 \u2013 10:00\nKeynote \u2013 OCPP as Part of Europe\u2019s Cyber Security Toolbox\n10:00 \u2013 10:15\n Source: https://nvidianews.nvidia.com/news/latest\nTitle: Latest News | NVIDIA Newsroom\nContent: Read Blog\nOctober 29, 2026\nSlice Into GFN Thursday: \u2018Phantom Blade Zero\u2019 Launches on GeForce NOW\nThis Halloween week, GFN Thursday is delivering a fresh batch of gaming treats. Something wicked this blade comes. S-GAME\u2019s Phantom Blade Zero launches on GeForce NOW today, bringing a scarily good blend of martial arts and punk fantasy to the ...\nRead Blog\nOctober 28, 2026\nNVIDIA Sets Conference Call for Third-Quarter Financial Results\nNVIDIA will host a conference call on Tuesday, November 17, at 2 p.m. PT (5 p.m. ET) to discuss its financial results for the third quarter of fiscal year 2027, which ended October 25, 2026.\nRead Press Release\n1\n2\n3\n4\n5\n6\n... 516\nNext\nLast\nMedia Contacts\nGlobal contacts for media inquiries.\nAll Contacts\nStay Informed\nNewsroom updates delivered to your inbox.\nSubscribe\n\nSource: https://nvidianews.nvidia.com/news/latest\nTitle: Latest News | NVIDIA Newsroom\nContent: How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks\nA year ago, NVIDIA open sourced its Aerial wireless software, joining Sionna and a broader suite of open source tools for accelerating next-generation 6G network development. Together, they give researchers a foundation for testing ideas, comparing ...\nRead Blog\nNovember 05, 2026\nVera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents\nAI agents do more than generate answers. They search for information, query databases, write and test code and take action. Each of those steps relies on a CPU, with agents moving between GPU reasoning and CPU execution throughout a task. As ...\nRead Blog\nNovember 05, 2026\nThe Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models\n\nSource: https://nvidianews.nvidia.com/news/latest\nTitle: Latest News | NVIDIA Newsroom\nContent: November 02, 2026\nCities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI\nCities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action \u2014 for planning, maintenance and public services \u2014 remains a challenge. Physical and agentic AI offer new ways to close that ...\nRead Blog\nOctober 30, 2026\nThings That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals\nWhile science fiction lore tells us that humans will meet extraterrestrial life in the form of little green men, the detail that should raise hairs this Halloween is this: the search for extraterrestrial intelligence took a major leap forward with ...\nRead Blog\nOctober 29, 2026\nSlice Into GFN Thursday: \u2018Phantom Blade Zero\u2019 Launches on GeForce NOW\n\nSource: https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\nTitle: Statement From NVIDIA Board of Directors | NVIDIA Newsroom\nContent: Downloads\nDownload Press Release\nMore News\nNVIDIA Announces CEO Transition\nNovember 12, 2026\nStatement From the Independent Members of the NVIDIA Board\nNovember 10, 2026\nNVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\nNovember 8, 2026\nA Message to Our Company\nNovember 8, 2026\nNVIDIA Sets Conference Call for Third-Quarter Financial Results\nOctober 28, 2026\nMedia Contacts\nGlobal contacts for media inquiries.\nAll Contacts\nStay Informed\nNewsroom updates delivered to your inbox.\nSubscribe\n\nSource: https://nvidianews.nvidia.com/news/latest\nTitle: Latest News | NVIDIA Newsroom\nContent: NVIDIA, Rebellions and SK Telecom today announced a collaboration to advance Korea\u2019s sovereign AI infrastructure \u2014 using NVIDIA NVLink Fusion\u2122 to bring together NVIDIA\u2019s open infrastructure platform, Rebellions\u2019 Korean-designed AI processors and SK ...\nRead Press Release\nNovember 08, 2026\nA Message to Our Company\nI owe my family and all of you an apology. I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry. Throughout my life, my ...\nRead Press Release\nNovember 08, 2026\nStatement From NVIDIA Board of Directors\nThe NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort. A committee of ...\nRead Press Release\nNovember 06, 2026\nHow NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks\n\nSource: https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\nTitle: Statement From NVIDIA Board of Directors | NVIDIA Newsroom\nContent: Statement From NVIDIA Board of Directors | NVIDIA Newsroom\nStatement From NVIDIA Board of Directors\nNovember 8, 2026\nThe NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.\nA committee of independent directors, assisted by outside independent counsel, will oversee the investigation. The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders.\nWhile the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board's inquiry will examine all available information. Jensen fully supports the review and has committed to cooperating with it.\nThe Board has confidence in Jensen and his leadership team and will provide further updates as appropriate.\nDownloads\nDownload Press Release\nMore News\nNVIDIA Announces CEO Transition\nNovember 12, 2026 Source: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: \u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, DGX Spark, BlueField, NVIDIA DRIVE Hyperion, NVIDIA RTX, NVIDIA RTX PRO, NVIDIA Cosmos, NVIDIA Isaac, Nemotron, BioNeMo, CUDA-X, Omniverse and G-SYNC are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and/or other countries. Other company and product names may be trademarks of the respective companies with which they are associated. Features, pricing, availability and specifications are subject to change without notice.\nMedia Contacts\nToshiya Hari\nInvestor Relations\nNVIDIA Corporation\nir@nvidia.com\nMylene Mangalindan\nCorporate Communications\nNVIDIA Corporation\npress@nvidia.com\nDownloads\nDownload Press Release\nMore News\nNVIDIA Announces CEO Transition\nNovember 12, 2026\nStatement From the Independent Members of the NVIDIA Board\nNovember 10, 2026\nNVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\nNovember 8, 2026\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: \u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA, the NVIDIA logo, DGX Spark, BlueField, NVIDIA DRIVE Hyperion, NVIDIA RTX, NVIDIA RTX PRO, NVIDIA Cosmos, NVIDIA Isaac, Nemotron, BioNeMo, CUDA-X, Omniverse and G-SYNC are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and/or other countries. Other company and product names may be trademarks of the respective companies with which they are associated. Features, pricing, availability and specifications are subject to change without notice.\nMedia Contacts\nGlobal contacts for media inquiries.\nAll Contacts\nStay Informed\nNewsroom updates delivered to your inbox.\nSubscribe\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nNVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026\nRecord quarterly revenue of $68.1 billion, up 20% from Q3 and up 73% from a year ago\nRecord quarterly Data Center revenue of $62.3 billion, up 22% from Q3 and up 75% from a year ago\nRecord full-year revenue of $215.9 billion, up 65%\nFebruary 25, 2026\nNVIDIA (NASDAQ: NVDA) today reported record revenue for the fourth quarter ended January 25, 2026, of $68.1 billion, up 20% from the previous quarter and up 73% from a year ago. For fiscal 2026, revenue was $215.9 billion, up 65% from a year ago.\nFor the quarter, GAAP and non-GAAP gross margins were 75.0% and 75.2%, respectively. For fiscal 2026, GAAP and non-GAAP gross margins were 71.1% and 71.3%, respectively.\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: Conference Call and Webcast Information\nNVIDIA will conduct a conference call with analysts and investors to discuss its fourth quarter and fiscal 2026 financial results and current financial prospects today at 2 p.m. Pacific time (5 p.m. Eastern time). A live webcast (listen-only mode) of the conference call will be accessible at NVIDIA\u2019s investor relations website, https://investor.nvidia.com. The webcast will be recorded and available for replay until NVIDIA\u2019s conference call to discuss its financial results for its first quarter of fiscal 2027.\nNon-GAAP Measures\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: To supplement NVIDIA\u2019s condensed consolidated financial statements presented in accordance with GAAP, the company uses non-GAAP measures of certain components of financial performance. These non-GAAP measures include non-GAAP gross profit, non-GAAP gross margin, non-GAAP operating expenses, non-GAAP operating income, non-GAAP other income (expense), net, non-GAAP net income, non-GAAP net income, or earnings, per diluted share, and free cash flow. For NVIDIA\u2019s investors to be better able to compare its current results with those of previous periods, the company has shown a reconciliation of GAAP to non-GAAP financial measures. The reconciliations for fiscal years 2025 and 2026 adjust the related GAAP financial measures to exclude stock-based compensation expense, acquisition-related and other costs, other, gains/losses from non-marketable and publicly-held equity securities, net, interest expense related to amortization of debt discount, and the associated tax impact of these items\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: NVIDIA files with the Securities and Exchange Commission, or SEC, including, but not limited to, its annual report on Form 10-K and quarterly reports on Form 10-Q. Copies of reports filed with the SEC are posted on the company\u2019s website and are available from NVIDIA without charge. These forward-looking statements are not guarantees of future performance and speak only as of the date hereof, and, except as required by law, NVIDIA disclaims any obligation to update these forward-looking statements to reflect future events or circumstances.\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: NVIDIA files with the Securities and Exchange Commission, or SEC, including, but not limited to, its annual report on Form 10-K and quarterly reports on Form 10-Q. Copies of reports filed with the SEC are posted on the company\u2019s website and are available from NVIDIA without charge. These forward-looking statements are not guarantees of future performance and speak only as of the date hereof, and, except as required by law, NVIDIA disclaims any obligation to update these forward-looking statements to reflect future events or circumstances.\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: expense related to amortization of debt discount, and the associated tax impact of these items where applicable. Beginning in the first quarter of fiscal 2027, NVIDIA\u2019s non-GAAP financial measures will no longer exclude stock-based compensation expense. Free cash flow is calculated as GAAP net cash provided by operating activities less both purchases related to property and equipment and intangible assets and principal payments on property and equipment and intangible assets. NVIDIA believes the presentation of its non-GAAP financial measures enhances the user\u2019s overall understanding of the company\u2019s historical financial performance. The presentation of the company\u2019s non-GAAP financial measures is not meant to be considered in isolation or as a substitute for the company\u2019s financial results prepared in accordance with GAAP, and the company\u2019s non-GAAP measures may be different from non-GAAP measures used by other companies.\n\nSource: http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026\nTitle: NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026 | NVIDIA Newsroom\nContent: Launched the NVIDIA RTX PRO\u2122 5000 72GB Blackwell GPU to power larger models and agentic workflows.\nExpanded global availability of NVIDIA DGX Spark\u2122 for the latest open models and delivered updates for improved performance.\nAutomotive and Robotics\nFourth-quarter Automotive revenue was $604 million, up 2% from the previous quarter and up 6% from a year ago, driven by continued adoption of NVIDIA\u2019s self-driving platforms. Full-year revenue rose 39% to a record $2.3 billion.\nUnveiled the NVIDIA Alpamayo family of open AI models, simulation tools and datasets designed to accelerate the next era of safe, reasoning\u2011based autonomous vehicle (AV) development.\nPartnered with Mercedes-Benz on the all-new Mercedes-Benz CLA, which introduces enhanced level 2 driver assistance powered by NVIDIA DRIVE AV software, AI infrastructure and accelerated compute.\"\n---\nUsing the above information, answer the following query or task: \"One-page pre-meeting briefing on NVIDIA for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\" in a detailed report --\nThe report should focus on the answer to the query, should be well structured, informative,\nin-depth, and comprehensive, with facts and numbers if available and at least 500 words.\nYou should strive to write the report as long as you can using all relevant and necessary information provided.\n\nPlease follow all of the following guidelines in your report:\n- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general and meaningless conclusions.\n- You MUST write the report with markdown syntax and APA format.\n- Structure your report with clear markdown headers: use # for the main title, ## for major sections, and ### for subsections.\n- Use markdown tables when presenting structured data or comparisons to enhance readability.\n- You MUST prioritize the relevance, reliability, and significance of the sources you use. Choose trusted sources over less reliable ones.\n- You must also prioritize new articles over older articles if the source can be trusted.\n- You MUST NOT include a table of contents, but DO include proper markdown headers (# ## ###) to structure your report clearly.\n- Use in-text citation references in APA format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).\n- Every substantive claim, figure or quote MUST carry an in-text citation to the source it came from. Do NOT cite sources that do not appear in the provided information.\n- Don't forget to add a reference list at the end of the report in APA format.\n- \nYou MUST write all used source urls at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each.\nEvery url should be hyperlinked: [url website](url)\nAdditionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:\n\neg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)\n\n- Write the report in a Objective (impartial and unbiased presentation of facts and findings) tone.\nYou MUST write the report in the following language: english.\nAssume that the current date is 2026-11-15.\n",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 12000,
+        "stream_options": {
+          "include_usage": true
+        },
+        "temperature": 0.35
+      },
+      "response": null,
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 8761,
+      "ts": "2026-11-15T17:22:05.602635Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: NVIDIA Corporation (NVDA)\n\n## Recent Developments\n\nNVIDIA Corporation (NASDAQ: NVDA) has experienced a highly dynamic period leading up to November 2026, characterized by significant organizational transitions, strategic international partnerships, product ecosystem expansions, and preliminary investigations ([NVIDIA Newsroom](http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026)). As a dominant force in computer hardware manufacturing and artificial intelligence platforms, recent updates highlight the company's operational adjustments and strategic growth vectors ([Tavily Knowledge Base](https://tavily.com/knowledge/company/TXRhn2TKUD7t)).\n\n### Executive Leadership and Board Investigations\nIn November 2026, NVIDIA announced notable developments regarding its executive leadership structure. On November 12, 2026, the company announced a CEO transition ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)). This followed a statement issued on November 10, 2026, by the independent members of the NVIDIA Board of Directors detailing the initiation of an independent investigation ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)). The inquiry was launched in light of recent reporting that founder and CEO Jensen Huang had been the target of a foreign intelligence effort ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)). A committee of independent directors, aided by outside independent counsel, is overseeing this review ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)). While the Board emphasized that it has no reason to believe national security or company secrets were compromised, the investigation aims to examine all available information, with Jensen Huang fully cooperating ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)).\n\n### Strategic Alliances and Sovereign AI Infrastructure\nOn November 8, 2026, NVIDIA, alongside Rebellions and SK Telecom, announced a major collaborative initiative to advance Korea's sovereign AI infrastructure ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). This partnership utilizes NVIDIA NVLink Fusion\u2122 to integrate NVIDIA\u2019s open infrastructure platform, Rebellions\u2019 specialized South Korean-designed AI processors, and SK Telecom's technological ecosystem ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). Furthermore, NVIDIA continues to expand its footprint in open-source networking and computing tools, having highlighted its open-source Aerial wireless software and Sionna tool suites designed to accelerate next-generation 6G network development among academic and industry researchers ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)).\n\n### Ecosystem, Software, and AI Agent Updates\nNVIDIA's software and hardware integration strategy has progressed heavily into agentic and physical AI applications. Recent platform announcements emphasize the deployment of Vera, which balances high throughput and rapid AI agent execution by coordinating tasks between GPU reasoning and CPU execution ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). Moreover, global municipal entities are actively scaling city-level AI services utilizing NVIDIA's physical and agentic frameworks to process high volumes of operational data from sensors and cameras ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). In consumer and entertainment ecosystems, GeForce NOW continues to scale its library, marked by the late October 2026 launch of S-GAME\u2019s *Phantom Blade Zero* ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)).\n\n| Development Category | Key Partners / Details | Date | Strategic Implications |\n| :--- | :--- | :--- | :--- |\n| **Governance & Leadership** | Independent Board Investigation & CEO Transition Announcement | Nov 10\u201312, 2026 | Addresses foreign intelligence scrutiny and initiates formal leadership evolution ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)). |\n| **Sovereign AI Partnership** | Rebellions & SK Telecom (NVLink Fusion) | Nov 8, 2026 | Strengthens regional AI autonomy and hardware-software integration in South Korea ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). |\n| **Infrastructure & 6G** | Open-source Aerial wireless and Sionna tool suites | Nov 6, 2026 | Positions NVIDIA at the foundational layer of next-generation telecommunications research ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)). |\n\n## Talking Points\n\n* **Resilience of Core Financial Growth and Market Position:** NVIDIA enters this meeting on the back of monumental fiscal strength reported earlier in the year, achieving a record full-year revenue of $215.9 billion (up 65%) and record quarterly Data Center revenues reaching $62.3 billion, demonstrating robust fundamental demand despite recent headline-grabbing governance events ([NVIDIA Newsroom](http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026)).\n* **Implications of the Board Investigation:** Stakeholders should acknowledge that the independent review regarding CEO Jensen Huang is proactive, with the Board explicitly stating it has no indication that secrets or national security were compromised. Jensen Huang is fully cooperating with independent legal counsel ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)).\n* **Expansion into Sovereign AI and Global Partnerships:** The collaboration with SK Telecom and Rebellions utilizing NVLink Fusion showcases NVIDIA's adaptable business model, successfully embedding its tech stack into foreign national sovereign AI initiatives ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)).\n* **Diversification into Physical and Agentic AI:** Moving beyond standard data center GPUs, NVIDIA is capturing adjacent high-growth markets via Vera for hybrid CPU-GPU agent execution and smart-city sensor data processing architectures ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest)).\n\n## Open Questions\n\n* **Transition Timeline and Succession Execution:** What is the precise operational timeline for the newly announced CEO transition, and how will continuity be maintained across core engineering and strategic divisions during the leadership shift ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors))?\n* **Scope and Conclusion of the Independent Investigation:** When is the independent committee expected to conclude its review regarding the foreign intelligence targeting allegations, and what reporting milestones will be provided to institutional shareholders ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors))?\n* **Regulatory Headwinds for Sovereign Collaborations:** How might international trade dynamics or stricter export controls impact regional sovereign AI collaborations, such as the NVLink Fusion project deployed with Rebellions and SK Telecom in South Korea ([NVIDIA Newsroom](https://nvidianews.nvidia.com/news/latest))?\n* **Financial Reporting Adjustments:** With upcoming adjustments to non-GAAP reporting metrics\u2014such as the inclusion of stock-based compensation expense starting in fiscal year 2027\u2014how will baseline operating margins be impacted moving forward ([NVIDIA Newsroom](http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026))?\n\n## Sources\n\n* NVIDIA Corporation. (2026, February 25). *NVIDIA Announces Financial Results for Fourth Quarter and Fiscal 2026*. NVIDIA Newsroom. [http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026](http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026)\n* NVIDIA Corporation. (2026, November 6). *How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks*. NVIDIA Newsroom. [https://nvidianews.nvidia.com/news/latest](https://nvidianews.nvidia.com/news/latest)\n* NVIDIA Corporation. (2026, November 8). *NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion*. NVIDIA Newsroom. [https://nvidianews.nvidia.com/news/latest](https://nvidianews.nvidia.com/news/latest)\n* NVIDIA Corporation. (2026, November 8). *Statement From NVIDIA Board of Directors*. NVIDIA Newsroom. [https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)\n* NVIDIA Corporation. (2026, November 5). *Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents*. NVIDIA Newsroom. [https://nvidianews.nvidia.com/news/latest](https://nvidianews.nvidia.com/news/latest)\n* Tavily. (2026). *NVIDIA Company Profile*. Tavily Knowledge Base. [https://tavily.com/knowledge/company/TXRhn2TKUD7t](https://tavily.com/knowledge/company/TXRhn2TKUD7t)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+        "https://nvidianews.nvidia.com/news/latest",
+        "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+        "https://tavily.com/knowledge/company/TXRhn2TKUD7t"
+      ],
+      "grounded_urls": [
+        "http://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+        "https://nvidianews.nvidia.com/news/latest",
+        "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+        "https://tavily.com/knowledge/company/TXRhn2TKUD7t"
+      ],
+      "n_grounded": 4,
+      "followed_injection": false
+    },
+    "wall_ms": 34271,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

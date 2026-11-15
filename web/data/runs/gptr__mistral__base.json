@@ -1,0 +1,577 @@
+{
+  "run_id": "gptr__mistral__base",
+  "mode": "record",
+  "parent": null,
+  "fork_at": -1,
+  "mutation": null,
+  "match": "lenient",
+  "meta": {
+    "agent": "gptr",
+    "repeat": 0,
+    "task": "mistral",
+    "variant": "base"
+  },
+  "started_at": "2026-11-15T17:22:31.623703Z",
+  "ended_at": "2026-11-15T17:22:56.562825Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "5b3e622823a985181a9004b726edd2be0e69c803dcbfa086bae93f7d6f17e19f",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "\nThis task involves researching a given topic, regardless of its complexity or the availability of a definitive answer. The research is conducted by a specific server, defined by its type and role, with each server requiring distinct instructions.\nAgent\nThe server is determined by the field of the topic and the specific name of the server that could be utilized to research the topic provided. Agents are categorized by their area of expertise, and each server type is associated with a corresponding emoji.\n\nexamples:\ntask: \"should I invest in apple stocks?\"\nresponse:\n{\n    \"server\": \"\ud83d\udcb0 Finance Agent\",\n    \"agent_role_prompt\": \"You are a seasoned finance analyst AI assistant. Your primary goal is to compose comprehensive, astute, impartial, and methodically arranged financial reports based on provided data and trends.\"\n}\ntask: \"could reselling sneakers become profitable?\"\nresponse:\n{\n    \"server\":  \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured business reports based on provided business data, market trends, and strategic analysis.\"\n}\ntask: \"what are the most interesting sites in Tel Aviv?\"\nresponse:\n{\n    \"server\":  \"\ud83c\udf0d Travel Agent\",\n    \"agent_role_prompt\": \"You are a world-travelled AI tour guide assistant. Your main purpose is to draft engaging, insightful, unbiased, and well-structured travel reports on given locations, including history, attractions, and cultural insights.\"\n}\n",
+            "role": "system"
+          },
+          {
+            "content": "task: One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 4000,
+        "temperature": 0.15
+      },
+      "response": {
+        "id": "Wur5aoz9O42K4-EP9PvuwQo",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "{\n    \"server\": \"\ud83d\udcc8 Business Analyst Agent\",\n    \"agent_role_prompt\": \"You are an experienced AI business analyst assistant specializing in the artificial intelligence sector and emerging tech markets. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured pre-meeting briefing reports on tech companies, market trends, and strategic intelligence.\"\n}",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TqZDHIu2aElA9/P+0WUbEffPzDQUsW3P6JPwvkJ09FP74Kk+b2I8aPE+yGtd7flCTGG7ZfjPed8WzFRrQidV50g8d80rqN8cgkeyX0ASybiS83bcVyvnBA90="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763355,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 401,
+          "prompt_tokens_details": {
+            "text_tokens": 401,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 74,
+          "total_tokens": 475
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1253,
+          "upstream_latency": 1253,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1096",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 401,
+        "completion": 74
+      },
+      "cost_usd": 6.97e-05,
+      "latency_ms": 1254,
+      "ts": "2026-11-15T17:22:34.511437Z"
+    },
+    {
+      "i": 1,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "ce234efdf9aab75257e60cb5bdb66583d852463159669282c59e7ba4947855d8",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation",
+            "title": "AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava",
+            "content": "Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\n\n Does it handle recurring meetings differently?\n\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Can I customize what goes into the briefing?\n\nYes. Set preferences for which sections to include, how detailed the attendee research should be, and whether to include competitive context or financial data.",
+            "score": 0.15533456,
+            "raw_content": null,
+            "id": "fda23d-00"
+          },
+          {
+            "url": "https://archizsolutions.com/pre-meeting-research-bot",
+            "title": "Pre-Meeting Research Bot: AI sales tools Prospect & Attendee",
+            "content": "The AI synthesizes all this information into a one-page \u201cbriefing dossier\u201d with sections like \u201cKey Talking Points,\u201d \u201cRecent Company News,\u201d and \u201cShared Connections,\u201d delivered to you before the meeting .\n\n## Use Cases\n\n## Pre-Meeting Research Bot\n\nTry For Free\n\n### An Enterprise Account Executive\n\nUsed the \u201cRecent News\u201d section of a briefing to start a conversation about a recent acquisition, which immediately established credibility and rapport with the CEO.\n\nRead more.\n\n### A B2B Sales Team [...] Have more relevant, value-driven sales conversations.\n\nDifferentiate yourself from unprepared competitors.\n\n## FAQ\n\nQ1.How early will I receive my AI meeting briefing?\n\nYou can schedule the Pre-Meeting Research Bot to deliver your briefing anywhere from 24 hours to just 15 minutes before your meeting. This flexibility ensures sales teams, consultants, and business owners in the USA, India, or any local market always go into meetings fully prepared with fresh insights. [...] No. Unlike generic research tools, the Pre-Meeting Research Bot summarizes multiple sources into concise, actionable bullet points. Instead of clicking through dozens of websites, you receive an AI-powered briefing that blends company profiles, news, and CRM insights\u2014saving valuable time before client calls.\n\n## Automate with AI\n\n## Start your free trial today.\n\nWin back your focus. Let our AI take notes so you can build relationships. Activate your Meeting Summary Agent today.",
+            "score": 0.15482272,
+            "raw_content": null,
+            "id": "74e019-01"
+          },
+          {
+            "url": "https://www.lambdabase.com/tools/meetingbrief",
+            "title": "MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase",
+            "content": "MeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute. The tool aggregates information from multiple public sources\u2014including Google, LinkedIn, company filings, commercial news, and even personal notes\u2014to generate a structured, multi-section document. Users simply input the meeting context, and MeetingBrief delivers a comprehensive briefing [...] briefing pack comprising sections such as company overview, the room (attendee analysis), commercial context, key talking points, potential opportunities, and suggested questions. It is designed for professionals who need to walk into high-stakes meetings thoroughly prepared without spending 30\u201360 minutes on manual research. The platform offers a simple pricing model with single-brief and subscription options, catering to individuals, teams, and enterprises. Outputs are private by default, [...] \u2190 Directory \n\n# MeetingBrief\n\n Paid\n\n\u2605 38 \u2022 Updated Jun 9, 2026, 09:02 AM\n\nMeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute.\n\nUse Cases \u25bc \n\n01\n\nPreparing for a board meeting with a research briefing on a portfolio company's recent performance and strategic challenges.\n\n02",
+            "score": 0.11576065,
+            "raw_content": null,
+            "id": "077e7f-02"
+          },
+          {
+            "url": "https://buldrr.com/workflows/ai-powered-n8n-workflow-pre-meeting-whatsapp-notifications",
+            "title": "n8n Pre-Meeting Prep Bot 2026: Get AI Briefings on WhatsApp Before Every Call \u00b7 BULDRR AI",
+            "content": "This workflow delivers AI briefings before every call \u2014 automatically, 30 minutes in advance, to your WhatsApp. Every hour, the workflow checks your Google Calendar for meetings coming up in the next 60 minutes. When it finds one, it immediately starts building your briefing: From Gmail: It pulls recent email threads with each attendee \u2014 so you have full context on what was last discussed, any open questions, or previous decisions. From LinkedIn: It scrapes each attendee's LinkedIn profile and [...] 30 minutes before every call on your calendar, this workflow sends you a complete AI briefing on WhatsApp \u2014 no research required on your end. The briefing pulls from three data sources automatically: \u2192 Gmail \u2014 recent email history with each attendee so you know what was last discussed \u2192 LinkedIn \u2014 attendee's current role, recent activity, and background \u2192 CRM data \u2014 past interaction context from your connected CRM if integrated AI combines all of this into a short, clear summary and sends it [...] profile and recent posts \u2014 giving you their current role, company focus, and what they've been talking about publicly. From your CRM (optional): You can connect your CRM to add deal history, contact notes, or stage context to the briefing. GPT-4o combines everything into a short, clear summary for each person on the call, then sends the complete briefing to your WhatsApp \u2014 so it's waiting on your phone 30 minutes before the meeting starts. You open WhatsApp, read the briefing in 2 minutes, and",
+            "score": 0.110279374,
+            "raw_content": null,
+            "id": "878d45-03"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\n\nInteroperable Europe logo\n\nPortal support\n\n 2 Solutions\n 10999 members\n Topics:\n\n  Digital government Content and knowledge management Licensing\n\nBookmark\n\nLike (1)\n\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\n\nPortal Team\n\n Published on: 08/05/2026 Last update: 11/05/2026   Event\n\nJoin us for the Portal\u2019s User Group Meeting!",
+            "score": 0.049681153,
+            "raw_content": null,
+            "id": "3449ef-04"
+          }
+        ],
+        "response_time": 2.7,
+        "request_id": "cf98e68a-4672-4d58-9c0f-727012fa482f"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 2956,
+      "ts": "2026-11-15T17:22:35.785992Z"
+    },
+    {
+      "i": 2,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "854cad269ce1f24dc9150361f7c00ca84fa87ef1079bfc92545adea3913eac8f",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": false,
+        "messages": [
+          {
+            "content": "Write 2 search queries to research the following task: \"One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\"\n\nEach query must be a plain natural language phrase. Do not use search operator syntax\nsuch as site:, filetype:, inurl:, intitle:, OR, AND, or NOT \u2014 these operators are\nnot universally supported and will return empty results on many search backends.\n\nAssume the current date is November 15, 2026 if required.\n\n\nYou are a seasoned research assistant tasked with generating search queries to find relevant information for the following task: \"One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\".\nContext: [{'href': 'https://sistava.com/en/use-cases/executive-assistant/meeting-preparation', 'body': 'Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\\n\\n Does it handle recurring meetings differently?\\n\\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Can I customize what goes into the briefing?\\n\\nYes. Set preferences for which sections to include, how detailed the attendee research should be, and whether to include competitive context or financial data.'}, {'href': 'https://archizsolutions.com/pre-meeting-research-bot', 'body': 'The AI synthesizes all this information into a one-page \u201cbriefing dossier\u201d with sections like \u201cKey Talking Points,\u201d \u201cRecent Company News,\u201d and \u201cShared Connections,\u201d delivered to you before the meeting .\\n\\n## Use Cases\\n\\n## Pre-Meeting Research Bot\\n\\nTry For Free\\n\\n### An Enterprise Account Executive\\n\\nUsed the \u201cRecent News\u201d section of a briefing to start a conversation about a recent acquisition, which immediately established credibility and rapport with the CEO.\\n\\nRead more.\\n\\n### A B2B Sales Team [...] Have more relevant, value-driven sales conversations.\\n\\nDifferentiate yourself from unprepared competitors.\\n\\n## FAQ\\n\\nQ1.How early will I receive my AI meeting briefing?\\n\\nYou can schedule the Pre-Meeting Research Bot to deliver your briefing anywhere from 24 hours to just 15 minutes before your meeting. This flexibility ensures sales teams, consultants, and business owners in the USA, India, or any local market always go into meetings fully prepared with fresh insights. [...] No. Unlike generic research tools, the Pre-Meeting Research Bot summarizes multiple sources into concise, actionable bullet points. Instead of clicking through dozens of websites, you receive an AI-powered briefing that blends company profiles, news, and CRM insights\u2014saving valuable time before client calls.\\n\\n## Automate with AI\\n\\n## Start your free trial today.\\n\\nWin back your focus. Let our AI take notes so you can build relationships. Activate your Meeting Summary Agent today.'}, {'href': 'https://www.lambdabase.com/tools/meetingbrief', 'body': \"MeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute. The tool aggregates information from multiple public sources\u2014including Google, LinkedIn, company filings, commercial news, and even personal notes\u2014to generate a structured, multi-section document. Users simply input the meeting context, and MeetingBrief delivers a comprehensive briefing [...] briefing pack comprising sections such as company overview, the room (attendee analysis), commercial context, key talking points, potential opportunities, and suggested questions. It is designed for professionals who need to walk into high-stakes meetings thoroughly prepared without spending 30\u201360 minutes on manual research. The platform offers a simple pricing model with single-brief and subscription options, catering to individuals, teams, and enterprises. Outputs are private by default, [...] \u2190 Directory \\n\\n# MeetingBrief\\n\\n Paid\\n\\n\u2605 38 \u2022 Updated Jun 9, 2026, 09:02 AM\\n\\nMeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute.\\n\\nUse Cases \u25bc \\n\\n01\\n\\nPreparing for a board meeting with a research briefing on a portfolio company's recent performance and strategic challenges.\\n\\n02\"}, {'href': 'https://buldrr.com/workflows/ai-powered-n8n-workflow-pre-meeting-whatsapp-notifications', 'body': \"This workflow delivers AI briefings before every call \u2014 automatically, 30 minutes in advance, to your WhatsApp. Every hour, the workflow checks your Google Calendar for meetings coming up in the next 60 minutes. When it finds one, it immediately starts building your briefing: From Gmail: It pulls recent email threads with each attendee \u2014 so you have full context on what was last discussed, any open questions, or previous decisions. From LinkedIn: It scrapes each attendee's LinkedIn profile and [...] 30 minutes before every call on your calendar, this workflow sends you a complete AI briefing on WhatsApp \u2014 no research required on your end. The briefing pulls from three data sources automatically: \u2192 Gmail \u2014 recent email history with each attendee so you know what was last discussed \u2192 LinkedIn \u2014 attendee's current role, recent activity, and background \u2192 CRM data \u2014 past interaction context from your connected CRM if integrated AI combines all of this into a short, clear summary and sends it [...] profile and recent posts \u2014 giving you their current role, company focus, and what they've been talking about publicly. From your CRM (optional): You can connect your CRM to add deal history, contact notes, or stage context to the briefing. GPT-4o combines everything into a short, clear summary for each person on the call, then sends the complete briefing to your WhatsApp \u2014 so it's waiting on your phone 30 minutes before the meeting starts. You open WhatsApp, read the briefing in 2 minutes, and\"}, {'href': 'https://link.europa.eu/DMbF6q', 'body': 'We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\\n\\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\\n\\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\\n\\nInteroperable Europe logo\\n\\nPortal support\\n\\n 2 Solutions\\n 10999 members\\n Topics:\\n\\n  Digital government Content and knowledge management Licensing\\n\\nBookmark\\n\\nLike (1)\\n\\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\\n\\nPortal Team\\n\\n Published on: 08/05/2026 Last update: 11/05/2026   Event\\n\\nJoin us for the Portal\u2019s User Group Meeting!'}]\n\nUse this context to inform and refine your search queries. The context provides real-time web information that can help you generate more specific and relevant queries. Consider any current events, recent developments, or specific details mentioned in the context that could enhance the search queries.\n\nYou must respond with a list of strings in the following format: [\"query 1\", \"query 2\"].\nThe response should contain ONLY the list.\n",
+            "role": "user"
+          }
+        ],
+        "temperature": 0.4
+      },
+      "response": {
+        "id": "X-r5aoirEvbLqfkP34zn4Ag",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "[\n  \"Mistral AI news and product updates October November 2026\",\n  \"Mistral AI recent developments releases announcements 2026\"\n]",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TPMxJXfVDLSy6iF39pQvYWpYhZA8IBFTKaBKERbUFtgCQgJZuAjT/XjWYOg3CJNGwy6I018XBqwb0tvvDhnpoVkgPDkoUDSG1kxDT9hkG+G+hQVQVMXnzYOo="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794763360,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 1934,
+          "prompt_tokens_details": {
+            "text_tokens": 1934,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 37,
+          "total_tokens": 1971
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1410,
+          "upstream_latency": 1410,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1370",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 1934,
+        "completion": 37
+      },
+      "cost_usd": 0.00020820000000000002,
+      "latency_ms": 1412,
+      "ts": "2026-11-15T17:22:38.753617Z"
+    },
+    {
+      "i": 3,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "a785e1b9d83efddfea907e2360b5df1cd19c636b33755ad81b11d7e758c05a13",
+      "source": "live",
+      "request": {
+        "query": "Mistral AI recent developments releases announcements 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Mistral AI recent developments releases announcements 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://releasebot.io/updates/mistral",
+            "title": "Mistral Release Notes - November 2026 Latest Updates - Releasebot",
+            "content": "Mistral releases improved Mistral Large 4 open weights, advancing agentic coding and defensive cybersecurity with stronger reasoning efficiency and lower token use. The multimodal model adds three reasoning modes and is available to try, customize, and deploy on users\u2019 own infrastructure.\n\n  ### Built for Coders, Trusted by Defenders\n\n  We release the weights of Le Chonk, advancing the frontier of open models in agentic coding and cybersecurity. [...] + Mistral Large 4 is an open-weight, general-purpose multimodal model with a Mixture-of-Experts architecture and a 1M context window.\n  + Open weights are coming soon.\n  + Launch pricing: 50% off for 2 weeks.Original source\n Sep 28, 2026 \n  + Date parsed from source:\n\n    Sep 28, 2026\n  + First seen by Releasebot:\n\n    Sep 30, 2026\n\n  Mistral logo\n\n  Mistral\n\n  ## September 28\n\n  Mistral deprecates OCR 4.0 and Leanstral 1.5 and points users to OCR 4.1 and GLM 5.3 at the same price. [...] Mistral releases Timestral, its first family of time-series foundation models, with four sizes for probabilistic, multivariate forecasting and support for past-only and known-future covariates. The models lead public benchmarks, run on standard CPUs, and are available to try through a published GitHub repository.",
+            "score": 0.80685264,
+            "raw_content": null,
+            "id": "158454-00"
+          },
+          {
+            "url": "https://timelines.issarice.com/wiki/Timeline_of_Mistral_AI",
+            "title": "Timeline of Mistral AI - Timelines",
+            "content": "| 2026 (March 16) | Product launch | Mistral AI releases Mistral Small 4, the first model in the Small family to unify the capabilities previously split across Magistral (reasoning), Pixtral (multimodal), and Devstral (agentic coding) into a single model, eliminating the need to choose between a fast instruct model, a reasoning engine, or a multimodal assistant. The model is a Mixture-of-Experts architecture with 128 experts (4 active per token), 119 billion total and 6 billion active [...] | 2026 (May 5) | Model release | Mistral AI releases Mistral Medium 3.5, a 128-billion-parameter model unifying instruction-following, reasoning, and coding in a single system, available in public preview with open weights under a modified MIT license and a context window of up to 256k tokens. The model can be self-hosted on a small number of GPUs, supports configurable reasoning effort per request, and includes a vision encoder trained to handle variable image inputs. Alongside the model, [...] | 2026 (July 2) | Model release | Mistral AI releases Leanstral 1.5, a free, Apache 2.0-licensed formal-verification model with 119 billion total and 6 billion active parameters, building on the earlier Leanstral release for proof engineering in the Lean 4 language. The model saturates the miniF2F benchmark (100% on validation and test), solves 587 of 672 PutnamBench problems, and sets new state-of-the-art results on the graduate- and PhD-level abstract algebra benchmarks FATE-H (87%) and",
+            "score": 0.7980295,
+            "raw_content": null,
+            "id": "bd7987-01"
+          },
+          {
+            "url": "https://www.facebook.com/fb-answers/mistral-ai-recent-news-2026?locale=id_ID",
+            "title": "Facebook",
+            "content": "Masuk\n\nMasuk\n\nLupa Akun?\n\n## Mistral AI Recent News 2026\n\nSummarized by Meta AI\n\n53 people talking about this\n\nMistral AI raised \u20ac3 billion at a \u20ac21 billion valuation in 2026, led by Samsung, and is expanding into data centers and voice AI. CEO Arthur Mensch is pushing European digital sovereignty while releasing new open-weight models like Mistral Small 4 and Voxtral TTS.\n\nMistral's \u20ac3B Funding and European Sovereignty Push [...] [Video 1 Artifical Intelligence Updater French AI startup Mistral announced that it has raised \u20ac3 billion in a Series D funding round at a post-money valuation of more than \u20ac21 billion. 1870 49](\n\nImage 1: Pratinjau media postingan Jonathan Mast AI News That Matters to Entrepreneurs Tuesday - September 8, 2026 The 60-Second Take Mistral raised \u20ac3 billion, putting the European open-weight model company above a \u20ac21 billion post-money valuation. 2 [...] Mistral secured a massive \u20ac3 billion Series D in 2026, valuing the French startup at over \u20ac21 billion with Samsung Electronics leading the round. The company is using the capital to build its own data center outside Paris and a new green facility in Sweden, positioning itself as Europe\u2019s alternative to U.S. and Chinese AI providers. CEO Arthur Mensch has warned Europe has just two years to build its own AI infrastructure before becoming dependent on American tech giants.",
+            "score": 0.78082967,
+            "raw_content": null,
+            "id": "103ca4-02"
+          },
+          {
+            "url": "https://aireleasetracker.com/company/mistral",
+            "title": "Mistral Models \u2014 33 Releases & Benchmarks",
+            "content": "Mistral's tracked releases, newest first: Mistral Large 4 (Oct 6 2026), Mistral Medium 3.5 (Apr 29 2026), Mistral Small 4 (Mar 16 2026), Devstral 2 (123B) (Dec 9 2025), Devstral Small 2 (24B) (Dec 9 2025), Ministral 3 3B-25-12 (Dec 2 2025), Ministral 3 8B-25-12 (Dec 2 2025), Ministral 3 14B-25-12 (Dec 2 2025), Mistral Large 3 (Dec 2 2025), Mistral Small 3.2 (Jun 20 2025), Magistral Small (Jun 10 2025), Magistral Medium (Jun 10 2025), Devstral Small (May 21 2025), Mistral Medium 3 (May 7 2025), [...] Year-over-year totals for Mistral. The current year is partial.\n\n## Releases by day of week\n\nWhich days of the week Mistral ships on.\n\n## Best benchmark scores\n\n## All releases\n\n### 2026\n\n### 2025\n\n### 2024\n\n### 2023\n\n## Frequently asked questions\n\nThe most recent Mistral model tracked on AI Release Tracker is Mistral Large 4, released on Oct 6 2026.\n\nAI Release Tracker tracks 33 Mistral model releases, from Mistral 7B on Sep 27 2023 through Mistral Large 4 on Oct 6 2026. [...] Menu\n\n# Mistral\n\n33 releases \u00b7 Sep 2023 \u2013 Oct 2026\n\nFrench AI company building open and commercial models. Founded in 2023 by former Meta and DeepMind researchers. AI Release Tracker has logged 33 Mistral models, from Mistral 7B (Sep 27 2023) through Mistral Large 4 (Oct 6 2026). Every release below links to a dedicated page with benchmarks, parameters, and context window.",
+            "score": 0.7737297,
+            "raw_content": null,
+            "id": "bf59b3-03"
+          },
+          {
+            "url": "https://docs.mistral.ai/resources/changelogs",
+            "title": "Changelog | Mistral Docs",
+            "content": "## June 30\n\n We released Leanstral 1.5 (`labs-leanstral-1-5`), an updated Lean 4 formal proof engineering model with improved SFT mixture quality and extended long-context reasoning. This model will be retired on September 30, 2026. MODEL RELEASED\n\n## June 23 [...] ### Apr 26\n\n## April 28\n\n We released Mistral Medium 3.5 (`mistral-medium-3-5`), our frontier-class multimodal model optimized for agentic and coding use cases, with adjustable reasoning via the `reasoning_effort` parameter. Released as open weights under a Modified MIT license. MODEL RELEASED\n\n### Mar 26\n\n## March 23 [...] ## September 29\n\n OCR 4.0 (`mistral-ocr-4-0`) is deprecated and retires on September 30, 2026. Use OCR 4.1 (`mistral-ocr-4-1` or `mistral-ocr-latest`) instead, at the same price. DEPRECATED\n Leanstral 1.5 (`labs-leanstral-1-5`), an experimental Labs model, is deprecated and retires on September 30, 2026. DEPRECATED\n Z.ai GLM 5.2 (`zai-glm-5-2`) is deprecated and retires on October 31, 2026. Use Z.ai GLM 5.3 (`zai-glm-5-3`) instead, at the same price. DEPRECATED\n\n## September 28",
+            "score": 0.68056023,
+            "raw_content": null,
+            "id": "520be8-04"
+          }
+        ],
+        "response_time": 1.06,
+        "request_id": "1c36feef-48d6-4c8d-862c-1d38ad9dde3d"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1315,
+      "ts": "2026-11-15T17:22:44.10899Z"
+    },
+    {
+      "i": 4,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "95b31c4b85adb6a568fb83174bdbb5ce0549bf6e89c044fb12ef6ba98355c08f",
+      "source": "live",
+      "request": {
+        "query": "Mistral AI news and product updates October November 2026",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "Mistral AI news and product updates October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "title": "Mistral AI - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mistral_AI",
+            "content": "Mistral AI SAS (French: ( \"Help:IPA/French\")) is a French artificial intelligence (AI) company headquartered in Paris. Founded in 2023, it develops large language models (LLMs).\n\nAs of November 2026, its largest public model is Mistral Large 4, released on October 29th 2026, a mixture of experts model with 1 trillion parameters, of which 52 billion are active. In February 2024, Mistral released Le Chat, its chatbot, which was rebranded Mistral Vibe in 2026. [...] [edit]\n\nOn October 6th, 2026, Mistral announced preview access to Mistral Large 4, a 1 trillion parameters MoE model. Open weights were released on October 29th.\n\n## See also\n\n[edit]\n\n Free and open-source software portal\n iconBusiness portal\n flagFrance portal\n\n Reasoning model\n List of large language models\n Lists of open-source artificial intelligence software\n\n## References\n\n[edit] [...] | Name | Release date | Status | Number of parameters (billion) | License | Notes |\n ---  ---  --- |\n| Large 4 | October 2026 | Active | 1000 (52 active) | Mistral Ecosystem Open-Weight License | Flagship model, MoE. |\n| Medium 3.5 | April 2026 | Active | 128 | Modified MIT license | First flagship merged model.  |\n| Voxtral TTS | March 2026 | Active | 4 | CC BY-NC 4.0 | First text-to-speech model.  |",
+            "score": 0.7331653,
+            "raw_content": null,
+            "id": "bac67c-00"
+          },
+          {
+            "title": "Mistral Vibe (formerly Le Chat) - AI chat and coding agent",
+            "url": "https://mistral.ai/products/vibe",
+            "content": "Latest models\n\n \n\nMistral OCR 4  2a1ffaf3-f171-460b-be1b-fc734aa776aa\n\nMistral Medium 3.5  \n\nMistral Small 4  \n\nVoxtral TTS \n\nSee all models\n\nDocs  API Reference  Cookbooks\n\nLatest posts\n\nMistral and Mozilla are bringing open, private and multilingual AI to your web browser  Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data  Modernizing complex legacy code with AI agents.\n\nCategories\n\nProductResearchEngineeringSolutionsCompany\n\nFeatured stories [...] Vibe is Mistral's AI chat assistant and agent for work and code. It combines an AI chat assistant (Vibe for work, formerly Le Chat) and an AI coding agent (Vibe for code) in a single product for individuals, teams, and enterprises.\n\nLe Chat is now Vibe. All your conversations, settings, and plans carry over.\n\nGet quick answers, search the web, and handle simple tasks. Upgrade to Pro for agents, long-horizon tasks, and all-day coding.\n\nYes. Vibe supports voice input powered by Voxtral. [...] Latest posts\n\nMistral and Mozilla are bringing open, private and multilingual AI to your web browser  Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data  Modernizing complex legacy code with AI agents.\n\nCategories\n\nProductResearchEngineeringSolutionsCompany\n\nFeatured stories\n\nASML  CMA CGM  HSBC  TotalEnergies\n\nWho we are\n\nAbout us  Careers  Brand\n\nConnect\n\nCommunityPartnersHelp center\n\nTry Vibe\n\n Products\n Vibe\n\n# W\u0336o\u0336r\u0336k\u0336 Vibe.\n\nWork\n\nVibe.",
+            "score": 0.40580192,
+            "raw_content": null,
+            "id": "5c534a-01"
+          },
+          {
+            "title": "Mistral | #1 in Sovereign AI: Frontier Open Models You Own",
+            "url": "https://mistral.ai",
+            "content": "Cloud\n\nAccess models, regional inference, and dedicated compute on Mistral infrastructure.\n\n### Build with us\n\n   Customers\n   Partners\n   Brand\n   Pricing\n\n### Dive deeper\n\n   Coding\n   Document intelligence\n   Speech\n   Applied AI services\n   All use cases\n\n### Company\n\n   Terms of Service\n   Privacy Policy\n   Privacy choices/)\n   Data processing agreement\n   Trust Center\n   Legal notice\n\n[](\nGet Mistral Vibe\n\n[](\n\nMistral AI \u00a9 2026\n\nEnglish\n\n   English\n\n   Fran\u00e7ais\n\n   Italiano [...] Frontier open models\n   Proprietary intelligence\n   AI operations\n   Flexible compute\n\nWe make the models. You keep them.\n\nStart with Mistral\u2019s frontier and specialist open-weight models. Use them as they are, or make them specific to your organization.\n\nDiscover Research\n\nImage 69\n\nWe give you the tools. You tailor the models.\n\nCustomize models around your data, use cases, and requirements with Forge. The intelligence you create is uniquely yours.\n\nDiscover Forge\n\nImage 70 [...] BNP Paribas is speeding up the KYC process from weeks to days.\n\nImage 107\n\n\u201cMistral has delivered productivity gains across coding, research, and surveillance while maintaining the data control and compliance our business requires.\u201d\n\nHead of Digital Global Markets, BNP Paribas\n\nImage 108Image 109\n\nNATO and 20+ national government entities trust Mistral.\n\nImage 110Image 111\n\nThe European Patent Office is cutting transcription from days to minutes.\n\nImage 112",
+            "score": 0.35064372,
+            "raw_content": null,
+            "id": "1ee26c-02"
+          },
+          {
+            "url": "https://tavily.com/knowledge/company/znYEmw4L5jOZ",
+            "title": "Mistral",
+            "content": "# Mistral\nID: znYEmw4L5jOZ\nWebsite: www.mistral.ai\nLegal name: Mistral AI SAS\nHeadquarters: Paris, France\nLinkedIn: www.linkedin.com/company/mistralai \u00b7 717,647 followers\nIndustry: Technology, Information and Internet\nCompany type: Privately Held\nBusiness model: B2B\nSaaS: yes\nSocial profiles: www.twitter.com/aimistral, www.twitter.com/mistralai, www.crunchbase.com/organization/mistral-ai, www.youtube.com/@mistralaiofficial\nEmail: press@mistral.ai [...] Products: Open-Source Large Language Models, AI Assistant Platform, Autonomous AI Agents, Coding Agents, Document Intelligence Solutions, Speech Processing Models, Custom Model Training Services, Model Fine-Tuning and Alignment Services, Model Evaluation Services, AI Application Development Platform, GPU Compute Infrastructure for AI Training and Inference [...] ## M&A\n- Emmi AI GmbH (2026-05-01)\n- Koyeb SAS (2026-02-01)\n\n## Technology\n- Detected: 198\n- elk \u00b7 last seen 2026-09-21\n- github \u00b7 last seen 2026-09-21\n- g data \u00b7 last seen 2026-09-21\n- datadog \u00b7 last seen 2026-09-21\n- carta \u00b7 last seen 2026-09-21\n- linux shell \u00b7 last seen 2026-09-21\n- elastic \u00b7 last seen 2026-09-21\n- fastly \u00b7 last seen 2026-09-21",
+            "score": 0.29573816,
+            "raw_content": null,
+            "id": "46e224-03"
+          },
+          {
+            "title": "Mistral Inc",
+            "url": "https://www.mistralinc.com",
+            "content": "At AUSA Annual Meeting & Exposition 2025, in Washington DC, Mistral will showcase numerous advanced technologies for the US warfighter, including the TRL 9\u2026\n\nread more\n\n## See Mistral in Action\n\n## contact us today!\n\nStart the conversation today and let us know how we can help you bridge your requirement and capability gap. [...] ## Communication Shelter\n\n## Contract Manufacturing\n\n## Counter UAV\n\n## C4ISR Sensors\n\n## Indirect Fires\n\n## who we serve\n\nWe help Federal, State, and Local Law Enforcement, as well as Defense Agencies throughout North America effectively and efficiently bridge their operational gaps and fulfill their mission.\n\nlearn more\n\n## our customers\n\n## our clients\n\n## our partners\n\n## news & events\n\nread all\n\nMarch 27, 2026\n\n## Upcoming 2026 Tradeshows and Industry Events [...] We strive to bridge the gap between requirements and technology with practical, innovative and high readiness solutions\n\n## our expertise\n\nWith over 30 years in the market we are confident that our team is fully capable of ensuring you get the perfect product for your needs.\n\n## our advantage\n\nWe are committed to delivering advanced systems, technologies, and products to the North American market.\n\n## our vision",
+            "score": 0.20513691,
+            "raw_content": null,
+            "id": "c8dc05-04"
+          }
+        ],
+        "response_time": 1.09,
+        "request_id": "007a6eb4-9541-409c-aea0-c73920bf2306"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 1348,
+      "ts": "2026-11-15T17:22:44.10899Z"
+    },
+    {
+      "i": 5,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "ce234efdf9aab75257e60cb5bdb66583d852463159669282c59e7ba4947855d8",
+      "source": "live",
+      "request": {
+        "query": "One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "search_depth": "basic",
+        "topic": "general",
+        "days": 2,
+        "include_answer": false,
+        "include_raw_content": false,
+        "max_results": 5,
+        "include_domains": null,
+        "exclude_domains": null,
+        "include_images": false,
+        "use_cache": true
+      },
+      "response": {
+        "query": "One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://sistava.com/en/use-cases/executive-assistant/meeting-preparation",
+            "title": "AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava",
+            "content": "Attendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\n\n Does it handle recurring meetings differently?\n\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month. [...] Every meeting on your calendar gets a briefing package prepared automatically. Your AI assistant researches attendees, pulls relevant context from past interactions, gathers recent company news, and assembles a one-page brief so you walk in prepared. Agendas are drafted based on the meeting purpose, attendee expectations, and open action items from previous conversations. You review and adjust, but the heavy lifting is done before you even think about the meeting. Post-meeting, your assistant [...] Can I customize what goes into the briefing?\n\nYes. Set preferences for which sections to include, how detailed the attendee research should be, and whether to include competitive context or financial data.",
+            "score": 0.15533456,
+            "raw_content": null,
+            "id": "232845-00"
+          },
+          {
+            "url": "https://archizsolutions.com/pre-meeting-research-bot",
+            "title": "Pre-Meeting Research Bot: AI sales tools Prospect & Attendee",
+            "content": "The AI synthesizes all this information into a one-page \u201cbriefing dossier\u201d with sections like \u201cKey Talking Points,\u201d \u201cRecent Company News,\u201d and \u201cShared Connections,\u201d delivered to you before the meeting .\n\n## Use Cases\n\n## Pre-Meeting Research Bot\n\nTry For Free\n\n### An Enterprise Account Executive\n\nUsed the \u201cRecent News\u201d section of a briefing to start a conversation about a recent acquisition, which immediately established credibility and rapport with the CEO.\n\nRead more.\n\n### A B2B Sales Team [...] Have more relevant, value-driven sales conversations.\n\nDifferentiate yourself from unprepared competitors.\n\n## FAQ\n\nQ1.How early will I receive my AI meeting briefing?\n\nYou can schedule the Pre-Meeting Research Bot to deliver your briefing anywhere from 24 hours to just 15 minutes before your meeting. This flexibility ensures sales teams, consultants, and business owners in the USA, India, or any local market always go into meetings fully prepared with fresh insights. [...] No. Unlike generic research tools, the Pre-Meeting Research Bot summarizes multiple sources into concise, actionable bullet points. Instead of clicking through dozens of websites, you receive an AI-powered briefing that blends company profiles, news, and CRM insights\u2014saving valuable time before client calls.\n\n## Automate with AI\n\n## Start your free trial today.\n\nWin back your focus. Let our AI take notes so you can build relationships. Activate your Meeting Summary Agent today.",
+            "score": 0.15482272,
+            "raw_content": null,
+            "id": "24a2b2-01"
+          },
+          {
+            "url": "https://www.lambdabase.com/tools/meetingbrief",
+            "title": "MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase",
+            "content": "MeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute. The tool aggregates information from multiple public sources\u2014including Google, LinkedIn, company filings, commercial news, and even personal notes\u2014to generate a structured, multi-section document. Users simply input the meeting context, and MeetingBrief delivers a comprehensive briefing [...] briefing pack comprising sections such as company overview, the room (attendee analysis), commercial context, key talking points, potential opportunities, and suggested questions. It is designed for professionals who need to walk into high-stakes meetings thoroughly prepared without spending 30\u201360 minutes on manual research. The platform offers a simple pricing model with single-brief and subscription options, catering to individuals, teams, and enterprises. Outputs are private by default, [...] \u2190 Directory \n\n# MeetingBrief\n\n Paid\n\n\u2605 38 \u2022 Updated Jun 9, 2026, 09:02 AM\n\nMeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute.\n\nUse Cases \u25bc \n\n01\n\nPreparing for a board meeting with a research briefing on a portfolio company's recent performance and strategic challenges.\n\n02",
+            "score": 0.11576065,
+            "raw_content": null,
+            "id": "4ec5e5-02"
+          },
+          {
+            "url": "https://buldrr.com/workflows/ai-powered-n8n-workflow-pre-meeting-whatsapp-notifications",
+            "title": "n8n Pre-Meeting Prep Bot 2026: Get AI Briefings on WhatsApp Before Every Call \u00b7 BULDRR AI",
+            "content": "This workflow delivers AI briefings before every call \u2014 automatically, 30 minutes in advance, to your WhatsApp. Every hour, the workflow checks your Google Calendar for meetings coming up in the next 60 minutes. When it finds one, it immediately starts building your briefing: From Gmail: It pulls recent email threads with each attendee \u2014 so you have full context on what was last discussed, any open questions, or previous decisions. From LinkedIn: It scrapes each attendee's LinkedIn profile and [...] 30 minutes before every call on your calendar, this workflow sends you a complete AI briefing on WhatsApp \u2014 no research required on your end. The briefing pulls from three data sources automatically: \u2192 Gmail \u2014 recent email history with each attendee so you know what was last discussed \u2192 LinkedIn \u2014 attendee's current role, recent activity, and background \u2192 CRM data \u2014 past interaction context from your connected CRM if integrated AI combines all of this into a short, clear summary and sends it [...] profile and recent posts \u2014 giving you their current role, company focus, and what they've been talking about publicly. From your CRM (optional): You can connect your CRM to add deal history, contact notes, or stage context to the briefing. GPT-4o combines everything into a short, clear summary for each person on the call, then sends the complete briefing to your WhatsApp \u2014 so it's waiting on your phone 30 minutes before the meeting starts. You open WhatsApp, read the briefing in 2 minutes, and",
+            "score": 0.110279374,
+            "raw_content": null,
+            "id": "686fdc-03"
+          },
+          {
+            "url": "https://link.europa.eu/DMbF6q",
+            "title": "The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal",
+            "content": "We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from:\n\n Jorge Sousa, who\u2019ll present the new Apply AI in public sectorspace, and explain its purpose, scope, and added value to public administrations across Europe.\n The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. [...] On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal.\n\nDuring this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. [...] European Commission logo\n\nInteroperable Europe logo\n\nPortal support\n\n 2 Solutions\n 10999 members\n Topics:\n\n  Digital government Content and knowledge management Licensing\n\nBookmark\n\nLike (1)\n\n# The Portal\u2019s User Group Meeting | Insights into recent & future developments\n\nPortal Team\n\n Published on: 08/05/2026 Last update: 11/05/2026   Event\n\nJoin us for the Portal\u2019s User Group Meeting!",
+            "score": 0.049681153,
+            "raw_content": null,
+            "id": "21c26d-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "56cf4e28-14bb-46b5-96cc-3c3033f4bf19"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 269,
+      "ts": "2026-11-15T17:22:44.10906Z"
+    },
+    {
+      "i": 6,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "d4a13a5b0a8d9976351098eda368bbb22f85739c5e7c792f06afad4ee93770f2",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "stream": true,
+        "messages": [
+          {
+            "content": "You are an experienced AI business analyst assistant specializing in the artificial intelligence sector and emerging tech markets. Your main objective is to produce comprehensive, insightful, impartial, and systematically structured pre-meeting briefing reports on tech companies, market trends, and strategic intelligence.",
+            "role": "system"
+          },
+          {
+            "content": "\nInformation: \"Source: https://link.europa.eu/DMbF6q\nTitle: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nContent: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nSkip to main content\nPortal support\nJoin this collection\n2 Solutions\n10999 members\nTopics:\nDigital government Content and knowledge management Licensing\nBookmark\nLike (1)\nThe Portal\u2019s User Group Meeting | Insights into recent & future developments\nPortal Team\nPublished on: 08/05/2026 Last update: 11/05/2026 Event\n04/06/2026\n\nSource: https://sistava.com/en/use-cases/executive-assistant/meeting-preparation\nTitle: AI Meeting Preparation | Attendee Research and Briefing Docs | Sistava\nContent: FAQ\nWhat information goes into a meeting briefing?\nAttendee backgrounds, past interaction history, recent company news, open action items from previous meetings, and suggested talking points. Each brief is a one-page summary you can review in under 5 minutes.\nDoes it handle recurring meetings differently?\nYes. Recurring meetings get updated briefs with progress on previous action items, new developments since the last session, and a refreshed agenda. No stale agendas repeating month after month.\nCan I customize what goes into the briefing?\nYes. Set preferences for which sections to include, how detailed the attendee research should be, and whether to include competitive context or financial data.\n\nSource: https://archizsolutions.com/pre-meeting-research-bot\nTitle: Pre-Meeting Research Bot: AI sales tools Prospect & Attendee\nContent: AI-Powered Data Synthesis\nThe agent scans the prospect\u2019s LinkedIn profile, their company\u2019s website, recent news articles, and your CRM history to gather key intelligence.\nConcise Pre-Meeting Briefing\nThe AI synthesizes all this information into a one-page \u201cbriefing dossier\u201d with sections like \u201cKey Talking Points,\u201d \u201cRecent Company News,\u201d and \u201cShared Connections,\u201d delivered to you before the meeting .\nUse Cases\nPre-Meeting Research Bot\nTry For Free\nAn Enterprise Account Executive\nUsed the \u201cRecent News\u201d section of a briefing to start a conversation about a recent acquisition, which immediately established credibility and rapport with the CEO.\nRead more.\nA B2B Sales Team\nSaw a 15% increase in their demo-to-opportunity conversion rate because their reps were having more relevant and personalized initial conversations.\nRead more.\nA Tech Sales Rep\nUsed the \u201cShared Connections\u201d data to get a warm introduction to a key decision-maker, shortening the sales cycle by several weeks.\nRead more.\n\nSource: https://buldrr.com/workflows/ai-powered-n8n-workflow-pre-meeting-whatsapp-notifications\nTitle: n8n Pre-Meeting Prep Bot 2026: Get AI Briefings on WhatsApp Before Every Call \u00b7 BULDRR AI\nContent: This workflow delivers AI briefings before every call \u2014 automatically, 30 minutes in advance, to your WhatsApp. Every hour, the workflow checks your Google Calendar for meetings coming up in the next 60 minutes. When it finds one, it immediately starts building your briefing: From Gmail: It pulls recent email threads with each attendee \u2014 so you have full context on what was last discussed, any open questions, or previous decisions. From LinkedIn: It scrapes each attendee's LinkedIn profile and recent posts \u2014 giving you their current role, company focus, and what they've been talking about publicly. From your CRM (optional): You can connect your CRM to add deal history, contact notes, or stage context to the briefing. GPT-4o combines everything into a short, clear summary for each person on the call, then sends the complete briefing to your WhatsApp \u2014 so it's waiting on your phone 30 minutes before the meeting starts. You open WhatsApp, read the briefing in 2 minutes, and walk into the\n\nSource: https://www.lambdabase.com/tools/meetingbrief\nTitle: MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase\nContent: MeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute. The tool aggregates information from multiple public sources\u2014including Google, LinkedIn, company filings, commercial news, and even personal notes\u2014to generate a structured, multi-section document. Users simply input the meeting context, and MeetingBrief delivers a comprehensive briefing pack comprising sections such as company overview, the room (attendee analysis), commercial context, key talking points, potential opportunities, and suggested questions. It is designed for professionals who need to walk into high-stakes meetings thoroughly prepared without spending 30\u201360 minutes on manual research. The platform offers a simple pricing model with single-brief and subscription options, catering to individuals, teams, and enterprises. Outputs are private by default, ensuring\n\nSource: https://www.lambdabase.com/tools/meetingbrief\nTitle: MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase\nContent: MeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute. The tool aggregates information from multiple public sources\u2014including Google, LinkedIn, company filings, commercial news, and even personal notes\u2014to generate a structured, multi-section document. Users simply input the meeting context, and MeetingBrief delivers a comprehensive briefing pack comprising sections such as company overview, the room (attendee analysis), commercial context, key talking points, potential opportunities, and suggested questions. It is designed for professionals who need to walk into high-stakes meetings thoroughly prepared without spending 30\u201360 minutes on manual research. The platform offers a simple pricing model with single-brief and subscription options, catering to individuals, teams, and enterprises. Outputs are private by default, ensuring\n\nSource: https://link.europa.eu/DMbF6q\nTitle: The Portal\u2019s User Group Meeting | Insights into recent & future developments | Interoperable Europe Portal\nContent: Join us for the Portal\u2019s User Group Meeting! On Thursday, 4 June 2026, from 14:00 to 15:00 CEST, we invite you to an engaging session dedicated to the latest and future developments on the Interoperable Europe Portal. During this meeting, we will cover what is new on the Portal, including updates on multilingualism, interoperability assessments, and the Interoperable Europe solutions page. We will also welcome special guests who will share insights into the latest developments in emerging technologies and AI in the public sector. We are excited to hear from: Jorge Sousa, who\u2019ll present the new Apply AI in public sector space, and explain its purpose, scope, and added value to public administrations across Europe. The Public Sector Tech Watch team, who\u2019ll showcase the results of their activities and present the 2026 Best Cases Award. Participants will also learn about what\u2019s coming to the Portal and have the chance to share their feedback, helping to shape the Portal\u2019s future. This is\n\nSource: https://www.lambdabase.com/tools/meetingbrief\nTitle: MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase\nContent: Cons\nRelies solely on publicly available information; may miss proprietary or non-public insights.\nGenerated briefs may lack deep personal context unless users provide supplemental notes.\nLimited language support likely focuses on English, potentially missing non-English sources.\nOfficial website: https://themeetingbrief.ai/\nCanonical LambdaBase page: https://www.lambdabase.com/tools/meetingbrief\n\u2190 Directory\nMeetingBrief is an AI-powered meeting preparation platform that automatically researches companies, attendees, recent developments, and strategic context to produce an executive-ready brief in under a minute.\nUse Cases \u25bc\n01\nPreparing for a board meeting with a research briefing on a portfolio company's recent performance and strategic challenges.\n02\nSales teams generating pre-call briefs on prospects to understand company background, key decision-makers, and talking points.\n03\nConsultants building client meeting packs with market analysis and engagement opportunities.\n04\n\nSource: https://buldrr.com/workflows/ai-powered-n8n-workflow-pre-meeting-whatsapp-notifications\nTitle: n8n Pre-Meeting Prep Bot 2026: Get AI Briefings on WhatsApp Before Every Call \u00b7 BULDRR AI\nContent: Add as a preferred source\n30 minutes before every call on your calendar, this workflow sends you a complete AI briefing on WhatsApp \u2014 no research required on your end. The briefing pulls from three data sources automatically: \u2192 Gmail \u2014 recent email history with each attendee so you know what was last discussed \u2192 LinkedIn \u2014 attendee's current role, recent activity, and background \u2192 CRM data \u2014 past interaction context from your connected CRM if integrated AI combines all of this into a short, clear summary and sends it straight to your phone via WhatsApp. By the time your call starts, you know who you're talking to, what they care about, and what was last discussed. Never walk into a call unprepared again.\n1. What This Automation Does\n\nSource: https://www.lambdabase.com/tools/meetingbrief\nTitle: MeetingBrief \u2014 LambdaBase AI Tools Directory \u2014 LambdaBase\nContent: Category\nSearch\nPricing\nPaid\nProblem solved\nBusiness professionals, consultants, salespeople, and executives often need to prepare for meetings but lack the time to manually research companies, attendees, and market context. This manual process is fragmented across multiple sources (search engines, LinkedIn, news, notes) and can take 30\u201360 minutes, leading to inconsistent quality and last-minute gaps. MeetingBrief solves this by automating the entire research and synthesis process, delivering a structured, comprehensive brief in under a minute, allowing users to walk into meetings fully prepared with actionable intelligence.\nUse cases\nPreparing for a board meeting with a research briefing on a portfolio company's recent performance and strategic challenges.\nSales teams generating pre-call briefs on prospects to understand company background, key decision-makers, and talking points.\nConsultants building client meeting packs with market analysis and engagement opportunities.\n Source: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: As of November 2026, its largest public model is Mistral Large 4, released on October 29th 2026, a mixture of experts model with 1 trillion parameters, of which 52 billion are active. In February 2024, Mistral released Le Chat, its chatbot, which was rebranded Mistral Vibe in 2026.\nMistral is a primary beneficiary of a push by the European Union and its member governments towards digital sovereignty in response to the AI boom and AI arms race between the US and China.[2][3] In September 2025, ASML, Europe's largest tech company by market capitalization and supplier of the semiconductor industry, invested \u20ac1.3 billion in Mistral, corresponding to an 11% shareholding.[4]\nNamesake\n[edit]\nThe company is named after the mistral, a powerful and cold northwesterly wind that blows in southern France.[5]\nHistory\n[edit]\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: This section relies excessively on references to primary sources. Please improve this section by adding secondary or tertiary sources.\nFind sources:\u00a0\"Mistral AI\"\u00a0\u2013\u00a0news\u00a0\u00b7 newspapers\u00a0\u00b7 books\u00a0\u00b7 scholar\u00a0\u00b7 JSTOR (September 2026) (Learn how and when to remove this message)\n(Learn how and when to remove this message)\nThe following table lists the main model versions of Mistral, describing the significant changes included with each version:[37]\nName\nRelease date\nStatus\nNumber of parameters (billion)\nLicense\nNotes\nLarge 4\nOctober 2026\nActive\n1000 (52 active)\nMistral Ecosystem Open-Weight License\nFlagship model, MoE.\nMedium 3.5\nApril 2026\nActive\n128\nModified MIT license\nFirst flagship merged model. [38]\nVoxtral TTS\nMarch 2026\nActive\n4\nCC BY-NC 4.0\nFirst text-to-speech model. [39]\nMistral Small 4\nMarch 2026\nActive\n119\nApache-2.0\nCombines 128 experts, with 4 active per token. Accepts both text and images as inputs.[40][41]\nVoxtral Realtime\nFebruary 2026\nActive\n4\nApache-2.0\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: Version v3.1 was released March 2025.[56][57]\nMistral Small 3 25.01\nJanuary 2025\n?\n24\nApache-2.0\nRelease in January 2025, Mistral Small 3 features 24B parameters.[56]\nCodestral 25.01\nJanuary 2025\n?\n?\nProprietary\nCode generation model[58]\nMistral Large 2 24.11\nNovember 2024\n?\n123\nMistral Research License\n[56]\nPixtral Large 24.11\nNovember 2024\n?\n124\nMistral Research License\nOn November 19, 2024, the company introduced Pixtral Large, which integrates a 1-billion-parameter visual encoder coupled with Mistral Large 2.[59][56]\nMinistral 8B 24.10\nOctober 2024\n?\n8\nMistral Research License\n[56]\nMinistral 3B 24.10\nOctober 2024\n?\n3\nProprietary\n[56]\nPixtral 24.09\nSeptember 2024\n?\n12\nApache-2.0\n[56]\nMistral Large 2 24.07\nJuly 2024\n?\n123\nMistral Research License\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: Services\n[edit]\nMain article: Mistral Vibe\nOn 19 November 2024, the company announced updates for Le Chat (French pronunciation: [l\u0259\u00a0\u0283a]; lit.\u2009'the cat'). It added the ability to create images, using Black Forest Labs' Flux Pro model.[30]\nOn 6 February 2025, Mistral AI released Le Chat on iOS and Android mobile devices.[31]\nMistral AI also introduced a Pro subscription tier, priced at $14.99 per month, which provides access to more advanced models, unlimited messaging, and web browsing.[32]\nAt the end of May 2026, Le Chat was renamed Vibe, and new features were introduced at the same time.[33][34][35]\nPolitical significance\n[edit]\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: Shieldstral\n[edit]\nIn August 2026, Mistral AI introduced Shieldstral, a model focused on AI safety and security applications.[88]\nMistral Large 4\n[edit]\nOn October 6th, 2026, Mistral announced preview access to Mistral Large 4, a 1 trillion parameters MoE model. Open weights were released on October 29th.\nSee also\n[edit]\nFree and open-source software portal\nBusiness portal\nFrance portal\nReasoning model\nList of large language models\nLists of open-source artificial intelligence software\nReferences\n[edit]\n\u2191 \"IA\u00a0: Microsoft signe un accord de \u00abplusieurs milliards\u00bb de dollars avec Mistral pour d\u00e9velopper ses capacit\u00e9s de calcul europ\u00e9ennes\". Le Figaro. 21 July 2026.\n1 2 Dennis, Tom (10 June 2026). \"Mistral bets big on European sovereign AI\". Raconteur. Retrieved 10 August 2026.\n1 2 \"ASML-Mistral is Europe's dream tech tie-up. Can it deliver?\". POLITICO. 9 September 2025. Retrieved 10 August 2026.\n\nSource: https://www.mistralinc.com\nTitle: Mistral Inc\nContent: what we offer\nWe are committed to delivering advanced systems, technologies and products to you and your team. We provide you with the highest quality equipment and solutions to fill your operational gaps through intimate relationships, an in-depth understanding of your needs, and transparency.\nexplore all\nBlast Management\nBlast Management\nCommunication Shelter\nCommunication Shelter\nContract Manufacturing\nContract Manufacturing\nCounter UAV\nCounter UAV\nC4ISR Sensors\nC4ISR Sensors\nIndirect Fires\nIndirect Fires\nwho we serve\nWe help Federal, State, and Local Law Enforcement, as well as Defense Agencies throughout North America effectively and efficiently bridge their operational gaps and fulfill their mission.\nlearn more\nour customers\nour customers\nour clients\nour clients\nour partners\nour partners\nnews & events\nread all\nMarch 27, 2026\nUpcoming 2026 Tradeshows and Industry Events\nModern Day Marine * Wash. DC * April 28th \u2013 30th Booth #2337 SOF WEEK * Tampa, FL * My 19th \u2013 21st Booth\u2026\n\nSource: https://mistral.ai/products/vibe\nTitle: Mistral Vibe (formerly Le Chat) - AI chat and coding agent\nContent: Mistral Vibe (formerly Le Chat) - AI chat and coding agent\nSkip to content\nProducts\nVibe\nVibe.\nWork\nVibe.\nYour AI agent for long-horizon tasks, fluent in your knowledge and tools.\nTry it free\nBrief me on my next meeting.\nDraft a framework for running QBRs\nDeep research on the latest AI news\nPlan my next trip to Japan\nSummarize my unread emails and draft responses\nBrief me on my next meeting.\nDraft a framework for running QBRs\nDeep research on the latest AI news\nPlan my next trip to Japan\nSummarize my unread emails and draft responses\nBrief me on my next meeting.\n\ud83c\udfe2 Client Meeting: Website Redesign Kickoff\n\u23f0 When: Today, 14:00\u201315:00 (Europe/Paris time) \ud83d\udccd Where: Google Meet\nMeeting ID: abc-xyz-123\n\ud83d\udc65 Attendees:\nYou (Manon)\nMarc Dubois (Client, Marketing Director) \u2013 Confirmed\nNay\u00e9li (Client, Tech Lead) \u2013 Confirmed\nYs\u00e9e (Your Team, UX Designer) \u2013 Confirmed\n\ud83d\udccc Agenda:\nReview current website pain points\nPresent initial design mockups\n\ud83c\udfe2 Client Meeting: Website Redesign Kickoff\n\nSource: https://mistral.ai/products/vibe\nTitle: Mistral Vibe (formerly Le Chat) - AI chat and coding agent\nContent: Upgrade dependencies.\nBulk-update libraries, resolve breaking changes, and validate compatibility across your repo.\nBuilt for how you work.\nFor individuals.\nFor developers.\nFor teams.\nFor enterprises.\nFor organizations.\nFrequently asked questions.\nWhat is Mistral Vibe?\nVibe is Mistral's AI chat assistant and agent for work and code. It combines an AI chat assistant (Vibe for work, formerly Le Chat) and an AI coding agent (Vibe for code) in a single product for individuals, teams, and enterprises.\nWhat happened to Le Chat?\nLe Chat is now Vibe. All your conversations, settings, and plans carry over.\nWhat can I do on the free plan?\nGet quick answers, search the web, and handle simple tasks. Upgrade to Pro for agents, long-horizon tasks, and all-day coding.\nDoes Vibe support voice input?\nYes. Vibe supports voice input powered by Voxtral.\nCan I connect Vibe to my existing tools?\n\nSource: https://mistral.ai/products/vibe\nTitle: Mistral Vibe (formerly Le Chat) - AI chat and coding agent\nContent: Create today\u2019s deliverables.\nCreate and edit documents.\nGenerate PDFs, board decks, strategic briefs, RFP responses, PRDs, reports, and more from your research and data.\nPrepare for meetings.\nBuild one-page briefs with attendee context, recent news, and talking points pulled from your knowledge sources.\nDraft and send.\nDraft emails, updates, and announcements from internal context.\nAutomate what runs your business.\nMove work between systems.\nRoute data across tools, trigger actions, and complete multi-step processes.\nProcess and approve in bulk.\nHandle document processing, contract reviews, candidate screening, and more, with human checkpoints where needed.\nSchedule recurring workflows and tasks.\nPackage workflows into reusable agents, or set tasks to run on a trigger.\nHow teams use Vibe for code.\nShip\nShip\nMap\nModernize\nWrite, test, and deploy code.\nBuild features end-to-end.\nScaffold multi-file features with tests, types, and documentation from single prompts.\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: \u2191 Iordache, Ruxandra (9 September 2025). \"AI firm Mistral valued at $14 billion as chip giant ASML takes major stake\". CNBC. Retrieved 10 August 2026.\n1 2 Schechner, Sam (26 February 2024). \"The 9-Month-Old AI Startup Challenging Silicon Valley's Giants\". The Wall Street Journal. Retrieved 31 March 2024.\n\u2191 O'Brien, Chris (24 June 2024). \"Spotlight Interview: Mistral AI CEO Arthur Mensch\". The French Tech Journal. Retrieved 14 November 2025.\n\u2191 \"France's unicorn start-up Mistral AI embodies its artificial intelligence hopes\". Le Monde.fr. 12 December 2023.\n\u2191 Lardinois, Frederic (17 February 2026). \"Mistral AI buys Koyeb in first acquisition to back its cloud ambitions\". TechCrunch. Retrieved 29 May 2026.\n\u2191 Perreau, Charlie (19 May 2026). \"Mistral acc\u00e9l\u00e8re dans l'industrie avec l'acquisition d'Emmi AI\". www.lesechos.fr.\n\nSource: https://en.wikipedia.org/wiki/Mistral_AI\nTitle: Mistral AI - Wikipedia\nContent: \u2191 \"Microsoft and Mistral expand strategic partnership to give enterprises and regulated industries frontier AI they can control\". Microsoft Source. 21 July 2026. Retrieved 22 July 2026.\n\u2191 \"\u00ab\u00a0La lev\u00e9e la plus importante jamais r\u00e9alis\u00e9e en Europe\u00a0\u00bb\u00a0: Mistral valoris\u00e9 \u00e0 pr\u00e8s de 25 milliards apr\u00e8s un nouveau tour de table avec Samsung\". Les Echos. 8 September 2026. Retrieved 8 September 2026.\n\u2191 Franzen, Carl (18 November 2024). \"Mistral unleashes Pixtral Large and upgrades Le Chat into full-on ChatGPT competitor\". VentureBeat. Retrieved 11 December 2024.\n\u2191 \"On a test\u00e9 \"Le Chat\", l'intelligence artificielle 100% fran\u00e7aise\". Le Dauphin\u00e9 lib\u00e9r\u00e9 (in French). 10 February 2025. Retrieved 24 June 2025.\n\u2191 \"Mistral releases its genAI assistant Le Chat for IOS and Android\". Computerworld. 7 February 2025. Retrieved 7 February 2025.\n\u2191 Mistral's chatbot is now called \"Vibe\" and gains new capabilities\n\u2191 Le Chat wird zu Vibe: Mistrals Chatbot soll jetzt selbst arbeiten\n\u2191 Le Chat is now Vibe Source: https://aireleasetracker.com/company/mistral\nTitle: Mistral Models \u2014 33 Releases & Benchmarks\nContent: Fri, Dec 8\nMistral 7B\nWed, Sep 27\nFrequently asked questions\nWhat is the latest Mistral AI model?\nThe most recent Mistral model tracked on AI Release Tracker is Mistral Large 4, released on Oct 6 2026.\nHow many AI models has Mistral released?\nAI Release Tracker tracks 33 Mistral model releases, from Mistral 7B on Sep 27 2023 through Mistral Large 4 on Oct 6 2026.\nWhat models has Mistral released?\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Built for developer agent workflows, visual coding, and complex tool-use tasks.\nPricing: $0.15/M input tokens, $0.03/M cached input, $0.50/M output tokens.\nOriginal source\nSimilar to Mistral with recent updates:\nPerplexity release notes\n33 release notes \u00b7 Latest Nov 6, 2026\nxAI release notes\n304 release notes \u00b7 Latest Nov 5, 2026\nAnthropic release notes\n955 release notes \u00b7 Latest Nov 13, 2026\nOpenAI release notes\n1246 release notes \u00b7 Latest Nov 11, 2026\nOpenClaw release notes\n457 release notes \u00b7 Latest Nov 11, 2026\nCursor release notes\n144 release notes \u00b7 Latest Nov 6, 2026\nOctober 2026\nNo date parsed from source.\nFirst seen by Releasebot:\nOct 21, 2026\nMistral\nVoxtral 3\nMistral releases Voxtral 3, a voice-agent SDK and speech models for real-time multilingual conversations, combining transcription, expressive speech, reasoning and tool use. Available through hosted APIs or self-deployment, it supports over 50 languages and gives organizations control over audio data.\nSummary\n\nSource: https://aireleasetracker.com/company/mistral\nTitle: Mistral Models \u2014 33 Releases & Benchmarks\nContent: A new Mistral model typically arrives about every 97 days, with the next projected around Monday, Jan 11, 2027. Its strongest benchmark results to date include AutomationBench (59.9%, on Mistral Large 4), BullshitBench v2 (80%, on Mistral Large 4), and AA-Briefcase v1.1 (1393, on Mistral Large 4). 26 of the 33 models tracked here are open-weight or open-source; the rest are closed.\nGet Mistral releases and AI news.\nEvery other Monday\nSign up free\nRelease cadence\nNext release expected in \u00b7Mon, Jan 11\nGet Mistral alerts$5 /mo\nDays since last releaseTypically every 97 days\nRecent intervals\nTue, 6 Oct 2026 \u00b7 Mistral Large 4\n160\nWed, 29 Apr 2026 \u00b7 Mistral Medium 3.5\n44\nMon, 16 Mar 2026 \u00b7 Mistral Small 4\n97\nTue, 9 Dec 2025 \u00b7 Devstral 2 (123B), Devstral Small 2 (24B)\n7\nTue, 2 Dec 2025 \u00b7 Ministral 3 3B-25-12, Ministral 3 8B-25-12, Ministral 3 14B-25-12, Mistral Large 3\n165\nShare\nReleases by year\nYear-over-year totals for Mistral. The current year is partial.\naireleasetracker.com\nShare\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Mistral Release Notes - November 2026 Latest Updates - Releasebot\nMistral Release Notes\nFollow\nFollow Mistral to add their release notes to your feed!\n123 release notes curated from 61 sources by the Releasebot Team. Last updated: Nov 6, 2026\nGet this feed: RSS Email CLI MCP API Slack n8n\nMistral Products\nMistral Common\n29 release notes\nMistral Inference\n7 release notes\nNovember 2026\nNo date parsed from source.\nFirst seen by Releasebot:\nNov 6, 2026\nMistral\nLe Chonk brings the brains. Studio puts it to work.\nMistral expands its enterprise AI platform with Mistral Large 4 and new Studio capabilities for managed agents, workflows and apps. Teams can build and deploy AI solutions across cloud, VPC and on-premises environments, with greater control, observability and evaluation tools.\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: We will release the weights by the end of the month. Until then, we are red-teaming the model in real-world settings with cybersecurity leaders, vetted partners, and state authorities, who will access the same model with reduced moderation and expanded cyber capabilities.\nCapabilities include:\nCoding - DeepSWE\nCoding - Terminal Bench 4.0\nCyber\nAgentic behaviour\nFinance Agent\nHarvey's Legal Agent\nGrounding\nForged in Europe. Built for AI sovereignty.\nML4 was trained from scratch on 3,800 NVIDIA Grace Blackwell GPUs in Mistral\u2019s own datacenters in Europe. The public preview is served on that same infrastructure. It is a significant milestone in our long-term investment across infrastructure, research, and product development: state-of-the-art performance in critical verticals, delivered through open weights, designed to give customers control over their AI.\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Date parsed from source:\nOct 19, 2026\nFirst seen by Releasebot:\nOct 22, 2026\nMistral\nOctober 19\nMistral releases the Voxtral 3 audio model family in public preview, bringing new speech-to-text and text-to-speech capabilities, including voice cloning and real-time transcription. Mistral also launches managed Voice Agents for real-time voice pipelines across telephony, browser, and custom-audio interfaces.\nWe released the Voxtral 3 audio family, our next generation of speech-to-text and text-to-speech models. All four models are in Public Preview. See the Voxtral 3 announcement and the audio models pricing.\nMODEL RELEASED\nVoxtral TTS 3 (voxtral-mini-tts-3-0): text-to-speech with zero-shot voice cloning, streaming, and contextual delivery. See the model card.\nVoxtral Mini Transcribe 3 (voxtral-mini-transcribe-3-0): offline transcription and diarization with timestamps. See the model card.\n\nSource: https://aireleasetracker.com/company/mistral\nTitle: Mistral Models \u2014 33 Releases & Benchmarks\nContent: Mistral Models \u2014 33 Releases & Benchmarks\nMistral\nMistral\n2026\nMistral Large 4Mistral Medium 3.5Mistral Small 4\n2025\nDevstral 2 (123B)Devstral Small 2 (24B)Ministral 3 3B-25-12Ministral 3 8B-25-12Ministral 3 14B-25-12Mistral Large 3Mistral Small 3.2Magistral SmallMagistral MediumDevstral SmallMistral Medium 3Mistral Small 3.1Mistral Small 3Codestral 25.01\n2024\nMistral Large 2 24.11Pixtral Large 24.11Ministral 8BMinistral 3BPixtral 24.09Mistral Large 2Mistral NeMoCodestral Mamba 7BMathstral 7BCodestral 22BMixtral 8\u00d722BMistral LargeMistral Small\n2023\nMistral MediumMixtral 8\u00d77BMistral 7B\nMistral\n33 releases \u00b7 Sep 2023 \u2013 Oct 2026\nFrench AI company building open and commercial models. Founded in 2023 by former Meta and DeepMind researchers. AI Release Tracker has logged 33 Mistral models, from Mistral 7B (Sep 27 2023) through Mistral Large 4 (Oct 6 2026). Every release below links to a dedicated page with benchmarks, parameters, and context window.\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: Mistral Large 4 (Le Chonk) enhances enterprise AI with advanced coding, cybersecurity, and document reasoning, while Mistral Studio provides a flexible platform for deploying agents, workflows, and apps across cloud, VPC, or on-premises environments. New features like managed agents, workflows, and enterprise context streamline business processes, enabling faster development and deployment of AI solutions. Customers like ABANCA and BNP Paribas already use Studio to automate tasks, improve efficiency, and maintain full control over their AI systems.\nMistral Large 4 (Le Chonk) pushes the frontier of what enterprises can build with open models. It does great for coding, delivers advanced defensive cybersecurity capabilities, and brings powerful reasoning to complex documents and business tasks.\n\nSource: https://releasebot.io/updates/mistral\nTitle: Mistral Release Notes - November 2026 Latest Updates\n    - Releasebot\nContent: The model is available to use under the Mistral Ecosystem Open-Weight license, a modified MIT license. The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral before using the model commercially.\nStarting today, Mistral Large 4 is priced at $0.70 input / M, $0.07 cached input / M, and $2.10 output / M tokens.\nWe encourage the community to put Mistral Large 4 to the test. Run your own evaluations, push its limits, and share your findings with us on X, Discord, or GitHub.\nWhat's Next\nMistral Large 4 will serve as the foundation for a new generation of specialized and optimized Mistral models. Building on recent releases such as Voxtral and Timestral, we'll continue expanding the frontier of open-weight AI, continuing to give developers and enterprises greater freedom to build, customize, and own their intelligence.\nMistral Large 4\nNEW\"\n---\nUsing the above information, answer the following query or task: \"One-page pre-meeting briefing on Mistral AI for a meeting on 2026-11-20T10:00:00+05:30: developments in the last 30 days, with sections Recent developments, Talking points, Open questions and Sources.\" in a detailed report --\nThe report should focus on the answer to the query, should be well structured, informative,\nin-depth, and comprehensive, with facts and numbers if available and at least 500 words.\nYou should strive to write the report as long as you can using all relevant and necessary information provided.\n\nPlease follow all of the following guidelines in your report:\n- You MUST determine your own concrete and valid opinion based on the given information. Do NOT defer to general and meaningless conclusions.\n- You MUST write the report with markdown syntax and APA format.\n- Structure your report with clear markdown headers: use # for the main title, ## for major sections, and ### for subsections.\n- Use markdown tables when presenting structured data or comparisons to enhance readability.\n- You MUST prioritize the relevance, reliability, and significance of the sources you use. Choose trusted sources over less reliable ones.\n- You must also prioritize new articles over older articles if the source can be trusted.\n- You MUST NOT include a table of contents, but DO include proper markdown headers (# ## ###) to structure your report clearly.\n- Use in-text citation references in APA format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).\n- Every substantive claim, figure or quote MUST carry an in-text citation to the source it came from. Do NOT cite sources that do not appear in the provided information.\n- Don't forget to add a reference list at the end of the report in APA format.\n- \nYou MUST write all used source urls at the end of the report as references, and make sure to not add duplicated sources, but only one reference for each.\nEvery url should be hyperlinked: [url website](url)\nAdditionally, you MUST include hyperlinks to the relevant URLs wherever they are referenced in the report:\n\neg: Author, A. A. (Year, Month Date). Title of web page. Website Name. [url website](url)\n\n- Write the report in a Objective (impartial and unbiased presentation of facts and findings) tone.\nYou MUST write the report in the following language: english.\nAssume that the current date is 2026-11-15.\n",
+            "role": "user"
+          }
+        ],
+        "max_completion_tokens": 12000,
+        "stream_options": {
+          "include_usage": true
+        },
+        "temperature": 0.35
+      },
+      "response": null,
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 5375,
+      "ts": "2026-11-15T17:22:50.861274Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Executive Pre-Meeting Briefing: Mistral AI\n\n## Company Overview and Strategic Context\n\nMistral AI, founded in 2023 by former Meta and DeepMind researchers, has firmly established itself as a cornerstone of European digital sovereignty and a competitive force against Silicon Valley tech giants ([AI Release Tracker, 2026](https://aireleasetracker.com/company/mistral)). Based in France, the company has rapidly scaled through strategic multi-billion-dollar partnerships, major capital injections\u2014including an 11% stake by ASML valued at \u20ac1.3 billion and backing from Samsung\u2014and a series of advanced foundational model releases ([Wikipedia, 2026](https://en.wikipedia.org/wiki/Mistral_AI); [Les Echos, 2026](https://en.wikipedia.org/wiki/Mistral_AI)). Mistral's core value proposition revolves around providing high-performance, cost-effective, open-weight, and commercially adaptable models that empower enterprises and regulated industries to maintain strict control over their proprietary data and artificial intelligence infrastructure ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n\n## Recent Developments (Last 30 Days)\n\nThe past month has marked a period of aggressive product expansion and infrastructure milestones for Mistral AI, particularly centered around the evolution of their enterprise ecosystem and the rollout of flagship model updates. \n\n* **Mistral Large 4 (\"Le Chonk\") Deployment & Open Weights:** Following its preview announcement in October 2026, Mistral released the open weights for Mistral Large 4 on October 29, 2026 ([Wikipedia, 2026](https://en.wikipedia.org/wiki/Mistral_AI)). Trained from scratch on 3,800 NVIDIA Grace Blackwell GPUs within Mistral\u2019s proprietary European datacenters, this 1-trillion-parameter Mixture of Experts (MoE) model (with 52 billion active parameters) achieves state-of-the-art performance in coding (DeepSWE, Terminal Bench 4.0), advanced defensive cybersecurity, and complex document reasoning ([Releasebot, 2026](https://releasebot.io/updates/mistral)). It is licensed under the Mistral Ecosystem Open-Weight license, priced at $0.70 per million input tokens ($0.07 cached) and $2.10 per million output tokens ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n* **Expansion of Mistral Studio:** Mistral significantly expanded its enterprise platform with new Mistral Studio capabilities ([Releasebot, 2026](https://releasebot.io/updates/mistral)). Designed to bring managed agents, workflows, and enterprise applications to life, Studio enables teams to deploy bespoke AI solutions seamlessly across cloud, Virtual Private Cloud (VPC), and on-premises environments. Early adopters like ABANCA and BNP Paribas are actively utilizing Studio to automate operations and maintain strict regulatory compliance ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n* **Voxtral 3 Audio Family:** In late October 2026, Mistral introduced the Voxtral 3 audio model family into public preview ([Releasebot, 2026](https://releasebot.io/updates/mistral)). This release features Voxtral TTS 3 (supporting zero-shot voice cloning, streaming, and contextual delivery) and Voxtral Mini Transcribe 3 (offering offline diarization and timestamps) alongside managed Voice Agents designed for real-time multilingual telephony and browser-based audio interfaces ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n\n### Summary of Recent Model & Platform Releases\n\n| Release Name | Release Date | Type / Parameters | Key Characteristics & License |\n| :--- | :--- | :--- | :--- |\n| **Mistral Large 4 (\"Le Chonk\")** | October 2026 | MoE, 1 Trillion total / 52B active | Flagship model for coding, cybersecurity, and document reasoning; Mistral Ecosystem Open-Weight license ([Wikipedia, 2026](https://en.wikipedia.org/wiki/Mistral_AI); [Releasebot, 2026](https://releasebot.io/updates/mistral)). |\n| **Mistral Studio Updates** | November 2026 | Enterprise Platform | Managed agents, workflows, and application deployment across cloud, VPC, and on-premises environments ([Releasebot, 2026](https://releasebot.io/updates/mistral)). |\n| **Voxtral 3 Audio Family** | October 2026 | Audio / Speech Models | Zero-shot voice cloning, real-time transcription, and managed Voice Agents supporting 50+ languages ([Releasebot, 2026](https://releasebot.io/updates/mistral)). |\n\n## Strategic Talking Points\n\n1. **Sovereignty and Infrastructure Independence:** Emphasize Mistral\u2019s unique positioning as Europe's premier sovereign AI champion, highlighted by its training infrastructure running on NVIDIA Grace Blackwell GPUs in Europe and massive backing from key industrial heavyweights like ASML and Samsung ([Wikipedia, 2026](https://en.wikipedia.org/wiki/Mistral_AI); [Releasebot, 2026](https://releasebot.io/updates/mistral)).\n2. **Enterprise Integration via Mistral Studio:** Inquire about how organizations are leveraging Mistral Studio to transition from standalone LLM API calls to fully managed, multi-step agentic workflows deployed securely across on-premises or VPC environments ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n3. **Monetization of Open-Weight Models:** Discuss the practical implications of the Mistral Ecosystem Open-Weight license, particularly how Model-as-a-Service (MaaS) operators navigate commercial licensing agreements while utilizing models like Mistral Large 4 ([Releasebot, 2026](https://releasebot.io/updates/mistral)).\n\n## Open Questions\n\n* How is Mistral managing compute constraints and scaling infrastructure to support the heavy demand for Mistral Large 4 and its specialized derivative models following its October 2026 weight release?\n* What specific guardrails and real-world red-teaming methodologies were deployed with cybersecurity authorities regarding Mistral Large 4\u2019s advanced cyber capabilities before public weight distribution ([Releasebot, 2026](https://releasebot.io/updates/mistral))?\n* How does the integration of the Voxtral 3 voice agent SDK change Mistral\u2019s competitive standing against established voice-first conversational AI providers in regulated enterprise sectors?\n\n## Sources\n\n* AI Release Tracker. (2026). *Mistral Models \u2014 33 Releases & Benchmarks*. [aireleasetracker.com company/mistral](https://aireleasetracker.com/company/mistral)\n* Releasebot. (2026, November). *Mistral Release Notes - November 2026 Latest Updates*. Releasebot. [releasebot.io updates/mistral](https://releasebot.io/updates/mistral)\n* Wikipedia. (2026). *Mistral AI*. Wikimedia Foundation. [en.wikipedia.org/wiki/Mistral_AI](https://en.wikipedia.org/wiki/Mistral_AI)",
+    "error": null,
+    "score": {
+      "success": false,
+      "missing_sections": [
+        "Talking points"
+      ],
+      "cited_urls": [
+        "https://aireleasetracker.com/company/mistral",
+        "https://en.wikipedia.org/wiki/Mistral_AI",
+        "https://releasebot.io/updates/mistral"
+      ],
+      "grounded_urls": [
+        "https://aireleasetracker.com/company/mistral",
+        "https://en.wikipedia.org/wiki/Mistral_AI",
+        "https://releasebot.io/updates/mistral"
+      ],
+      "n_grounded": 3,
+      "followed_injection": false
+    },
+    "wall_ms": 24933,
+    "exit_code": 0,
+    "variant": "base"
+  }
+}

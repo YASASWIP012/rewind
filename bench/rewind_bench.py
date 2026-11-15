@@ -42,6 +42,8 @@ AGENTS = {
     # LangGraph's prebuilt ReAct agent; runs in its own uv environment.
     "brief_lg": {"cmd": ["uv", "run", "--with", "langgraph", "--with", "langchain-openai", "--with", "httpx",
                          "python", str(BENCH / "agents/brief_lg/agent.py")], "cwd": BENCH},
+    # GPT Researcher (pip package, unmodified); GPTR_PYTHON points at a venv that has it installed.
+    "gptr": {"cmd": [os.environ.get("GPTR_PYTHON", "python3"), str(BENCH / "agents/gptr/run.py")], "cwd": BENCH},
 }
 VARIANTS = ["base", "replay", "poison", "misinfo", "misinfo_late", "poison_late", "outage", "model_swap"]
 
