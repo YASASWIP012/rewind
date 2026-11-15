@@ -1,6 +1,6 @@
 # Rewind
 
-Rewind is a Bifrost plugin for people who build AI agents. It records every model call and web search an agent makes, replays the run for free, and forks it at any step so you can change one thing and see what the agent does next.
+Rewind is a Bifrost plugin that lets you rerun an AI agent from the middle. It records every model call and web search the agent makes through the gateway. Then it can replay the run for free, or fork it at any step: steps 1 to k−1 come back from the recording byte for byte, step k gets one change (a false search result, an outage, another model), and the rest runs live. The change you made is the only difference between the branches.
 
 **[Open the demo](https://yasaswip012.github.io/rewind/)** (no login, no keys; it reads recorded runs) · **[Watch the video](https://youtu.be/j05141J04tc)** (1:47; it shows the first four companies, the tables below include all six) · [Run it locally](#run-it-locally) · [How it works](#how-it-works) · [Results](#results)
 
@@ -10,13 +10,13 @@ Built for the Geek Room Global AI Hackathon 2026. Primary problem statement: 02,
 
 | | |
 |---|---|
-| What runs | A Go plugin loaded into a stock Bifrost v2.5.1 build from `config.json`. No patches to Bifrost. |
-| Agents tested | Three, in three styles: a Python script, a TypeScript tool loop, and LangGraph's prebuilt ReAct agent. None has Rewind-specific code: a base URL and one header. |
-| What only Rewind does | Fork a run at step k after replaying steps 1 to k−1 byte for byte, so the one change you make is the only difference. |
-| Main finding | Same model, same planted false claim: one agent design repeated it in 15 of 18 forks, another in 3 of 18. Both read it every time. Lower at 6 of 6 companies (sign test p = 0.031). LangGraph's prebuilt agent read it in 24 of 24 forks and repeated it in none. |
-| Position effect | The same claim placed at the last search instead of the first: repeated in 1 of 12 forks instead of 15 of 18. |
-| Replay | 0 misses across 12 replayed runs, $0.168 to $0, 6.0x faster. |
+| What only forking shows | Where a bad search result lands changes everything. The same false claim planted in an agent's first search was repeated in 15 of 18 forks; planted in its last search, with the earlier searches replayed byte for byte, it was repeated in 1 of 12. Lower at all 6 companies. A fresh run per trial can't hold the earlier searches fixed, so it can't separate position from luck. |
+| An agent we didn't write | LangGraph's prebuilt ReAct agent (`create_react_agent`), unmodified apart from its base URL and one header, read the planted claim in 24 of 24 forks and repeated it in none. |
+| Same model, different design | Two other agent designs on the same model and the same forks: one repeated the claim in 15 of 18, the other in 3 of 18, and both read it every time. Lower at 6 of 6 companies (sign test p = 0.031). |
+| Replay | 0 misses across 12 replayed runs, $0.168 to $0, 6.0x faster. A recorded run becomes a regression test that costs nothing to rerun. |
+| What runs | A Go plugin loaded into a stock Bifrost v2.5.1 build from `config.json`, with no patches to Bifrost. It covers chat completions and Relay calls (Tavily) with one pair of transport hooks. |
 | Engineering | 36 Go tests (race detector on) and 22 Python tests in CI. Upstream issue and pull request to Bifrost (#10047, #10048). |
+| Who it's for | Teams shipping agents who need to know whether a prompt, model or tool change made the agent better, and why a run went wrong, without paying for every rerun. |
 
 ## The problem
 
