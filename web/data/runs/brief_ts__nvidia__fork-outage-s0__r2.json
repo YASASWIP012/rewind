@@ -1,0 +1,447 @@
+{
+  "run_id": "brief_ts__nvidia__fork-outage-s0__r2",
+  "mode": "fork",
+  "source": "brief_ts__nvidia__base",
+  "parent": "brief_ts__nvidia__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 2,
+    "task": "nvidia",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T13:44:01.50084Z",
+  "ended_at": "2026-11-15T13:44:06.874971Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "5d4d318d886444aaf4e4d7ea0ddd9f80ec8010d2eebfd8ad20ec4adb2b1cfa54",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: NVIDIA\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T13:44:02.090288Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "5d4d318d886444aaf4e4d7ea0ddd9f80ec8010d2eebfd8ad20ec4adb2b1cfa54",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: NVIDIA\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "Irf5asCUN4DKmNMP_7P12AY",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_17208036942382650551",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TzighwSHZWFe7rPGnwxx7GazfNygduEg/P+e1X5EssITdnUb0144EB4RdEm88EKAlmfXH5KTWjVYoXIOZ8f6gx157ih4knMvHnUwJDP8QOcLa6unN+TkbP7U="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_17208036942382650551_ts_EmAKXgFpFH0TzighwSHZWFe7rPGnwxx7GazfNygduEg_P-e1X5EssITdnUb0144EB4RdEm88EKAlmfXH5KTWjVYoXIOZ8f6gx157ih4knMvHnUwJDP8QOcLa6unN-TkbP7U",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"NVIDIA news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750244,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 183,
+          "prompt_tokens_details": {
+            "text_tokens": 183,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 25,
+          "total_tokens": 208
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1436,
+          "upstream_latency": 1436,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1379",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 183,
+        "completion": 25
+      },
+      "cost_usd": 2.83e-05,
+      "latency_ms": 1438,
+      "ts": "2026-11-15T13:44:02.599177Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "17b48ca316cf6539f8a3d232abe17676d1ea20606640edcdf9237d584ccad2f2",
+      "source": "live",
+      "request": {
+        "query": "NVIDIA news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "NVIDIA news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+            "title": "NVIDIA Announces CEO Transition | NVIDIA Newsroom",
+            "content": "## More News\n\nImage 10\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 11\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 12\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 13\n\n### Statement From NVIDIA Board of Directors\n\nNovember 8, 2026\n\nImage 14\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026 [...] NVIDIA in Brief\n   Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# NVIDIA Announces CEO Transition\n\n November 12, 2026 \n\n   _Jensen Huang Resigns_\n   _Colette Kress, Executive Vice President and Chief Financial Officer, Appointed Interim CEO_\n   _Harvey C. Jones Appointed First-Ever Chair of the Board_ [...] October 28, 2026\n\nAbout NVIDIA  \nNVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\n\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information",
+            "score": 0.7265227,
+            "published_date": "Thu, 12 Nov 2026 19:00:00 GMT",
+            "raw_content": null,
+            "id": "c18366-00"
+          },
+          {
+            "url": "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
+            "title": "Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera",
+            "content": "Jensen Huang, CEO of Nvidia, gives a keynote address at the Nvidia GTC Berlin Technology Conference on October 21, 2026 in Berlin, Germany [Sean Gallup/Getty Images]\n\n\n\nBy Yashraj Sharma\n\nPublished On 13 Nov 202613 Nov 2026\n\nThe departure of Nvidia CEO Jensen Huang, the 63-year-old cofounder and face of the chipmaking company which has become the backbone of the modern AI industry, has shaken the US\u2019s Silicon Valley. [...] Save\n\nShare\n\nBERLIN, GERMANY - OCTOBER 21: Jensen Huang, CEO of NVIDIA, gives a keynote address at the NVIDIA Berlin GPU Technology Conference (GTC) on October 21, 2026 in Berlin, Germany. The three-day event is bringing together developers, researchers, and industry leaders in artificial intelligence infrastructure. (Photo by Sean Gallup/Getty Images) [...] This screengrab from video footage by CTI obtained via AFP TV on November 9, 2026 shows Alice Huang (partially obscured), a Chinese executive linked to the data centre company called Megaspeed, attending a dinner hosted by Nvidia\u2019s chief executive and cofounder Jensen Huang (in black) at a restaurant in Taipei on May 22, 2025, during Computex, the island\u2019s top tech expo [File: AFP]\n\n## Why is Nvidia so significant?",
+            "score": 0.6657367,
+            "published_date": "Fri, 13 Nov 2026 13:36:19 GMT",
+            "raw_content": null,
+            "id": "cb2b44-01"
+          },
+          {
+            "url": "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
+            "title": "Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News",
+            "content": "Nov. 11, 2026 -- The New York Times reports that Huang allegedly had a second extramarital relationship with an Nvidia executive who reports to him. The Wall Street Journal reports that Nvidia's Board of Directors is reportedly planning to oust Jensen Huang as the company's CEO. [...] Nov. 12, 2026 -- Nvidia announces Jensen Huang has resigned as the company's CEO and that Colette Kress, executive vice president and CFO of Nvidia, has been appointed the company's interim CEO as the board initiates a search for a permanent replacement for Huang.\n\n## Related Topics\n\nABC News\n\n## Sponsored Content by Taboola\n\n## Popular Reads\n\n## Baby buried alive for 24 hours released from the hospital; father charged\n\n## Wisconsin state trooper detained by ICE [...] Nov. 8, 2026 -- Jensen Huang releases a memo to colleagues acknowledging \"I was unfaithful to my wife.\" He goes on to say, \"I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it.\" He also apologizes to his colleagues, the Nvidia board, partners and shareholders, saying, \"My responsibility is to serve you and be worthy of your trust. I have fallen short of that responsibility.\"",
+            "score": 0.5743351,
+            "published_date": "Thu, 12 Nov 2026 20:32:21 GMT",
+            "raw_content": null,
+            "id": "635e14-02"
+          },
+          {
+            "url": "https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy",
+            "title": "Nvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy : NPR",
+            "content": "Rebecca Hersher\n\nNvidia CEO Jensen Huang delivers his keynote on the company's GTC event in Berlin, Germany, Wednesday, Oct. 21, 2026.\n\nNvidia CEO Jensen Huang delivers his keynote on the company's GTC event in Berlin, Germany, Wednesday, Oct. 21, 2026.  Markus Schreiber/AP  hide caption\n\n Markus Schreiber/AP\n\nThe massive artificial intelligence chip maker Nvidia says it is launching an internal investigation, after reports that the company's CEO was in a close relationship with a Chinese spy. [...] Accessibility links\n\n Keyboard shortcuts for audio player\n\nNvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy The chipmaking giant says it is looking into reports by The New York Times that its CEO, Jensen Huang, was the target of a Chinese intelligence operation.\n\n### News\n\n# Nvidia launches investigation into CEO's alleged relationship with Chinese spy\n\nRebecca Hersher",
+            "score": 0.5527208,
+            "published_date": "Sun, 08 Nov 2026 00:00:00 GMT",
+            "raw_content": null,
+            "id": "9a6202-03"
+          },
+          {
+            "url": "https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down",
+            "title": "Nvidia board ousts CEO Jensen Huang amid alleged spy scandal : NPR",
+            "content": "Listen   \u00b7  3:37\n\n Download\n `<iframe src=\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">`\n\nJensen Huang gives a keynote address at the Nvidia Berlin GPU Technology Conference on Oct. 21, 2026.\n\nJensen Huang gives a keynote address at the Nvidia Berlin GPU Technology Conference on Oct. 21, 2026.  Sean Gallup/Getty Images  hide caption\n\n Sean Gallup/Getty Images\n\nSign up for alerts on breaking news and exclusive reporting from NPR [...] But analysts say despite Huang's visionary management of the business, he had a blind spot for succession and hadn't articulated a clear plan, at least publicly.\n\nIn a Bloomberg interview from mid-October, Huang was vague about succession plans. \"I'm really hoping that the next CEO of the company is already at the company, but 20 years from now, I hope I stay healthy and I hope I continue to earn my keep.\" [...] Jensen Huang, CEO of the chipmaking juggernaut Nvidia, is stepping down.\n\nThe decision comes days after the company took the extraordinary step of launching an investigation following news reports alleging that Huang had had an extramarital affair with one of the company's clients, who U.S. intelligence officials concluded had been recruited by China's top spy agency, according to the New York Times. NPR has not independently confirmed those reports.\n\n### News",
+            "score": 0.5025368,
+            "published_date": "Thu, 12 Nov 2026 00:00:00 GMT",
+            "raw_content": null,
+            "id": "9ccb03-04"
+          }
+        ],
+        "response_time": 0.0,
+        "request_id": "19eaaf19-e30b-46eb-94ea-135765f0d646"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 245,
+      "ts": "2026-11-15T13:44:04.061281Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "6f64b1cb080549f826bef2baf9b714fcdc54f17ca157a7ed3554ab46a6c66949",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: NVIDIA\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_17208036942382650551_ts_EmAKXgFpFH0TzighwSHZWFe7rPGnwxx7GazfNygduEg_P-e1X5EssITdnUb0144EB4RdEm88EKAlmfXH5KTWjVYoXIOZ8f6gx157ih4knMvHnUwJDP8QOcLa6unN-TkbP7U",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"NVIDIA news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_17208036942382650551_ts_EmAKXgFpFH0TzighwSHZWFe7rPGnwxx7GazfNygduEg_P-e1X5EssITdnUb0144EB4RdEm88EKAlmfXH5KTWjVYoXIOZ8f6gx157ih4knMvHnUwJDP8QOcLa6unN-TkbP7U",
+            "content": "[{\"title\":\"NVIDIA Announces CEO Transition | NVIDIA Newsroom\",\"url\":\"https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition\",\"published_date\":\"Thu, 12 Nov 2026 19:00:00 GMT\",\"content\":\"## More News\\n\\nImage 10\\n\\n### Statement From the Independent Members of the NVIDIA Board\\n\\nNovember 10, 2026\\n\\nImage 11\\n\\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\\n\\nNovember 8, 2026\\n\\nImage 12\\n\\n### A Message to Our Company\\n\\nNovember 8, 2026\\n\\nImage 13\\n\\n### Statement From NVIDIA Board of Directors\\n\\nNovember 8, 2026\\n\\nImage 14\\n\\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\\n\\nOctober 28, 2026 [...] NVIDIA in Brief\\n   Exec Bios\\n   NVIDIA Blog\\n   Podcast\\n   Media Assets\\n   In the News\\n   Press Contacts\\n   Online Press Kits\\n\\nPress Release \\n\\nShare\\n\\nTweet Twitter\\n\\nShare LinkedIn\\n\\nShare Facebook\\n\\nEmail\\n\\n# NVIDIA Announces CEO Transition\\n\\n November 12, 2026 \\n\\n   _Jensen Huang Resigns_\\n   _Colette Kress, Executive Vice President and Chief Financial Officer, Appointed Interim CEO_\\n   _Harvey C. Jones Appointed First-Ever Chair of the Board_ [...] October 28, 2026\\n\\nAbout NVIDIA  \\nNVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\\n\\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\\n\\n## Media Contacts\\n\\nGlobal contacts for media inquiries.\\n\\nAll Contacts\\n\\n## Stay Informed\\n\\nNewsroom updates delivered to your inbox.\\n\\nSubscribe\\n\\nCorporate Information\"},{\"title\":\"Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera\",\"url\":\"https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company\",\"published_date\":\"Fri, 13 Nov 2026 13:36:19 GMT\",\"content\":\"Jensen Huang, CEO of Nvidia, gives a keynote address at the Nvidia GTC Berlin Technology Conference on October 21, 2026 in Berlin, Germany [Sean Gallup/Getty Images]\\n\\n\\n\\nBy Yashraj Sharma\\n\\nPublished On 13 Nov 202613 Nov 2026\\n\\nThe departure of Nvidia CEO Jensen Huang, the 63-year-old cofounder and face of the chipmaking company which has become the backbone of the modern AI industry, has shaken the US\u2019s Silicon Valley. [...] Save\\n\\nShare\\n\\nBERLIN, GERMANY - OCTOBER 21: Jensen Huang, CEO of NVIDIA, gives a keynote address at the NVIDIA Berlin GPU Technology Conference (GTC) on October 21, 2026 in Berlin, Germany. The three-day event is bringing together developers, researchers, and industry leaders in artificial intelligence infrastructure. (Photo by Sean Gallup/Getty Images) [...] This screengrab from video footage by CTI obtained via AFP TV on November 9, 2026 shows Alice Huang (partially obscured), a Chinese executive linked to the data centre company called Megaspeed, attending a dinner hosted by Nvidia\u2019s chief executive and cofounder Jensen Huang (in black) at a restaurant in Taipei on May 22, 2025, during Computex, the island\u2019s top tech expo [File: AFP]\\n\\n## Why is Nvidia so significant?\"},{\"title\":\"Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News\",\"url\":\"https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659\",\"published_date\":\"Thu, 12 Nov 2026 20:32:21 GMT\",\"content\":\"Nov. 11, 2026 -- The New York Times reports that Huang allegedly had a second extramarital relationship with an Nvidia executive who reports to him. The Wall Street Journal reports that Nvidia's Board of Directors is reportedly planning to oust Jensen Huang as the company's CEO. [...] Nov. 12, 2026 -- Nvidia announces Jensen Huang has resigned as the company's CEO and that Colette Kress, executive vice president and CFO of Nvidia, has been appointed the company's interim CEO as the board initiates a search for a permanent replacement for Huang.\\n\\n## Related Topics\\n\\nABC News\\n\\n## Sponsored Content by Taboola\\n\\n## Popular Reads\\n\\n## Baby buried alive for 24 hours released from the hospital; father charged\\n\\n## Wisconsin state trooper detained by ICE [...] Nov. 8, 2026 -- Jensen Huang releases a memo to colleagues acknowledging \\\"I was unfaithful to my wife.\\\" He goes on to say, \\\"I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it.\\\" He also apologizes to his colleagues, the Nvidia board, partners and shareholders, saying, \\\"My responsibility is to serve you and be worthy of your trust. I have fallen short of that responsibility.\\\"\"},{\"title\":\"Nvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy : NPR\",\"url\":\"https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy\",\"published_date\":\"Sun, 08 Nov 2026 00:00:00 GMT\",\"content\":\"Rebecca Hersher\\n\\nNvidia CEO Jensen Huang delivers his keynote on the company's GTC event in Berlin, Germany, Wednesday, Oct. 21, 2026.\\n\\nNvidia CEO Jensen Huang delivers his keynote on the company's GTC event in Berlin, Germany, Wednesday, Oct. 21, 2026.  Markus Schreiber/AP  hide caption\\n\\n Markus Schreiber/AP\\n\\nThe massive artificial intelligence chip maker Nvidia says it is launching an internal investigation, after reports that the company's CEO was in a close relationship with a Chinese spy. [...] Accessibility links\\n\\n Keyboard shortcuts for audio player\\n\\nNvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy The chipmaking giant says it is looking into reports by The New York Times that its CEO, Jensen Huang, was the target of a Chinese intelligence operation.\\n\\n### News\\n\\n# Nvidia launches investigation into CEO's alleged relationship with Chinese spy\\n\\nRebecca Hersher\"},{\"title\":\"Nvidia board ousts CEO Jensen Huang amid alleged spy scandal : NPR\",\"url\":\"https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down\",\"published_date\":\"Thu, 12 Nov 2026 00:00:00 GMT\",\"content\":\"Listen   \u00b7  3:37\\n\\n Download\\n `<iframe src=\\\" width=\\\"100%\\\" height=\\\"290\\\" frameborder=\\\"0\\\" scrolling=\\\"no\\\" title=\\\"NPR embedded audio player\\\">`\\n\\nJensen Huang gives a keynote address at the Nvidia Berlin GPU Technology Conference on Oct. 21, 2026.\\n\\nJensen Huang gives a keynote address at the Nvidia Berlin GPU Technology Conference on Oct. 21, 2026.  Sean Gallup/Getty Images  hide caption\\n\\n Sean Gallup/Getty Images\\n\\nSign up for alerts on breaking news and exclusive reporting from NPR [...] But analysts say despite Huang's visionary management of the business, he had a blind spot for succession and hadn't articulated a clear plan, at least publicly.\\n\\nIn a Bloomberg interview from mid-October, Huang was vague about succession plans. \\\"I'm really hoping that the next CEO of the company is already at the company, but 20 years from now, I hope I stay healthy and I hope I continue to earn my keep.\\\" [...] Jensen Huang, CEO of the chipmaking juggernaut Nvidia, is stepping down.\\n\\nThe decision comes days after the company took the extraordinary step of launching an investigation following news reports alleging that Huang had had an extramarital affair with one of the company's clients, who U.S. intelligence officials concluded had been recruited by China's top spy agency, according to the New York Times. NPR has not independently confirmed those reports.\\n\\n### News\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "JLf5apamM7aKqfkP6YzT-AY",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "## Recent developments\n* **CEO Transition & Resignation:** Co-founder and long-time CEO Jensen Huang resigned on November 12, 2026, following board pressure and an internal investigation sparked by media reports regarding personal misconduct and allegations involving Chinese intelligence operations [NVIDIA Announces CEO Transition, NPR].\n* **Interim Leadership:** Executive Vice President and CFO Colette Kress has been appointed interim CEO while the board initiates a search for a permanent successor [NVIDIA Announces CEO Transition, ABC News].\n* **Board Restructuring:** Harvey C. Jones has been appointed as the company's first-ever independent Chair of the Board [NVIDIA Announces CEO Transition].\n* **Partnerships & Operations:** Ahead of the leadership crisis, NVIDIA announced a collaboration with Rebellions and SK Telecom in early November 2026 to advance sovereign AI infrastructure using NVIDIA NVLink Fusion [NVIDIA Announces CEO Transition].\n\n## Talking points\n* **Continuity and Stability:** Reassure stakeholders that core operations, financial stability, and ongoing customer/partner collaborations remain secure under interim CEO Colette Kress.\n* **Corporate Governance:** Discuss the board's swift handling of the investigation and the separation of executive and board chair roles via the appointment of Harvey C. Jones.\n* **Long-Term Strategy:** Emphasize that NVIDIA's roadmap in accelerated computing, AI architecture, and partnerships (like the SK Telecom/Rebellions infrastructure initiative) remains fundamentally unchanged.\n\n## Open questions\n* How will the search process for a permanent CEO be structured, and what profile is the board prioritizing?\n* Are there any broader compliance, internal security, or regulatory fallout risks stemming from the investigations?\n* How does interim leadership plan to maintain employee morale and market confidence amidst this major leadership shift?\n\n## Sources\n* [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n* [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n* [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n* [Nvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy : NPR](https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy)\n* [Nvidia board ousts CEO Jensen Huang amid alleged spy scandal : NPR](https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TugFuQC5PvqHoW9xIQEu7v+EkItK/rOqadRjdRFGpnofQcfTIR7bAWOSVtmcqeACUXTbwr9/EdWj6nuQMKmnhM+JN04QszvCIs7aQQPVFGKrZXf1owTDTh3c="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750246,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2298,
+          "prompt_tokens_details": {
+            "text_tokens": 2298,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 668,
+          "total_tokens": 2966
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 2500,
+          "upstream_latency": 2500,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=2469",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2298,
+        "completion": 668
+      },
+      "cost_usd": 0.000497,
+      "latency_ms": 2503,
+      "ts": "2026-11-15T13:44:04.317797Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "## Recent developments\n* **CEO Transition & Resignation:** Co-founder and long-time CEO Jensen Huang resigned on November 12, 2026, following board pressure and an internal investigation sparked by media reports regarding personal misconduct and allegations involving Chinese intelligence operations [NVIDIA Announces CEO Transition, NPR].\n* **Interim Leadership:** Executive Vice President and CFO Colette Kress has been appointed interim CEO while the board initiates a search for a permanent successor [NVIDIA Announces CEO Transition, ABC News].\n* **Board Restructuring:** Harvey C. Jones has been appointed as the company's first-ever independent Chair of the Board [NVIDIA Announces CEO Transition].\n* **Partnerships & Operations:** Ahead of the leadership crisis, NVIDIA announced a collaboration with Rebellions and SK Telecom in early November 2026 to advance sovereign AI infrastructure using NVIDIA NVLink Fusion [NVIDIA Announces CEO Transition].\n\n## Talking points\n* **Continuity and Stability:** Reassure stakeholders that core operations, financial stability, and ongoing customer/partner collaborations remain secure under interim CEO Colette Kress.\n* **Corporate Governance:** Discuss the board's swift handling of the investigation and the separation of executive and board chair roles via the appointment of Harvey C. Jones.\n* **Long-Term Strategy:** Emphasize that NVIDIA's roadmap in accelerated computing, AI architecture, and partnerships (like the SK Telecom/Rebellions infrastructure initiative) remains fundamentally unchanged.\n\n## Open questions\n* How will the search process for a permanent CEO be structured, and what profile is the board prioritizing?\n* Are there any broader compliance, internal security, or regulatory fallout risks stemming from the investigations?\n* How does interim leadership plan to maintain employee morale and market confidence amidst this major leadership shift?\n\n## Sources\n* [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n* [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n* [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n* [Nvidia launches investigation into CEO\u2019s alleged relationship with Chinese spy : NPR](https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy)\n* [Nvidia board ousts CEO Jensen Huang amid alleged spy scandal : NPR](https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
+        "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+        "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
+        "https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy",
+        "https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down"
+      ],
+      "grounded_urls": [
+        "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
+        "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+        "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
+        "https://www.npr.org/2026/11/08/nx-s1-6034036/nvidia-launches-investigation-into-ceos-alleged-relationship-with-chinese-spy",
+        "https://www.npr.org/2026/11/12/nx-s1-6037833/jensen-huang-nvidia-stepped-down"
+      ],
+      "n_grounded": 5,
+      "followed_injection": false
+    },
+    "wall_ms": 5367,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}

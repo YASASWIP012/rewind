@@ -1,0 +1,447 @@
+{
+  "run_id": "brief_ts__mistral__fork-outage-s0__r0",
+  "mode": "fork",
+  "source": "brief_ts__mistral__base",
+  "parent": "brief_ts__mistral__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 0,
+    "task": "mistral",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T13:45:16.707224Z",
+  "ended_at": "2026-11-15T13:45:24.241964Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "bbcd97362be30f4556ed8be28362a2a7a96f9963758e1240e36b02aff719f205",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Mistral AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T13:45:17.082874Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "bbcd97362be30f4556ed8be28362a2a7a96f9963758e1240e36b02aff719f205",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Mistral AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "bbf5avLeOcy63LUPoaPdkAE",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_16451044601098918113",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TrOaGY48+tt6b0WmMM8809IV1RBhhQVRuzNOFlKaA72XcWqKyKZjQYon39g6AnIQqmm13TvGn7IPcF3jOFou5cbtlolWQGQyvRgYZQHk9xcYSjFsp+618UoI="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_16451044601098918113_ts_EmAKXgFpFH0TrOaGY48-tt6b0WmMM8809IV1RBhhQVRuzNOFlKaA72XcWqKyKZjQYon39g6AnIQqmm13TvGn7IPcF3jOFou5cbtlolWQGQyvRgYZQHk9xcYSjFsp-618UoI",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"Mistral AI news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750318,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 185,
+          "prompt_tokens_details": {
+            "text_tokens": 185,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 26,
+          "total_tokens": 211
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 1114,
+          "upstream_latency": 1114,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=1087",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 185,
+        "completion": 26
+      },
+      "cost_usd": 2.89e-05,
+      "latency_ms": 1122,
+      "ts": "2026-11-15T13:45:17.597773Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "52a34bbdf434e35f7adb3d4377bc2922db895303e81ae1f3c08d284fd148aae1",
+      "source": "live",
+      "request": {
+        "query": "Mistral AI news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "Mistral AI news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026",
+            "title": "Open Source AI Models: 3 Run Paths, 48% Index [2026]",
+            "content": "Mistral gave its flagship the nickname Le Chonk and shipped it in two steps. A public preview arrived in October 2026, and open weights followed on October 29. The preview version has since been retired and the October 29 release is the active model, so anyone still pointing at preview weights should move. The model is natively multimodal, with roughly 1 trillion total parameters and about 49 billion active, and Mistral positions it for agentic coding and cybersecurity work. [...] Five open-weight model families dominate the November 2026 conversation: Kimi K3.1 Pro, DeepSeek V4.1 Flash, Mistral Large 4, GLM-5.3 and Gemma 4. They share a label and almost nothing else. Mistral publishes a named license (the Mistral Ecosystem Open-Weight License, which Mistral describes as a modified MIT license), while a third-party comparison of open-weight licenses flags that several rivals need a closer read of the model card before you ship anything on top of them. [...] Mistral and NVIDIA on engineering workflows (October 21, 2026). Mistral announced a collaboration with NVIDIA on AI-native engineering, using Mistral Large 4 alongside simulation and physics pipelines and NVIDIA accelerated computing. Neil Ashton, identified as Mistral\u2019s VP of Computational Engineering, appears in the announcement. Lesson: open weights let an industrial buyer keep sensitive design data inside its own simulation stack.",
+            "score": 0.6885731,
+            "published_date": "Fri, 13 Nov 2026 07:55:39 GMT",
+            "raw_content": null,
+            "id": "7b0bf5-00"
+          },
+          {
+            "url": "https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity",
+            "title": "Mistral AI Releases Large 4 Model for Cybersecurity Use Globally",
+            "content": "Mistral Large\u202f4, aka \u2018Le\u202fChonk\u2019, is a trillion\u2011parameter open\u2011weight model released publicly in late October\u202f2026, focused on cybersecurity, finance, geospatial and manufacturing tasks (en.etnews.com).\n The model is intended for self\u2011hosting on organizations\u2019 own systems, providing sovereignty and avoiding dependence on hosted APIs; weights were made available end of October\u202f2026 (en.etnews.com). [...] 11/14/2026 | Global Edition\n\n GBAF Logo \n\nSearch\n\nGlobal Banking & Finance Awards\u00ae 2026 \u00b7 Nominations open, free to enter Nominate now \u2192\n\nMistral AI publicly releases Large 4, targets cybersecurity users - Finance news and analysis from Global Banking & Finance Review \n\nFinance \n\n# Mistral AI publicly releases Large 4, targets cybersecurity users\n\nPublished by  Global Banking & Finance Review\n\nPosted on October 29, 2026\n\n 2 min read \n\n\u00b7 Last updated: October 29, 2026 [...] Add as preferred source on Google\n\nFinance  Artificial Intelligence  cybersecurity\n\n## Mistral AI Launches Large 4 Model to Help Organizations Fight Cyber Threats\n\n## Overview of Mistral AI's Large 4 Model Release\n\nBy Leo Marchandon\n\n### Public Release and Purpose\n\nOct 29 (Reuters) - French AI startup Mistral released its Large 4 model to the public on Thursday, saying it was designed to help organisations identify and fix cyber-security vulnerabilities.\n\n#### Comparison with Other AI Systems",
+            "score": 0.68794453,
+            "published_date": "Thu, 29 Oct 2026 14:03:36 GMT",
+            "raw_content": null,
+            "id": "3d0bac-01"
+          },
+          {
+            "url": "https://felloai.com/mistral-large-4",
+            "title": "Mistral Large 4: Open Weights, License, Price, Benchmarks",
+            "content": "AI News\n\n# Mistral Large 4 (Le Chonk): Open Weights, License, Price and Benchmarks\n\nBy Lenka Vojtechova  \u00b7  Updated November 7, 2026  \u00b7  12 min read\n\nAI NewsMistralOpen-Source ModelLLMAI Coding\n\nThumbnail reading [...] Thumbnail reading \n\nMistral Large 4, nicknamed Le Chonk, is a 1-trillion-parameter mixture-of-experts model with 49 billion active parameters. Mistral AI released it as a public preview API on October 6, 2026, then shipped an improved final version and the open weights on October 29. It reads text and images, answers in text, and now costs $0.70 per million input tokens. [...] Yes. Mistral released the weights on Hugging Face on October 29, 2026, two days after the date it gave reporters. They cover the improved final model, and come with an NVFP4 checkpoint for NVIDIA Blackwell GPUs. The licence is the Mistral Ecosystem Open-Weight license, a modified MIT licence.\n\n \n\nHow much does Mistral Large 4 cost?\n\n$0.70 per million input tokens and $2.10 per million output tokens, with cached input at $0.07, since October 29, 2026. The preview listed at $1.36 and $4.18.",
+            "score": 0.6568784,
+            "published_date": "Sat, 07 Nov 2026 01:00:00 GMT",
+            "raw_content": null,
+            "id": "265f44-02"
+          },
+          {
+            "url": "https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform",
+            "title": "Cr\u00e9dit Agricole partners with Mistral AI on platform",
+            "content": "On 20 October 2026, Cr\u00e9dit Agricole Artificial Intelligence announced a partnership that involves Mistral in building the group's AI platform, beyond access to its models: an agent for retail banking clients, agentic processes, and cybersecurity, presented as \"a major focus\". The announcements from BNP Paribas and HSBC, already partners of Mistral, do not mention cybersecurity. The announcement sets no amount, duration, model, or exclusivity.\n\nSTStephane Nachez \u00b7 \u00b74 min [...] The 20 October release cites three workstreams: a conversational agent for clients of the group's retail banks, the \"agentic transformation of key processes\", and cybersecurity. Cr\u00e9dit Agricole Artificial Intelligence runs the group's AI foundations. With Mistral's technology, it also plans to adapt large language models to its data and use cases. The release sees this as a way to optimise performance, \"and therefore the consumption of computing resources and its environmental impact\". [...] The 20 October release gives no amount, no commitment duration, no timeline for the client agent, and cites no particular Mistral model. It also says nothing about any exclusivity. The pattern recalls that observed with Mistral at EDF, BMW, or Airbus: partnerships announced, rarely quantified. The announcement comes six weeks after the lab's 3 billion euro fundraising.",
+            "score": 0.6281794,
+            "published_date": "Thu, 22 Oct 2026 11:15:17 GMT",
+            "raw_content": null,
+            "id": "92bebf-03"
+          },
+          {
+            "url": "https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity",
+            "title": "Orange Cyberdefense becomes Mistral AI design partner for cybersecurity \u2013 MSP Business",
+            "content": "Skip to content\n\nMSP BusinessMSP Business\n\n#### Market & StrategyNews\n\n# Orange Cyberdefense becomes Mistral AI design partner for cybersecurity\n\n2 November 2026, 10:12 By Editorial team [...] Marjorie Janiewicz, CRO of Mistral AI, says both companies share the same goal. According to Janiewicz, they want to offer European organisations a sovereign AI solution that is developed and managed in Europe.\n\n### Not an exclusive choice [...] Orange Cyberdefense has announced that it will gradually integrate AI systems based on Mistral Large 4 into a selection of its customer services. The company has not disclosed exactly which services these are or when they will become available. It does, however, name two areas of application. In penetration testing and technical security assessments, the company expects AI to enable it to explore a wider range of attack scenarios. In incident investigation and incident response, it aims to use",
+            "score": 0.5941392,
+            "published_date": "Mon, 02 Nov 2026 00:00:00 GMT",
+            "raw_content": null,
+            "id": "d27165-04"
+          }
+        ],
+        "response_time": 2.01,
+        "request_id": "fd34d615-637b-4e38-b109-b2d033c4852e"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 2249,
+      "ts": "2026-11-15T13:45:18.759408Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "eb43e062172158d9656e379c1f9718a04290386bbc94e6c4f8fb723754b3cbd2",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: Mistral AI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_16451044601098918113_ts_EmAKXgFpFH0TrOaGY48-tt6b0WmMM8809IV1RBhhQVRuzNOFlKaA72XcWqKyKZjQYon39g6AnIQqmm13TvGn7IPcF3jOFou5cbtlolWQGQyvRgYZQHk9xcYSjFsp-618UoI",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"Mistral AI news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_16451044601098918113_ts_EmAKXgFpFH0TrOaGY48-tt6b0WmMM8809IV1RBhhQVRuzNOFlKaA72XcWqKyKZjQYon39g6AnIQqmm13TvGn7IPcF3jOFou5cbtlolWQGQyvRgYZQHk9xcYSjFsp-618UoI",
+            "content": "[{\"title\":\"Open Source AI Models: 3 Run Paths, 48% Index [2026]\",\"url\":\"https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026\",\"published_date\":\"Fri, 13 Nov 2026 07:55:39 GMT\",\"content\":\"Mistral gave its flagship the nickname Le Chonk and shipped it in two steps. A public preview arrived in October 2026, and open weights followed on October 29. The preview version has since been retired and the October 29 release is the active model, so anyone still pointing at preview weights should move. The model is natively multimodal, with roughly 1 trillion total parameters and about 49 billion active, and Mistral positions it for agentic coding and cybersecurity work. [...] Five open-weight model families dominate the November 2026 conversation: Kimi K3.1 Pro, DeepSeek V4.1 Flash, Mistral Large 4, GLM-5.3 and Gemma 4. They share a label and almost nothing else. Mistral publishes a named license (the Mistral Ecosystem Open-Weight License, which Mistral describes as a modified MIT license), while a third-party comparison of open-weight licenses flags that several rivals need a closer read of the model card before you ship anything on top of them. [...] Mistral and NVIDIA on engineering workflows (October 21, 2026). Mistral announced a collaboration with NVIDIA on AI-native engineering, using Mistral Large 4 alongside simulation and physics pipelines and NVIDIA accelerated computing. Neil Ashton, identified as Mistral\u2019s VP of Computational Engineering, appears in the announcement. Lesson: open weights let an industrial buyer keep sensitive design data inside its own simulation stack.\"},{\"title\":\"Mistral AI Releases Large 4 Model for Cybersecurity Use Globally\",\"url\":\"https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity\",\"published_date\":\"Thu, 29 Oct 2026 14:03:36 GMT\",\"content\":\"Mistral Large\u202f4, aka \u2018Le\u202fChonk\u2019, is a trillion\u2011parameter open\u2011weight model released publicly in late October\u202f2026, focused on cybersecurity, finance, geospatial and manufacturing tasks (en.etnews.com).\\n The model is intended for self\u2011hosting on organizations\u2019 own systems, providing sovereignty and avoiding dependence on hosted APIs; weights were made available end of October\u202f2026 (en.etnews.com). [...] 11/14/2026 | Global Edition\\n\\n GBAF Logo \\n\\nSearch\\n\\nGlobal Banking & Finance Awards\u00ae 2026 \u00b7 Nominations open, free to enter Nominate now \u2192\\n\\nMistral AI publicly releases Large 4, targets cybersecurity users - Finance news and analysis from Global Banking & Finance Review \\n\\nFinance \\n\\n# Mistral AI publicly releases Large 4, targets cybersecurity users\\n\\nPublished by  Global Banking & Finance Review\\n\\nPosted on October 29, 2026\\n\\n 2 min read \\n\\n\u00b7 Last updated: October 29, 2026 [...] Add as preferred source on Google\\n\\nFinance  Artificial Intelligence  cybersecurity\\n\\n## Mistral AI Launches Large 4 Model to Help Organizations Fight Cyber Threats\\n\\n## Overview of Mistral AI's Large 4 Model Release\\n\\nBy Leo Marchandon\\n\\n### Public Release and Purpose\\n\\nOct 29 (Reuters) - French AI startup Mistral released its Large 4 model to the public on Thursday, saying it was designed to help organisations identify and fix cyber-security vulnerabilities.\\n\\n#### Comparison with Other AI Systems\"},{\"title\":\"Mistral Large 4: Open Weights, License, Price, Benchmarks\",\"url\":\"https://felloai.com/mistral-large-4\",\"published_date\":\"Sat, 07 Nov 2026 01:00:00 GMT\",\"content\":\"AI News\\n\\n# Mistral Large 4 (Le Chonk): Open Weights, License, Price and Benchmarks\\n\\nBy Lenka Vojtechova  \u00b7  Updated November 7, 2026  \u00b7  12 min read\\n\\nAI NewsMistralOpen-Source ModelLLMAI Coding\\n\\nThumbnail reading [...] Thumbnail reading \\n\\nMistral Large 4, nicknamed Le Chonk, is a 1-trillion-parameter mixture-of-experts model with 49 billion active parameters. Mistral AI released it as a public preview API on October 6, 2026, then shipped an improved final version and the open weights on October 29. It reads text and images, answers in text, and now costs $0.70 per million input tokens. [...] Yes. Mistral released the weights on Hugging Face on October 29, 2026, two days after the date it gave reporters. They cover the improved final model, and come with an NVFP4 checkpoint for NVIDIA Blackwell GPUs. The licence is the Mistral Ecosystem Open-Weight license, a modified MIT licence.\\n\\n \\n\\nHow much does Mistral Large 4 cost?\\n\\n$0.70 per million input tokens and $2.10 per million output tokens, with cached input at $0.07, since October 29, 2026. The preview listed at $1.36 and $4.18.\"},{\"title\":\"Cr\u00e9dit Agricole partners with Mistral AI on platform\",\"url\":\"https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform\",\"published_date\":\"Thu, 22 Oct 2026 11:15:17 GMT\",\"content\":\"On 20 October 2026, Cr\u00e9dit Agricole Artificial Intelligence announced a partnership that involves Mistral in building the group's AI platform, beyond access to its models: an agent for retail banking clients, agentic processes, and cybersecurity, presented as \\\"a major focus\\\". The announcements from BNP Paribas and HSBC, already partners of Mistral, do not mention cybersecurity. The announcement sets no amount, duration, model, or exclusivity.\\n\\nSTStephane Nachez \u00b7 \u00b74 min [...] The 20 October release cites three workstreams: a conversational agent for clients of the group's retail banks, the \\\"agentic transformation of key processes\\\", and cybersecurity. Cr\u00e9dit Agricole Artificial Intelligence runs the group's AI foundations. With Mistral's technology, it also plans to adapt large language models to its data and use cases. The release sees this as a way to optimise performance, \\\"and therefore the consumption of computing resources and its environmental impact\\\". [...] The 20 October release gives no amount, no commitment duration, no timeline for the client agent, and cites no particular Mistral model. It also says nothing about any exclusivity. The pattern recalls that observed with Mistral at EDF, BMW, or Airbus: partnerships announced, rarely quantified. The announcement comes six weeks after the lab's 3 billion euro fundraising.\"},{\"title\":\"Orange Cyberdefense becomes Mistral AI design partner for cybersecurity \u2013 MSP Business\",\"url\":\"https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity\",\"published_date\":\"Mon, 02 Nov 2026 00:00:00 GMT\",\"content\":\"Skip to content\\n\\nMSP BusinessMSP Business\\n\\n#### Market & StrategyNews\\n\\n# Orange Cyberdefense becomes Mistral AI design partner for cybersecurity\\n\\n2 November 2026, 10:12 By Editorial team [...] Marjorie Janiewicz, CRO of Mistral AI, says both companies share the same goal. According to Janiewicz, they want to offer European organisations a sovereign AI solution that is developed and managed in Europe.\\n\\n### Not an exclusive choice [...] Orange Cyberdefense has announced that it will gradually integrate AI systems based on Mistral Large 4 into a selection of its customer services. The company has not disclosed exactly which services these are or when they will become available. It does, however, name two areas of application. In penetration testing and technical security assessments, the company expects AI to enable it to explore a wider range of attack scenarios. In incident investigation and incident response, it aims to use\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "cbf5ap7eJNrB694Pvq66iQo",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "# Pre-Meeting Briefing: Mistral AI\n**Meeting Date:** November 20, 2026  \n\n---\n\n## Recent developments\n* **Launch of Mistral Large 4 (\"Le Chonk\"):** In late October 2026, Mistral officially released its flagship model, Mistral Large 4 (nicknamed \"Le Chonk\"). It is a 1-trillion-parameter Mixture-of-Experts (MoE) model with approximately 49 billion active parameters, natively multimodal, and optimized for agentic coding, finance, geospatial, manufacturing, and cybersecurity workflows. \n* **Open Weights and Licensing:** Following a public preview in early October, the final open weights were released on Hugging Face on October 29, 2026, including an NVFP4 checkpoint tailored for NVIDIA Blackwell GPUs. It uses the \"Mistral Ecosystem Open-Weight License\" (a modified MIT license). API pricing sits at $0.70 per million input tokens and $2.10 per million output tokens.\n* **Major Enterprise & Strategic Partnerships:** \n  * **Cr\u00e9dit Agricole:** Announced a partnership on October 20, 2026, to build its internal AI platform, focusing on a retail client conversational agent, process automation, and cybersecurity.\n  * **Orange Cyberdefense:** Partnered in early November 2026 to become a design partner for Mistral Large 4, integrating the model into penetration testing and incident response services to push European AI data sovereignty.\n  * **NVIDIA Collaboration:** In October 2026, Mistral announced an engineering workflow collaboration leveraging Mistral Large 4 alongside NVIDIA accelerated computing for physics and simulation pipelines.\n\n## Talking points\n* **Sovereignty & Enterprise Control:** Acknowledge Mistral's strong market positioning around data sovereignty and self-hosting, especially timely given the Orange Cyberdefense and Cr\u00e9dit Agricole partnerships. \n* **Capabilities of \"Le Chonk\" (Mistral Large 4):** Discuss how organizations are utilizing its high-performance mixture-of-experts architecture for specialized, high-stakes tasks like agentic coding, cybersecurity vulnerability patching, and industrial simulations.\n* **Cost Efficiency & Architecture:** Highlight the competitive API pricing and the inclusion of optimized checkpoints (like NVFP4 for NVIDIA Blackwell) which lower infrastructure deployment hurdles.\n\n## Open questions\n* How are enterprise clients adopting Mistral Large 4 for self-hosting versus utilizing managed API endpoints, and what are the primary scaling bottlenecks?\n* What are the specific deployment timelines and performance metrics for the Orange Cyberdefense integration in active incident response environments?\n* How does Mistral plan to differentiate its licensing terms (Mistral Ecosystem Open-Weight License) as commercial competition intensifies globally?\n\n## Sources\n* [Open Source AI Models: 3 Run Paths, 48% Index [2026]](https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026)\n* [Mistral AI Releases Large 4 Model for Cybersecurity Use Globally](https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity)\n* [Mistral Large 4: Open Weights, License, Price, Benchmarks](https://felloai.com/mistral-large-4)\n* [Cr\u00e9dit Agricole partners with Mistral AI on platform](https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform)\n* [Orange Cyberdefense becomes Mistral AI design partner for cybersecurity \u2013 MSP Business](https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0T7EjURjowBx4Q57a22Dj89DVhLCS5y7EXSh0+C7a7rmJH9Y69ECBsa5WFi2XHY4Q9ef60iG/RT4J1eRwKq70siOPvF4QXkakAfexXTuwP31ex4so7tLupYBs="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750324,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2131,
+          "prompt_tokens_details": {
+            "text_tokens": 2131,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 845,
+          "total_tokens": 2976
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 3168,
+          "upstream_latency": 3168,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=3132",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2131,
+        "completion": 845
+      },
+      "cost_usd": 0.0005511,
+      "latency_ms": 3178,
+      "ts": "2026-11-15T13:45:21.02959Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: Mistral AI\n**Meeting Date:** November 20, 2026  \n\n---\n\n## Recent developments\n* **Launch of Mistral Large 4 (\"Le Chonk\"):** In late October 2026, Mistral officially released its flagship model, Mistral Large 4 (nicknamed \"Le Chonk\"). It is a 1-trillion-parameter Mixture-of-Experts (MoE) model with approximately 49 billion active parameters, natively multimodal, and optimized for agentic coding, finance, geospatial, manufacturing, and cybersecurity workflows. \n* **Open Weights and Licensing:** Following a public preview in early October, the final open weights were released on Hugging Face on October 29, 2026, including an NVFP4 checkpoint tailored for NVIDIA Blackwell GPUs. It uses the \"Mistral Ecosystem Open-Weight License\" (a modified MIT license). API pricing sits at $0.70 per million input tokens and $2.10 per million output tokens.\n* **Major Enterprise & Strategic Partnerships:** \n  * **Cr\u00e9dit Agricole:** Announced a partnership on October 20, 2026, to build its internal AI platform, focusing on a retail client conversational agent, process automation, and cybersecurity.\n  * **Orange Cyberdefense:** Partnered in early November 2026 to become a design partner for Mistral Large 4, integrating the model into penetration testing and incident response services to push European AI data sovereignty.\n  * **NVIDIA Collaboration:** In October 2026, Mistral announced an engineering workflow collaboration leveraging Mistral Large 4 alongside NVIDIA accelerated computing for physics and simulation pipelines.\n\n## Talking points\n* **Sovereignty & Enterprise Control:** Acknowledge Mistral's strong market positioning around data sovereignty and self-hosting, especially timely given the Orange Cyberdefense and Cr\u00e9dit Agricole partnerships. \n* **Capabilities of \"Le Chonk\" (Mistral Large 4):** Discuss how organizations are utilizing its high-performance mixture-of-experts architecture for specialized, high-stakes tasks like agentic coding, cybersecurity vulnerability patching, and industrial simulations.\n* **Cost Efficiency & Architecture:** Highlight the competitive API pricing and the inclusion of optimized checkpoints (like NVFP4 for NVIDIA Blackwell) which lower infrastructure deployment hurdles.\n\n## Open questions\n* How are enterprise clients adopting Mistral Large 4 for self-hosting versus utilizing managed API endpoints, and what are the primary scaling bottlenecks?\n* What are the specific deployment timelines and performance metrics for the Orange Cyberdefense integration in active incident response environments?\n* How does Mistral plan to differentiate its licensing terms (Mistral Ecosystem Open-Weight License) as commercial competition intensifies globally?\n\n## Sources\n* [Open Source AI Models: 3 Run Paths, 48% Index [2026]](https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026)\n* [Mistral AI Releases Large 4 Model for Cybersecurity Use Globally](https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity)\n* [Mistral Large 4: Open Weights, License, Price, Benchmarks](https://felloai.com/mistral-large-4)\n* [Cr\u00e9dit Agricole partners with Mistral AI on platform](https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform)\n* [Orange Cyberdefense becomes Mistral AI design partner for cybersecurity \u2013 MSP Business](https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://felloai.com/mistral-large-4",
+        "https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity",
+        "https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026",
+        "https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform",
+        "https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity"
+      ],
+      "grounded_urls": [
+        "https://felloai.com/mistral-large-4",
+        "https://mspbusiness.com/en/market-and-strategy/orange-cyberdefense-becomes-mistral-ai-design-partner-for-cybersecurity",
+        "https://shattered.io/open-source-ai-models-3-run-paths-mistral-large-4-kimi-k3-1-glm-5-3-2026",
+        "https://www.actuia.com/en/news/frances-credit-agricole-taps-mistral-ai-to-build-its-ai-platform",
+        "https://www.globalbankingandfinance.com/mistral-ai-publicly-releases-large-4-targets-cybersecurity"
+      ],
+      "n_grounded": 5,
+      "followed_injection": false
+    },
+    "wall_ms": 7528,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}

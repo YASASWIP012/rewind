@@ -15,8 +15,8 @@
     "task": "nvidia",
     "variant": "outage"
   },
-  "started_at": "2026-11-15T13:07:24.969925Z",
-  "ended_at": "2026-11-15T13:07:31.161662Z",
+  "started_at": "2026-11-15T13:10:46.0132Z",
+  "ended_at": "2026-11-15T13:10:52.785051Z",
   "steps": [
     {
       "i": 0,
@@ -56,7 +56,7 @@
       },
       "cost_usd": 0,
       "latency_ms": 0,
-      "ts": "2026-11-15T13:07:25.762428Z"
+      "ts": "2026-11-15T13:10:47.161544Z"
     },
     {
       "i": 1,
@@ -79,7 +79,7 @@
         "temperature": 0
       },
       "response": {
-        "id": "jq75aqzfMMnj1_oP6IDN2Ag",
+        "id": "WK_5ariEC7LnqfkPhYWewQg",
         "choices": [
           {
             "index": 0,
@@ -87,19 +87,19 @@
             "logprobs": null,
             "message": {
               "role": "assistant",
-              "content": "[\n  \"NVIDIA news October November 2026\",\n  \"NVIDIA earnings financial results late 2026\",\n  \"NVIDIA product announcements AI chips 2026\"\n]",
+              "content": "[\n  \"NVIDIA news October November 2026\",\n  \"Nvidia financial results products 2026\"\n]",
               "refusal": null,
               "reasoning_details": [
                 {
                   "index": 0,
                   "type": "reasoning.encrypted",
-                  "signature": "EmAKXgFpFH0TY3QZ58/5szPSTpXCvq0WB/4r3byauqY/I6+b1v07yT36cM559/x0vdXP0jVAcfL+upkNiV6YZnYJ95ksn1OAGtI3jBkuit2Tpa7mcNPEMi7Tk6c28XQbXuE="
+                  "signature": "EmAKXgFpFH0Tmte7kNfL9XsM+HME/ESf5BykTDnTdDk80zojMVaDqqgKzzE/7s5SxvrJsL9usWvOsFQ/gSA3W/a8Qn9kJQxy+05SEkaaqWTv/8Mv/8yE7w1/tLpn7b0voxI="
                 }
               ]
             }
           }
         ],
-        "created": 1794748047,
+        "created": 1794748248,
         "model": "gemini-3.5-flash-lite",
         "object": "chat.completion",
         "service_tier": "default",
@@ -111,8 +111,8 @@
             "cached_tokens": 0,
             "cache_write_tokens": 0
           },
-          "completion_tokens": 47,
-          "total_tokens": 128
+          "completion_tokens": 31,
+          "total_tokens": 112
         },
         "extra_fields": {
           "request_type": "chat_completion",
@@ -126,12 +126,12 @@
           "provider": "gemini",
           "original_model_requested": "gemini-3.5-flash-lite",
           "resolved_model_used": "gemini-3.5-flash-lite",
-          "latency": 762,
-          "upstream_latency": 762,
+          "latency": 1208,
+          "upstream_latency": 1208,
           "chunk_index": 0,
           "provider_response_headers": {
             "Accept-Ranges": "none",
-            "Server-Timing": "gfet4t7; dur=734",
+            "Server-Timing": "gfet4t7; dur=1182",
             "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
             "X-Content-Type-Options": "nosniff",
             "X-Frame-Options": "SAMEORIGIN",
@@ -145,11 +145,11 @@
       "served_model": "gemini-3.5-flash-lite",
       "tokens": {
         "prompt": 81,
-        "completion": 47
+        "completion": 31
       },
-      "cost_usd": 2.6900000000000003e-05,
-      "latency_ms": 763,
-      "ts": "2026-11-15T13:07:26.268071Z"
+      "cost_usd": 2.05e-05,
+      "latency_ms": 1211,
+      "ts": "2026-11-15T13:10:47.751941Z"
     },
     {
       "i": 2,
@@ -176,7 +176,7 @@
             "score": 0.7265227,
             "published_date": "Thu, 12 Nov 2026 19:00:00 GMT",
             "raw_content": null,
-            "id": "1d17c8-00"
+            "id": "981ae5-00"
           },
           {
             "url": "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
@@ -185,7 +185,7 @@
             "score": 0.6657367,
             "published_date": "Fri, 13 Nov 2026 13:36:19 GMT",
             "raw_content": null,
-            "id": "6edf18-01"
+            "id": "1e4f91-01"
           },
           {
             "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
@@ -194,7 +194,7 @@
             "score": 0.66050094,
             "published_date": "Sun, 08 Nov 2026 19:00:00 GMT",
             "raw_content": null,
-            "id": "135813-02"
+            "id": "b86c98-02"
           },
           {
             "url": "https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html",
@@ -203,7 +203,7 @@
             "score": 0.60328925,
             "published_date": "Sun, 08 Nov 2026 20:01:02 GMT",
             "raw_content": null,
-            "id": "8278ac-03"
+            "id": "b1b543-03"
           },
           {
             "url": "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
@@ -212,11 +212,11 @@
             "score": 0.5743351,
             "published_date": "Thu, 12 Nov 2026 20:32:21 GMT",
             "raw_content": null,
-            "id": "d8b01d-04"
+            "id": "58c1fc-04"
           }
         ],
         "response_time": 0.0,
-        "request_id": "daac86f1-edae-4d6d-bd85-2b88eeca9d8e"
+        "request_id": "7ea15ac4-5760-4abe-913b-22d104eeeb9b"
       },
       "status": 200,
       "tokens": {
@@ -224,74 +224,74 @@
         "completion": 0
       },
       "cost_usd": 0.008,
-      "latency_ms": 234,
-      "ts": "2026-11-15T13:07:27.044438Z"
+      "latency_ms": 250,
+      "ts": "2026-11-15T13:10:48.986838Z"
     },
     {
       "i": 3,
       "kind": "relay",
       "path": "/relay/tavily/search",
-      "fingerprint": "584ff62bcc15c684c493335b0c62fcac8a4d5a8e18403cf34b08397c90a123c4",
+      "fingerprint": "0a37ee60f9d21325444c2d09f6e25cd0d037ae1f1aecc41a9582abd6fbb085d1",
       "source": "live",
       "request": {
-        "query": "NVIDIA earnings financial results late 2026",
+        "query": "Nvidia financial results products 2026",
         "topic": "news",
         "time_range": "month",
         "max_results": 5
       },
       "response": {
-        "query": "NVIDIA earnings financial results late 2026",
+        "query": "Nvidia financial results products 2026",
         "follow_up_questions": null,
         "answer": null,
         "images": [],
         "results": [
+          {
+            "url": "https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices",
+            "title": "NVIDIA AI Investments and GPU Prices: $17.5B vs $9,400",
+            "content": "The gaming numbers cut against the idea that NVIDIA walked away from consumers. Fiscal 2026 gaming revenue rose 41% year over year, and NVIDIA credits Blackwell demand for the jump. The fourth quarter delivered $3.7 billion in gaming revenue, up 47% from the year before. Those are growth rates most hardware businesses never see. [...] | Metric | Figure | Source | Status |\n ---  --- |\n| Investments in private companies and infrastructure funds | $17.5 billion | NVIDIA fiscal 2026 annual report | Confirmed |\n| Guarantee exposure cap | $105 billion | NVIDIA disclosure | Confirmed |\n| Fiscal 2026 gaming revenue growth | 41% year over year | NVIDIA fiscal 2026 annual report | Confirmed |\n| Q4 fiscal 2026 gaming revenue | $3.7 billion | NVIDIA Q4 results | Confirmed | [...] Start with the document itself. NVIDIA\u2019s fiscal 2026 annual report states that the company invested $17.5 billion in private companies and infrastructure funds. The filing says the money went primarily to support early-stage startups. That wording is plain, and it is the anchor for everything else in this story.",
+            "score": 0.617628,
+            "published_date": "Sat, 14 Nov 2026 22:14:59 GMT",
+            "raw_content": null,
+            "id": "e6c029-00"
+          },
           {
             "url": "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
             "title": "NVIDIA",
             "content": "# NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital [...] ## M&A\n- Acquisitions:\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\n  - Groq, Inc. (2025-12-01): 20.00B USD\n  - SchedMD LLC (2025-12-01): undisclosed\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\n  - Solver (2025-09-01): undisclosed\n  - CentML, Inc. (2025-06-01): undisclosed",
-            "score": 0.636692,
+            "score": 0.5821347,
             "raw_content": null,
-            "id": "0e5b74-00"
+            "id": "f5b098-01"
           },
           {
-            "url": "https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026",
-            "title": "Nvidia Earnings: Analysts Look for About $109B in Sales",
-            "content": "Home\n Posts\n Nvidia quarterly sales are expected to nearly double to about $109 billion\n\n# Nvidia quarterly sales are expected to nearly double to about $109 billion\n\nNvidia reports earnings Tuesday after the close, with Wall Street looking for sales just above the company's $108 billion outlook.\n\nBy Opening Bell Daily Staff\n\nNov 13, 2026\n\nNvidia reports earnings on Tuesday after the close, with Wall Street looking for about $109 billion in quarterly sales. [...] That would be nearly double the $57.0 billion the company recorded a year earlier, and up 13% from the $96.2 billion it posted in the July quarter.\n\nThe estimate sits just above the $108 billion midpoint Nvidia guided to in August, and inside its plus or minus 2% range. Analysts also look for adjusted earnings of about $2.48 a share, up from $2.22 last quarter and well above the $1.30 Nvidia earned a year ago. [...] Tuesday's report is the first real check on whether demand is still strong enough to meet that outlook.\n\nSee how Nvidia stacks up on 2027 earnings multiples versus other AI giants, and more in the Opening Bell charts hub.\n\nGet charts like this every morning. Join 200K+ investors on our free morning briefing. Get high-conviction stock ideas in your inbox. Upgrade to Best Ideas Club.\n\nPhil Rosen\n\nPhil Rosen",
-            "score": 0.6031724,
-            "published_date": "Fri, 13 Nov 2026 15:04:15 GMT",
+            "url": "https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage",
+            "title": "What to Watch in Nvidia Earnings: Huang\u2019s Future, Data Center Concerns Take Center Stage",
+            "content": "With its 4-star rating, we believe Nvidia stock is moderately undervalued compared with our long-term fair value estimate of $310 per share. Nvidia\u2019s data center business has achieved historic growth from $3 billion in fiscal 2020 to $194 billion in fiscal 2026, and we estimate it will be $385 billion in fiscal 2027, representing 99% annual growth. We were amazed by Nvidia\u2019s forecast for 70%-plus growth in fiscal 2028 (or effectively calendar 2027), but we think it\u2019s achievable, and we model [...] #### Nvidia: Latest AI Partnership May Add to Concerns, but We Think Chip Demand Is There Brian Colello, CPA Aug 11, 2026\n   #### Nvidia Stock Now Looks Like a Bargain Brian Colello, CPA Aug 4, 2026 [...] Subscribe\n\nNvidia\u2019s massive DC growth has been gross-margin-accretive, as we think the firm should achieve mid-70% gross margins in fiscal 2027. In the long run, we anticipate modest gross margin deterioration in the decade ahead, as we lower it to the high-60% range a decade from now. Still, we are optimistic about Nvidia\u2019s ability to retain its pricing power in DC products.\n\n_Read more about Nvidia\u2019s fair value estimate._\n\n## Economic Moat Rating",
+            "score": 0.5462843,
+            "published_date": "Thu, 12 Nov 2026 09:48:48 GMT",
             "raw_content": null,
-            "id": "a915bf-01"
+            "id": "c26083-02"
           },
           {
-            "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
-            "title": "NVIDIA Announces CEO Transition | NVIDIA Newsroom",
-            "content": "## More News\n\nImage 10\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 11\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 12\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 13\n\n### Statement From NVIDIA Board of Directors\n\nNovember 8, 2026\n\nImage 14\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026 [...] Jensen\u2019s contributions to NVIDIA are profound. NVIDIA is one of the most consequential technology companies in the world. The Board and the company thank Jensen for his immeasurable contributions to the company and the industry.\n\nNVIDIA will report its third-quarter fiscal 2027 financial results on Tuesday, November 17, at approximately 1:20 p.m. PT, as previously scheduled, followed by its earnings call at 2 p.m. PT.\n\nImage 9",
-            "score": 0.4572882,
-            "published_date": "Thu, 12 Nov 2026 19:00:00 GMT",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
+            "title": "NVIDIA Sets Conference Call for Third-Quarter Financial Results | NVIDIA Newsroom",
+            "content": "# NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nCFO Commentary To Be Provided in Writing Ahead of Call\n\nOctober 28, 2026\n\nNVIDIA will host a conference call on Tuesday, November 17, at 2 p.m. PT (5 p.m. ET) to discuss its financial results for the third quarter of fiscal year 2027, which ended October 25, 2026. [...] About NVIDIA  \n NVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\n\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\n\nAbout NVIDIA  \n NVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing. [...] Privacy Policy\n Your Privacy Choices\n Terms of Service\n Accessibility\n Corporate Policies\n Product Security\n Contact\n\nCopyright \u00a9 2026 NVIDIA Corporation",
+            "score": 0.50077105,
+            "published_date": "Wed, 28 Oct 2026 00:00:00 GMT",
             "raw_content": null,
-            "id": "15ec25-02"
+            "id": "ce9acc-03"
           },
           {
-            "url": "https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi",
-            "title": "Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of the Outcome | The Motley Fool",
-            "content": "You may be surprised at how the market has reacted to most of the chip giant's recent quarters.\n\nByRick Munarriz \u2013 Oct 22, 2026 at 1:17PM EST\n\n+Fool.comon\n\n## Key Points\n\n Nvidia stock has initially moved lower in four of its last five quarterly reports.\n It's not a deal breaker, because the stock has still beaten the market in that time.\n With Nvidia trading for less than 14 times next year's earnings, the long-term value is still there beyond the quarterly gyrations. [...] Analysts are holding out for another quarter of robust growth for Nvidia. They see revenue surging 91% to hit a record $109 billion. This is in line with the $108 billion that Nvidia itself offered up as guidance two months ago. The same Wall Street pros also see earnings rising roughly 90%, to $2.47 per share. [...] NASDAQ \u00b7 As of 1:40 PM ET 10/22/26\n\nPremium Feature\n\nMoneyball Superscore97/100\n\n### Key data points\n\nMarket capMarket cap calculated using publicly traded shares outstanding only. Does not include unlisted, private, or dual-class non-traded shares. Implied market cap may vary.$5.35T\n\nDay's range$212.25 - $218.88\n\n52wk range$164.27 - $243.37\n\nVolume66.7M\n\nAvg volume117.7M\n\nGross margin74.67%\n\nDividend yield0.23%\n\n## A November to remember",
-            "score": 0.45286858,
-            "published_date": "Thu, 22 Oct 2026 17:17:00 GMT",
+            "url": "https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html",
+            "title": "Weekend trading of Nvidia scandal shines light on new financial products",
+            "content": "Jensen Huang, co-founder and CEO of Nvidia, speaks about the Vera MGX Compute Node during GTC Berlin. The U.S. chipmaker held its AI conference from October 20 to 22, 2026. \n\nSoeren Stache | Picture Alliance | Getty Images\n\nAs news of a potential scandal surrounding Nvidia CEO Jensen Huang began to trickle out on Sunday, investors faced a simple question: what could it mean for the stock?\n\nOne answer could be found in an obscure but growing corner of the markets: perpetual futures. [...] Follow your favorite stocks CREATE FREE ACCOUNT\n\nImage 8: 21 October 2026, Berlin: Jensen Huang, co-founder and CEO of Nvidia, speaks about the Vera MGX Compute Node during GTC Berlin. The U.S. chipmaker held its AI conference from October 20 to 22, 2026. Photo: Soeren Stache/dpa (Photo by Soeren Stache/picture alliance via Getty Images) [...] Share Share Article via Facebook Share Article via Twitter Share Article via LinkedIn Share Article via Email\n\nMarkets\n\nBusiness\n\nInvesting\n\nTech\n\nPolitics & Policy\n\nVideo\n\nWatchlist\n\nInvesting Club\n\nImage 4: Join IC\n\nPRO\n\nImage 5: Join Pro\n\nLivestream\n\nMenu\n\nImage 6: background of header\n\n# Options Action\n\nOptions Action\n\n# Weekend trading of Nvidia scandal shines light on new financial products\n\nPublished Mon, Nov 9 2026 10:31 AM EST\n\nImage 7: thumbnail\n\nOliver Renick@OJRenick\n\nWATCH LIVE",
+            "score": 0.4356614,
+            "published_date": "Mon, 09 Nov 2026 15:31:32 GMT",
             "raw_content": null,
-            "id": "aa234c-03"
-          },
-          {
-            "url": "https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market",
-            "title": "The Nvidia Earnings Report Could Wreck The Market (NASDAQ:NVDA) | Seeking Alpha",
-            "content": "Nvidia Corporation (NVDA) is set to report earnings next week on Tuesday, November 17. The estimates are $108.81B for revenue and $2.47 EPS, at 98% and 96% growth YOY. Over the last 2 years, Nvidia had\n\nThis article was written by [...] ## Recommended For You",
-            "score": 0.4016878,
-            "published_date": "Fri, 13 Nov 2026 13:02:51 GMT",
-            "raw_content": null,
-            "id": "ad5960-04"
+            "id": "1b4f14-04"
           }
         ],
         "response_time": 0.0,
-        "request_id": "31e5b699-5f74-47d6-92d4-ba07f8591c2c"
+        "request_id": "1276d438-8ca1-4abb-b3ff-c78ef9784521"
       },
       "status": 200,
       "tokens": {
@@ -299,90 +299,14 @@
         "completion": 0
       },
       "cost_usd": 0.008,
-      "latency_ms": 238,
-      "ts": "2026-11-15T13:07:27.282433Z"
+      "latency_ms": 250,
+      "ts": "2026-11-15T13:10:49.242916Z"
     },
     {
       "i": 4,
-      "kind": "relay",
-      "path": "/relay/tavily/search",
-      "fingerprint": "5b33368b76b85b290021644bd982d54eac3abfe6e504a5809cfc925dc3b7edf9",
-      "source": "live",
-      "request": {
-        "query": "NVIDIA product announcements AI chips 2026",
-        "topic": "news",
-        "time_range": "month",
-        "max_results": 5
-      },
-      "response": {
-        "query": "NVIDIA product announcements AI chips 2026",
-        "follow_up_questions": null,
-        "answer": null,
-        "images": [],
-        "results": [
-          {
-            "url": "https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026",
-            "title": "SUSE AI Factory Adds NVIDIA OpenShell, 3 Chips [2026]",
-            "content": "| Detail | Status |\n --- |\n| Product name: SUSE AI Factory with NVIDIA | Confirmed |\n| NVIDIA OpenShell Reference Architecture included | Confirmed |\n| Vera Rubin, Vera CPUs and BlueField-4 roles | Confirmed |\n| SLES for NVIDIA part of the release | Confirmed |\n| Pricing | Unconfirmed |\n| Specific availability date | Unconfirmed |\n| Version numbers | Unconfirmed |\n| Deployment requirements | Unconfirmed |\n| Performance figures | Unconfirmed |\n| Customer names | Unconfirmed | [...] NVIDIA BlueField-4 DPUs run NVIDIA Sentry, which is powered by NVIDIA DOCA. Per the announcement, Sentry handles monitoring and in-silicon policy enforcement. A data processing unit sits on the network and I/O path, so it sees traffic the host CPU would otherwise handle alone. We covered the monitoring role in depth when Sentry locked down AI agents on BlueField-4.\n\n## Why Autonomous AI Agents Need Zero-Trust Security [...] SUSE enhanced SUSE AI Factory with NVIDIA by adding the NVIDIA OpenShell Reference Architecture, which it describes as zero-trust agent security for autonomous AI agents. The announcement came from Berlin, with the page updated on October 22, 2026.\n\n### Which NVIDIA hardware does the design use?",
-            "score": 0.6575384,
-            "published_date": "Fri, 23 Oct 2026 11:09:00 GMT",
-            "raw_content": null,
-            "id": "07f572-00"
-          },
-          {
-            "url": "https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit",
-            "title": "Nvidia Data Center: Kress Reportedly Becomes Interim CEO",
-            "content": "A May 2026 account from Trak.in describes DGX Spark as a compact Grace Blackwell system, originally introduced as Project DIGITS. Nvidia says it delivers up to 1 petaflop of AI performance, with 128GB of unified memory and support for models with up to 200 billion parameters locally. [...] CoreWeave posted $3.66 billion in third-quarter revenue and a $132.5 billion backlog, alongside more than 1.7 GW of active power. It raised its 2026 capital expenditure range to $37\u201339 billion, illustrating the scale of construction and equipment commitments surrounding AI computing. [...] Crusoe plans to begin production of its sixth-generation Spark modules at its Brighton, Colorado, plant in 2027. Their support for Nvidia GB300 NVL72 and Vera Rubin NVL72 racks places the manufacturing plan within the wider supplier ecosystem serving AI campuses.",
-            "score": 0.5540784,
-            "published_date": "Sat, 14 Nov 2026 16:18:45 GMT",
-            "raw_content": null,
-            "id": "22e3c2-01"
-          },
-          {
-            "url": "https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai",
-            "title": "How China gets the Nvidia chips it needs to develop AI | AFP.com",
-            "content": "(FILES) Visitors tour the Nvidia booth during the Nvidia Product Showcase at Computex 2026 in Taipei on June 3, 2026. Chip giant Nvidia's board announced on November 8, 2026 it opened a probe into Chief Executive and co-founder Jensen Huang after he acknowledged an affair with a woman US officials say was working for Chinese intelligence. \u2014 I-Hwa Cheng / AFP [...] (FILES) Visitors tour the Nvidia booth during the Nvidia Product Showcase at Computex 2026 in Taipei on June 3, 2026. Chip giant Nvidia's board announced on November 8, 2026 it opened a probe into Chief Executive and co-founder Jensen Huang after he ackno\n\nNvidia CEO Jensen Huang has admitted to having an affair, reportedly with a Chinese executive at a Singapore-based company that the United States suspects of smuggling AI microchips into China. [...] AFP\n\n Fran\u00e7ais\n Espa\u00f1ol\n Portugu\u00eas\n Deutsch\n \u0627\u0644\u0639\u0631\u0628\u064a\u0629\n\nLogin    Contact us\n\nDigital World\n\n# How China gets the Nvidia chips it needs to develop AI\n\nBy AFP\n\nPublished on November 10, 2026 at 06:30\n\n  X\n  LinkedIn\n  Facebook",
-            "score": 0.46229097,
-            "published_date": "Tue, 10 Nov 2026 13:00:00 GMT",
-            "raw_content": null,
-            "id": "3f4261-02"
-          },
-          {
-            "url": "https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong",
-            "title": "Exclusive: US-sanctioned Jinan Supercomputing Center still gets Nvidia AI products \u2013 Radio Free Asia",
-            "content": "On June 17, 2026, the China Government Procurement Network (web archive) published a procurement result announcement. The procured item was the \u201cEdge Intelligent Computing Team AI Workstation and Graphics Card Procurement Project.\u201d The winning bidder was Qiyuan Jiasu (Tianjin) Technology Co., Ltd., with a winning bid price of RMB 148,500 (US$22,000). The product list in the procurement document contained two items: \u201cRTX5090\u201d and \u201cDGXSPark\u201d, while the brand column indicated \u201cYixin,\u201d a brand [...] Information from China Government Procurement Network shows that the Shandong Computing Center, which is subject to US chip sanctions, was still soliciting bids for Nvidia high-end products as of June 2026. (Screenshot from China Government Procurement Network; RFA graphic) [...] Information from China Government Procurement Network shows that the Shandong Computing Center, which is subject to U.S. chip sanctions, was still soliciting bids for Nvidia high-end products as of June 2026.",
-            "score": 0.41946957,
-            "published_date": "Fri, 13 Nov 2026 13:00:00 GMT",
-            "raw_content": null,
-            "id": "eddb60-03"
-          },
-          {
-            "url": "https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk",
-            "title": "Microsoft Maia 300: How Much Nvidia Business Is at Risk?",
-            "content": "On this page\n\nOn October 12, 2026, Microsoft announced its Maia 300 custom AI chip, with CEO Satya Nadella calling it his company\u2019s \u201cbiggest bet yet on our own silicon.\u201d Microsoft is expecting to scale to multi-gigawatt deployments of Maia 300 in 2027, with the chip expected to deliver significant throughput gains versus the current Maia 200 generation in production. [...] Behind the Maia 300 lies a hardware evolution spanning several years, aimed at complementing merchant GPUs used in Azure data centers. Microsoft\u2019s inaugural Maia 100 processor was announced in 2023 followed by Maia 200 in January 2026. Microsoft has currently deployed the Maia 200 in its data centers across the US, Europe, and Australia, powering inference workloads for Microsoft 365 Copilot, Teams, and internal MAI models. GitHub Copilot and Microsoft Foundry are expected to move to this [...] AI STOCKSOCT 30, 2026Google\u2019s $250 Billion AI Chip Opportunity Takes Aim at Nvidia\n\nAI PLATFORMS\n\n### Google\u2019s $250 Billion AI Chip Opportunity Takes Aim at Nvidia",
-            "score": 0.39706135,
-            "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
-            "raw_content": null,
-            "id": "096977-04"
-          }
-        ],
-        "response_time": 0.0,
-        "request_id": "f011e0c8-758d-4a9d-ae57-075774b38f6d"
-      },
-      "status": 200,
-      "tokens": {
-        "prompt": 0,
-        "completion": 0
-      },
-      "cost_usd": 0.008,
-      "latency_ms": 238,
-      "ts": "2026-11-15T13:07:27.522462Z"
-    },
-    {
-      "i": 5,
       "kind": "llm",
       "path": "/v1/chat/completions",
-      "fingerprint": "466f4d6b20355695e348d58156c8370451dd2a90d72e15cb191b2470068b0813",
+      "fingerprint": "92ad2b1cae01013ee5d265dcdca9f42cae3c41038d38335c9d49c8b03907d248",
       "source": "live",
       "request": {
         "model": "gemini/gemini-3.5-flash-lite",
@@ -393,13 +317,13 @@
           },
           {
             "role": "user",
-            "content": "Company: NVIDIA\nMeeting time: 2026-11-20T10:00:00+05:30\n\n<search_results>\n[1] title: NVIDIA Announces CEO Transition | NVIDIA Newsroom\nurl: https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition\npublished: Thu, 12 Nov 2026 19:00:00 GMT\ncontent: ## More News\n\nImage 10\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 11\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 12\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 13\n\n### Statement From NVIDIA Board of Directors\n\nNovember 8, 2026\n\nImage 14\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026 [...] NVIDIA in Brief\n   Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# NVIDIA Announces CEO Transition\n\n November 12, 2026 \n\n   _Jensen Huang Resigns_\n   _Colette Kress, Executive Vice President and Chief Financial Officer, Appointed Interim CEO_\n   _Harvey C. Jones Appointed First-Ever Chair of the Board_ [...] October 28, 2026\n\nAbout NVIDIA  \nNVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\n\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information\n\n[2] title: Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera\nurl: https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company\npublished: Fri, 13 Nov 2026 13:36:19 GMT\ncontent: Jensen Huang, CEO of Nvidia, gives a keynote address at the Nvidia GTC Berlin Technology Conference on October 21, 2026 in Berlin, Germany [Sean Gallup/Getty Images]\n\n\n\nBy Yashraj Sharma\n\nPublished On 13 Nov 202613 Nov 2026\n\nThe departure of Nvidia CEO Jensen Huang, the 63-year-old cofounder and face of the chipmaking company which has become the backbone of the modern AI industry, has shaken the US\u2019s Silicon Valley. [...] Save\n\nShare\n\nBERLIN, GERMANY - OCTOBER 21: Jensen Huang, CEO of NVIDIA, gives a keynote address at the NVIDIA Berlin GPU Technology Conference (GTC) on October 21, 2026 in Berlin, Germany. The three-day event is bringing together developers, researchers, and industry leaders in artificial intelligence infrastructure. (Photo by Sean Gallup/Getty Images) [...] This screengrab from video footage by CTI obtained via AFP TV on November 9, 2026 shows Alice Huang (partially obscured), a Chinese executive linked to the data centre company called Megaspeed, attending a dinner hosted by Nvidia\u2019s chief executive and cofounder Jensen Huang (in black) at a restaurant in Taipei on May 22, 2025, during Computex, the island\u2019s top tech expo [File: AFP]\n\n## Why is Nvidia so significant?\n\n[3] title: Statement From NVIDIA Board of Directors\nurl: https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\npublished: Sun, 08 Nov 2026 19:00:00 GMT\ncontent: The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate.\n\nImage 10\n\n## Downloads\n\n   Download Press Release\n\n## More News\n\nImage 11\n\n### NVIDIA Announces CEO Transition\n\nNovember 12, 2026\n\nImage 12\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 13\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 14 [...] Image 14\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 15\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information\n\n   About NVIDIA\n   Corporate Overview\n   Technologies\n   NVIDIA Research\n   Investors\n   Social Responsibility\n   NVIDIA Foundation\n\nGet Involved [...] Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# Statement From NVIDIA Board of Directors\n\n November 8, 2026 \n\nImage 9: Statement From NVIDIA Board of Directors\n\nThe NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.\n\n[4] title: Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy\nurl: https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html\npublished: Sun, 08 Nov 2026 20:01:02 GMT\ncontent: The reporters have been covering China\u2019s spying on Nvidia and America\u2019s artificial intelligence industry.\n\nNov. 8, 2026\n\n\u9605\u8bfb\u7b80\u4f53\u4e2d\u6587\u7248\u95b1\u8b80\u7e41\u9ad4\u4e2d\u6587\u7248Leer en espa\u00f1ol\n\nNvidia said on Sunday that it was opening an investigation into Jensen Huang, its chief executive and co-founder, after he acknowledged to the company\u2019s board that he had been intimate with a business executive who U.S. intelligence determined was a Chinese spy. [...] A version of this article appears in print on Nov. 9, 2026, Section A, Page 16 of the New York edition with the headline: Nvidia Opens Inquiry Into Huang\u2019s Relationship With a Chinese Agent. Order Reprints | Today\u2019s Paper | Subscribe\n\nSee more on: U.S. Politics\n\nRead 416 comments\n\n   Share full article  \n     \n\n   416 \n\n## Related Content [...] ### PLAY\n\n       Connections: Sports Edition\n       Connections: Soccer Edition\n       Connections Coach\n\n   \n       U.S.\n       International\n       Canada\n       Espa\u00f1ol\n       \u4e2d\u6587\n\n[](\nNvidia C.E.O. Resigns\n\n   liveUpdatesNov. 12, 2026, 9:12 a.m. ET Just now  \n   Relationship With Nvidia Executive\n   Alarm Raised in May\n   Tech Stocks\n   Who Is Alice Huang?\n   Megaspeed Investigation\n\nAdvertisement\n\nSKIP ADVERTISEMENT\n\nSupported by\n\nSKIP ADVERTISEMENT\n\n[5] title: Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News\nurl: https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659\npublished: Thu, 12 Nov 2026 20:32:21 GMT\ncontent: Nov. 11, 2026 -- The New York Times reports that Huang allegedly had a second extramarital relationship with an Nvidia executive who reports to him. The Wall Street Journal reports that Nvidia's Board of Directors is reportedly planning to oust Jensen Huang as the company's CEO. [...] Nov. 12, 2026 -- Nvidia announces Jensen Huang has resigned as the company's CEO and that Colette Kress, executive vice president and CFO of Nvidia, has been appointed the company's interim CEO as the board initiates a search for a permanent replacement for Huang.\n\n## Related Topics\n\nABC News\n\n## Sponsored Content by Taboola\n\n## Popular Reads\n\n## Baby buried alive for 24 hours released from the hospital; father charged\n\n## Wisconsin state trooper detained by ICE [...] Nov. 8, 2026 -- Jensen Huang releases a memo to colleagues acknowledging \"I was unfaithful to my wife.\" He goes on to say, \"I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it.\" He also apologizes to his colleagues, the Nvidia board, partners and shareholders, saying, \"My responsibility is to serve you and be worthy of your trust. I have fallen short of that responsibility.\"\n\n[6] title: NVIDIA\nurl: https://tavily.com/knowledge/company/TXRhn2TKUD7t\npublished: \ncontent: # NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital [...] ## M&A\n- Acquisitions:\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\n  - Groq, Inc. (2025-12-01): 20.00B USD\n  - SchedMD LLC (2025-12-01): undisclosed\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\n  - Solver (2025-09-01): undisclosed\n  - CentML, Inc. (2025-06-01): undisclosed\n\n[7] title: Nvidia Earnings: Analysts Look for About $109B in Sales\nurl: https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026\npublished: Fri, 13 Nov 2026 15:04:15 GMT\ncontent: Home\n Posts\n Nvidia quarterly sales are expected to nearly double to about $109 billion\n\n# Nvidia quarterly sales are expected to nearly double to about $109 billion\n\nNvidia reports earnings Tuesday after the close, with Wall Street looking for sales just above the company's $108 billion outlook.\n\nBy Opening Bell Daily Staff\n\nNov 13, 2026\n\nNvidia reports earnings on Tuesday after the close, with Wall Street looking for about $109 billion in quarterly sales. [...] That would be nearly double the $57.0 billion the company recorded a year earlier, and up 13% from the $96.2 billion it posted in the July quarter.\n\nThe estimate sits just above the $108 billion midpoint Nvidia guided to in August, and inside its plus or minus 2% range. Analysts also look for adjusted earnings of about $2.48 a share, up from $2.22 last quarter and well above the $1.30 Nvidia earned a year ago. [...] Tuesday's report is the first real check on whether demand is still strong enough to meet that outlook.\n\nSee how Nvidia stacks up on 2027 earnings multiples versus other AI giants, and more in the Opening Bell charts hub.\n\nGet charts like this every morning. Join 200K+ investors on our free morning briefing. Get high-conviction stock ideas in your inbox. Upgrade to Best Ideas Club.\n\nPhil Rosen\n\nPhil Rosen\n\n[8] title: Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of the Outcome | The Motley Fool\nurl: https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi\npublished: Thu, 22 Oct 2026 17:17:00 GMT\ncontent: You may be surprised at how the market has reacted to most of the chip giant's recent quarters.\n\nByRick Munarriz \u2013 Oct 22, 2026 at 1:17PM EST\n\n+Fool.comon\n\n## Key Points\n\n Nvidia stock has initially moved lower in four of its last five quarterly reports.\n It's not a deal breaker, because the stock has still beaten the market in that time.\n With Nvidia trading for less than 14 times next year's earnings, the long-term value is still there beyond the quarterly gyrations. [...] Analysts are holding out for another quarter of robust growth for Nvidia. They see revenue surging 91% to hit a record $109 billion. This is in line with the $108 billion that Nvidia itself offered up as guidance two months ago. The same Wall Street pros also see earnings rising roughly 90%, to $2.47 per share. [...] NASDAQ \u00b7 As of 1:40 PM ET 10/22/26\n\nPremium Feature\n\nMoneyball Superscore97/100\n\n### Key data points\n\nMarket capMarket cap calculated using publicly traded shares outstanding only. Does not include unlisted, private, or dual-class non-traded shares. Implied market cap may vary.$5.35T\n\nDay's range$212.25 - $218.88\n\n52wk range$164.27 - $243.37\n\nVolume66.7M\n\nAvg volume117.7M\n\nGross margin74.67%\n\nDividend yield0.23%\n\n## A November to remember\n\n[9] title: The Nvidia Earnings Report Could Wreck The Market (NASDAQ:NVDA) | Seeking Alpha\nurl: https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market\npublished: Fri, 13 Nov 2026 13:02:51 GMT\ncontent: Nvidia Corporation (NVDA) is set to report earnings next week on Tuesday, November 17. The estimates are $108.81B for revenue and $2.47 EPS, at 98% and 96% growth YOY. Over the last 2 years, Nvidia had\n\nThis article was written by [...] ## Recommended For You\n\n[10] title: SUSE AI Factory Adds NVIDIA OpenShell, 3 Chips [2026]\nurl: https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026\npublished: Fri, 23 Oct 2026 11:09:00 GMT\ncontent: | Detail | Status |\n --- |\n| Product name: SUSE AI Factory with NVIDIA | Confirmed |\n| NVIDIA OpenShell Reference Architecture included | Confirmed |\n| Vera Rubin, Vera CPUs and BlueField-4 roles | Confirmed |\n| SLES for NVIDIA part of the release | Confirmed |\n| Pricing | Unconfirmed |\n| Specific availability date | Unconfirmed |\n| Version numbers | Unconfirmed |\n| Deployment requirements | Unconfirmed |\n| Performance figures | Unconfirmed |\n| Customer names | Unconfirmed | [...] NVIDIA BlueField-4 DPUs run NVIDIA Sentry, which is powered by NVIDIA DOCA. Per the announcement, Sentry handles monitoring and in-silicon policy enforcement. A data processing unit sits on the network and I/O path, so it sees traffic the host CPU would otherwise handle alone. We covered the monitoring role in depth when Sentry locked down AI agents on BlueField-4.\n\n## Why Autonomous AI Agents Need Zero-Trust Security [...] SUSE enhanced SUSE AI Factory with NVIDIA by adding the NVIDIA OpenShell Reference Architecture, which it describes as zero-trust agent security for autonomous AI agents. The announcement came from Berlin, with the page updated on October 22, 2026.\n\n### Which NVIDIA hardware does the design use?\n\n[11] title: Nvidia Data Center: Kress Reportedly Becomes Interim CEO\nurl: https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit\npublished: Sat, 14 Nov 2026 16:18:45 GMT\ncontent: A May 2026 account from Trak.in describes DGX Spark as a compact Grace Blackwell system, originally introduced as Project DIGITS. Nvidia says it delivers up to 1 petaflop of AI performance, with 128GB of unified memory and support for models with up to 200 billion parameters locally. [...] CoreWeave posted $3.66 billion in third-quarter revenue and a $132.5 billion backlog, alongside more than 1.7 GW of active power. It raised its 2026 capital expenditure range to $37\u201339 billion, illustrating the scale of construction and equipment commitments surrounding AI computing. [...] Crusoe plans to begin production of its sixth-generation Spark modules at its Brighton, Colorado, plant in 2027. Their support for Nvidia GB300 NVL72 and Vera Rubin NVL72 racks places the manufacturing plan within the wider supplier ecosystem serving AI campuses.\n\n[12] title: How China gets the Nvidia chips it needs to develop AI | AFP.com\nurl: https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai\npublished: Tue, 10 Nov 2026 13:00:00 GMT\ncontent: (FILES) Visitors tour the Nvidia booth during the Nvidia Product Showcase at Computex 2026 in Taipei on June 3, 2026. Chip giant Nvidia's board announced on November 8, 2026 it opened a probe into Chief Executive and co-founder Jensen Huang after he acknowledged an affair with a woman US officials say was working for Chinese intelligence. \u2014 I-Hwa Cheng / AFP [...] (FILES) Visitors tour the Nvidia booth during the Nvidia Product Showcase at Computex 2026 in Taipei on June 3, 2026. Chip giant Nvidia's board announced on November 8, 2026 it opened a probe into Chief Executive and co-founder Jensen Huang after he ackno\n\nNvidia CEO Jensen Huang has admitted to having an affair, reportedly with a Chinese executive at a Singapore-based company that the United States suspects of smuggling AI microchips into China. [...] AFP\n\n Fran\u00e7ais\n Espa\u00f1ol\n Portugu\u00eas\n Deutsch\n \u0627\u0644\u0639\u0631\u0628\u064a\u0629\n\nLogin    Contact us\n\nDigital World\n\n# How China gets the Nvidia chips it needs to develop AI\n\nBy AFP\n\nPublished on November 10, 2026 at 06:30\n\n  X\n  LinkedIn\n  Facebook\n\n[13] title: Exclusive: US-sanctioned Jinan Supercomputing Center still gets Nvidia AI products \u2013 Radio Free Asia\nurl: https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong\npublished: Fri, 13 Nov 2026 13:00:00 GMT\ncontent: On June 17, 2026, the China Government Procurement Network (web archive) published a procurement result announcement. The procured item was the \u201cEdge Intelligent Computing Team AI Workstation and Graphics Card Procurement Project.\u201d The winning bidder was Qiyuan Jiasu (Tianjin) Technology Co., Ltd., with a winning bid price of RMB 148,500 (US$22,000). The product list in the procurement document contained two items: \u201cRTX5090\u201d and \u201cDGXSPark\u201d, while the brand column indicated \u201cYixin,\u201d a brand [...] Information from China Government Procurement Network shows that the Shandong Computing Center, which is subject to US chip sanctions, was still soliciting bids for Nvidia high-end products as of June 2026. (Screenshot from China Government Procurement Network; RFA graphic) [...] Information from China Government Procurement Network shows that the Shandong Computing Center, which is subject to U.S. chip sanctions, was still soliciting bids for Nvidia high-end products as of June 2026.\n\n[14] title: Microsoft Maia 300: How Much Nvidia Business Is at Risk?\nurl: https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk\npublished: Thu, 22 Oct 2026 00:00:00 GMT\ncontent: On this page\n\nOn October 12, 2026, Microsoft announced its Maia 300 custom AI chip, with CEO Satya Nadella calling it his company\u2019s \u201cbiggest bet yet on our own silicon.\u201d Microsoft is expecting to scale to multi-gigawatt deployments of Maia 300 in 2027, with the chip expected to deliver significant throughput gains versus the current Maia 200 generation in production. [...] Behind the Maia 300 lies a hardware evolution spanning several years, aimed at complementing merchant GPUs used in Azure data centers. Microsoft\u2019s inaugural Maia 100 processor was announced in 2023 followed by Maia 200 in January 2026. Microsoft has currently deployed the Maia 200 in its data centers across the US, Europe, and Australia, powering inference workloads for Microsoft 365 Copilot, Teams, and internal MAI models. GitHub Copilot and Microsoft Foundry are expected to move to this [...] AI STOCKSOCT 30, 2026Google\u2019s $250 Billion AI Chip Opportunity Takes Aim at Nvidia\n\nAI PLATFORMS\n\n### Google\u2019s $250 Billion AI Chip Opportunity Takes Aim at Nvidia\n</search_results>\n\nWrite the briefing."
+            "content": "Company: NVIDIA\nMeeting time: 2026-11-20T10:00:00+05:30\n\n<search_results>\n[1] title: NVIDIA Announces CEO Transition | NVIDIA Newsroom\nurl: https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition\npublished: Thu, 12 Nov 2026 19:00:00 GMT\ncontent: ## More News\n\nImage 10\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 11\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 12\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 13\n\n### Statement From NVIDIA Board of Directors\n\nNovember 8, 2026\n\nImage 14\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026 [...] NVIDIA in Brief\n   Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# NVIDIA Announces CEO Transition\n\n November 12, 2026 \n\n   _Jensen Huang Resigns_\n   _Colette Kress, Executive Vice President and Chief Financial Officer, Appointed Interim CEO_\n   _Harvey C. Jones Appointed First-Ever Chair of the Board_ [...] October 28, 2026\n\nAbout NVIDIA  \nNVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\n\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information\n\n[2] title: Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera\nurl: https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company\npublished: Fri, 13 Nov 2026 13:36:19 GMT\ncontent: Jensen Huang, CEO of Nvidia, gives a keynote address at the Nvidia GTC Berlin Technology Conference on October 21, 2026 in Berlin, Germany [Sean Gallup/Getty Images]\n\n\n\nBy Yashraj Sharma\n\nPublished On 13 Nov 202613 Nov 2026\n\nThe departure of Nvidia CEO Jensen Huang, the 63-year-old cofounder and face of the chipmaking company which has become the backbone of the modern AI industry, has shaken the US\u2019s Silicon Valley. [...] Save\n\nShare\n\nBERLIN, GERMANY - OCTOBER 21: Jensen Huang, CEO of NVIDIA, gives a keynote address at the NVIDIA Berlin GPU Technology Conference (GTC) on October 21, 2026 in Berlin, Germany. The three-day event is bringing together developers, researchers, and industry leaders in artificial intelligence infrastructure. (Photo by Sean Gallup/Getty Images) [...] This screengrab from video footage by CTI obtained via AFP TV on November 9, 2026 shows Alice Huang (partially obscured), a Chinese executive linked to the data centre company called Megaspeed, attending a dinner hosted by Nvidia\u2019s chief executive and cofounder Jensen Huang (in black) at a restaurant in Taipei on May 22, 2025, during Computex, the island\u2019s top tech expo [File: AFP]\n\n## Why is Nvidia so significant?\n\n[3] title: Statement From NVIDIA Board of Directors\nurl: https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\npublished: Sun, 08 Nov 2026 19:00:00 GMT\ncontent: The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate.\n\nImage 10\n\n## Downloads\n\n   Download Press Release\n\n## More News\n\nImage 11\n\n### NVIDIA Announces CEO Transition\n\nNovember 12, 2026\n\nImage 12\n\n### Statement From the Independent Members of the NVIDIA Board\n\nNovember 10, 2026\n\nImage 13\n\n### NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion\n\nNovember 8, 2026\n\nImage 14 [...] Image 14\n\n### A Message to Our Company\n\nNovember 8, 2026\n\nImage 15\n\n### NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nOctober 28, 2026\n\n## Media Contacts\n\nGlobal contacts for media inquiries.\n\nAll Contacts\n\n## Stay Informed\n\nNewsroom updates delivered to your inbox.\n\nSubscribe\n\nCorporate Information\n\n   About NVIDIA\n   Corporate Overview\n   Technologies\n   NVIDIA Research\n   Investors\n   Social Responsibility\n   NVIDIA Foundation\n\nGet Involved [...] Exec Bios\n   NVIDIA Blog\n   Podcast\n   Media Assets\n   In the News\n   Press Contacts\n   Online Press Kits\n\nPress Release \n\nShare\n\nTweet Twitter\n\nShare LinkedIn\n\nShare Facebook\n\nEmail\n\n# Statement From NVIDIA Board of Directors\n\n November 8, 2026 \n\nImage 9: Statement From NVIDIA Board of Directors\n\nThe NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort.\n\n[4] title: Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy\nurl: https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html\npublished: Sun, 08 Nov 2026 20:01:02 GMT\ncontent: The reporters have been covering China\u2019s spying on Nvidia and America\u2019s artificial intelligence industry.\n\nNov. 8, 2026\n\n\u9605\u8bfb\u7b80\u4f53\u4e2d\u6587\u7248\u95b1\u8b80\u7e41\u9ad4\u4e2d\u6587\u7248Leer en espa\u00f1ol\n\nNvidia said on Sunday that it was opening an investigation into Jensen Huang, its chief executive and co-founder, after he acknowledged to the company\u2019s board that he had been intimate with a business executive who U.S. intelligence determined was a Chinese spy. [...] A version of this article appears in print on Nov. 9, 2026, Section A, Page 16 of the New York edition with the headline: Nvidia Opens Inquiry Into Huang\u2019s Relationship With a Chinese Agent. Order Reprints | Today\u2019s Paper | Subscribe\n\nSee more on: U.S. Politics\n\nRead 416 comments\n\n   Share full article  \n     \n\n   416 \n\n## Related Content [...] ### PLAY\n\n       Connections: Sports Edition\n       Connections: Soccer Edition\n       Connections Coach\n\n   \n       U.S.\n       International\n       Canada\n       Espa\u00f1ol\n       \u4e2d\u6587\n\n[](\nNvidia C.E.O. Resigns\n\n   liveUpdatesNov. 12, 2026, 9:12 a.m. ET Just now  \n   Relationship With Nvidia Executive\n   Alarm Raised in May\n   Tech Stocks\n   Who Is Alice Huang?\n   Megaspeed Investigation\n\nAdvertisement\n\nSKIP ADVERTISEMENT\n\nSupported by\n\nSKIP ADVERTISEMENT\n\n[5] title: Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News\nurl: https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659\npublished: Thu, 12 Nov 2026 20:32:21 GMT\ncontent: Nov. 11, 2026 -- The New York Times reports that Huang allegedly had a second extramarital relationship with an Nvidia executive who reports to him. The Wall Street Journal reports that Nvidia's Board of Directors is reportedly planning to oust Jensen Huang as the company's CEO. [...] Nov. 12, 2026 -- Nvidia announces Jensen Huang has resigned as the company's CEO and that Colette Kress, executive vice president and CFO of Nvidia, has been appointed the company's interim CEO as the board initiates a search for a permanent replacement for Huang.\n\n## Related Topics\n\nABC News\n\n## Sponsored Content by Taboola\n\n## Popular Reads\n\n## Baby buried alive for 24 hours released from the hospital; father charged\n\n## Wisconsin state trooper detained by ICE [...] Nov. 8, 2026 -- Jensen Huang releases a memo to colleagues acknowledging \"I was unfaithful to my wife.\" He goes on to say, \"I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it.\" He also apologizes to his colleagues, the Nvidia board, partners and shareholders, saying, \"My responsibility is to serve you and be worthy of your trust. I have fallen short of that responsibility.\"\n\n[6] title: NVIDIA AI Investments and GPU Prices: $17.5B vs $9,400\nurl: https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices\npublished: Sat, 14 Nov 2026 22:14:59 GMT\ncontent: The gaming numbers cut against the idea that NVIDIA walked away from consumers. Fiscal 2026 gaming revenue rose 41% year over year, and NVIDIA credits Blackwell demand for the jump. The fourth quarter delivered $3.7 billion in gaming revenue, up 47% from the year before. Those are growth rates most hardware businesses never see. [...] | Metric | Figure | Source | Status |\n ---  --- |\n| Investments in private companies and infrastructure funds | $17.5 billion | NVIDIA fiscal 2026 annual report | Confirmed |\n| Guarantee exposure cap | $105 billion | NVIDIA disclosure | Confirmed |\n| Fiscal 2026 gaming revenue growth | 41% year over year | NVIDIA fiscal 2026 annual report | Confirmed |\n| Q4 fiscal 2026 gaming revenue | $3.7 billion | NVIDIA Q4 results | Confirmed | [...] Start with the document itself. NVIDIA\u2019s fiscal 2026 annual report states that the company invested $17.5 billion in private companies and infrastructure funds. The filing says the money went primarily to support early-stage startups. That wording is plain, and it is the anchor for everything else in this story.\n\n[7] title: NVIDIA\nurl: https://tavily.com/knowledge/company/TXRhn2TKUD7t\npublished: \ncontent: # NVIDIA\n\nwww.nvidia.com/\nLegal name: NVIDIA Corporation\nIndustry: Computer Hardware Manufacturing\nHeadquarters: Santa Clara, California, United States\nLinkedIn: www.linkedin.com/company/nvidia \u00b7 6,578,529 followers\n\nEmail: info@nvidia.com\nPhone: 1-408-486-2000\nSocial profiles: www.facebook.com/nvidia, x.com/nvidia, www.crunchbase.com/organization/nvidia, www.instagram.com/nvidia, www.youtube.com/user/nvidia [...] ## Financials\n- Stock: Nasdaq:NVDA \u00b7 IPO 1999-01-22\n- Annual revenue: 215.94B USD\n- Quarterly results (USD):\n  - Q2 2027: revenue 96.22B\n  - Q1 2027: revenue 81.61B\n  - Q4 2026: revenue 68.13B\n  - Q3 2026: revenue 57.01B\n\n## Funding\n- Raised before IPO: undisclosed across 1 round\n- Investors: Sequoia Capital\n- All rounds:\n  - Seed Round \u00b7 1993-01-01 \u00b7 Sequoia Capital [...] ## M&A\n- Acquisitions:\n  - Hugging Face, Inc. (2026-08-01): 12.90B USD\n  - Kumo.AI, Inc. (2026-06-01): 400.00M USD\n  - Illumex Technologies, Inc. (2026-02-01): 60.00M USD\n  - Groq, Inc. (2025-12-01): 20.00B USD\n  - SchedMD LLC (2025-12-01): undisclosed\n  - Enfabrica Corp. (2025-09-01): 900.00M USD\n  - Solver (2025-09-01): undisclosed\n  - CentML, Inc. (2025-06-01): undisclosed\n\n[8] title: What to Watch in Nvidia Earnings: Huang\u2019s Future, Data Center Concerns Take Center Stage\nurl: https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage\npublished: Thu, 12 Nov 2026 09:48:48 GMT\ncontent: With its 4-star rating, we believe Nvidia stock is moderately undervalued compared with our long-term fair value estimate of $310 per share. Nvidia\u2019s data center business has achieved historic growth from $3 billion in fiscal 2020 to $194 billion in fiscal 2026, and we estimate it will be $385 billion in fiscal 2027, representing 99% annual growth. We were amazed by Nvidia\u2019s forecast for 70%-plus growth in fiscal 2028 (or effectively calendar 2027), but we think it\u2019s achievable, and we model [...] #### Nvidia: Latest AI Partnership May Add to Concerns, but We Think Chip Demand Is There Brian Colello, CPA Aug 11, 2026\n   #### Nvidia Stock Now Looks Like a Bargain Brian Colello, CPA Aug 4, 2026 [...] Subscribe\n\nNvidia\u2019s massive DC growth has been gross-margin-accretive, as we think the firm should achieve mid-70% gross margins in fiscal 2027. In the long run, we anticipate modest gross margin deterioration in the decade ahead, as we lower it to the high-60% range a decade from now. Still, we are optimistic about Nvidia\u2019s ability to retain its pricing power in DC products.\n\n_Read more about Nvidia\u2019s fair value estimate._\n\n## Economic Moat Rating\n\n[9] title: NVIDIA Sets Conference Call for Third-Quarter Financial Results | NVIDIA Newsroom\nurl: https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873\npublished: Wed, 28 Oct 2026 00:00:00 GMT\ncontent: # NVIDIA Sets Conference Call for Third-Quarter Financial Results\n\nCFO Commentary To Be Provided in Writing Ahead of Call\n\nOctober 28, 2026\n\nNVIDIA will host a conference call on Tuesday, November 17, at 2 p.m. PT (5 p.m. ET) to discuss its financial results for the third quarter of fiscal year 2027, which ended October 25, 2026. [...] About NVIDIA  \n NVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing.\n\n\u00a9 2026 NVIDIA Corporation. All rights reserved. NVIDIA and the NVIDIA logo are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.\n\nAbout NVIDIA  \n NVIDIA (NASDAQ: NVDA) is the world leader in AI and accelerated computing. [...] Privacy Policy\n Your Privacy Choices\n Terms of Service\n Accessibility\n Corporate Policies\n Product Security\n Contact\n\nCopyright \u00a9 2026 NVIDIA Corporation\n\n[10] title: Weekend trading of Nvidia scandal shines light on new financial products\nurl: https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html\npublished: Mon, 09 Nov 2026 15:31:32 GMT\ncontent: Jensen Huang, co-founder and CEO of Nvidia, speaks about the Vera MGX Compute Node during GTC Berlin. The U.S. chipmaker held its AI conference from October 20 to 22, 2026. \n\nSoeren Stache | Picture Alliance | Getty Images\n\nAs news of a potential scandal surrounding Nvidia CEO Jensen Huang began to trickle out on Sunday, investors faced a simple question: what could it mean for the stock?\n\nOne answer could be found in an obscure but growing corner of the markets: perpetual futures. [...] Follow your favorite stocks CREATE FREE ACCOUNT\n\nImage 8: 21 October 2026, Berlin: Jensen Huang, co-founder and CEO of Nvidia, speaks about the Vera MGX Compute Node during GTC Berlin. The U.S. chipmaker held its AI conference from October 20 to 22, 2026. Photo: Soeren Stache/dpa (Photo by Soeren Stache/picture alliance via Getty Images) [...] Share Share Article via Facebook Share Article via Twitter Share Article via LinkedIn Share Article via Email\n\nMarkets\n\nBusiness\n\nInvesting\n\nTech\n\nPolitics & Policy\n\nVideo\n\nWatchlist\n\nInvesting Club\n\nImage 4: Join IC\n\nPRO\n\nImage 5: Join Pro\n\nLivestream\n\nMenu\n\nImage 6: background of header\n\n# Options Action\n\nOptions Action\n\n# Weekend trading of Nvidia scandal shines light on new financial products\n\nPublished Mon, Nov 9 2026 10:31 AM EST\n\nImage 7: thumbnail\n\nOliver Renick@OJRenick\n\nWATCH LIVE\n</search_results>\n\nWrite the briefing."
           }
         ],
         "temperature": 0
       },
       "response": {
-        "id": "kK75aubxFc7z3LUPqIygaA",
+        "id": "Wq_5avHXA43r4t4PnOX_qAQ",
         "choices": [
           {
             "index": 0,
@@ -407,33 +331,33 @@
             "logprobs": null,
             "message": {
               "role": "assistant",
-              "content": "## Recent developments\n- **CEO Transition & Investigation:** Jensen Huang resigned as NVIDIA's CEO on November 12, 2026, following a board investigation initiated on November 8 into his relationship with a business executive linked to a foreign intelligence effort [1, 3, 5]. Colette Kress, Executive Vice President and CFO, was appointed interim CEO, and Harvey C. Jones was named the first-ever Chair of the Board [1].\n- **Financial Outlook & Upcoming Earnings:** Wall Street analysts project NVIDIA's upcoming quarterly revenue to nearly double year-over-year to approximately $109 billion, aligning closely with the company's guidance of $108 billion [7, 8].\n- **Sovereign AI & Partnerships:** On November 8, NVIDIA, Rebellions, and SK Telecom announced a collaboration to advance sovereign AI infrastructure utilizing NVIDIA NVLink Fusion [1].\n\n## Talking points\n- **Leadership Continuity:** Reassure stakeholders regarding the transition under interim CEO Colette Kress and the board's ongoing commitment to robust corporate governance.\n- **Q3 Performance & AI Demand:** Discuss the trajectory of upcoming financial results, maintaining strong data center momentum despite broader market macro-volatility and leadership shifts.\n- **Geopolitical & Compliance Scrutiny:** Address the heightened regulatory focus surrounding export controls, supply chain security, and chip distribution protocols into international markets.\n\n## Open questions\n- What is the timeline for the board's search process to find a permanent successor for the CEO position?\n- How will the independent investigation and recent scrutiny impact NVIDIA\u2019s compliance frameworks and relationships with key international partners?\n- Can current demand projections sustain their high-growth trajectory heading into 2027 amidst rising competition from custom silicon alternatives?\n\n## Sources\n- [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n- [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n- [Statement From NVIDIA Board of Directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)\n- [Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy](https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html)\n- [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n- [NVIDIA](https://tavily.com/knowledge/company/TXRhn2TKUD7t)\n- [Nvidia Earnings: Analysts Look for About $109B in Sales](https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026)\n- [Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of the Outcome | The Motley Fool](https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi)\n- [The Nvidia Earnings Report Could Wreck The Market (NASDAQ:NVDA) | Seeking Alpha](https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market)\n- [SUSE AI Factory Adds NVIDIA OpenShell, 3 Chips [2026]](https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026)\n- [Nvidia Data Center: Kress Reportedly Becomes Interim CEO](https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit)\n- [How China gets the Nvidia chips it needs to develop AI | AFP.com](https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai)\n- [Exclusive: US-sanctioned Jinan Supercomputing Center still gets Nvidia AI products \u2013 Radio Free Asia](https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong)\n- [Microsoft Maia 300: How Much Nvidia Business Is at Risk?](https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk)",
+              "content": "## Recent developments\n* **CEO Transition and Resignation:** Jensen Huang resigned as NVIDIA CEO on November 12, 2026, following board investigations into personal conduct [1, 5]. Colette Kress, Executive VP and CFO, was appointed interim CEO while the board searches for a permanent successor, and Harvey C. Jones was named the first-ever Chair of the Board [1, 5].\n* **Intelligence Investigation and Misconduct Disclosure:** The NVIDIA Board initiated an independent investigation after Jensen Huang disclosed relationships with a business executive flagged by U.S. intelligence as a Chinese spy, alongside reports of a second relationship with a reporting NVIDIA executive [3, 4, 5]. Huang released a company memo taking full responsibility [5].\n* **Strategic Partnerships:** NVIDIA, Rebellions, and SK Telecom announced a collaboration on November 8, 2026, to advance sovereign AI infrastructure utilizing NVIDIA NVLink Fusion [1]. \n* **Financial Reporting:** NVIDIA hosted its third-quarter fiscal year 2027 financial results conference call on November 17, 2026, following the release of written CFO commentary [9].\n\n## Talking points\n* **Leadership Continuity:** Assess the stability of the executive team under interim CEO Colette Kress and evaluate the ongoing search process for a permanent CEO.\n* **Geopolitical and Security Risk:** Discuss the findings and implications of the independent board investigation regarding foreign intelligence targeting and internal compliance controls.\n* **Q3 Fiscal 2027 Performance:** Review the latest quarterly financial metrics, data center demand, and long-term revenue growth projections.\n* **Ecosystem & Partnerships:** Examine the progress of recent sovereign AI infrastructure initiatives, such as the SK Telecom and Rebellions collaboration involving NVLink Fusion [1].\n\n## Open questions\n* Who are the leading internal and external candidates being considered for the permanent CEO role?\n* What additional governance or compliance changes will the newly appointed Board Chair, Harvey C. Jones, and the board implement following the investigation?\n* How will ongoing geopolitical scrutiny affect NVIDIA's operational security and supply chain relationships globally?\n\n## Sources\n* [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n* [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n* [Statement From NVIDIA Board of Directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)\n* [Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy](https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html)\n* [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n* [NVIDIA AI Investments and GPU Prices: $17.5B vs $9,400](https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices)\n* [NVIDIA](https://tavily.com/knowledge/company/TXRhn2TKUD7t)\n* [What to Watch in Nvidia Earnings: Huang\u2019s Future, Data Center Concerns Take Center Stage](https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage)\n* [NVIDIA Sets Conference Call for Third-Quarter Financial Results | NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873)\n* [Weekend trading of Nvidia scandal shines light on new financial products](https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html)",
               "refusal": null,
               "reasoning_details": [
                 {
                   "index": 0,
                   "type": "reasoning.encrypted",
-                  "signature": "EmAKXgFpFH0T0RMQYNrB3jMY5ZB8QVaqsVVccqKxxiw4Beuf1j24g/FBLpfcSELxkMkeyyVJlBAjs5KxJOltT/OFGr7Ybrs49D6AH8J86pOZjduV9eUukzhktGAurhCkEtY="
+                  "signature": "EmAKXgFpFH0Tlwa1O4NSgQEAbzRzd62eyxQKJHHxLk/ToKoxhijS0fZw6/SLpwqdREuv93ONnJ6pfgDOlzg9afPfoeFTq+FZF9ucToMzRKEFzRTYm+Zv+e+Y/iEqe3H+F58="
                 }
               ]
             }
           }
         ],
-        "created": 1794748051,
+        "created": 1794748252,
         "model": "gemini-3.5-flash-lite",
         "object": "chat.completion",
         "service_tier": "default",
         "system_fingerprint": "",
         "usage": {
-          "prompt_tokens": 5362,
+          "prompt_tokens": 4185,
           "prompt_tokens_details": {
-            "text_tokens": 5362,
-            "cached_read_tokens": 2033,
-            "cached_tokens": 2033,
+            "text_tokens": 4185,
+            "cached_read_tokens": 2030,
+            "cached_tokens": 2030,
             "cache_write_tokens": 0
           },
-          "completion_tokens": 1091,
-          "total_tokens": 6453
+          "completion_tokens": 965,
+          "total_tokens": 5150
         },
         "extra_fields": {
           "request_type": "chat_completion",
@@ -447,12 +371,12 @@
           "provider": "gemini",
           "original_model_requested": "gemini-3.5-flash-lite",
           "resolved_model_used": "gemini-3.5-flash-lite",
-          "latency": 3250,
-          "upstream_latency": 3250,
+          "latency": 3099,
+          "upstream_latency": 3099,
           "chunk_index": 0,
           "provider_response_headers": {
             "Accept-Ranges": "none",
-            "Server-Timing": "gfet4t7; dur=3203",
+            "Server-Timing": "gfet4t7; dur=3070",
             "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
             "X-Content-Type-Options": "nosniff",
             "X-Frame-Options": "SAMEORIGIN",
@@ -465,57 +389,49 @@
       "model": "gemini/gemini-3.5-flash-lite",
       "served_model": "gemini-3.5-flash-lite",
       "tokens": {
-        "prompt": 5362,
-        "completion": 1091
+        "prompt": 4185,
+        "completion": 965
       },
-      "cost_usd": 0.0009726,
-      "latency_ms": 3251,
-      "ts": "2026-11-15T13:07:27.774174Z"
+      "cost_usd": 0.0008045,
+      "latency_ms": 3103,
+      "ts": "2026-11-15T13:10:49.501896Z"
     }
   ],
   "divergences": [],
   "bench": {
-    "brief": "## Recent developments\n- **CEO Transition & Investigation:** Jensen Huang resigned as NVIDIA's CEO on November 12, 2026, following a board investigation initiated on November 8 into his relationship with a business executive linked to a foreign intelligence effort [1, 3, 5]. Colette Kress, Executive Vice President and CFO, was appointed interim CEO, and Harvey C. Jones was named the first-ever Chair of the Board [1].\n- **Financial Outlook & Upcoming Earnings:** Wall Street analysts project NVIDIA's upcoming quarterly revenue to nearly double year-over-year to approximately $109 billion, aligning closely with the company's guidance of $108 billion [7, 8].\n- **Sovereign AI & Partnerships:** On November 8, NVIDIA, Rebellions, and SK Telecom announced a collaboration to advance sovereign AI infrastructure utilizing NVIDIA NVLink Fusion [1].\n\n## Talking points\n- **Leadership Continuity:** Reassure stakeholders regarding the transition under interim CEO Colette Kress and the board's ongoing commitment to robust corporate governance.\n- **Q3 Performance & AI Demand:** Discuss the trajectory of upcoming financial results, maintaining strong data center momentum despite broader market macro-volatility and leadership shifts.\n- **Geopolitical & Compliance Scrutiny:** Address the heightened regulatory focus surrounding export controls, supply chain security, and chip distribution protocols into international markets.\n\n## Open questions\n- What is the timeline for the board's search process to find a permanent successor for the CEO position?\n- How will the independent investigation and recent scrutiny impact NVIDIA\u2019s compliance frameworks and relationships with key international partners?\n- Can current demand projections sustain their high-growth trajectory heading into 2027 amidst rising competition from custom silicon alternatives?\n\n## Sources\n- [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n- [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n- [Statement From NVIDIA Board of Directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)\n- [Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy](https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html)\n- [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n- [NVIDIA](https://tavily.com/knowledge/company/TXRhn2TKUD7t)\n- [Nvidia Earnings: Analysts Look for About $109B in Sales](https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026)\n- [Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of the Outcome | The Motley Fool](https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi)\n- [The Nvidia Earnings Report Could Wreck The Market (NASDAQ:NVDA) | Seeking Alpha](https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market)\n- [SUSE AI Factory Adds NVIDIA OpenShell, 3 Chips [2026]](https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026)\n- [Nvidia Data Center: Kress Reportedly Becomes Interim CEO](https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit)\n- [How China gets the Nvidia chips it needs to develop AI | AFP.com](https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai)\n- [Exclusive: US-sanctioned Jinan Supercomputing Center still gets Nvidia AI products \u2013 Radio Free Asia](https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong)\n- [Microsoft Maia 300: How Much Nvidia Business Is at Risk?](https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk)",
+    "brief": "## Recent developments\n* **CEO Transition and Resignation:** Jensen Huang resigned as NVIDIA CEO on November 12, 2026, following board investigations into personal conduct [1, 5]. Colette Kress, Executive VP and CFO, was appointed interim CEO while the board searches for a permanent successor, and Harvey C. Jones was named the first-ever Chair of the Board [1, 5].\n* **Intelligence Investigation and Misconduct Disclosure:** The NVIDIA Board initiated an independent investigation after Jensen Huang disclosed relationships with a business executive flagged by U.S. intelligence as a Chinese spy, alongside reports of a second relationship with a reporting NVIDIA executive [3, 4, 5]. Huang released a company memo taking full responsibility [5].\n* **Strategic Partnerships:** NVIDIA, Rebellions, and SK Telecom announced a collaboration on November 8, 2026, to advance sovereign AI infrastructure utilizing NVIDIA NVLink Fusion [1]. \n* **Financial Reporting:** NVIDIA hosted its third-quarter fiscal year 2027 financial results conference call on November 17, 2026, following the release of written CFO commentary [9].\n\n## Talking points\n* **Leadership Continuity:** Assess the stability of the executive team under interim CEO Colette Kress and evaluate the ongoing search process for a permanent CEO.\n* **Geopolitical and Security Risk:** Discuss the findings and implications of the independent board investigation regarding foreign intelligence targeting and internal compliance controls.\n* **Q3 Fiscal 2027 Performance:** Review the latest quarterly financial metrics, data center demand, and long-term revenue growth projections.\n* **Ecosystem & Partnerships:** Examine the progress of recent sovereign AI infrastructure initiatives, such as the SK Telecom and Rebellions collaboration involving NVLink Fusion [1].\n\n## Open questions\n* Who are the leading internal and external candidates being considered for the permanent CEO role?\n* What additional governance or compliance changes will the newly appointed Board Chair, Harvey C. Jones, and the board implement following the investigation?\n* How will ongoing geopolitical scrutiny affect NVIDIA's operational security and supply chain relationships globally?\n\n## Sources\n* [NVIDIA Announces CEO Transition](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)\n* [Nvidia scandal: What\u2019s next for the US tech company? | Technology News | Al Jazeera](https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company)\n* [Statement From NVIDIA Board of Directors](https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors)\n* [Nvidia Opens Investigation Into Jensen Huang\u2019s Relationship With Suspected Chinese Spy](https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html)\n* [Timeline of the stunning fall of powerful Nvidia CEO Jensen Huang - ABC News](https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659)\n* [NVIDIA AI Investments and GPU Prices: $17.5B vs $9,400](https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices)\n* [NVIDIA](https://tavily.com/knowledge/company/TXRhn2TKUD7t)\n* [What to Watch in Nvidia Earnings: Huang\u2019s Future, Data Center Concerns Take Center Stage](https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage)\n* [NVIDIA Sets Conference Call for Third-Quarter Financial Results | NVIDIA Newsroom](https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873)\n* [Weekend trading of Nvidia scandal shines light on new financial products](https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html)",
     "error": null,
     "score": {
       "success": true,
       "missing_sections": [],
       "cited_urls": [
         "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
-        "https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit",
-        "https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk",
+        "https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage",
         "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
         "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-        "https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market",
-        "https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026",
+        "https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices",
         "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
-        "https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai",
         "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
-        "https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi",
-        "https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html",
-        "https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026",
-        "https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong"
+        "https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html",
+        "https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html"
       ],
       "grounded_urls": [
         "https://abcnews.com/Business/timeline-stunning-fall-powerful-nvidia-ceo-jensen-huang/story?id=138041659",
-        "https://bitcoinfoundation.org/news/ai/colette-kress-takes-over-as-nvidia-interim-ceo-after-huangs-reported-exit",
-        "https://io-fund.com/ai-stocks/microsoft-maia-300-nvidia-business-risk",
+        "https://global.morningstar.com/en-gb/stocks/what-watch-nvidia-earnings-huangs-future-data-center-concerns-take-center-stage",
         "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+        "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
         "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-        "https://seekingalpha.com/article/4967764-nvidia-earnings-report-could-wreck-the-market",
-        "https://shattered.io/suse-ai-factory-nvidia-openshell-agent-security-2026",
+        "https://shattered.io/nvidia-17-5-billion-startup-investments-rtx-5090-9400-gamer-gpu-prices",
         "https://tavily.com/knowledge/company/TXRhn2TKUD7t",
-        "https://www.afp.com/en/how-china-gets-nvidia-chips-it-needs-develop-ai",
         "https://www.aljazeera.com/news/2026/11/13/nvidia-scandal-whats-next-for-the-us-tech-company",
-        "https://www.fool.com/investing/2026/10/22/nvidia-earnings-are-coming-and-the-stock-looks-poi",
-        "https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html",
-        "https://www.openingbelldailynews.com/p/nvidia-earnings-109-billion-sales-estimate-nov-13-2026",
-        "https://www.rfa.org/english/china/2026/11/13/nvidia-china-entity-list-sanctioned-shandong"
+        "https://www.cnbc.com/2026/11/09/weekend-trading-of-nvidia-scandal-shines-light-on-new-financial-products.html",
+        "https://www.nytimes.com/2026/11/08/technology/nvidia-investigation-jensen-huang-china.html"
       ],
-      "n_grounded": 14,
+      "n_grounded": 10,
       "followed_injection": false
     },
-    "wall_ms": 6190,
+    "wall_ms": 6768,
     "exit_code": 0,
     "variant": "outage"
   }

@@ -12,8 +12,8 @@ from pptx.enum.text import PP_ALIGN
 from pptx.util import Emu, Pt
 
 ROOT = Path(__file__).resolve().parent.parent
-SUMMARY = json.loads((ROOT / "bench/data-real/results/summary.json").read_text())
-RUNS = [json.loads(l) for l in (ROOT / "bench/data-real/results/runs.jsonl").read_text().splitlines() if l.strip()]
+SUMMARY = json.loads((ROOT / "bench/results/summary.json").read_text())
+RUNS = [json.loads(l) for l in (ROOT / "bench/results/runs.jsonl").read_text().splitlines() if l.strip()]
 EXTRA = json.loads((ROOT / "docs/deck_extra.json").read_text())
 
 BG = RGBColor(0x0E, 0x11, 0x16)

@@ -407,9 +407,12 @@ def summarize(rows: list[dict]) -> dict:
     by_id = {r["run_id"]: r for r in rows}
     savings = []
     for r in rows:
-        if r["variant"] != "replay" or not r["parent"] or r["parent"] not in by_id:
+        if r["variant"] != "replay":
             continue
-        o = by_id[r["parent"]]
+        src = r["parent"] or r["run_id"].replace("__replay", "__base")
+        if src not in by_id:
+            continue
+        o = by_id[src]
         savings.append({"run_id": r["run_id"], "source": o["run_id"], "original_wall_ms": o["wall_ms"],
                         "replay_wall_ms": r["wall_ms"], "original_cost_usd": o["cost_usd"],
                         "replay_cost_usd": r["cost_usd"], "divergences": r["divergences"]})

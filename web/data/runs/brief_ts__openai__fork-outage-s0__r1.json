@@ -1,0 +1,446 @@
+{
+  "run_id": "brief_ts__openai__fork-outage-s0__r1",
+  "mode": "fork",
+  "source": "brief_ts__openai__base",
+  "parent": "brief_ts__openai__base",
+  "fork_at": 0,
+  "mutation": {
+    "type": "outage",
+    "status": 503
+  },
+  "match": "lenient",
+  "meta": {
+    "agent": "brief_ts",
+    "repeat": 1,
+    "task": "openai",
+    "variant": "outage"
+  },
+  "started_at": "2026-11-15T13:44:22.384916Z",
+  "ended_at": "2026-11-15T13:44:30.636127Z",
+  "steps": [
+    {
+      "i": 0,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "2d87a3c15ad49b0facce23150bcdfef386f2c3cb3c436e99469970f756b38f16",
+      "source": "mutated",
+      "mutation": {
+        "type": "outage",
+        "status": 503
+      },
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: OpenAI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "error": {
+          "message": "upstream unavailable (injected by rewind, HTTP 503)",
+          "type": "rewind_injected_outage"
+        }
+      },
+      "status": 503,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0,
+      "latency_ms": 0,
+      "ts": "2026-11-15T13:44:22.736629Z"
+    },
+    {
+      "i": 1,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "2d87a3c15ad49b0facce23150bcdfef386f2c3cb3c436e99469970f756b38f16",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: OpenAI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "N7f5aoioIvnh694Ptfq12Qo",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "tool_calls",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "id": "tool_call_call_669963057130013980",
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TjPk5MaG/NPVrZ+/CAtnubM/q2efEBW5E7q/yRKRC658xr+UdtBgYGjuw6P4lv2RrrM/UxDZXxDbgfO4lolCK8yrNl/1SBwKB36aZaLCD0FQDQqM1jRBTyNU="
+                }
+              ],
+              "tool_calls": [
+                {
+                  "index": 0,
+                  "type": "function",
+                  "id": "call_669963057130013980_ts_EmAKXgFpFH0TjPk5MaG_NPVrZ-_CAtnubM_q2efEBW5E7q_yRKRC658xr-UdtBgYGjuw6P4lv2RrrM_UxDZXxDbgfO4lolCK8yrNl_1SBwKB36aZaLCD0FQDQqM1jRBTyNU",
+                  "function": {
+                    "name": "web_search",
+                    "arguments": "{\n                \"query\": \"OpenAI news October November 2026\"\n              }"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750263,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 183,
+          "prompt_tokens_details": {
+            "text_tokens": 183,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 25,
+          "total_tokens": 208
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 546,
+          "upstream_latency": 546,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=520",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 183,
+        "completion": 25
+      },
+      "cost_usd": 2.83e-05,
+      "latency_ms": 548,
+      "ts": "2026-11-15T13:44:23.244588Z"
+    },
+    {
+      "i": 2,
+      "kind": "relay",
+      "path": "/relay/tavily/search",
+      "fingerprint": "224aec8a764823035532127471552cb90daf9483c10cb0ff57ad08fa9d917f89",
+      "source": "live",
+      "request": {
+        "query": "OpenAI news October November 2026",
+        "topic": "news",
+        "time_range": "month",
+        "max_results": 5
+      },
+      "response": {
+        "query": "OpenAI news October November 2026",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html",
+            "title": "OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits",
+            "content": "\ue802November 2, 2026 Read \u279d  Expert Insights\n\n## PEDM vs. Standing Elevated Privileges: Control Access Without Flooding the Helpdesk\n\n\ue802November 2, 2026 Read \u279d  Expert Insights\n\n## Why Root and Jailbreak Detection Alone Cannot Guarantee Mobile App Security\n\n\ue802October 26, 2026 Read \u279d [...] Cybersecurity\n\nOpenAI said it has implemented additional guardrails to flag misuse and ensure the model's actions fall within the scope of the user's intent and authorization. As of last month, the company announced plans to use content from Daybreak Blue sessions on personal accounts starting November 29, 2026, to \"improve our models, including to help strengthen safeguards against cyber misuse\" even when the \"improve the model for everyone\" setting is off. [...] Between September 18 and October 7, 2026, when GPT-6 Astra engaged in \"covert underperformance\" on safety research tasks by \"adding unnecessary prerequisites, abandoning working solutions, and reporting blockers that either did not exist or that it had caused itself on safety and alignment tasks.\"",
+            "score": 0.58664125,
+            "published_date": "Fri, 06 Nov 2026 14:58:00 GMT",
+            "raw_content": null,
+            "id": "f6020f-00"
+          },
+          {
+            "url": "https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem",
+            "title": "OpenAI just scooped human researchers on a million-dollar quantum math problem | Scientific American",
+            "content": "Scientific American\n\nSubscribeSign In\n\nRead the November Issue: Social Media Addiction\n\nOctober 27, 2026\n\n6min read\n\nGoogle Logo Add Us On GoogleAdd SciAm\n\nOpenAI just scooped mathematicians\u2019 work on another million-dollar problem\n\nAnother bombshell result shows how artificial intelligence is fueling fierce competition at the frontiers of math and physics\n\nBy Joseph Howlett edited by Lee Billings\n\nA swirl of fractal-looking waves in yellow, green and blue.\n\nagsandrew/Shutterstock [...] Editor\u2019s Note (10/27/26): This is a breaking news story and may be updated.\n\n## Subscribe to Support Independent Journalism\n\nGreat science journalism requires human expertise, time, effort and creativity. And it costs money. That\u2019s why I and the journalists here at Scientific American hope you\u2019ll join our community. [...] On October 6 Sussman and Alp\u00f6ge heard the rumors that OpenAI was about to release hundreds of major math results and thought Yang-Mills might be one of them. They decided to proactively start staking their own claim by posting their progress in a public GitHub repository. \u201cI certainly was not the only person to realize this was something worth pursuing,\u201d Sussman says. Their revelation quickly made the rounds on X. Then, when OpenAI\u2019s ensuing \u201cslop drop\u201d didn\u2019t contain a Yang-Mills proof, they",
+            "score": 0.56571865,
+            "published_date": "Tue, 27 Oct 2026 00:00:00 GMT",
+            "raw_content": null,
+            "id": "4b796f-01"
+          },
+          {
+            "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+            "title": "Making it easier for websites to express AI training preferences | OpenAI",
+            "content": "OpenAI and ServiceNow expand partnership across enterprise workflows Company Oct 28, 2026\n\nImage 2: OpenAI expands partnership with Oracle to bring its apps to ChatGPT \u2014 Cover\n\nOpenAI expands partnership with Oracle to bring its apps to ChatGPT Company Oct 27, 2026\n\nImage 3: Uber brings ChatGPT Work to all employees \u2014 cover\n\nUber brings ChatGPT Work to all employees with OpenAI Company Oct 22, 2026\n\nResearch\n   Research Index\n   Research Overview\n   Economic Research [...] Skip to main content\n\n\n\nLog inTry ChatGPT(opens in a new window)\n\n   Research\n   Products\n   Business\n   Developers\n   Company\n   Foundation(opens in a new window)\n\nTry ChatGPT(opens in a new window)Login\n\nOpenAI\n\nOctober 30, 2026\n\nCompany\n\n# Making it easier for websites to express AI training preferences\n\nWhy we\u2019re supporting a common signal that lets website operators communicate their choices to multiple AI providers at once.\n\nLoading\u2026\n\nAudio 1\n\nShare [...] We believe this is a practical step toward an open web where people can publish and discover information, and website owners have clearer, simpler ways to communicate their choices about how their content is used. We encourage other AI providers to honor the signal.\n\n   Policies and Procedures\n   2026\n\n## Author\n\nOpenAI\n\n## Keep reading\n\nView all\n\nImage 1: OpenAI and ServiceNow expand partnership across enterprise workflows, software development and security \u2014 Cover",
+            "score": 0.53206044,
+            "published_date": "Fri, 30 Oct 2026 16:00:00 GMT",
+            "raw_content": null,
+            "id": "7327e2-02"
+          },
+          {
+            "url": "https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak",
+            "title": "The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in | Fortune",
+            "content": "# The PHP bug marks a dangerous new era for the internet. OpenAI\u2019s poised to cash in\n\nEmily Forlini\n\nBy \n\nEmily Forlini\n\nEmily Forlini\n\nSenior AI Reporter\n\nEmily Forlini\n\nBy \n\nEmily Forlini\n\nEmily Forlini\n\nSenior AI Reporter\n\nOctober 22, 2026, 2:37 PM ET\n\nOpenAI Daybreak is a cybersecurity initiative that integrates frontier AI models and the Codex security agent into automated vulnerability discovery, code review, and patch validation workflows [...] OpenAI is also planning to debut a new cybersecurity-focused model this fall, as well as a first-of-its kind tool to help businesses deploy it more easily across their infrastructure. The company seems to have made a proactive bet on AI-powered cybersecurity tools being a burgeoning source of revenue, and that prediction is coming true. And they\u2019re far from the only ones in this business; Anthropic has a similar program for cybersecurity professionals at vetted organizations called Project [...] The researchers treated the discovery as an emergency, but the public didn\u2019t find out about it until this week, when on Oct. 20 the PHP foundation announced it would be issuing a critical patch within the next 24 hours. The following day, a coalition of companies\u2014including OpenAI, Wiz, Calif, and more\u2014that had been privately working on a fix formally disclosed it. For the full story on who first discovered the bug, and how the companies worked together over the past two months, check out the",
+            "score": 0.48918325,
+            "published_date": "Sun, 25 Oct 2026 13:00:00 GMT",
+            "raw_content": null,
+            "id": "ebbc9b-03"
+          },
+          {
+            "url": "https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists",
+            "title": "Dueling proofs from OpenAI and Anthropic astound scientists | Scientific American",
+            "content": "Scientific American\n\nSubscribeSign In\n\nRead the November Issue: Social Media Addiction\n\nOctober 27, 2026\n\n5min read\n\nGoogle Logo Add Us On GoogleAdd SciAm\n\nDueling proofs from OpenAI and Anthropic astound scientists\n\nThe results resolve major problems in math, physics and computer science. But like other recent AI-generated \u201cslop drops,\u201d the releases are already controversial\n\nBy Joseph Howlett & Peter Hall edited by Lee Billings [...] The result hasn\u2019t been without controversy, either. Mere hours after OpenAI\u2019s announcement, Anthropic posted its own independent result disproving ETH, based on work by an internal Anthropic model.\n\nEditor\u2019s Note (10/27/26): This is a breaking news story and will be updated.\n\n## Subscribe to Support Independent Journalism",
+            "score": 0.48404476,
+            "published_date": "Tue, 27 Oct 2026 00:00:00 GMT",
+            "raw_content": null,
+            "id": "42ee84-04"
+          }
+        ],
+        "response_time": 2.28,
+        "request_id": "33f98a4e-d7b7-4725-b8c1-9c7882efae0c"
+      },
+      "status": 200,
+      "tokens": {
+        "prompt": 0,
+        "completion": 0
+      },
+      "cost_usd": 0.008,
+      "latency_ms": 3110,
+      "ts": "2026-11-15T13:44:23.812279Z"
+    },
+    {
+      "i": 3,
+      "kind": "llm",
+      "path": "/v1/chat/completions",
+      "fingerprint": "ccb297128e8b632684f437f6c7d684fee202da00cda73982be46e04302d72614",
+      "source": "live",
+      "request": {
+        "model": "gemini/gemini-3.5-flash-lite",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a research assistant preparing a one-page pre-meeting briefing.\nUse the web_search tool to find news about the company from the 30 days before the meeting.\nSearch at most 4 times, then write the briefing in markdown with these sections:\n## Recent developments\n## Talking points\n## Open questions\n## Sources\nCite sources as markdown links with the exact URLs returned by the tool."
+          },
+          {
+            "role": "user",
+            "content": "Company: OpenAI\nMeeting time: 2026-11-20T10:00:00+05:30\nPrepare my briefing."
+          },
+          {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "index": 0,
+                "type": "function",
+                "id": "call_669963057130013980_ts_EmAKXgFpFH0TjPk5MaG_NPVrZ-_CAtnubM_q2efEBW5E7q_yRKRC658xr-UdtBgYGjuw6P4lv2RrrM_UxDZXxDbgfO4lolCK8yrNl_1SBwKB36aZaLCD0FQDQqM1jRBTyNU",
+                "function": {
+                  "name": "web_search",
+                  "arguments": "{\n                \"query\": \"OpenAI news October November 2026\"\n              }"
+                }
+              }
+            ]
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call_669963057130013980_ts_EmAKXgFpFH0TjPk5MaG_NPVrZ-_CAtnubM_q2efEBW5E7q_yRKRC658xr-UdtBgYGjuw6P4lv2RrrM_UxDZXxDbgfO4lolCK8yrNl_1SBwKB36aZaLCD0FQDQqM1jRBTyNU",
+            "content": "[{\"title\":\"OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits\",\"url\":\"https://thehackernews.com/2026/11/openai-launches-gpt-6-cyber-after-ai.html\",\"published_date\":\"Fri, 06 Nov 2026 14:58:00 GMT\",\"content\":\"\ue802November 2, 2026 Read \u279d  Expert Insights\\n\\n## PEDM vs. Standing Elevated Privileges: Control Access Without Flooding the Helpdesk\\n\\n\ue802November 2, 2026 Read \u279d  Expert Insights\\n\\n## Why Root and Jailbreak Detection Alone Cannot Guarantee Mobile App Security\\n\\n\ue802October 26, 2026 Read \u279d [...] Cybersecurity\\n\\nOpenAI said it has implemented additional guardrails to flag misuse and ensure the model's actions fall within the scope of the user's intent and authorization. As of last month, the company announced plans to use content from Daybreak Blue sessions on personal accounts starting November 29, 2026, to \\\"improve our models, including to help strengthen safeguards against cyber misuse\\\" even when the \\\"improve the model for everyone\\\" setting is off. [...] Between September 18 and October 7, 2026, when GPT-6 Astra engaged in \\\"covert underperformance\\\" on safety research tasks by \\\"adding unnecessary prerequisites, abandoning working solutions, and reporting blockers that either did not exist or that it had caused itself on safety and alignment tasks.\\\"\"},{\"title\":\"OpenAI just scooped human researchers on a million-dollar quantum math problem | Scientific American\",\"url\":\"https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem\",\"published_date\":\"Tue, 27 Oct 2026 00:00:00 GMT\",\"content\":\"Scientific American\\n\\nSubscribeSign In\\n\\nRead the November Issue: Social Media Addiction\\n\\nOctober 27, 2026\\n\\n6min read\\n\\nGoogle Logo Add Us On GoogleAdd SciAm\\n\\nOpenAI just scooped mathematicians\u2019 work on another million-dollar problem\\n\\nAnother bombshell result shows how artificial intelligence is fueling fierce competition at the frontiers of math and physics\\n\\nBy Joseph Howlett edited by Lee Billings\\n\\nA swirl of fractal-looking waves in yellow, green and blue.\\n\\nagsandrew/Shutterstock [...] Editor\u2019s Note (10/27/26): This is a breaking news story and may be updated.\\n\\n## Subscribe to Support Independent Journalism\\n\\nGreat science journalism requires human expertise, time, effort and creativity. And it costs money. That\u2019s why I and the journalists here at Scientific American hope you\u2019ll join our community. [...] On October 6 Sussman and Alp\u00f6ge heard the rumors that OpenAI was about to release hundreds of major math results and thought Yang-Mills might be one of them. They decided to proactively start staking their own claim by posting their progress in a public GitHub repository. \u201cI certainly was not the only person to realize this was something worth pursuing,\u201d Sussman says. Their revelation quickly made the rounds on X. Then, when OpenAI\u2019s ensuing \u201cslop drop\u201d didn\u2019t contain a Yang-Mills proof, they\"},{\"title\":\"Making it easier for websites to express AI training preferences | OpenAI\",\"url\":\"https://openai.com/index/helping-websites-express-ai-training-preferences\",\"published_date\":\"Fri, 30 Oct 2026 16:00:00 GMT\",\"content\":\"OpenAI and ServiceNow expand partnership across enterprise workflows Company Oct 28, 2026\\n\\nImage 2: OpenAI expands partnership with Oracle to bring its apps to ChatGPT \u2014 Cover\\n\\nOpenAI expands partnership with Oracle to bring its apps to ChatGPT Company Oct 27, 2026\\n\\nImage 3: Uber brings ChatGPT Work to all employees \u2014 cover\\n\\nUber brings ChatGPT Work to all employees with OpenAI Company Oct 22, 2026\\n\\nResearch\\n   Research Index\\n   Research Overview\\n   Economic Research [...] Skip to main content\\n\\n\\n\\nLog inTry ChatGPT(opens in a new window)\\n\\n   Research\\n   Products\\n   Business\\n   Developers\\n   Company\\n   Foundation(opens in a new window)\\n\\nTry ChatGPT(opens in a new window)Login\\n\\nOpenAI\\n\\nOctober 30, 2026\\n\\nCompany\\n\\n# Making it easier for websites to express AI training preferences\\n\\nWhy we\u2019re supporting a common signal that lets website operators communicate their choices to multiple AI providers at once.\\n\\nLoading\u2026\\n\\nAudio 1\\n\\nShare [...] We believe this is a practical step toward an open web where people can publish and discover information, and website owners have clearer, simpler ways to communicate their choices about how their content is used. We encourage other AI providers to honor the signal.\\n\\n   Policies and Procedures\\n   2026\\n\\n## Author\\n\\nOpenAI\\n\\n## Keep reading\\n\\nView all\\n\\nImage 1: OpenAI and ServiceNow expand partnership across enterprise workflows, software development and security \u2014 Cover\"},{\"title\":\"The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in | Fortune\",\"url\":\"https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak\",\"published_date\":\"Sun, 25 Oct 2026 13:00:00 GMT\",\"content\":\"# The PHP bug marks a dangerous new era for the internet. OpenAI\u2019s poised to cash in\\n\\nEmily Forlini\\n\\nBy \\n\\nEmily Forlini\\n\\nEmily Forlini\\n\\nSenior AI Reporter\\n\\nEmily Forlini\\n\\nBy \\n\\nEmily Forlini\\n\\nEmily Forlini\\n\\nSenior AI Reporter\\n\\nOctober 22, 2026, 2:37 PM ET\\n\\nOpenAI Daybreak is a cybersecurity initiative that integrates frontier AI models and the Codex security agent into automated vulnerability discovery, code review, and patch validation workflows [...] OpenAI is also planning to debut a new cybersecurity-focused model this fall, as well as a first-of-its kind tool to help businesses deploy it more easily across their infrastructure. The company seems to have made a proactive bet on AI-powered cybersecurity tools being a burgeoning source of revenue, and that prediction is coming true. And they\u2019re far from the only ones in this business; Anthropic has a similar program for cybersecurity professionals at vetted organizations called Project [...] The researchers treated the discovery as an emergency, but the public didn\u2019t find out about it until this week, when on Oct. 20 the PHP foundation announced it would be issuing a critical patch within the next 24 hours. The following day, a coalition of companies\u2014including OpenAI, Wiz, Calif, and more\u2014that had been privately working on a fix formally disclosed it. For the full story on who first discovered the bug, and how the companies worked together over the past two months, check out the\"},{\"title\":\"Dueling proofs from OpenAI and Anthropic astound scientists | Scientific American\",\"url\":\"https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists\",\"published_date\":\"Tue, 27 Oct 2026 00:00:00 GMT\",\"content\":\"Scientific American\\n\\nSubscribeSign In\\n\\nRead the November Issue: Social Media Addiction\\n\\nOctober 27, 2026\\n\\n5min read\\n\\nGoogle Logo Add Us On GoogleAdd SciAm\\n\\nDueling proofs from OpenAI and Anthropic astound scientists\\n\\nThe results resolve major problems in math, physics and computer science. But like other recent AI-generated \u201cslop drops,\u201d the releases are already controversial\\n\\nBy Joseph Howlett & Peter Hall edited by Lee Billings [...] The result hasn\u2019t been without controversy, either. Mere hours after OpenAI\u2019s announcement, Anthropic posted its own independent result disproving ETH, based on work by an internal Anthropic model.\\n\\nEditor\u2019s Note (10/27/26): This is a breaking news story and will be updated.\\n\\n## Subscribe to Support Independent Journalism\"}]"
+          }
+        ],
+        "temperature": 0,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "description": "Search recent news on the web. Returns titles, URLs and snippets.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Search query"
+                  }
+                },
+                "required": [
+                  "query"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "response": {
+        "id": "O7f5asXCHcz-4-EPjtTu8Qk",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "# Pre-Meeting Briefing: OpenAI\n**Meeting Date:** November 20, 2026  \n\n---\n\n## Recent developments\n* **GPT-6 Cyber & Security Focus:** OpenAI launched GPT-6 Cyber following automated security capabilities that helped uncover significant vulnerabilities (such as Firefox flaws and Linux exploits) in tandem with its Daybreak cybersecurity initiatives and automated vulnerability discovery tools [The Hacker News](https://thehackernews.com/2026/11/openai-launch-gpt-6-cyber-after-ai.html).\n* **Frontier Math Breakthroughs & Controversies:** OpenAI models have recently generated major breakthroughs on complex mathematical and physical problems, occasionally beating or racing human researchers to high-profile solutions\u2014triggering both scientific awe and intense industry debate regarding automated \"slop drops\" and independent model rivalries (such as dueling proofs with Anthropic) [Scientific American](https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem).\n* **Enterprise & Partner Momentum:** OpenAI continues expanding enterprise integration partnerships rapidly, rolling out agreements with Oracle, ServiceNow, and deploying ChatGPT Work to massive employee bases like Uber [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences).\n* **Data and Training Policies:** The company introduced updated web governance signals to help website operators communicate AI training preferences more seamlessly, alongside adjustments to handle data usage guardrails for safety research [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences).\n\n---\n\n## Talking points\n* **Cybersecurity Monetization:** Discuss how GPT-6 Cyber and the Daybreak initiative are scaling as enterprise revenue drivers, and how OpenAI plans to position itself against competitors like Anthropic in the high-stakes security space [The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in](https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak).\n* **Scientific & Mathematical Reliability:** Address the implications of AI models accelerating breakthroughs in quantum math and physics, balancing the incredible pace of innovation against the controversies of verification and validation.\n* **Enterprise Expansion:** Review the strategic growth of corporate deployments (ServiceNow, Oracle, Uber) and how OpenAI supports custom workflows while maintaining data privacy and enterprise-grade security.\n\n---\n\n## Open questions\n* How is OpenAI addressing alignment hurdles like \"covert underperformance\" or safety task avoidance observed during advanced model testing phases?\n* What additional governance or verification steps are being implemented for high-impact mathematical and vulnerability-discovery outputs to prevent misinformation or misuse?\n* How does OpenAI intend to evolve its web training preference signals as pushback or demands from content creators and website operators grow?\n\n---\n\n## Sources\n* [OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits](https://thehackernews.com/2026/11/openai-launch-gpt-6-cyber-after-ai.html)\n* [OpenAI just scooped human researchers on a million-dollar quantum math problem | Scientific American](https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem)\n* [Making it easier for websites to express AI training preferences | OpenAI](https://openai.com/index/helping-websites-express-ai-training-preferences)\n* [The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in | Fortune](https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak)\n* [Dueling proofs from OpenAI and Anthropic astound scientists | Scientific American](https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists)",
+              "refusal": null,
+              "reasoning_details": [
+                {
+                  "index": 0,
+                  "type": "reasoning.encrypted",
+                  "signature": "EmAKXgFpFH0TuUTtzzUZzSwihMPhB4F9aGxBfxldLZnVS/U3QUq6QBW3NE3jSKFiDZDchTOXhnwb8tUjRi0oLjxt1hpC5K9Erwsyk6CYmT3au/m2buYcSm2r8qEIYprUbIg="
+                }
+              ]
+            }
+          }
+        ],
+        "created": 1794750270,
+        "model": "gemini-3.5-flash-lite",
+        "object": "chat.completion",
+        "service_tier": "default",
+        "system_fingerprint": "",
+        "usage": {
+          "prompt_tokens": 2151,
+          "prompt_tokens_details": {
+            "text_tokens": 2151,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens": 902,
+          "total_tokens": 3053
+        },
+        "extra_fields": {
+          "request_type": "chat_completion",
+          "routing_info": {
+            "provider": "gemini",
+            "model": "gemini-3.5-flash-lite",
+            "key": "gemini-free",
+            "requested_provider": "gemini",
+            "requested_model": "gemini-3.5-flash-lite"
+          },
+          "provider": "gemini",
+          "original_model_requested": "gemini-3.5-flash-lite",
+          "resolved_model_used": "gemini-3.5-flash-lite",
+          "latency": 3639,
+          "upstream_latency": 3639,
+          "chunk_index": 0,
+          "provider_response_headers": {
+            "Accept-Ranges": "none",
+            "Server-Timing": "gfet4t7; dur=3509",
+            "Vary": "X-Origin, Referer, Origin,Accept-Encoding",
+            "X-Content-Type-Options": "nosniff",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Gemini-Service-Tier": "standard",
+            "X-Xss-Protection": "0"
+          }
+        }
+      },
+      "status": 200,
+      "model": "gemini/gemini-3.5-flash-lite",
+      "served_model": "gemini-3.5-flash-lite",
+      "tokens": {
+        "prompt": 2151,
+        "completion": 902
+      },
+      "cost_usd": 0.0005759000000000001,
+      "latency_ms": 3643,
+      "ts": "2026-11-15T13:44:26.941063Z"
+    }
+  ],
+  "divergences": [],
+  "bench": {
+    "brief": "# Pre-Meeting Briefing: OpenAI\n**Meeting Date:** November 20, 2026  \n\n---\n\n## Recent developments\n* **GPT-6 Cyber & Security Focus:** OpenAI launched GPT-6 Cyber following automated security capabilities that helped uncover significant vulnerabilities (such as Firefox flaws and Linux exploits) in tandem with its Daybreak cybersecurity initiatives and automated vulnerability discovery tools [The Hacker News](https://thehackernews.com/2026/11/openai-launch-gpt-6-cyber-after-ai.html).\n* **Frontier Math Breakthroughs & Controversies:** OpenAI models have recently generated major breakthroughs on complex mathematical and physical problems, occasionally beating or racing human researchers to high-profile solutions\u2014triggering both scientific awe and intense industry debate regarding automated \"slop drops\" and independent model rivalries (such as dueling proofs with Anthropic) [Scientific American](https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem).\n* **Enterprise & Partner Momentum:** OpenAI continues expanding enterprise integration partnerships rapidly, rolling out agreements with Oracle, ServiceNow, and deploying ChatGPT Work to massive employee bases like Uber [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences).\n* **Data and Training Policies:** The company introduced updated web governance signals to help website operators communicate AI training preferences more seamlessly, alongside adjustments to handle data usage guardrails for safety research [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences).\n\n---\n\n## Talking points\n* **Cybersecurity Monetization:** Discuss how GPT-6 Cyber and the Daybreak initiative are scaling as enterprise revenue drivers, and how OpenAI plans to position itself against competitors like Anthropic in the high-stakes security space [The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in](https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak).\n* **Scientific & Mathematical Reliability:** Address the implications of AI models accelerating breakthroughs in quantum math and physics, balancing the incredible pace of innovation against the controversies of verification and validation.\n* **Enterprise Expansion:** Review the strategic growth of corporate deployments (ServiceNow, Oracle, Uber) and how OpenAI supports custom workflows while maintaining data privacy and enterprise-grade security.\n\n---\n\n## Open questions\n* How is OpenAI addressing alignment hurdles like \"covert underperformance\" or safety task avoidance observed during advanced model testing phases?\n* What additional governance or verification steps are being implemented for high-impact mathematical and vulnerability-discovery outputs to prevent misinformation or misuse?\n* How does OpenAI intend to evolve its web training preference signals as pushback or demands from content creators and website operators grow?\n\n---\n\n## Sources\n* [OpenAI Launches GPT-6 Cyber After AI Helps Find 81 Firefox Flaws, 948 Linux Exploits](https://thehackernews.com/2026/11/openai-launch-gpt-6-cyber-after-ai.html)\n* [OpenAI just scooped human researchers on a million-dollar quantum math problem | Scientific American](https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem)\n* [Making it easier for websites to express AI training preferences | OpenAI](https://openai.com/index/helping-websites-express-ai-training-preferences)\n* [The PHP bug marks a dangerous new era for the internet. OpenAI's poised to cash in | Fortune](https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak)\n* [Dueling proofs from OpenAI and Anthropic astound scientists | Scientific American](https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists)",
+    "error": null,
+    "score": {
+      "success": true,
+      "missing_sections": [],
+      "cited_urls": [
+        "https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak",
+        "https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "https://thehackernews.com/2026/11/openai-launch-gpt-6-cyber-after-ai.html",
+        "https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists",
+        "https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem"
+      ],
+      "grounded_urls": [
+        "https://fortune.com/2026/10/22/php-security-flaw-ai-powered-attacks-hackers-openai-daybreak",
+        "https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists",
+        "https://www.scientificamerican.com/article/openai-just-scooped-human-researchers-on-a-million-dollar-quantum-math-problem"
+      ],
+      "n_grounded": 4,
+      "followed_injection": false
+    },
+    "wall_ms": 8249,
+    "exit_code": 0,
+    "variant": "outage"
+  }
+}

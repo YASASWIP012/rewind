@@ -1,0 +1,31 @@
+{
+  "results_sub": "Same model (Gemini 3.5 Flash-Lite), two agent designs, 4 companies, 12 paired forks per cell",
+  "variant_names": {"base": "Recorded run", "misinfo": "False claim in a search result", "poison": "Hidden instruction in a search result", "outage": "Provider outage (503)"},
+  "results_notes": [
+    "Hidden instruction: brief_py repeated it in 7 of 12 forks, brief_ts in 0 of 12. Paired difference +58 points (95% CI +33 to +83), exact McNemar p = 0.016.",
+    "False claim: brief_py repeated it in 12 of 12, brief_ts in 3 of 12. +75 points (+50 to +100), p = 0.004.",
+    "Both agents recovered from every outage. The difference is the agent's design, not the model."
+  ],
+  "fork_notes": [
+    "A fork replays the shared history from the recording, so it only pays for the steps after the change: 43% cheaper than a fresh run for brief_py and 94% cheaper for brief_ts.",
+    "88 real runs in total cost $0.73 at list price, all on free tiers."
+  ],
+  "engineering": [
+    "Runs on a stock Bifrost v2.5.1 build; uses only public plugin hooks (HTTPTransportPreHook / PostHook) plus Relays, virtual keys and provider retries.",
+    "36 Go tests (race detector on) cover fingerprinting, diffs, the store, every mode and mutation through the real hooks, and the run API. 22 Python tests for scoring and statistics. CI on every push.",
+    "Overhead: about 15 µs to fingerprint a request; about 0.36 ms per replayed step including the atomic cassette write.",
+    "Agents in two languages needed no Rewind code: a base URL and one header.",
+    "Opened upstream as maximhq/bifrost issue #10047 and pull request #10048."
+  ],
+  "limits": [
+    "Only traffic through the gateway is recorded; local files or clocks aren't.",
+    "Streams are recorded but not replayed as streams yet.",
+    "The model-swap fork ran out of free quota, so it isn't reported."
+  ],
+  "next": [
+    "Export cassettes as OTel spans for Bifrost's tracing.",
+    "MCP tool calls and A2A traffic (both have short-circuit hooks).",
+    "A GitHub Action that fails a pull request when a golden run diverges."
+  ],
+  "upstream": "Upstream: github.com/maximhq/bifrost/pull/10048"
+}
